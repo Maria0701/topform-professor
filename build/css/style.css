@@ -3136,92 +3136,46 @@ button {
 @import "components/header-menu";
 @import "components/header-search";
 @import "components/secondary-menu";
+@import "components/socials.scss";
+@import "components/info-menu";
 */
-.socials {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 17px;
-}
-
-.socials__link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--mid-grey);
-  fill: var(--mid-grey);
-  text-decoration: none;
-}
-.socials__link svg {
-  width: 24px;
-  height: 24px;
-}
-
-.info-menu {
-  position: relative;
+.search-block,
+.prices__search-block {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  order: 1;
-  gap: 24px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-left: var(--padding);
+  row-gap: 6px;
+}
+
+.search-block__name,
+.prices__search-block-name {
+  flex-basis: 100%;
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 130%;
+  color: var(--dark-gray);
+  text-transform: uppercase;
+}
+
+.search-block__label,
+.prices__search-block-label {
+  display: flex;
+  max-width: 327px;
   width: 100%;
 }
-.info-menu:after {
-  content: "";
-  position: absolute;
-  left: var(--padding);
-  bottom: 0;
-  display: block;
-  width: calc(100% - var(--padding));
-  height: 1px;
-  background-color: var(--light-gray);
-}
 
-.info-menu-phones {
-  display: grid;
-  grid-auto-flow: row;
-  gap: 5px;
-}
-.info-menu-phones a {
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.2;
-  color: var(--green);
-  text-decoration: none;
-}
-
-.info-menu-contact__item {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 12px;
-}
-.info-menu-contact__item svg {
-  width: 24px;
-  height: 24px;
-  color: var(--green);
-  fill: var(--green);
-}
-
-.info-menu-contact__main {
-  display: grid;
-  grid-auto-flow: row;
-}
-
-.info-menu-contact__desc {
-  font-size: 0.625rem;
-  color: var(--mid-grey);
-}
-
-.info-menu-contact__caption,
-.info-menu-contact__caption a {
+.search-block__input,
+.prices__search-block-input {
+  padding-bottom: 5px;
+  width: 100%;
+  font-weight: 400;
   font-size: 0.75rem;
-  color: var(--dark-gray);
-  text-decoration: none;
+  line-height: 130%;
+  color: var(--mid-grey);
+  border-bottom: 1px solid var(--dark-gray);
+  border-radius: 0;
+  cursor: auto;
 }
 
 .bread {
@@ -3341,7 +3295,7 @@ button {
   row-gap: 6px;
 }
 
-.prices__search-block {
+.prices__search-block-name {
   margin: 0;
   font-weight: 500;
   font-size: 0.75rem;

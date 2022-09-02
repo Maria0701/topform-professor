@@ -1,0 +1,38 @@
+.search-block,
+.prices__search-block {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+}
+
+.search-block__name,
+.prices__search-block-name {
+    flex-basis: 100%;
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 130%;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+}
+
+.search-block__label,
+.prices__search-block-label {
+    display: flex;
+    max-width: 327px;
+    width: 100%;
+}
+
+.search-block__input,
+.prices__search-block-input {
+    padding-bottom: 5px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 130%;
+    color: var(--mid-grey);
+    border-bottom: 1px solid var(--dark-gray);
+    border-radius: 0;
+    cursor: auto;
+}
