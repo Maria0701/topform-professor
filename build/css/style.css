@@ -161,6 +161,10 @@ input:hover, input:focus {
   display: block;
 }
 
+.section-head h2 {
+  line-height: 1.4;
+}
+
 button {
   -webkit-appearance: none;
      -moz-appearance: none;
