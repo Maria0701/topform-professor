@@ -1,0 +1,21 @@
+.socials {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 17px;
+}
+
+.socials__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mid-grey);
+    fill: var(--mid-grey);
+    text-decoration: none;
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}

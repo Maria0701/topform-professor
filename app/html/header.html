@@ -1,0 +1,306 @@
+<header class="header">
+	<div class="header-container">
+		<div class="header-logo">
+			<a href="/" class="header-logo__img" title="На Главную">
+				<img src="img/logo.png" alt="Логотип Медицинского центра Профессор" width="77.5" height: 32>
+				<div class="header-logo__text">Медицинский центр</div>
+			</a>
+			<div class="header-logo__caption">
+				Все врачи в  нашем центре –&nbsp;профессора!
+			</div>
+		</div>
+	
+		<div class="header-actions-mobile">
+			<a class="header-sign-up" href="#" title="перейти на страницу записи" aria-label="Записаться на прием">
+                <include src="app/html/svg-icon.html" locals='{"name": "appointment", "width": "24", "height": "24"}'></include>
+			</a>
+			<a class="header-phone-up"  href="tel:+7999123456" title="позвонить в центр">
+                <include src="app/html/svg-icon.html" locals='{"name": "call","width": "24", "height": "24" }'></include>
+			</a>
+			<button class="js-menu-mobile-button header-toggler" title="Открыть меню">
+				<svg class="icon icon-menu" width="24" height="24">
+					<use xlink:href="img/sprite.svg#menu" />
+				</svg>
+				<svg class="icon icon-cancel" width="24" height="24">
+					<use xlink:href="img/sprite.svg#cancel"/>
+				</svg>
+			</button>
+		</div>
+	
+		<div class="header-main js-menu-mobile">
+			<div class="secondary-menu">
+				<nav class="secondary-menu__nav">
+					<ul class="secondary-menu-list">
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">О нас</a>
+						</li>
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">Специалисты</a>
+						</li>
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">Расписание специалистов</a>
+						</li>
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">Режим работы</a>
+						</li>
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">Отзывы</a>
+						</li>
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+				<button class="btn btn--icon secondary-menu__btn" aria-label="Версия для плохо видящих">
+                    <include src="app/html/svg-icon.html" locals='{ "name": "fa_eye", "width": "24", "height": "24" }'></include>
+				</button>
+			</div>
+	
+			<div class="info-menu">
+				<div class="info-menu-search">
+					<form action="" class="info-menu-search search">
+						<label class="input-group search__label">
+							<input type="search" class="search__input">							
+						</label>
+						<button class="btn search__btn"><include src="app/html/svg-icon.html" locals='{ "name": "fa_search", "width": "24", "height": "24" }'></include></button>
+					</form>
+				</div>
+				<div class="info-menu-contact">
+					<div class="info-menu-contact__item">
+						<include src="app/html/svg-icon.html" locals='{ "name": "fa_mail","width": "24", "height": "24"  }'></include>
+						<div class="info-menu-contact__main">
+							<div class="info-menu-contact__caption">
+								<a href="mailto:zapis@mcprofessor.ru" title="Напишите на почту">zapis@mcprofessor.ru</a>
+							</div>
+						</div>
+					</div>
+					<div class="info-menu-contact__item">
+						<include src="app/html/svg-icon.html" locals='{ "name": "fa_map", "width": "24", "height": "24" }'></include>
+						<div class="info-menu-contact__main">
+							<div class="info-menu-contact__desc">м. Чернышевская</div>
+							<div class="info-menu-contact__caption">ул. Чайковского, 42</div>
+						</div>
+					</div>
+					<div class="info-menu-contact__item">
+						<include src="app/html/svg-icon.html" locals='{ "name": "fa_clock","width": "24", "height": "24"  }'></include>
+						<div class="info-menu-contact__main">
+							<div class="info-menu-contact__desc">Время работы</div>
+							<div class="info-menu-contact__caption">пн-пт: 9-21, сб: 9-20, вс: 9-19</div>
+						</div>
+					</div>
+				</div>
+
+				<include src="app/html/socials.html" locals='{ "class": "info-menu-social" }'></include>
+				
+				<div class="info-menu-phones">
+					<a href="tel:+7 (812) 272-70-24" title="позвонить в клинику">+7 (812) 272-70-24</a>
+					<a href="tel:+7 (812) 272-37-34" title="позвонить в клинику">+7 (812) 272-37-34</a>
+					<a href="tel:+7 (812) 275-86-96" title="позвонить в клинику">+7 (812) 275-86-96</a>
+				</div>
+			</div>
+			<div class="primary-menu">
+				<nav class="header-menu">
+					<div class="header-menu-back">
+						<button class="btn-menu-back">
+							<svg class="icon" height="7" width="34">
+								<use xlink:href="img/sprite.svg#back"/>
+							</svg>
+							<span>Назад</span>
+						</button>
+					</div>
+					<ul class="header-menu__wrap">
+						<li class="header-menu__item header-menu__item--inner">
+							<a href="#" title="Врачи">Врачи</a>
+							<div class="inner-menu">
+								<div class="service-content">
+									<div class="service-content__item">
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#"  title="Ангиолог ( флеболог)">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--feet","width": "24", "height": "24"  }'></include>
+														<span>Ангиолог ( флеболог)</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--andrology","width": "24", "height": "24"  }'></include>
+														<span>Андролог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--gastro","width": "24", "height": "24"  }'></include>
+														<span>Гастроэнтеролог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--blood","width": "24", "height": "24"  }'></include>
+														<span>Гематолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--gynekologist","width": "24", "height": "24"  }'></include>
+														<span>Гинеколог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--endokrinology","width": "24", "height": "24"  }'></include>
+														<span>Гинеколог- эндокринолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--endokrinology","width": "24", "height": "24"  }'></include>
+														<span>Дерматолог - эндокринолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--diabet","width": "24", "height": "24"  }'></include>
+														<span>Диабетолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--cardiology","width": "24", "height": "24"  }'></include>
+														<span>Кардиолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--ent","width": "24", "height": "24"  }'></include>
+														<span>ЛОР</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--ent-f","width": "24", "height": "24"  }'></include>
+														<span>ЛОР-фониатр</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--mamology","width": "24", "height": "24"  }'></include>
+														<span>Маммолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--neurologist","width": "24", "height": "24"  }'></include>
+														<span>Невролог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--cancer","width": "24", "height": "24"  }'></include>
+														<span>Онколог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--proctology","width": "24", "height": "24"  }'></include>
+														<span>Проктолог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--psy","width": "24", "height": "24"  }'></include>
+														<span>Психотерапевт</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--therapist-psy","width": "24", "height": "24"  }'></include>
+														<span>Психотерапевт - психолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--lung","width": "24", "height": "24"  }'></include>
+														<span>Пульмонолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--joint","width": "24", "height": "24"  }'></include>
+														<span>Ревматолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--sexologist","width": "24", "height": "24"  }'></include>
+														<span>Сексолог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--therapist","width": "24", "height": "24"  }'></include>
+														<span>Терапевт</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--hair","width": "24", "height": "24"  }'></include>
+														<span>Трихолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--urologist","width": "24", "height": "24"  }'></include>
+														<span>Уролог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--surgeon","width": "24", "height": "24"  }'></include>
+														<span>Хирург</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<include src="app/html/svg-icon.html" locals='{ "name": "service--endokrinology","width": "24", "height": "24"  }'></include>
+														<span>Эндокринолог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="header-menu__item header-menu__item--inner"><a href="#">Лечебные процедуры</a></li>
+						<li class="header-menu__item header-menu__item--inner"><a href="#">Анализы</a></li>
+						<li class="header-menu__item header-menu__item--inner"><a href="#">Диагностика</a></li>
+						<li class="header-menu__item"><a href="#">Акции</a></li>
+						<li class="header-menu__item"><a href="#">Цены</a></li>
+						<li class="header-menu__item"><a href="#">Пациентам</a></li>
+					</ul>
+				</nav>
+				<div class="header-actions">
+					<button class="btn btn--primary header__action">Запись на прием</button>
+					<button class="btn btn--secondary header__action">Обратный звонок</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

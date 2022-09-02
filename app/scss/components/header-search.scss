@@ -1,0 +1,29 @@
+.search {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.search__label {
+    display: flex;
+    flex-basis: 100%;
+    height: 30px;
+    border: 1px solid var(--mid-grey);
+    border-radius: 8px;    
+}
+
+.search__input {
+    flex-basis: 100%;
+    padding-left: 12px;
+    padding-right: 26px;;
+    color: var(--dark-gray);
+    box-sizing: border-box;
+    cursor: auto;
+}
+
+.search__btn {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}

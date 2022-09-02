@@ -1,0 +1,30 @@
+<div class="prices">
+    <div class="container prices__wrapper">
+        <div class="prices__filter-btns btns-swiper">
+            <div class="prices__filter-btns-wrapper swiper-wrapper">
+                <a href="#" class="prices__filter-btn btn btn--green swiper-slide">Все</a>
+                <a href="#" class="prices__filter-btn btn btn--green swiper-slide btn--active">Врачи</a>
+                <a href="#" class="prices__filter-btn btn btn--green swiper-slide ">ЛЕЧЕБНЫЕ ПРОЦЕДУРЫ</a>
+                <a href="#" class="prices__filter-btn btn btn--green swiper-slide ">АНАЛИЗЫ</a>
+                <a href="#" class="prices__filter-btn btn btn--green swiper-slide">ДИАГНОСТИКА</a>
+            </div>
+        </div>
+        <div class="prices__search-block">
+            <p class="prices__search-block">НАПРАВЛЕНИЕ</p>
+            <label class="prices__search-block-label">
+                <input type="search" class="prices__search-block-input" placeholder="Выберите направление">
+            </label>
+        </div>
+        <div class="prices__list">
+            <div class="prices__tab-block opened">
+            <include src="app/html/prices-tab-block.html" locals='{"class": "", "name": "Гинеколог", "icon": "gynekologist"}'></include>
+            </div>
+            <div class="prices__tab-block closed">
+                <include src="app/html/prices-tab-block.html" locals='{"class": "", "name": "аниолог (флеболог)", "icon": "feet"}'></include>
+            </div>
+            <div class="prices__tab-block closed">
+                <include src="app/html/prices-tab-block.html" locals='{"class": "", "name": "Андролог", "icon": "andrology"}'></include>
+            </div>
+        </div>
+    </div>
+</div>

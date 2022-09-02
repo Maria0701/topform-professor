@@ -1,0 +1,113 @@
+.prices__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 36px;
+    padding-top: 37px;
+    padding-bottom: 50px;
+}
+
+.prices__filter-btns {
+    margin-right: -16px;
+    width: calc(100% + 16px);
+    max-width: calc(100% + 16px);
+    overflow: hidden;
+}
+
+.prices__filter-btns-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.prices__search-block {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 6px;
+}
+
+.prices__search-block {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 130%;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+}
+
+.prices__search-block-label {
+    display: flex;
+    max-width: 327px;
+    width: 100%;
+}
+
+.prices__search-block-input {
+    padding-bottom: 5px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 130%;
+    color: var(--mid-grey);
+    border-bottom: 1px solid var(--dark-gray);
+    border-radius: 0;
+    cursor: auto;
+}
+
+.prices__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.prices__tab-block {
+    flex-basis: 100%;
+}
+
+@media (min-width: $small) {
+    .prices__filter-btns-wrapper {
+        gap: 16px
+    }
+
+    .prices__wrapper {
+        overflow: hidden;
+    }
+
+    .prices__list {
+        position: relative;
+        
+        &::before {
+            content: '';
+            position:absolute;
+            right: -156px;
+            top: -185px;
+            z-index: 0;
+            width: 503px;
+            height: 282px;
+            background-image: url('/img/bg-flowers2.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            aspect-ratio: 503 / 282;
+            //margin-left: -156px;
+
+            //transform: translate(156px, 185px);
+        } 
+    }
+}
+
+@media (min-width: $desktop-large) {
+    .prices__wrapper {
+        overflow: visible;
+    }
+    .prices__list {      
+        &::before {
+            right: -16px;
+        }
+    }
+}
+
+@media (min-width: 1752px) {
+    .prices__list {      
+        &::before {
+            right: -156px;
+        }
+    }
+}

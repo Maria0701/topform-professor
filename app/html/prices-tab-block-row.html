@@ -1,0 +1,8 @@
+<div class="prices-block__row prices-row">
+    <p class="prices-row__name">{{ text }}</p>
+    <div class="prices-row__prices">
+        <p class="prices-row__price">{{ price }}</p>
+        <p  class="prices-row__old">{{ formerprice }}</p>
+    </div>
+    <include src="app/html/btn.html" locals='{"text": "записаться", "class": "btn--primary prices-row__btn"}'></include>
+</div>

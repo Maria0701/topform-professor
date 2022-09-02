@@ -1,0 +1,109 @@
+button {
+	appearance: none;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	border: none;
+	font: inherit;
+	background-color: transparent;
+	line-height: 1;
+}
+
+.btn {
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	text-transform: uppercase;
+}
+
+.btn--primary,
+.btn--secondary {    
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s ease;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: var(--dark-gray);
+    border: 1px solid;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    &:hover {
+        background-color: var(--light-gray);
+    }
+}
+
+.btn--icon {
+    font-size: 0;
+    line-height: 1;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+
+.btn--primary {
+    background-color: var(--orange);
+    color: var(--white);
+    border: 1px solid var(--orange);
+    padding-left: 13px;
+    padding-right: 13px;
+    position: relative;
+
+    &:hover {
+        background-color: #dd8c42;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        left: 3px;
+        right: 3px;
+        border: 1px solid hsla(0, 0%, 100%, 0.5);
+        pointer-events: none;
+    }
+}
+
+.btn--green {
+    padding-right: 24px;
+    padding-left: 24px;
+    height: 50px;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1;
+    background-color: transparent;
+    color: var(--dark-gray);
+    border: 1px solid var(--dark-gray);
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, 
+        background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: var(--green);
+        text-decoration: none;
+        border-color: var(--green);
+    }
+}
+
+.btn--green.btn--active {
+    color: var(--white);
+    background-color: var(--green);
+    border-color: var(--green);
+}

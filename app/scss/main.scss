@@ -1,0 +1,91 @@
+html {
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--dark-gray);
+    font-family: 'Rubik', 'Arial', sans-serif;  
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--white);  
+}
+
+main {
+    flex-grow: 1;    
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    font-size: inherit;
+    font-family: inherit;
+    color: var(--white);
+    border: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+}
+
+
+.visually-hidden:not(:focus) {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+
+.h1 {
+    font-family: 'EIisabethische';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.25rem;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+}
+
+@media (min-width: $small) {
+    .h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: $desktop-large) {
+    .h1 {
+        font-size: 3.75rem;
+    }
+}

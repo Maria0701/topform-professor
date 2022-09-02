@@ -1,0 +1,39 @@
+.top-page {
+    padding-top: 34px;
+    padding-bottom: 36px;
+}
+
+.top-page--gray {
+    background-color: var(--background-gray);
+    background-image: url('/img/bg-gray.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.top-page__bread {
+    margin-bottom: 24px;
+}
+
+.top-page__h1 {
+    margin-bottom: 12px;
+}
+
+.top-page__subname {
+    font-size: 1rem;
+    line-height: 130%;
+    color: var(--dark-gray);
+}
+
+@media (min-width: $desktop-large) {
+    .top-page {
+        padding-top: 36px;
+    }
+    
+    .top-page__bread {
+        margin-bottom: 36px;
+    }
+
+    .top-page__subname {
+        font-size: 1.125rem;
+    }
+}

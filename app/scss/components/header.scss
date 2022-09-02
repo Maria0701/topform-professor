@@ -1,0 +1,131 @@
+.header {
+	position: relative;
+	width: 100%;	
+	z-index: 11;
+	background-color: var(--white);
+	transition: height .1s ease;
+}
+
+.header-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: var(--padding);
+}
+
+.header-logo {	
+	padding-top: 12px;
+	padding-bottom: 13px;
+	padding-right: var(--padding);
+	padding-left: var(--padding);
+	background-color: var(--light-gray);
+	
+}
+
+.header-logo__img {
+	display: grid;
+	grid-template-columns: auto auto;
+	align-items: center;
+	gap: 8.7px;
+	text-decoration: none;
+
+	img {
+		display: block;
+		width: 77.5px;
+		height: 32px;
+	}
+}
+
+.header-logo__text {
+	display:flex;
+	align-items: center;
+	max-width: 70px;
+	font-weight: 500;
+	font-size: 0.625rem;
+	line-height: 120%;
+	color: var(--green);
+	text-decoration: none;
+}
+
+.header-logo__caption {
+	display: none;
+}
+
+.header-toggler .icon-cancel {
+	display: none;
+}
+
+.header-actions-mobile {
+	display: grid;
+	grid-template-columns: 30px 30px 30px;
+	gap: 20px;
+	align-items: center;
+	justify-content: space-between;
+
+}
+
+.header-sign-up {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	list-style: none;
+	color: var(--orange);
+	text-decoration: none;
+
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.header-phone-up {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	list-style: none;
+	color: var(--dark-gray);
+	text-decoration: none;
+
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.header-toggler {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	list-style: none;
+	color: var(--dark-gray);
+	text-decoration: none;
+
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.header-main {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	z-index: 10;
+	display: grid;
+	grid-template-columns: 1fr;
+	max-width: 276px;
+	padding-top: 12px;
+	padding-right: 16px;
+	background-color: var(--white);
+	box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.25);
+}
+
+.header__action {
+	display: none;
+}

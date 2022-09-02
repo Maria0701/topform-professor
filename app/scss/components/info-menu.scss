@@ -1,0 +1,68 @@
+.info-menu {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    order: 1;
+    gap: 24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: var(--padding);
+    width: 100%;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: var(--padding);
+        bottom: 0;
+        display: block;
+        width: calc(100% - var(--padding));
+        height: 1px;
+        background-color: var(--light-gray);
+    }
+}
+
+.info-menu-phones {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 5px;
+
+    a {
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: var(--green);
+        text-decoration: none;
+    }    
+}
+
+.info-menu-contact__item {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+
+    svg {        
+        width: 24px;
+        height: 24px;
+        color: var(--green);
+        fill: var(--green);
+    }
+}
+
+.info-menu-contact__main {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.info-menu-contact__desc {
+    font-size: 0.625rem;
+    color: var(--mid-grey);
+}
+
+.info-menu-contact__caption,
+.info-menu-contact__caption a {
+    font-size: 0.75rem;
+    color: var(--dark-gray);
+    text-decoration: none;
+}
