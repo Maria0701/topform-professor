@@ -1,0 +1,28 @@
+<section class="comment {{ class}}">
+    <div class="comment__wrapper">
+        <h2 class="comment__name">оставить отзыв</h2>
+        <p class="comment__remark">Ваши фамилия и e-mail не будут опубликованы на сайте. Они нужны нам, чтобы убедиться, что вы реальный пациент клиники.</p>
+        <form class="comment__form comment-form" action=".">
+            <label class="comment-form__label">                
+                <input class="comment-form__input required" type="text">
+                <span class="comment-form__name" name="name">ВАШЕ ИМЯ*</span>
+            </label>
+            <label class="comment-form__label">                
+                <input class="comment-form__input required" type="text">
+                <span class="comment-form__name" name="surname">ВАША ФАМИЛИЯ*</span>
+            </label>
+            <label class="comment-form__label">                
+                <input class="comment-form__input required" type="mail">
+                <span class="comment-form__name" name="mail">ВАШ E-MAIL*</span>
+            </label>
+            <label class="comment-form__label comment-form__label--textarea">
+                <textarea rows="10" cols="45" name="text"></textarea>
+            </label>
+            <label class="commet-form__label commet-form__label--checkbox">
+                <input type="checkbox" name="agreed" checked>
+                Я даю согласие на обработку персональных данных
+            </label>
+            <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>
+        </form>
+    </div>
+</section>

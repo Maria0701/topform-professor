@@ -734,6 +734,10 @@ button {
   margin-right: -16px;
 }
 
+.feedback__item {
+  background-color: var(--bege);
+}
+
 @media (min-width: 740px) {
   .feedback__list {
     row-gap: 36px;
@@ -751,7 +755,6 @@ button {
   padding-right: 16px;
   padding-top: 24px;
   padding-bottom: 24px;
-  background-color: var(--bege);
 }
 
 .review__container {
