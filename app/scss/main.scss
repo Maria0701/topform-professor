@@ -41,7 +41,7 @@ input {
     font-size: inherit;
     font-family: inherit;
     color: var(--white);
-    border: 0;
+   // border: 0;
     cursor: pointer;
 
     &:hover,
@@ -87,5 +87,13 @@ input {
 @media (min-width: $desktop-large) {
     .h1 {
         font-size: 3.75rem;
+    }
+}
+
+.hero-slider__title {
+    line-height: 1.4;
+    
+    span {
+        display: block;
     }
 }
