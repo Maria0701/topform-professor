@@ -113,7 +113,7 @@ input {
   background-color: transparent;
   font-size: inherit;
   font-family: inherit;
-  color: var(--white);
+  color: var(--dark-gray);
   cursor: pointer;
 }
 input:hover, input:focus {
