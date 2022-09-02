@@ -1,0 +1,28 @@
+.feedback__wrapper {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 36px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+.feedback__list {
+    display:grid;
+    grid-auto-flow: row;
+    gap: 24px;
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+@media (min-width: $small) {
+    .feedback__list {
+        row-gap: 36px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .feedback__list {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

@@ -1,6 +1,5 @@
 export const tabsOpener = (className) => {
     const togglers = document.querySelectorAll(className);
-    console.log(togglers);
     if (togglers.length === 0 ) return;
     const openHandler = (evt) => {
         evt.preventDefault();

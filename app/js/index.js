@@ -1,4 +1,5 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
+import { clipText } from './components/clip-text';
 
 
 const { swiperMode } = require("./components/btns-swiper");
@@ -197,4 +198,15 @@ try {
 
 } catch(e) {
 	console.log(e)
+}
+
+try {
+	clipText({
+		btnsClassName: '.review__btn', 
+		parentEltClass: '.review', // элемент должен быть родителем кнопки
+		classForClipped:'clipped', //этот элемент указываем без точки
+		textEltClass:'.review__text',
+	})
+} catch(e) {
+	console.log(e);
 }
