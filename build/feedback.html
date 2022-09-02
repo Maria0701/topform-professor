@@ -569,12 +569,17 @@
                 <textarea class="comment-form__textarea" rows="5" cols="45" name="text" placeholder="введите комментарий"></textarea>
                 <span class="comment-form__name" name="mail" placeholder="Ivanova@mail.ru">КОММЕНТАРИЙ</span>
             </label>
-            <label class="commet-form__label commet-form__label--checkbox">
-                <input type="checkbox" name="agreed" checked="">
-                Я даю согласие на обработку персональных данных
-            </label>
-            <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>
+            <div class="comment-form__bottom">
+                <label class="comment-form__label comment-form__label--checkbox">
+                    <input type="checkbox" name="agreed" checked="">
+                    <span>Я даю согласие на обработку <a href="#" alt="персональных данных">персональных данных</a></span>
+                </label>
+                <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>
+            </div>
         </form>
+        <div class="comment__img-wrap">
+            <img src="/img/form-img.png" alt="" class="comment__img" width="306" height="279">
+        </div>
     </div>
 </section>
 
