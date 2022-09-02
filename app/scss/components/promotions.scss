@@ -1,0 +1,30 @@
+.promotions__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+}
+
+.promotions__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+}
+
+@media (min-width: $small) {
+    .promotions__list {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 36px;
+    }
+
+    .promotions__item--large {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1000px) {
+    .promotions__list {
+        grid-template-columns: repeat(4, minmax(0,1fr));
+        column-gap: 53px;
+        row-gap: 50px;
+    }
+}

@@ -28,6 +28,13 @@
 
 .container-inside {
     padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+@media (min-width: $desktop-large){
+    .container-inside {
+        padding-bottom: 50px;
+    }
 }
 
 .btn {
