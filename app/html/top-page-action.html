@@ -1,0 +1,20 @@
+<div class="top-page {{ class }}">
+    <div class="container">
+        <include src="app/html/breadcrumbs.html"></include>
+        <div class="top-page__container">
+            <div class="top-page__img-wrapper">
+                <img class="top-page__img" src="../img/promition-img-3.jpg" alt="text" width="260" height="244">
+            </div>
+            <div class="top-page__text">
+                <h1 class="top-page__h1 h1">{{ name }}</h1>
+                <p class="top-page__subname">{{ subname }}</p>
+                <div class="top-page__rates">
+                    <p class="top-page__new">от 2500 ₽</p>
+                    <p class="top-page__old">от 4000 ₽</p>
+                </div>
+                <div class="top-page__dates"><span>Даты проведения акции:</span> <span class="top-page__dates--text">С 1 по 31 июля 2022</span></div>
+                <include src="app/html/btn.html"  locals='{"class": "btn--primary top-page__btn", "text": "ЗАПИСАТЬСЯ ПО АКЦИИ"}'></include> 
+            </div>
+        </div>
+    </div>
+</div>

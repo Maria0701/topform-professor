@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+    <include src="app/html/meta.html"></include>
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">   
+  </head>
+  <body >
+    <include src="app/html/header.html"></include>
+    <main>
+      <include src="app/html/top-page-action.html" locals='{"class": "top-page--nobg top-page--promo", "name": "скидка 20% на мезотерапию в июле", "subname": "Получите скидку на мезотерапию в июле"}'></include>
+      <include src="app/html/promotions.html"></include>      
+    </main> 
+    <include src="app/html/footer.html"></include>
+    <script src="js/index.js"></script>
+  </body>
+</html>
