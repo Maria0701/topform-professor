@@ -200,6 +200,40 @@ try {
 	console.log(e)
 }
 
+
+try {
+	const optionsIncluded = {
+		modules: [ Navigation],
+		slidesPerView: "auto",
+        spaceBetween: 16,
+		loop: true,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			320: {
+			  spaceBetween: 16
+			},
+			740: {
+			  spaceBetween: 30
+			},
+			1200: {
+			  spaceBetween: 53
+			}
+		},
+		navigation: {
+			nextEl: '.includes-block__right',
+			prevEl: '.includes-block__left',
+		}
+	};
+
+	const swiper = new Swiper('.includes-swiper', optionsIncluded);
+	  
+
+} catch(e) {
+	console.log(e)
+}
+
+
 try {
 	clipText({
 		btnsClassName: '.review__btn', 
