@@ -102,6 +102,56 @@
     height: 66px;
 }
 
+@media (min-width: $small) {
+    .top-page__container {
+        grid-template-columns: 200px 1fr;
+        gap: 20px;
+    }
+
+    .top-page--promo {
+        text-align: left;
+    }
+
+    .top-page__img-wrapper {
+        width: 100%;
+    }
+
+    .top-page__rates {
+        justify-content: flex-start;
+    }
+
+    .top-page__dates {
+        justify-content: flex-start;   
+    }
+
+    .top-page__btn {
+        width: unset;
+        height: 50px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .top-page__container {
+        grid-template-columns: 320px 1fr;
+        gap: 50px;
+    }
+
+    .top-page__rates {
+        padding-top: 36px;
+    }
+
+    .top-page__dates {
+        margin-bottom: 37px;
+    }
+
+    .top-page--promo {
+        background-image: url('../img/bg-flowers.png');
+        background-position: right 30%;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
 @media (min-width: $desktop-large) {
     .top-page {
         padding-top: 36px;
@@ -114,4 +164,78 @@
     .top-page__subname {
         font-size: 1.125rem;
     }
+   
 }
+
+.collage {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows:repeat(10, 1fr);
+    position: relative;
+    row-gap: 20px;
+    aspect-ratio: 700 / 530;
+}
+
+.collage__part {
+    position: relative;
+    overflow: hidden;
+}
+
+.collage__right {
+    //aspect-ratio: 386 / 352;
+    border: 10px solid #F3F3F3;
+    border-radius: 200px 200px 0px 0px;
+    //max-width: 70%;
+    grid-row: 1/8;
+    grid-column: 7/-1;
+    //display: none;
+    
+}
+
+.collage__left {
+    //aspect-ratio: 423/298;
+    border-radius: 0px 0px 200px 200px;
+    border: 1px solid black;
+    //max-width: 70%;
+    //left:-2%;
+    grid-row: 5/-1;
+    grid-column: 1/10;
+    //display: none;
+}
+
+.collage__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.collage__frame {
+    border: 1px solid black;
+    border-radius: 0px;
+    //aspect-ratio: 553/389;
+    grid-row: 3 / -2;
+    grid-column: 2/ -3;
+    //justify-self: center;
+}
+
+.collage__img-right {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    rotate: -6deg;
+    width: 50%;
+}
+
+.collage__img-left {
+    position: absolute;
+    top: 5%;
+    left: 8%;
+    rotate: 4deg;
+    width: 40%;
+}
+
+// 700 / 530
