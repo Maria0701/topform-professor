@@ -556,6 +556,10 @@ button {
     text-align: left;
   }
 
+  .top-page--gray {
+    margin-top: 12px;
+  }
+
   .top-page__img-wrapper {
     width: 100%;
   }
