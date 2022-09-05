@@ -10,12 +10,53 @@
     background-size: cover;
 }
 
+.top-page--bege {
+    background-color: var(--background-gray);
+    background-image: url('../img/bg-vintage.png');
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: cover;   
+}
+
 .top-page--nobg {
     background-color: var(--light-gray);
 }
 
 .top-page--promo {
     text-align: center;
+}
+
+.top-page--service {
+    padding-top: 24px;
+    padding-bottom: 34px;
+    text-align: center;
+
+    .top-page__bread {
+        margin-bottom: 14px;
+    }
+
+    .top-page__img-wrapper {
+        position: relative;
+        margin-bottom: 34px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            display: block;
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            transform: translate(-50%, -50%);
+            border: 1px solid var(--white);
+            border-radius: 50%;
+        }
+    }
+
 }
 
 .top-page__bread {
@@ -103,6 +144,58 @@
     height: 66px;
 }
 
+.top-page__service-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 9px;
+    column-gap: 0;
+    row-gap: 50px;
+    text-align: left;
+
+    .top-page__btn {
+        grid-column: span 2;
+    }
+}
+
+.top-page__from {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    column-gap: 16px;
+    row-gap: 2px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.top-page__from-text {
+    font-size: 0.75rem;
+    color: var(--dark-gray);
+
+   
+}
+
+.top-page__from-price {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+.top-page__from-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: span 2;
+    width: 37px;
+    height: 37px;
+
+    svg {
+        display: block;
+        width: 35px;
+        height: 35px;
+        box-sizing: border-box;
+    }
+}
+
 @media (min-width: $small) {
     .top-page__container {
         grid-template-columns: 200px 1fr;
@@ -110,6 +203,10 @@
     }
 
     .top-page--promo {
+        text-align: left;
+    }
+    
+    .top-page--service {
         text-align: left;
     }
 
@@ -134,6 +231,7 @@
         width: unset;
         height: 50px;
     }
+
 }
 
 @media (min-width: 1000px) {
@@ -148,6 +246,16 @@
 
     .top-page__dates {
         margin-bottom: 37px;
+    }
+
+    .top-page--service {
+        padding-top: 39px;
+        padding-bottom: 65px;
+
+        .top-page__container {
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+        }
     }
 
     .top-page--promo {
@@ -172,76 +280,3 @@
     }
    
 }
-
-.collage {
-    display: grid;
-    grid-template-columns: repeat(14, 1fr);
-    grid-template-rows:repeat(10, 1fr);
-    position: relative;
-    row-gap: 20px;
-    aspect-ratio: 700 / 530;
-}
-
-.collage__part {
-    position: relative;
-    overflow: hidden;
-}
-
-.collage__right {
-    //aspect-ratio: 386 / 352;
-    border: 10px solid #F3F3F3;
-    border-radius: 200px 200px 0px 0px;
-    //max-width: 70%;
-    grid-row: 1/8;
-    grid-column: 7/-1;
-    //display: none;
-    
-}
-
-.collage__left {
-    //aspect-ratio: 423/298;
-    border-radius: 0px 0px 200px 200px;
-    border: 1px solid black;
-    //max-width: 70%;
-    //left:-2%;
-    grid-row: 5/-1;
-    grid-column: 1/10;
-    //display: none;
-}
-
-.collage__img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-}
-
-.collage__frame {
-    border: 1px solid black;
-    border-radius: 0px;
-    //aspect-ratio: 553/389;
-    grid-row: 3 / -2;
-    grid-column: 2/ -3;
-    //justify-self: center;
-}
-
-.collage__img-right {
-    position: absolute;
-    top: 30%;
-    left: 45%;
-    rotate: -6deg;
-    width: 50%;
-}
-
-.collage__img-left {
-    position: absolute;
-    top: 5%;
-    left: 8%;
-    rotate: 4deg;
-    width: 40%;
-}
-
-// 700 / 530

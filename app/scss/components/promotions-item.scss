@@ -5,6 +5,7 @@
     align-items: flex-start;
     align-content: flex-start;
     text-align: center;
+    text-decoration: none;
 }
 
 .promotion__img-wrap {
@@ -32,6 +33,7 @@
     text-align: center;
     text-transform: uppercase;
     color: var(--dark-gray);
+    text-decoration: none;
 }
 
 .promotion__text {
@@ -40,6 +42,7 @@
     line-height: 130%;
     text-align: center;
     color: var(--dark-gray);
+    text-decoration: none;
 
     p {
         margin: 0;
@@ -65,12 +68,18 @@
 }
 
 @media (min-width: $small) {
+    .promotion {
+        text-align: left;
+    }
+
     .promotion__name {
         font-size: 1rem;
+        text-align: left;
     }
 
     .promotion__text {
         font-size: 0.875rem;
+        text-align: left;
     }
 }
 
