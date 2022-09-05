@@ -5,7 +5,7 @@
 
 .top-page--gray {
     background-color: var(--background-gray);
-    background-image: url('/img/bg-gray.jpg');
+    background-image: url('../img/bg-gray.jpg');
     background-position: center;
     background-size: cover;
 }
@@ -85,6 +85,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    column-gap: 12px;
     margin-bottom: 25px;
     font-size: 0.75rem;
     line-height: 130%;
