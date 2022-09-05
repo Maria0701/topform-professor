@@ -156,13 +156,13 @@ input {
     }
 
     .h2--star {
-        padding-top: 40px;
+        padding-top: 43px;
 
         &::after {
             content: '';
             position: absolute;
             right: 100%;
-            top: -40px;
+            top: 0;
             display: block;
             width: 60px;
             height: 60px;

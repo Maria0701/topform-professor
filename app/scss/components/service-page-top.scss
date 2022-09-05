@@ -28,6 +28,12 @@
     margin-bottom: 36px;
 }
 
+.service-page__text {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
 @media (min-width: $small) {
     .service-page__top {
         grid-template-columns: 1fr 1fr;
