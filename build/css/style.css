@@ -556,7 +556,8 @@ button {
     text-align: left;
   }
 
-  .top-page--gray {
+  .top-page--gray,
+.top-page--promo {
     margin-top: 12px;
   }
 
