@@ -166,7 +166,8 @@ input:hover, input:focus {
   padding-bottom: 6px;
 }
 
-.h2--underlined::before {
+.h2--underlined::before,
+.h2--short::before {
   content: "";
   position: absolute;
   bottom: -6px;
@@ -221,6 +222,10 @@ input:hover, input:focus {
 
   .h2--underlined::before {
     width: 500%;
+  }
+
+  .h2--short {
+    padding-top: 43px;
   }
 
   .h2--star {
@@ -1699,8 +1704,33 @@ button {
 }
 
 .service-page__about,
-.service-page__rates {
+.service-page__rates,
+.service-page__steps {
   margin-bottom: 50px;
+}
+
+.service-page__indications {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 36px;
+}
+
+.service-page__indications-img {
+  position: relative;
+  align-self: flex-start;
+}
+.service-page__indications-img img {
+  width: 100%;
+  height: auto;
+}
+.service-page__indications-img::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border: 1px solid var(--white);
 }
 
 @media (min-width: 740px) {
@@ -1710,12 +1740,45 @@ button {
          column-gap: 36px;
     align-items: center;
   }
+
+  .service-page__indications-col:nth-child(3n) {
+    grid-column: span 2;
+  }
+
+  .service-page__indications {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    -moz-column-gap: 36px;
+         column-gap: 36px;
+    justify-items: center;
+  }
 }
 @media (min-width: 1200px) {
+  .service-page__indications {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    -moz-column-gap: 36px;
+         column-gap: 36px;
+    justify-content: space-between;
+  }
+
+  .service-page__indications-col:nth-child(3n) {
+    grid-column: span 1;
+    width: 100%;
+  }
+
   .service-page__top {
     -moz-column-gap: 94px;
          column-gap: 94px;
     align-items: flex-start;
+  }
+}
+@media (min-width: 1472px) {
+  .service-page__indications {
+    grid-template-columns: minmax(0, 386px) minmax(0, 386px) minmax(0, 450px);
+  }
+
+  .service-page__indications-col:nth-child(3n) {
+    padding-top: 43px;
+    width: 100%;
   }
 }
 .includes-block {
@@ -2186,6 +2249,28 @@ button {
 }
 .text ul + p {
   padding-top: 8px;
+}
+.text ol {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  list-style: none;
+  counter-reset: li;
+}
+.text ol li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.text ol li:before {
+  content: counter(li) ". ";
+  counter-increment: li;
+  padding-right: 8px;
+  font-weight: 700;
+  color: var(--green);
 }
 
 .text--three-columns {

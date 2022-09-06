@@ -94,7 +94,8 @@ input {
     padding-bottom: 6px;
 }
 
-.h2--underlined {
+.h2--underlined,
+.h2--short {
     &::before {
         content: '';
         position: absolute;
@@ -153,6 +154,10 @@ input {
 
     .h2--underlined::before {
         width: 500%;
+    }
+
+    .h2--short {
+        padding-top: 43px;
     }
 
     .h2--star {

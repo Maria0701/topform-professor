@@ -34,8 +34,36 @@
 }
 
 .service-page__about,
-.service-page__rates {
+.service-page__rates,
+.service-page__steps {
     margin-bottom: 50px;
+}
+
+.service-page__indications {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+}
+
+.service-page__indications-img {
+    position: relative;
+    align-self: flex-start;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        border: 1px solid var(--white);
+    }
+
 }
 
 
@@ -45,11 +73,43 @@
         column-gap: 36px;
         align-items: center;
     }
+
+    .service-page__indications-col:nth-child(3n) {
+        grid-column: span 2;
+    }
+
+    .service-page__indications {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 36px;
+        justify-items: center;
+    }
 }
 
 @media (min-width: 1200px) {
+    .service-page__indications {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 36px;
+        justify-content: space-between;
+    }
+
+    .service-page__indications-col:nth-child(3n) {
+        grid-column: span 1;
+        width: 100%;
+    }   
+
     .service-page__top {
         column-gap: 94px;
         align-items: flex-start;
+    }
+}
+
+@media (min-width: $desktop-large) {
+    .service-page__indications {
+        grid-template-columns: minmax(0,386px) minmax(0,386px) minmax(0,450px);
+    }
+
+    .service-page__indications-col:nth-child(3n)  {
+        padding-top: 43px;
+        width: 100%;
     }
 }
