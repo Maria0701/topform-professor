@@ -1733,7 +1733,8 @@ button {
 .service-page__indications,
 .service-page__doctors,
 .service-page__promo,
-.service-page__years {
+.service-page__years,
+.service-page__advantages {
   margin-bottom: 50px;
 }
 
@@ -2658,6 +2659,7 @@ button {
 }
 
 .advantages__name {
+  margin: 0;
   margin-bottom: 8px;
   font-weight: 500;
   font-size: 0.875rem;
@@ -2665,6 +2667,7 @@ button {
 }
 
 .advantages__desc {
+  margin: 0;
   font-size: 0.875rem;
   line-height: 140%;
   color: var(--gray2);
@@ -2757,6 +2760,40 @@ button {
     padding-bottom: 36px;
   }
 }
+.review-slider__h2 {
+  margin-bottom: 36px;
+}
+
+.review-slider__wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding-bottom: 24px;
+  margin-left: -16px;
+  margin-right: -16px;
+  background-image: url("../img/reviews-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.review-slider__pagination {
+  position: absolute;
+  top: 0;
+  right: 17px;
+  width: 83px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background-color: var(--bege2);
+}
+
+.review-slider__fractions {
+  font-family: Elisabethische, serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
 .text {
   display: grid;
   grid-template-columns: 1fr;

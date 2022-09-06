@@ -63,10 +63,10 @@
         </section>
         <include src="app/html/doctors-block.html" locals='{"class": "service-page__doctors", "name": "Врачи" }'></include>
         <include src="app/html/promo-block.html" locals='{"class": "service-page__promo promo-block--years" }'></include>
-        <include src="app/html/banner-years.html" ></include>
+        <include src="app/html/banner-years.html" locals='{"class": "service-page__years" }' ></include>
         <div class="service-page__advantages">
-            <include src="app/html/advantages-block.html" ></include>
-            <section class="review-slider"></section>
+            <include src="app/html/advantages-block.html" locals='{"class": "service-page__advantages" }'></include>
+            <include src="app/html/review-slider.html" locals='{"class": "review-slider__advantages" }'></include>
         </div>
         <section class="qa">
             <div class="h2__wrapper">
