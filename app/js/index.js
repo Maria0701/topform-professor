@@ -201,7 +201,7 @@ try {
 	console.log(e)
 }
 
-
+// свайпер для слайдера включено. Опции можно использовать во всех подобных свайперах
 try {
 	const optionsIncluded = {
 		modules: [ Navigation],

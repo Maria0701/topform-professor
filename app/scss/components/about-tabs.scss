@@ -155,6 +155,10 @@
         padding-right: 0;
         padding-bottom: 0;
 
+        &::before {
+            display: none;
+        }
+
         &:last-child {
             &::after {
                display: none;

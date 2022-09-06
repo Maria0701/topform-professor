@@ -36,7 +36,11 @@
             background-position: center;
             background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNDU1MjIgMTcuOTA5OEM4LjcwNDI3IDE4LjgyODUgMTAuNzMwNCAyMC4yMjU1IDEyLjM5MjcgMjJDMTQuMTEzNiAyMC4xNjMxIDE2LjIyNDYgMTguNzMxNSAxOC41Njg4IDE3LjgxNTZDMTguODM2MSAxNi43OTc2IDE5IDE1LjcxNTYgMTkgMTQuNTg4QzE5IDguNDEzNTkgMTIuNSAyIDEyLjUgMkMxMi41IDIgNiA4LjQxMzczIDYgMTQuNTg4QzYuMDAwMTQgMTUuNzUwMiA2LjE3MzE5IDE2Ljg2NDcgNi40NTUyMiAxNy45MDk4WiIgZmlsbD0iIzVGOEQ2RSIvPgo8L3N2Zz4K);
         }
-    }    
+    }
+    
+    ul + p {
+        padding-top: 8px;
+    }
 }
 
 .text--three-columns {

@@ -6,7 +6,7 @@
             </div>
             <include src="app/html/about-tabs.html" ></include>
         </div>        
-        <section class="service-page__rates">
+        <section class="service-page__rates container">
             <div class="h2__wrapper">
                 <h2 class="service-page__h2 h2 h2--star h2--underlined">Цены</h2>
             </div>
@@ -14,9 +14,12 @@
                 <include src="app/html/prices-tab-block.html" locals='{"class": "js-tabs", "name": "Гинеколог", "icon": "gynekologist"}'></include>
             </div>
         </section>
-        <section class="service-page__steps">
-            <div class="h2__wrapper">
-                <h2 class="service-page__h2 h2 h2--underlined">Цены</h2>
+        <section class="service-page__steps steps">
+            <div class="steps__wrapper container">
+                <div class="h2__wrapper">
+                    <h2 class="service-page__h2 h2 h2--underlined">этапы процедуры</h2>
+                </div>
+                <include src="app/html/steps-tabs.html" ></include>
             </div>
         </section>
         <div class="service-page__info">
