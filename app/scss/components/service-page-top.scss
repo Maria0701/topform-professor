@@ -37,7 +37,9 @@
 .service-page__rates,
 .service-page__steps,
 .service-page__indications,
-.service-page__doctors {
+.service-page__doctors,
+.service-page__promo,
+.service-page__years {
     margin-bottom: 50px;
 }
 
@@ -89,6 +91,11 @@
     }
 }
 
+@media (min-width: 1000px) {
+    .service-page__promo {
+        margin-bottom: 0;
+    }
+}
 @media (min-width: 1200px) {
     .service-page__indications {
         grid-template-columns: repeat(3, minmax(0, 1fr));
