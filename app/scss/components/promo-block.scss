@@ -1,0 +1,97 @@
+.promo-block {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--bege);
+}
+
+.promo-block__container {
+    position: relative;
+}
+
+.promo-block__btn {
+    position: absolute;
+    top: 40px;
+    right: 16px;
+}
+
+.promo-block__h2 {
+    margin-right: 130px;
+    margin-bottom: 36px;
+
+    &::after {
+        background-image: url('../img/star-white.svg');
+    }
+}
+
+.promo-block__slider {
+    overflow: hidden;
+}
+
+.promo-block__item  {
+    width: 240px;
+    height: auto;
+}
+
+.promo-block__item--large {
+    width: 496px;
+}
+
+.promo-block__left,
+.promo-block__right {
+    fill: none;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+    display: none;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+    }
+}
+
+@media (min-width: $small) {
+    .promo-block__item {
+        width: 300px;
+    }
+
+    .promo-block__item--large {
+        width: 640px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .promo-block__item {
+        width: 320px;
+    }
+
+    .promo-block__item--large {
+        width: 692px;
+    }
+}
+
+
+@media (min-width: 1478px) {
+    .promo-block__left,
+    .promo-block__right {
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 36px;
+        height: 36px;
+        transform: translateY(-50%);
+    }
+
+    .promo-block__left {
+        left: -72px;
+    }
+
+    .promo-block__right {
+        right: -72px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .promo-block--years {
+        padding-bottom: 150px;
+    }
+}

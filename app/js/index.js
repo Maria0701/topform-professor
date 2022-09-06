@@ -227,6 +227,30 @@ try {
 		}
 	};
 
+	const optionsPromo = {
+		modules: [ Navigation],
+		slidesPerView: "auto",
+        spaceBetween: 16,
+		loop: true,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			320: {
+			  spaceBetween: 16
+			},
+			740: {
+			  spaceBetween: 30
+			},
+			1200: {
+			  spaceBetween: 53
+			}
+		},
+		navigation: {
+			nextEl: '.promo-block__right',
+			prevEl: '.promo-block__left',
+		}
+	};
+
 	const optionsDoctors = {
 		modules: [ Navigation],
 		slidesPerView: "auto",
@@ -251,7 +275,8 @@ try {
 		}
 	};
 	const swiper = new Swiper('.includes-swiper', optionsIncluded);
-	const swiperDoctors = new Swiper('.doctors__swiper', optionsDoctors);		  
+	const swiperDoctors = new Swiper('.doctors__swiper', optionsDoctors);
+	const promoDoctors = new Swiper('.promo-block__swiper', optionsPromo);	  
 
 } catch(e) {
 	console.log(e)

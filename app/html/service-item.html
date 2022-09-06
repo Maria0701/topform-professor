@@ -22,8 +22,7 @@
                 <include src="app/html/steps-tabs.html" ></include>
             </div>
         </section>
-        <div class="service-page__info">
-            <section class="service-page__indications container">
+        <section class="service-page__indications container">
                 <div class="service-page__indications-col">
                     <div class="h2__wrapper">
                         <h2 class="service-page__h2 h2 h2--star h2--underlined">Показания</h2>
@@ -61,17 +60,10 @@
                         <img src="../img/included3.jpg" alt="some text" width="306" height="285">
                     </div>
                 </div>
-            </section>
-            <include src="app/html/doctors-block.html" locals='{"class": "service-page__doctors", "name": "Врачи" }'></include>
-        </div>
-        <section class="promo-slider">
-            <div class="h2__wrapper">
-                <h2 class="promo-slider__h2 h2 h2--star h2--underlined">Акции</h2>
-            </div>
         </section>
-        <section class="years-block">
+        <include src="app/html/doctors-block.html" locals='{"class": "service-page__doctors", "name": "Врачи" }'></include>
+        <include src="app/html/promo-block.html" locals='{"class": "service-page__promo promo-block--years" }'></include>
 
-        </section>
         <div class="service-page__advantages">
             <section class="advantages"></section>
             <section class="review-slider"></section>
