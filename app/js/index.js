@@ -226,7 +226,32 @@ try {
 			prevEl: '.includes-block__left',
 		}
 	};
-	const swiper = new Swiper('.includes-swiper', optionsIncluded);	  
+
+	const optionsDoctors = {
+		modules: [ Navigation],
+		slidesPerView: "auto",
+        spaceBetween: 16,
+		loop: true,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			320: {
+			  spaceBetween: 16
+			},
+			740: {
+			  spaceBetween: 40
+			},
+			1200: {
+			  spaceBetween: 53
+			}
+		},
+		navigation: {
+			nextEl: '.doctors__right',
+			prevEl: '.doctors__left',
+		}
+	};
+	const swiper = new Swiper('.includes-swiper', optionsIncluded);
+	const swiperDoctors = new Swiper('.doctors__swiper', optionsDoctors);		  
 
 } catch(e) {
 	console.log(e)

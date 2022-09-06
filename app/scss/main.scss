@@ -158,6 +158,10 @@ input {
 
     .h2--short {
         padding-top: 43px;
+
+        &::before {
+            width: 100%;
+        }
     }
 
     .h2--star {

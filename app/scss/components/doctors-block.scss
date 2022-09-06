@@ -1,0 +1,82 @@
+.doctors {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        height: 570px;
+        width: 100%;
+        background-image: url('../img/banner-bg.jpg');
+        background-repeat: repeat-x;
+        background-size: cover;
+    }
+}
+
+.doctors__wrapper {
+    margin-right: -16px;
+    width: calc(100% + 16px); 
+    max-width: calc(100% + 16px);
+    overflow: hidden;
+}
+
+.doctors__h2 {
+    margin-bottom: 36px;
+}
+
+.doctors__wrapper-out {
+    position: relative;
+}
+
+.doctors__left, .doctors__right {
+    position:absolute;
+    
+    top: -89px;
+    display: block;
+    width: 36px;
+    height: 36px;
+    fill: none;
+}
+
+.doctors__right {
+    right: 0;
+}
+
+.doctors__left {
+    right: 66px;
+}
+
+
+.doctors__item {
+    width: 240px;
+}
+
+@media (min-width: $small)  {
+    .doctors__item {
+        width: 300px;
+    }
+
+    .doctors {  
+        &::before {
+            top: -48%;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .doctors__item {
+        width: 320px;
+    }
+
+    .doctors__left, .doctors__right {
+        display: block;
+    }
+}
+
+@media (min-width: $desktop-large) {
+    .doctors__wrapper {
+        margin-right: 0;
+        width: 100%; 
+        max-width: 100%; 
+    }
+}

@@ -1,0 +1,20 @@
+<div class="doctor">
+    <div class="doctor__img-wrapper">
+        <img src="../img/{{icon}}" alt="gkeh" width="360" height="360">
+        <div class="doctor__link">
+            <include src="app/html/btn.html"  locals='{"class": "btn--primary doctor__btn", "text": "ЗАПИСь на прием"}'></include> 
+        </div>
+    </div>
+    <div class="doctor__content">
+        <div class="doctor__content-top">
+            <p class="doctor__surname">{{surname}}</p>
+            <p class="doctor__name">{{name}}</p>
+            <p class="doctor__position">{{position}}</p>
+        </div>
+        <div class="doctor__content-bottom">
+            <p class="doctor__education">{{education}}</p>
+            <p class="doctor__price">от {{price}} ₽</p>
+        </div>
+    </div>
+    
+</div>

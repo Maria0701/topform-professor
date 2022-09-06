@@ -35,11 +35,14 @@
 
 .service-page__about,
 .service-page__rates,
-.service-page__steps {
+.service-page__steps,
+.service-page__indications {
     margin-bottom: 50px;
 }
 
 .service-page__indications {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 36px;
