@@ -1,5 +1,6 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 import { clipText } from './components/clip-text';
+import { TabsAutomatic } from './components/tabs-auromatic';
 
 
 const { swiperMode } = require("./components/btns-swiper");
@@ -225,15 +226,13 @@ try {
 			prevEl: '.includes-block__left',
 		}
 	};
-
-	const swiper = new Swiper('.includes-swiper', optionsIncluded);
-	  
+	const swiper = new Swiper('.includes-swiper', optionsIncluded);	  
 
 } catch(e) {
 	console.log(e)
 }
 
-
+// обрезает текст комментариев
 try {
 	clipText({
 		btnsClassName: '.review__btn', 
@@ -242,5 +241,17 @@ try {
 		textEltClass:'.review__text',
 	})
 } catch(e) {
+	console.log(e);
+}
+
+// открытие горизонтальных табов
+try {
+		var tablists = document.querySelectorAll('[role=tablist]');
+		if (tablists.length > 0) {
+		for (var i = 0; i < tablists.length; i++) {
+		  new TabsAutomatic(tablists[i]);
+		}
+  }
+} catch (e) {
 	console.log(e);
 }

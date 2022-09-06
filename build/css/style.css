@@ -547,6 +547,7 @@ button {
 }
 
 .top-page__subname {
+  max-width: 1000px;
   font-size: 1rem;
   line-height: 130%;
   color: var(--dark-gray);
@@ -669,6 +670,13 @@ button {
     margin-top: 12px;
   }
 
+  .top-page__service-block {
+    grid-template-columns: auto auto auto;
+  }
+  .top-page__service-block .top-page__btn {
+    grid-column: span 1;
+  }
+
   .top-page__img-wrapper {
     width: 100%;
   }
@@ -684,6 +692,10 @@ button {
   .top-page__btn {
     width: unset;
     height: 50px;
+  }
+
+  .top-page__subname {
+    font-size: 1.125rem;
   }
 }
 @media (min-width: 1000px) {
@@ -707,6 +719,20 @@ button {
   .top-page--service .top-page__container {
     grid-template-columns: 300px 1fr;
     gap: 60px;
+  }
+  .top-page--service .top-page__img-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+  .top-page--service .top-page__bread {
+    margin-bottom: 36px;
+  }
+
+  .top-page__service-block {
+    -moz-column-gap: 70px;
+         column-gap: 70px;
+    justify-content: flex-start;
+    padding-top: 36px;
   }
 
   .top-page--promo {
@@ -1885,6 +1911,154 @@ button {
   width: 40%;
 }
 
+.tabs-horizon {
+  margin-right: -16px;
+  width: calc(100% + 16px);
+  padding-right: 16px;
+}
+
+.tabs-horizon__wrapper {
+  max-width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.tabs-horizon__btns {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.tabs-horizon__panels {
+  padding: 16px;
+}
+
+[role=tab] {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+  outline: none;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+  border-left: 1px solid var(--mid-grey);
+  border-top: 1px solid var(--mid-grey);
+  border-bottom: 1px solid var(--mid-grey);
+  background: var(--light-gray);
+  white-space: nowrap;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+[role=tab]:last-child {
+  border-right: 1px solid var(--mid-grey);
+}
+
+[role=tab]:focus,
+[role=tab]:hover {
+  color: var(--green);
+  background-color: var(--white);
+}
+
+[role=tab][aria-selected=true] {
+  color: var(--white);
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+[role=tabpanel] {
+  position: relative;
+}
+[role=tabpanel]:before {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: -32px;
+  display: block;
+  height: 1px;
+  width: calc(100% + 64px);
+  background-color: var(--mid-grey);
+}
+[role=tabpanel]:last-child::after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  display: block;
+  width: 1px;
+  background-color: var(--mid-grey);
+  height: calc(100% + 32px);
+}
+[role=tabpanel]:last-child:before {
+  width: calc(100% + 48px);
+}
+[role=tabpanel]:first-child:after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  display: block;
+  width: 1px;
+  background-color: var(--mid-grey);
+  height: calc(100% + 32px);
+}
+[role=tabpanel]:first-child:before {
+  left: -16px;
+  width: calc(100% + 48px);
+}
+
+[role=tabpanel].is-hidden {
+  display: none;
+}
+
+@media (min-width: 740px) {
+  [role=tab] {
+    padding-top: 30px;
+    padding-bottom: 31px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .tabs-horizon__panels {
+    padding-top: 36px;
+  }
+
+  [role=tabpanel]:last-child::after {
+    top: -36px;
+    height: calc(100% + 52px);
+  }
+  [role=tabpanel]:first-child::after {
+    top: -36px;
+    height: calc(100% + 52px);
+  }
+}
+@media (min-width: 1000px) {
+  .tabs-horizon__btns {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  [role=tabpanel] {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+  [role=tabpanel]:last-child::after {
+    display: none;
+  }
+  [role=tabpanel]:first-child:after {
+    display: none;
+  }
+
+  [role=tab] {
+    background-color: var(--white);
+  }
+}
 .text {
   display: grid;
   grid-template-columns: 1fr;
