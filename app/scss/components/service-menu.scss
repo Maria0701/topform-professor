@@ -1,4 +1,5 @@
 .service-menu-wrapper {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr;
     align-items: flex-start;
@@ -7,7 +8,7 @@
     padding-left: 16px;
     padding-bottom: 14px;
     padding-right: 16px;
-    background-color: var(--bege);
+    background-color: rgba(240,238,224, 0.9);
 }
 
 .service-menu {
@@ -174,6 +175,14 @@
         border: 0;
     }
 
+    .service-menu > .service-menu__item > .service-menu__link { 
+        font-size: 1rem;
+    }
+
+    .service-menu__sub .service-menu__link {
+        font-size: 0.875rem;
+    }
+
 }
 
 @media (min-width: 1000px) {
@@ -181,10 +190,34 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-columns: masonry;
         column-gap: 54px;
+        padding: 36px;
     }
 
     .service-menu:nth-last-child(3) > .service-menu__item:last-child {
         border: 0;
     }
+}
 
+@media (min-width: $desktop-large) {
+    .service-menu-wrapper {
+        z-index: 1;
+    }
+    .service-menu-block {
+        position: relative;
+
+        &::before {
+            content: '';
+            position:absolute;
+            bottom: -181px;
+            right:-194px;
+            z-index: 0;
+            display: block;
+            height: 275px;
+            width: 673px;
+            background-image: url('../img/bg-flowers4.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size:cover;
+        }
+    }
 }
