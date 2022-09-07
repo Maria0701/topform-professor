@@ -159,8 +159,8 @@
 
 .comment--short {
     .comment__img-wrap {
-        padding-left: 11px;
-        padding-right: 11px;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -226,6 +226,18 @@
         height: 100%;
     }
 
+    .comment--short .comment__img-wrap {
+        top: auto;
+        align-items: flex-end;
+        z-index: 1;
+    }
+
+    .comment--short .comment__img {
+        bottom: -15px;
+        height: auto;
+        z-index: 1;
+    }
+
     .comment__wrapper {
         padding-top: 50px;
         padding-left: 50px;
@@ -233,6 +245,10 @@
         display: grid;
         grid-template-columns: 5fr 4fr;
         column-gap: 80px;
+    }
+
+    .comment--short .comment__wrapper {
+        column-gap: 0;
     }
 
     .comment__name {

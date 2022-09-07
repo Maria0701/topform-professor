@@ -1476,8 +1476,8 @@ button {
 }
 
 .comment--short .comment__img-wrap {
-  padding-left: 11px;
-  padding-right: 11px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .comment__img-wrap {
@@ -1542,6 +1542,18 @@ button {
     height: 100%;
   }
 
+  .comment--short .comment__img-wrap {
+    top: auto;
+    align-items: flex-end;
+    z-index: 1;
+  }
+
+  .comment--short .comment__img {
+    bottom: -15px;
+    height: auto;
+    z-index: 1;
+  }
+
   .comment__wrapper {
     padding-top: 50px;
     padding-left: 50px;
@@ -1550,6 +1562,11 @@ button {
     grid-template-columns: 5fr 4fr;
     -moz-column-gap: 80px;
          column-gap: 80px;
+  }
+
+  .comment--short .comment__wrapper {
+    -moz-column-gap: 0;
+         column-gap: 0;
   }
 
   .comment__name {
@@ -1775,7 +1792,8 @@ button {
 .service-page__doctors,
 .service-page__promo,
 .service-page__years,
-.service-page__advantages {
+.service-page__advantages,
+.service-page__result {
   margin-bottom: 50px;
 }
 
@@ -3092,6 +3110,69 @@ button {
     padding-top: 14px;
     padding-bottom: 13px;
     font-size: 1rem;
+  }
+}
+.result__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+}
+
+.result__img-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+}
+.result__img-list img {
+  width: 100%;
+}
+
+.result__h2 {
+  margin-bottom: 36px;
+}
+
+.result__img-main {
+  position: relative;
+}
+.result__img-main img {
+  width: 100%;
+}
+.result__img-main:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border: 1px solid var(--white);
+}
+
+@media (min-width: 740px) {
+  .result__wrapper {
+    grid-template-columns: 1fr 2fr;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+  }
+
+  .result__img-list {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    align-content: space-between;
+    justify-content: space-between;
+  }
+  .result__img-list img {
+    max-width: 450px;
+  }
+}
+@media (min-width: 1000px) {
+  .result__wrapper {
+    -moz-column-gap: 45px;
+         column-gap: 45px;
+  }
+
+  .result__img-list {
+    gap: 46px;
   }
 }
 .text {
