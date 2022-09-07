@@ -1,3 +1,10 @@
+.service-page__wrapper {
+   /* display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;*/
+    padding-bottom: 50px;
+}
+
 .service-page__top {
     display: grid;
     grid-template-columns: 1fr;
@@ -40,7 +47,8 @@
 .service-page__doctors,
 .service-page__promo,
 .service-page__years,
-.service-page__advantages {
+.service-page__advantages,
+.service-page__qa-block {
     margin-bottom: 50px;
 }
 
