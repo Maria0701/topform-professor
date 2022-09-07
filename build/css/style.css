@@ -1757,7 +1757,11 @@ button {
   grid-template-columns: 1fr;
   row-gap: 24px;
   padding-top: 50px;
-  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+.service-page__intro .service-page__top {
+  padding: 0;
 }
 
 .service-page__top-text {
@@ -1794,7 +1798,9 @@ button {
 .service-page__years,
 .service-page__advantages,
 .service-page__result,
-.service-page__menu {
+.service-page__menu,
+.service-page__text-blocks,
+.service-page__promo {
   margin-bottom: 50px;
 }
 
@@ -1857,10 +1863,6 @@ button {
   }
 }
 @media (min-width: 1000px) {
-  .service-page__promo {
-    margin-bottom: 0;
-  }
-
   .service-page__menu {
     padding-top: 15px;
   }
@@ -2590,6 +2592,11 @@ button {
 
   .promo-block__btn {
     top: -5px;
+  }
+}
+@media (min-width: 1000px) {
+  .promo-block--years {
+    margin-bottom: 0;
   }
 }
 @media (min-width: 1200px) {
@@ -3444,18 +3451,27 @@ button {
   font-weight: 700;
   color: var(--green);
 }
-
-.text--three-columns {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 24px;
+.text h2 {
+  position: relative;
+  margin-bottom: 12px;
+  font-family: Elisabethische, serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: var(--dark-gray);
 }
-.text--three-columns div {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 24px;
+.text h2::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  display: block;
+  height: 1px;
+  width: calc(100% + var(--padding));
+  background-color: var(--dark-gray);
 }
-.text--three-columns blockquote {
+.text blockquote {
   position: relative;
   margin: 0;
   padding-left: 60px;
@@ -3470,7 +3486,7 @@ button {
   color: var(--gray2);
   background-color: var(--bege);
 }
-.text--three-columns blockquote::before {
+.text blockquote::before {
   content: "";
   position: absolute;
   left: 16px;
@@ -3482,7 +3498,7 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.text--three-columns h3 {
+.text h3 {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 500;
@@ -3490,12 +3506,31 @@ button {
   line-height: 140%;
   color: var(--gray2);
 }
-.text--three-columns h3 + p {
+.text h3 + p {
   margin-top: -8px;
 }
-.text--three-columns img {
+.text img {
   width: 100%;
   height: auto;
+}
+.text .bg-quote {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  gap: 0;
+}
+
+.text--three-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 36px;
+}
+.text--three-columns div {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 24px;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 @media (min-width: 740px) {
@@ -3518,6 +3553,25 @@ button {
   .text ol {
     font-size: 1rem;
   }
+  .text .h2 {
+    font-size: 2.25rem;
+  }
+  .text .bg-quote {
+    position: relative;
+    align-content: flex-end;
+    padding: 32px;
+    overflow: hidden;
+  }
+  .text .bg-quote img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transform: translate(-50%, -50%);
+  }
 
   .text--three-columns {
     display: flex;
@@ -3537,6 +3591,25 @@ button {
   }
 }
 @media (min-width: 1472px) {
+  .text h2::before {
+    width: 500%;
+  }
+  .text h2 {
+    padding-top: 43px;
+  }
+  .text h2::after {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 0;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .text--three-columns {
     -moz-column-gap: 44px;
          column-gap: 44px;

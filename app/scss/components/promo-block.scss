@@ -51,6 +51,8 @@
     }
 }
 
+
+
 @media (min-width: $small) {
     .promo-block__item {
         width: 300px;
@@ -62,6 +64,12 @@
 
     .promo-block__btn {
         top: -5px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .promo-block--years {
+        margin-bottom: 0;
     }
 }
 

@@ -1,0 +1,35 @@
+<div class="service-page">
+    <div class="service-page__wrapper">
+        <section class="service-page__intro container">
+            <include src="app/html/promotion-single-top.html"></include>
+        </section>
+        <!--text-block-->
+        <section class="service-page__rates container">
+            <div class="h2__wrapper">
+                <h2 class="service-page__h2 h2 h2--star h2--underlined">Цены</h2>
+            </div>
+            <div class="service-page__tab-block opened">
+                <include src="app/html/prices-tab-block.html" locals='{"class": "js-tabs", "name": "Гинеколог", "icon": "gynekologist"}'></include>
+            </div>
+        </section>
+        <include src="app/html/doctors-block.html" locals='{"class": "service-page__doctors", "name": "Врачи-гинекологи" }'></include>
+        <div class="service-page__menu container">
+            <include src="app/html/service-menu.html"></include>
+        </div>
+        <include src="app/html/promo-block.html" locals='{"class": "service-page__promo" }'></include>
+        <!--text-block-->
+        <div class="service-page__text-blocks container">
+            <include src="app/html/text-three-cols-2rows.html"></include>
+        </div>        
+        <include src="app/html/banner-years.html" locals='{"class": "service-page__years" }' ></include>
+        <include src="app/html/advantages-block.html" locals='{"class": "service-page__advantages" }'></include>
+        <include src="app/html/review-slider.html" locals='{"class": "service-page__advantages" }'></include>
+        <include src="app/html/qa-block.html" locals='{"class": "service-page__qa-block" }'></include>
+        <section class="service-page__container service-page__comment  container">
+            <include src="app/html/comment-question.html" locals='{"class": "comment--short"}'></include>
+        </section>
+        <section class="service-page__container container">
+            <include src="app/html/includes-block.html" locals='{"class": "service-page__includes", "name": "Сопутствующие услуги"}'></include>
+        </section>
+    </div>
+</div>

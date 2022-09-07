@@ -10,7 +10,13 @@
     grid-template-columns: 1fr;
     row-gap: 24px;
     padding-top: 50px;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+.service-page__intro {
+    .service-page__top {
+        padding: 0;
+    }
 }
 
 .service-page__top-text {
@@ -49,7 +55,9 @@
 .service-page__years,
 .service-page__advantages,
 .service-page__result,
-.service-page__menu {
+.service-page__menu,
+.service-page__text-blocks,
+.service-page__promo {
     margin-bottom: 50px;
 }
 
@@ -115,9 +123,6 @@
 }
 
 @media (min-width: 1000px) {
-    .service-page__promo {
-        margin-bottom: 0;
-    }
 
     .service-page__menu  {
         padding-top: 15px;

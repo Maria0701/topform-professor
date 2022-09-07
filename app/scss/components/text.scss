@@ -66,17 +66,27 @@
             }
         }
     }
-}
 
-.text--three-columns {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 24px;
+    h2 {
+        position: relative;
+        margin-bottom: 12px;
+        font-family: Elisabethische, serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 130%;
+        text-transform: uppercase; 
+        color: var(--dark-gray);
 
-    div {
-        display: grid;
-        grid-template-columns: 1fr;
-        row-gap: 24px;
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            right:0;
+            display: block;
+            height: 1px;
+            width: calc(100% + var(--padding));
+            background-color: var(--dark-gray);
+        }
     }
 
     blockquote {
@@ -125,6 +135,29 @@
         width: 100%;
         height: auto;
     }
+
+    .bg-quote {        
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;        
+        gap: 0;
+    }
+}
+
+.text--three-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+
+    div {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+
+    
 }
 
 @media (min-width: $small) {
@@ -152,6 +185,27 @@
         ol {
             font-size: 1rem;
         }
+
+        .h2 {
+            font-size: 2.25rem;
+        }
+
+        .bg-quote {
+            position:relative;
+            align-content: flex-end;
+            padding: 32px;
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-height: 100%;
+                min-width: 100%;
+                object-fit: cover;
+                transform: translate(-50%, -50%);
+            }
+        }
     }
 
     .text--three-columns {
@@ -176,6 +230,29 @@
 }
 
 @media (min-width: $desktop-large) {
+    .text {
+        h2::before {
+            width: 500%;
+
+        }
+
+        h2 {
+            padding-top: 43px;
+    
+            &::after {
+                content: '';
+                position: absolute;
+                right: 100%;
+                top: 0;
+                display: block;
+                width: 60px;
+                height: 60px;
+                background-image: url(../img/star.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
     .text--three-columns {
         column-gap: 44px;
 
