@@ -1,0 +1,34 @@
+<div class="top-page {{ class }}">
+    <div class="container">
+        <include src="app/html/breadcrumbs.html"></include>
+        <div class="top-page__container">            
+            <div class="top-page__text">
+                <div class="top-page__logo">
+                    <img class="top-page__logo-img" src="../img/logo.png" alt="text" width="260" height="244">
+                </div>
+                <h1 class="top-page__h1 h1">{{ name }}</h1>
+                <div class="top-page__about">
+                    <div class="top-page__about-item">
+                        <span class="top-page__about-svg">
+                            <include src="app/html/svg-icon.html" locals='{ "name": "doc2","width": "50", "height": "50"  }'></include>
+                        </span>
+                        <p>В штате только врачи высшей квалификации – кандидаты и доктора медицинских наук</p>
+                    </div>
+                    <div class="top-page__about-item">
+                        <span class="top-page__about-svg">
+                            <include src="app/html/svg-icon.html" locals='{ "name": "lab","width": "50", "height": "50"  }'></include>
+                        </span>
+                        <p>Современный медцентр с собственной лабораторией и оборудованием</p>
+                    </div>
+                    <div class="top-page__about-item">
+                        <span class="top-page__about-svg">
+                            <include src="app/html/svg-icon.html" locals='{ "name": "1992","width": "50", "height": "50"  }'></include>
+                        </span>
+                        <p>Клиника работает с 1992 года</p>
+                    </div>
+                </div>                
+            </div>
+            <img class="top-page__logo-img" src="../img/top-doc-img.png" alt="text" width="642" height="546">
+        </div>
+    </div>
+</div>

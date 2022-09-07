@@ -474,11 +474,11 @@ button {
   background-color: var(--background-gray);
   background-image: url("../img/bg-gray.jpg");
   background-position: center;
+  background-repeat: repeat-x;
   background-size: cover;
 }
 
 .top-page--bege {
-  background-color: var(--background-gray);
   background-image: url("../img/bg-vintage.png");
   background-position: center;
   background-repeat: repeat-x;
@@ -520,6 +520,14 @@ button {
   transform: translate(-50%, -50%);
   border: 1px solid var(--white);
   border-radius: 50%;
+}
+
+.top-page--about {
+  background-color: var(--background-gray);
+  background-image: url("../img/bg-about.png");
+  background-position: center;
+  background-repeat: repeat-x;
+  background-size: cover;
 }
 
 .top-page__bread {
