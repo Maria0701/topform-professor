@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+    <include src="app/html/meta.html"></include>
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">   
+  </head>
+  <body >
+    <include src="app/html/header.html"></include>
+    <main>
+      <include src="app/html/top-page-service.html" locals='{"class": "top-page--service top-page--bege", "name": "Мезотерапия", "subname": "Медицинский центр «Профессор» приглашает записаться на прием к врачу-гинекологу в Центральном районе Санкт-Петербурга. В клинике работают акушеры-гинекологи – кандидаты и доктора медицинских наук."}'></include>
+      <include src="app/html/service-item-in.html"></include>      
+    </main> 
+    <include src="app/html/footer.html"></include>
+    <script src="js/index.js"></script>
+  </body>
+</html>

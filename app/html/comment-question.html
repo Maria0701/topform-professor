@@ -1,0 +1,26 @@
+<section class="comment {{ class}}">
+    <div class="comment__wrapper">
+        <h2 class="comment__name">остались вопросы?</h2>
+        <p class="comment__remark">Оставьте заявку и мы подробно ответим на ваши вопросы</p>
+        <form class="comment__form comment-form" action=".">
+            <label class="comment-form__label">                
+                <input class="comment-form__input required" type="text" placeholder="Елена">
+                <span class="comment-form__name" name="name">ВАШЕ ИМЯ*</span>
+            </label>
+            <label class="comment-form__label">                
+                <input class="comment-form__input required" type="tel" placeholder="Иванова">
+                <span class="comment-form__name" name="surname">ВАШ Телефон*</span>
+            </label>
+            <div class="comment-form__bottom">
+                <label class="comment-form__label comment-form__label--checkbox">
+                    <input type="checkbox" name="agreed" checked>
+                    <span>Я даю согласие на обработку <a href="#" alt="персональных данных">персональных данных</a></span>
+                </label>
+                <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>
+            </div>
+        </form>
+        <div class="comment__img-wrap">
+            <img src="/img/doctors-form.promotion-img-2" alt="" class="comment__img" width="306" height="279">
+        </div>
+    </div>
+</section>

@@ -47,8 +47,7 @@
 .service-page__doctors,
 .service-page__promo,
 .service-page__years,
-.service-page__advantages,
-.service-page__qa-block {
+.service-page__advantages {
     margin-bottom: 50px;
 }
 
@@ -102,6 +101,14 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         column-gap: 36px;
         justify-items: center;
+    }
+
+    .service-page__qa-block {
+        margin-bottom: 50px;
+    }
+
+    .service-page__comment {
+        padding-top: 50px;
     }
 }
 
