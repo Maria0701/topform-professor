@@ -52,6 +52,11 @@
     row-gap: 36px;
 }
 
+.service-page__advantages {
+    position: relative;
+    z-index: 1;
+}
+
 .service-page__indications-img {
     position: relative;
     align-self: flex-start;

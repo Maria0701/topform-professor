@@ -78,12 +78,14 @@
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 16px;
+
+        svg {
+            width: 50px;
+            height: 85px;
+        }
     }
 
-    svg {
-        width: 50px;
-        height: 85px;
-    }
+    
 
     .advantages__name,
     .advantages__desc {

@@ -274,9 +274,27 @@ try {
 			prevEl: '.doctors__left',
 		}
 	};
+
+	const optionsReviews = {
+		modules: [ Navigation, Pagination],
+		slidesPerView: 1,
+        spaceBetween: 16,
+		loop: true,
+		observer: true,
+		observeParents: true,
+		navigation: {
+			nextEl: '.review-slider__right',
+			prevEl: '.review-slider__left',
+		},
+		pagination: {
+			el: ".review-slider__fractions",
+			type: "fraction",
+		},
+	};
 	const swiper = new Swiper('.includes-swiper', optionsIncluded);
 	const swiperDoctors = new Swiper('.doctors__swiper', optionsDoctors);
-	const promoDoctors = new Swiper('.promo-block__swiper', optionsPromo);	  
+	const swiperPromo = new Swiper('.promo-block__swiper', optionsPromo);
+	const swiperReviews = new Swiper('.review-slider__swiper', optionsReviews);	  
 
 } catch(e) {
 	console.log(e)
@@ -285,7 +303,7 @@ try {
 // обрезает текст комментариев
 try {
 	clipText({
-		btnsClassName: '.review__btn', 
+		btnsClassName: '.js-cliptext', 
 		parentEltClass: '.review', // элемент должен быть родителем кнопки
 		classForClipped:'clipped', //этот элемент указываем без точки
 		textEltClass:'.review__text',
