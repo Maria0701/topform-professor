@@ -1,0 +1,29 @@
+.about__advantages {
+    margin-bottom: 50px;
+}
+
+.about__intro {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+.gray {
+    background-color: var(--light-gray);
+
+    .text blockquote {
+        margin-top: 20px;
+        background-color: var(--white);
+    }
+}
+
+@media (min-width: 1000px) {
+    .about__advantages {
+        margin-bottom: 82px;
+    }
+
+    .about__years {
+        margin-bottom: 50px;
+    }
+}
+
