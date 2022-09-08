@@ -1,6 +1,7 @@
 .about__advantages,
 .about__history,
-.about__gallery {
+.about__gallery,
+.about__license {
     margin-bottom: 50px;
 }
 
@@ -10,6 +11,14 @@
     margin-bottom: 50px;
 }
 
+.about__wrapper {
+    padding-bottom: 50px;
+}
+
+.about__tour {
+    position: relative;
+    z-index: 1;
+}
 
 
 @media (min-width: 1000px) {
@@ -22,3 +31,7 @@
     }
 }
 
+
+.about__advantages::before {
+    display: none;
+}

@@ -1,0 +1,27 @@
+.licence-block__h2 {
+    margin-bottom: 36px;
+    
+}
+
+.licence-block__content {
+    font-size: 1rem;
+    line-height: 140%;
+    color: var(--gray2);
+
+    p {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+        height:auto;
+    }
+}
+
+@media (min-width: 800px) {
+    .licence-block__content {
+        p {
+            display: none;
+        }
+    }
+}
