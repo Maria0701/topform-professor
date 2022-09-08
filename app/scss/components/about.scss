@@ -1,4 +1,5 @@
-.about__advantages {
+.about__advantages,
+.about__history {
     margin-bottom: 50px;
 }
 
@@ -8,14 +9,7 @@
     margin-bottom: 50px;
 }
 
-.gray {
-    background-color: var(--light-gray);
 
-    .text blockquote {
-        margin-top: 20px;
-        background-color: var(--white);
-    }
-}
 
 @media (min-width: 1000px) {
     .about__advantages {

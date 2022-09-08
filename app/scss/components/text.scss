@@ -160,6 +160,15 @@
     
 }
 
+.gray {
+    background-color: var(--light-gray);
+
+    .text blockquote {
+        margin-top: 20px;
+        background-color: var(--white);
+    }
+}
+
 @media (min-width: $small) {
     .text {
         p {

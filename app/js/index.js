@@ -291,10 +291,28 @@ try {
 			type: "fraction",
 		},
 	};
+
+	const optionsHistory = {
+		slidesPerView: "auto",
+        spaceBetween: 16,
+		loop: false,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			320: {
+			  spaceBetween: 16
+			},
+			740: {
+			  spaceBetween: 36
+			},
+		},
+	};
+
 	const swiper = new Swiper('.includes-swiper', optionsIncluded);
 	const swiperDoctors = new Swiper('.doctors__swiper', optionsDoctors);
 	const swiperPromo = new Swiper('.promo-block__swiper', optionsPromo);
 	const swiperReviews = new Swiper('.review-slider__swiper', optionsReviews);	  
+	const swiperHistory = new Swiper('.history__swiper', optionsHistory);	  
 
 } catch(e) {
 	console.log(e)
