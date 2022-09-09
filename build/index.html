@@ -1410,6 +1410,63 @@
 		</div>
 	</div>
 </footer>
+<section class="popup">
+    <div class="popup__wrapper">
+        <button class="popup__close">
+            <svg width="12" height="12">
+	<use xlink:href="img/sprite.svg#cancel"></use>
+</svg>
+        </button>
+        <p class="popup__head">записаться на прием</p>
+        <form class="popup__form comment-form" action=".">
+            <label class="comment-form__label">                
+                <input class="comment-form__input required" type="text" placeholder="Иванова Елена Алексеевна">
+                <span class="comment-form__name" name="name">ВАШЕ ФИО*</span>
+            </label>
+            <label class="comment-form__label">                
+                <input class="comment-form__input required" type="tel" placeholder="+7 (931) 001-34-34">
+                <span class="comment-form__name" name="phone">ВАШ ТЕЛЕФОН*</span>
+            </label>
+            <label class="comment-form__label">                
+                <select class="comment-form__select required" name="specialist">
+                    <option value="0">Выберите специалиста/услугу</option>
+                    <option value="1">Диабетолог</option>
+                    <option value="2">Гинеколог-эндокринолог</option>
+                    <option value="3">Дерматолог-эндокринолог</option>
+                    <option value="4">Диабетолог</option>
+                    <option value="5">Гастроэнтеролог</option>
+                </select>
+                <span class="comment-form__name" name="surname">Специалист/услуга*</span>
+            </label>
+            <label class="comment-form__label comment-form__label--date">                
+                <input class="comment-form__input required comment-form__date" type="mail" placeholder="Выберите дату">                
+                <span class="comment-form__name" name="mail">ДАТА*</span>
+                <svg width="16" height="16">
+	<use xlink:href="img/sprite.svg#calendar"></use>
+</svg>
+            </label>
+            <label class="comment-form__label">                
+                <select class="comment-form__select required" name="specialist">
+                    <option value="0">Выберите время</option>
+                    <option value="1">13:00</option>
+                    <option value="2">13:15</option>
+                    <option value="3">14:00</option>
+                    <option value="4">15:00</option>
+                    <option value="5">15:15</option>
+                </select>
+                <span class="comment-form__name" name="surname">ВРЕМЯ*</span>
+            </label>
+
+            <div class="comment-form__bottom">
+                <label class="comment-form__label comment-form__label--checkbox">
+                    <input type="checkbox" name="agreed" checked="">
+                    <span>Я даю согласие на обработку <a href="#" alt="персональных данных">персональных данных</a></span>
+                </label>
+                <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>
+            </div>
+        </form>
+    </div>
+</section>
 
     <script src="js/index.js"></script>
   </body>

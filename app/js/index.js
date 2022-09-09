@@ -1,3 +1,5 @@
+import flatpickr from 'flatpickr';
+import { Russian } from 'flatpickr/dist/l10n/ru.js';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import { clipText } from './components/clip-text';
 import { TabsAutomatic } from './components/tabs-auromatic';
@@ -382,3 +384,20 @@ try {
   } catch(e) {
 	console.log(e);
   }
+
+try {
+	const myInput = document.querySelector(".comment-form__date");
+	const fp = flatpickr(myInput, {
+		"locale": Russian,
+		alowInput: true,
+		enableTime: false,
+		time24hr: false,
+		altFormat: `d.m.Y`,
+		dateFormat: `d.m.Y`,
+		//mode: `range`,
+		minDate: new Date(),
+		});  // flatpickr
+
+} catch(e) {
+	console.log(e);
+}

@@ -52,11 +52,13 @@
     }
 }
 
-.comment-form__input {
+.comment-form__input,
+.comment-form__select {
     order: 1;
     padding-top: 5px;
     padding-bottom: 5px;
     width: 100%;
+    background-color: transparent;
     border-top: 0;
     border-right: 0;
     border-left: 0;
@@ -171,6 +173,17 @@
 
 .comment__img {
     width: 100%;
+}
+
+.comment-form__label--date {
+    position: relative;
+
+    svg {
+        position:absolute;
+        bottom: 5px;
+        right: 0;
+        fill: none;
+    }
 }
 
 @media (min-width: $small) {
