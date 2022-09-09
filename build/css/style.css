@@ -1021,7 +1021,8 @@ button {
     padding-top: 36px;
   }
 
-  .top-page--promo {
+  .top-page--promo,
+.top-page--doctor-page {
     background-image: url("../img/bg-flowers.png");
     background-position: right 30%;
     background-repeat: no-repeat;
