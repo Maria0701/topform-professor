@@ -13,7 +13,6 @@ let defaultOptions = {
 export const swiperMode = (className, options = defaultOptions, width) => {
     if (width) mobile = width;
     let allWorks = document.querySelectorAll(className);
-    console.log(allWorks);
 
     const buildSlider = (element, id) => {
         return new Swiper(element, options);

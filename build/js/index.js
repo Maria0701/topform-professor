@@ -25,7 +25,6 @@ var swiperMode = function swiperMode(className) {
   var width = arguments.length > 2 ? arguments[2] : undefined;
   if (width) mobile = width;
   var allWorks = document.querySelectorAll(className);
-  console.log(allWorks);
 
   var buildSlider = function buildSlider(element, id) {
     return new swiper__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .ZP(element, options);

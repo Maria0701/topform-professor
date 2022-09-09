@@ -623,7 +623,7 @@ button {
 }
 .top-page__img-wrapper img {
   position: relative;
-  z-index: 0;
+  z-index: 1;
   width: 100%;
 }
 
@@ -637,10 +637,10 @@ button {
   content: "";
   position: absolute;
   width: 100%;
-  height: 70.4%;
   z-index: 0;
   background: var(--white);
   border-radius: 300px 300px 0px 0px;
+  aspect-ratio: 1/1;
 }
 
 .top-page__img {
@@ -4914,7 +4914,8 @@ button {
 
 .doctor-page__about,
 .doctor-page__menu,
-.doctor-page__rates {
+.doctor-page__rates,
+.doctor-page__consult {
   margin-bottom: 50px;
 }
 
@@ -4923,6 +4924,11 @@ button {
     margin-bottom: 50px;
   }
 }
+.consult {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .text {
   display: grid;
   grid-template-columns: 1fr;
