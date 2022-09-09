@@ -137,6 +137,13 @@ input {
     }
 }
 
+.phone-link {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.2;
+    transition: color 0.3s ease-in-out;
+}
+
 
 @media (min-width: $small) {
     .h1 {

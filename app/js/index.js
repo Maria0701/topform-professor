@@ -1,6 +1,7 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 import { clipText } from './components/clip-text';
 import { TabsAutomatic } from './components/tabs-auromatic';
+import { YmapsInitializer } from './components/yandex';
 
 
 const { swiperMode } = require("./components/btns-swiper");
@@ -341,3 +342,13 @@ try {
 } catch (e) {
 	console.log(e);
 }
+
+// запускаем карту 
+try {
+	const mapContainer = document.querySelector('.js-map');
+	if (mapContainer) {
+	  new YmapsInitializer(mapContainer);
+	}
+  } catch(e) {
+	console.log(e);
+  }

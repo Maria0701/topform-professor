@@ -30,6 +30,7 @@
     font-size: 1.5rem;
     line-height: 130%;
     text-transform: uppercase;
+    text-align: center;
     color: var(--white);
     background-color: var(--green);
 }
@@ -95,5 +96,29 @@
 
     .tour__content {
         padding-top: 37%;
+    }
+}
+
+@media (min-width: $desktop-large) {
+    .tour {
+        z-index: 1;
+    }
+    
+    .tour--flowers2 {
+        position: relative;
+        &::after {
+            content:'';
+            position: absolute;
+            bottom: -34px;
+            left: -214px;
+            z-index: 0;
+            display: block;
+            width:275px;
+            height:673px;
+            background-image: url('../img/bg-flowers.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            
+        }
     }
 }

@@ -219,7 +219,8 @@
     }
 }
 
-.top-page__text {
+.top-page__text,
+.top-page__left {
     position: relative;
     z-index: 1;
     display: grid;
@@ -415,7 +416,7 @@
     }
 
     
-    .top-page__text {
+    .top-page__left {
         padding-bottom: 60px;
     }
 

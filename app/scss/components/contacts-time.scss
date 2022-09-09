@@ -1,0 +1,145 @@
+.time {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+.time thead {    
+    color:  var(--white);
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+
+    .time__sell {
+        background-color: var(--green);
+        border: 1px solid var(--white);
+    }
+}
+
+.time__sell  {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+    background-color: var(--green);
+
+    p {
+        margin: 0;
+
+        &:last-child {
+            font-size: 1.125rem;
+        }
+    }
+
+    
+}
+
+.time td {
+    padding-top: 16px;
+    padding-bottom: 0;
+    padding-left: 56px;
+    padding-right: 16px;
+    border-right: 1px solid var(--dark-gray);
+    background-color: var(--white);
+
+    p {
+        margin: 0;
+    }
+
+    &:first-child {
+        border-left: 1px solid var(--dark-gray);
+    }
+
+}
+
+.time tr {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(256px, 1fr));
+
+    &:last-child td {
+        padding-bottom: 16px;
+    }
+}
+
+.time__cabinet {
+    position: relative;
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 130%;
+    color: var(--mid-gray);
+
+    &:before {
+        content: '';
+
+        position: absolute;
+        left: -40px;
+        top: 50%;
+        width: 24px;
+        height: 1px;
+        background-color: var(--dark-gray);
+    }  
+
+}
+
+.time__cabinet-time {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 130%;
+    color: var(--dark-gray);
+
+    span {
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: $small) {
+    .time .time__row {
+        td {
+            padding-top: 24px;
+        }
+
+        &:first-child td{
+            padding-top: 36px;
+        }
+
+        &:last-child td {
+            padding-bottom: 36px;
+        }
+    }
+
+    .time thead {    
+        color:  var(--white);
+        font-weight: 700;
+        font-size: 0.75rem;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+    
+        .time__sell {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+
+    .time__sell p:last-child {
+        font-size: 1.25rem;
+    }
+
+    .time__cabinet {
+        font-size: 0.875rem;
+    }
+
+    .time__cabinet-time {
+        font-size: 1.125rem;
+    }
+    
+}

@@ -1,0 +1,135 @@
+<div class="contacts" style="background-image:url(../img/bg-contacts.jpg)">
+    <div class="contacts__top container">
+        <div class="contacts__top-img">
+            <img src="../img/contacts.jpg" alt="Фото фасада клиники" width="700" height="436">
+        </div>
+        <div class="contacts__top-adress" >
+            <div class="contacts__quote">
+                <p class="contacts__intro">Адрес клиники</p>
+                <div class="contacts__directions">
+                    <div class="contacts__svg">
+                        <include src="app/html/svg-icon.html" locals='{ "name": "metro","width": "19", "height": "16"  }'></include>
+                    </div>
+                    <div><span>Чернышевская</span> - 310 метров  
+                        <div class="contacts__svg">
+                            <include src="app/html/svg-icon.html" locals='{ "name": "walk","width": "16", "height": "16"  }'></include>
+                        </div> 4 минуты пешком</div>
+                </div>
+                <div class="contacts__adress">г. Санкт-Петербург, ул. Чайковского, 42</div>
+            </div>
+        </div>
+        <div class="contacts__time">
+            <table class="time">
+                <thead>
+                    <tr>
+                        <td class="time__sell">
+                            <p>понедельник-пятница</p>
+                            <p>с 9:00 до 21:00</p>
+                        </td>
+                        <td class="time__sell">
+                            <p>суббота</p>
+                            <p>с 9:00 до 19:00</p>
+                        </td>
+                        <td class="time__sell">
+                            <p>воскресенье</p>
+                            <p>с 9:00 до 18:00</p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="time__row">
+                        <td>
+                            <p class="time__cabinet">Регистратура:</p>
+                            <p class="time__cabinet-time">с 9:00 до 21:00</p>
+                        </td>
+                        <td>
+                            <p class="time__cabinet">Регистратура:</p>
+                            <p class="time__cabinet-time">с 9:00 до 19:00 <span>- без записи</span></p>
+                        </td>
+                        <td>
+                            <p class="time__cabinet">Регистратура:</p>
+                            <p class="time__cabinet-time">с 9:00 до 18:00 <span>- без записи</span></p>
+                        </td>
+                        <tr class="time__row">
+                            <td>
+                                <p class="time__cabinet">Регистратура:</p>
+                                <p class="time__cabinet-time">с 9:00 до 21:00</p>
+                            </td>
+                            <td>
+                                <p class="time__cabinet">Регистратура:</p>
+                                <p class="time__cabinet-time">с 9:00 до 19:00</p>
+                            </td>
+                            <td>
+                                <p class="time__cabinet">Регистратура:</p>
+                                <p class="time__cabinet-time">с 9:00 до 18:00</p>
+                            </td>
+                        </tr>
+                        <tr class="time__row">
+                            <td>
+                                <p class="time__cabinet">Регистратура:</p>
+                                <p class="time__cabinet-time">с 9:00 до 21:00</p>
+                            </td>
+                            <td>
+                                <p class="time__cabinet">Регистратура:</p>
+                                <p class="time__cabinet-time">с 9:00 до 19:00</p>
+                            </td>
+                            <td>
+                                <p class="time__cabinet">Регистратура:</p>
+                                <p class="time__cabinet-time">с 9:00 до 18:00</p>
+                            </td>
+                        </tr>
+                        <tr class="time__row">
+                            <td>
+                                <p class="time__cabinet">Регистратура:</p>
+                                <p class="time__cabinet-time">с 9:00 до 21:00</p>
+                            </td>
+                            <td>
+                                <p class="time__cabinet">Регистратура:</p>
+                                <p class="time__cabinet-time">с 9:00 до 19:00</p>
+                            </td>
+                            <td>
+                                <p class="time__cabinet">Регистратура:</p>
+                                <p class="time__cabinet-time">с 9:00 до 18:00</p>
+                            </td>
+                        </tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="contacts__contacts">
+            <div class="contacts__phones">
+                <div class="contacts__svg">
+                    <include src="app/html/svg-icon.html" locals='{ "name": "call2","width": "24", "height": "24"  }'></include>
+                </div>
+				<a href="tel:+78122727024" title="позвонить в клинику" class="phone-link">+7 (812) 272-70-24</a>
+				<a href="tel:+78122723734" title="позвонить в клинику" class="phone-link">+7 (812) 272-37-34</a>
+				<a href="tel:+78122758696" title="позвонить в клинику" class="phone-link">+7 (812) 275-86-96</a>
+            </div>
+            <div class="contacts__emails">
+                <div class="contacts__svg">
+                    <include src="app/html/svg-icon.html" locals='{ "name": "fa_mail","width": "24", "height": "24"  }'></include>
+                </div>
+                <a href="mailto:glavvrach@mcprofessor.ru" class="email-link" title="написать главврачу">
+                    <span>Главврач:</span>
+                    glavvrach@mcprofessor.ru
+                </a>
+                <a href="mailto:professor2001@bk.ru" class="email-link" title="написать главврачу">
+                    <span>Информация:</span>
+                    professor2001@bk.ru
+                </a>
+                <a href="mailto:zapis@mcprofessor.ru" class="email-link" title="написать главврачу">
+                    <span>Для записи:</span>
+                    zapis@mcprofessor.ru
+                </a>
+            </div>
+            <include src="app/html/socials.html" locals='{"class": "contacts__socials"}'></include>  
+        </div>
+    </div>
+    <div class="contacts__map js-map">
+    </div>
+    <div class="contacts__tour">
+        <div class="container tour--flowers2">
+            <include src="app/html/tour.html" locals='{"class": ""}'></include>
+        </div>
+    </div>
+</div>

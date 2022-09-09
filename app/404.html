@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+    <include src="app/html/meta.html"></include>
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">   
+  </head>
+  <body >
+    <include src="app/html/header.html"></include>
+    <main>
+      <include src="app/html/top-page.html" locals='{"class": "top-page--404", "name": "404", "subname": ""}'></include>
+      <div class="no-page">
+        <div class="container-inside no-page__container container">
+          <div class="no-page__img">
+            <img src="../img/404.svg" alt="no-page">
+          </div>
+          <div class="no-page__text">
+            <p>Извините,
+              <br/>но такой страницы не существует</p>
+              <a href="/" class="btn btn--primary" title="вернуться на главную">вернуться на главную</a>
+          </div>
+        </div>
+      </div>  
+    </main> 
+    <include src="app/html/footer.html"></include>
+    <script src="js/index.js"></script>
+  </body>
+</html>
