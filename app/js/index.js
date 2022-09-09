@@ -197,6 +197,10 @@ try {
 		swiperMode('.btns-swiper', options, 740);
 	});
 
+	window.addEventListener('load', function() {
+		swiperMode('.doctors-page__swiper');
+	});
+
 
 } catch(e) {
 	console.log(e)

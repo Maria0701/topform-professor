@@ -17,7 +17,7 @@ var defaultOptions = {
   loop: true,
   observer: true,
   observeParents: true,
-  slidesPerView: 5,
+  slidesPerView: 4,
   spaceBetween: 16
 };
 var swiperMode = function swiperMode(className) {
@@ -25,27 +25,32 @@ var swiperMode = function swiperMode(className) {
   var width = arguments.length > 2 ? arguments[2] : undefined;
   if (width) mobile = width;
   var allWorks = document.querySelectorAll(className);
+  console.log(allWorks);
 
   var buildSlider = function buildSlider(element, id) {
     return new swiper__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .ZP(element, options);
   };
 
-  if (!width) return;
-
-  if (document.body.clientWidth <= mobile) {
-    if (!init) {
-      init = true;
-      allWorks.forEach(function (item, id) {
-        var slider = buildSlider(item, id);
-      });
-    }
-  }
-
-  if (document.body.clientWidth > mobile) {
-    allWorks.forEach(function (item) {
-      if (item.swiper) item.swiper.destroy(true, true);
+  if (!width) {
+    allWorks.forEach(function (item, id) {
+      var slider = buildSlider(item, id);
     });
-    init = false;
+  } else {
+    if (document.body.clientWidth <= mobile) {
+      if (!init) {
+        init = true;
+        allWorks.forEach(function (item, id) {
+          var slider = buildSlider(item, id);
+        });
+      }
+    }
+
+    if (document.body.clientWidth > mobile) {
+      allWorks.forEach(function (item) {
+        if (item.swiper) item.swiper.destroy(true, true);
+      });
+      init = false;
+    }
   }
 };
 
@@ -11166,6 +11171,9 @@ try {
   });
   window.addEventListener('resize', function () {
     swiperMode('.btns-swiper', options, 740);
+  });
+  window.addEventListener('load', function () {
+    swiperMode('.doctors-page__swiper');
   });
 } catch (e) {
   console.log(e);

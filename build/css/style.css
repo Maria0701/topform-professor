@@ -2529,6 +2529,11 @@ button {
   width: 100%;
 }
 
+.doctor__btn-inside {
+  justify-self: flex-start;
+  margin-top: 16px;
+}
+
 .doctor__img-wrapper {
   position: relative;
   width: 100%;
@@ -2591,6 +2596,8 @@ button {
 
 .doctor__content-top {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
   padding-bottom: 16px;
 }
 .doctor__content-top::after {
@@ -2654,6 +2661,10 @@ button {
   background-image: url("../img/banner-bg.jpg");
   background-repeat: repeat-x;
   background-size: cover;
+}
+
+.doctors--nobg::before {
+  display: none;
 }
 
 .doctors__wrapper {
@@ -4758,6 +4769,17 @@ button {
     font-size: 1.125rem;
   }
 }
+.doctors-page__list {
+  margin-bottom: 50px;
+}
+.doctors-page__list:last-child {
+  margin-bottom: 0;
+}
+
+.doctors-page__search {
+  margin-bottom: 36px;
+}
+
 .text {
   display: grid;
   grid-template-columns: 1fr;

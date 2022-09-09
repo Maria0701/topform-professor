@@ -1,10 +1,7 @@
 <div class="doctor">
-    <div class="doctor__img-wrapper">
-        <img src="../img/{{icon}}" alt="gkeh" width="360" height="360">
-        <div class="doctor__link">
-            <include src="app/html/btn.html"  locals='{"class": "btn--primary doctor__btn", "text": "ЗАПИСь на прием"}'></include> 
-        </div>
-    </div>
+    <a class="doctor__img-wrapper"  href="#" title="gewrsrgsrar">
+        <img src="../img/{{icon}}" alt="gkeh" width="360" height="360">        
+    </a>
     <div class="doctor__content">
         <a class="doctor__content-top" href="#" title="gewrsrgsrar">
             <span class="doctor__surname">{{surname}}</span>
@@ -15,5 +12,6 @@
             <p class="doctor__education">{{education}}</p>
             <p class="doctor__price">от {{price}} ₽</p>
         </div>
-    </div>    
+        <include src="app/html/btn.html"  locals='{"class": "btn--primary doctor__btn-inside", "text": "ЗАПИСь на прием"}'></include> 
+    </div> 
 </div>
