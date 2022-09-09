@@ -2,28 +2,80 @@
     <div class="container">
         <include src="app/html/breadcrumbs.html"></include>
         <div class="top-page__container">
-            <div class="top-page__img-wrapper">
-                <img class="top-page__img" src="../img/specialisty.jpg" alt="text" width="260" height="244">
+            <div class="top-page__img-wrapper top-page__img-doctor">
+                <img src="../img/doc-img-3.png" alt="gkeh" width="240" height="270">        
             </div>
             <div class="top-page__text">
                 <h1 class="top-page__h1 h1">{{ name }}</h1>
-                <p class="top-page__subname">{{ subname }}</p>
+                <div class="top-page__doctor">
+                    <table class="top-page__doctor-info">
+                        <tbody>
+                            <tr>
+                                <td>Направление деятельности:</td>
+                                <td>Врач - гинеколог</td>
+                            </tr>
+                            <tr>
+                                <td>Ученая степень:</td>
+                                <td>Кандидат медицинских наук</td>
+                            </tr>
+                            <tr>
+                                <td>Звание:</td>
+                                <td>Доцент</td>
+                            </tr>
+                            <tr>
+                                <td>Врачебный стаж:</td>
+                                <td>Более 20 лет</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="top-page__doctor-time">
+                        <div class="top-page__timetable-wrap">
+                            <table class="top-page__timetable">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p class="top-page__day">ПН:</p>
+                                            <p class="top-page__time">15:30 до 19:00</p>
+                                        </td>
+                                        <td>
+                                            <p class="top-page__day">ВТ:</p>
+                                            <p class="top-page__time">нет приема</p>                                        
+                                        </td>
+                                        <td>
+                                            <p class="top-page__day">СР:</p>
+                                            <p class="top-page__time">15:30 до 19:00</p>
+                                        </td>
+                                        <td>
+                                            <p class="top-page__day">ЧТ:</p>
+                                            <p class="top-page__time">15:30 до 19:00</p>                                        
+                                        </td>
+                                        <td>
+                                            <p class="top-page__day">ПТ:</p>
+                                            <p class="top-page__time">15:30 до 19:00</p>
+                                        </td>
+                                        <td>
+                                            <p class="top-page__day">СБ:</p>
+                                            <p class="top-page__time">15:30 до 19:00</p>                                        
+                                        </td>
+                                        <td>
+                                            <p class="top-page__day">ВС:</p>
+                                            <p class="top-page__time">15:30 до 19:00</p>                                        
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 <div class="top-page__service-block">
+                    <include src="app/html/btn.html"  locals='{"class": "btn--primary top-page__btn", "text": "ЗАПИСь на прием"}'></include> 
                     <div class="top-page__from">
                         <span class="top-page__from-svg">
                             <include src="app/html/svg-icon.html" locals='{ "name": "ruble","width": "36", "height": "36"  }'></include>
                         </span>
                         <span class="top-page__from-text">Цена:</span>
                         <span class="top-page__from-price">от 1500 ₽</span>
-                    </div>
-                    <div class="top-page__from">
-                        <span class="top-page__from-svg">
-                            <include src="app/html/svg-icon.html" locals='{ "name": "time","width": "36", "height": "36"  }'></include>
-                        </span>
-                        <span class="top-page__from-text">Прием:</span>
-                        <span class="top-page__from-price">от 30 минут</span>
-                    </div>
-                    <include src="app/html/btn.html"  locals='{"class": "btn--primary top-page__btn", "text": "ЗАПИСь на прием"}'></include> 
+                    </div>                    
                 </div>
             </div>
         </div>
