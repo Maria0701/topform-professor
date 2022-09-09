@@ -166,6 +166,10 @@ input:hover, input:focus {
   padding-bottom: 6px;
 }
 
+.h2--underlined,
+.h2--short {
+  margin-bottom: 36px;
+}
 .h2--underlined::before,
 .h2--short::before {
   content: "";
@@ -838,6 +842,8 @@ button {
   }
 
   .top-page__btn {
+    justify-self: flex-start;
+    align-self: center;
     width: unset;
     height: 50px;
   }
@@ -2701,6 +2707,10 @@ button {
 
 .doctors__item {
   width: 240px;
+  height: auto;
+}
+.doctors__item .doctor {
+  height: 100%;
 }
 
 @media (min-width: 740px) {
@@ -4780,6 +4790,17 @@ button {
   margin-bottom: 36px;
 }
 
+.doctor-page__about,
+.doctor-page__menu,
+.doctor-page__rates {
+  margin-bottom: 50px;
+}
+
+@media (min-width: 1000px) {
+  .doctor-page__advantages {
+    margin-bottom: 50px;
+  }
+}
 .text {
   display: grid;
   grid-template-columns: 1fr;

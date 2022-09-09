@@ -1,0 +1,11 @@
+.doctor-page__about, 
+.doctor-page__menu,
+.doctor-page__rates {
+    margin-bottom: 50px;
+}
+
+@media (min-width: 1000px) {
+    .doctor-page__advantages {
+        margin-bottom: 50px;
+    }
+}

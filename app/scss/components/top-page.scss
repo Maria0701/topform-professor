@@ -319,6 +319,8 @@
     }
 
     .top-page__btn {
+        justify-self: flex-start;
+        align-self: center;
         width: unset;
         height: 50px;
     }

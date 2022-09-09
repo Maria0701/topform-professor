@@ -55,6 +55,11 @@
 
 .doctors__item {
     width: 240px;
+    height: auto;
+
+    .doctor {
+        height: 100%;
+    }
 }
 
 @media (min-width: $small)  {

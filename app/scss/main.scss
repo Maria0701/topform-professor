@@ -96,6 +96,8 @@ input {
 
 .h2--underlined,
 .h2--short {
+    margin-bottom: 36px;
+    
     &::before {
         content: '';
         position: absolute;

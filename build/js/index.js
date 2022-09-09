@@ -11166,6 +11166,25 @@ try {
     slidesPerView: "auto",
     spaceBetween: 16
   };
+  var optionsDoctors = {
+    slidesPerView: "auto",
+    spaceBetween: 16,
+    loop: true,
+    observer: true,
+    observeParents: true,
+    breakpoints: {
+      320: {
+        spaceBetween: 16
+      },
+      740: {
+        spaceBetween: 40
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 53
+      }
+    }
+  };
   window.addEventListener('load', function () {
     swiperMode('.btns-swiper', options, 740);
   });
@@ -11173,7 +11192,7 @@ try {
     swiperMode('.btns-swiper', options, 740);
   });
   window.addEventListener('load', function () {
-    swiperMode('.doctors-page__swiper');
+    swiperMode('.doctors-page__swiper', optionsDoctors);
   });
 } catch (e) {
   console.log(e);
@@ -11227,7 +11246,7 @@ try {
       prevEl: '.promo-block__left'
     }
   };
-  var optionsDoctors = {
+  var _optionsDoctors = {
     modules: [swiper_esm/* Navigation */.W_],
     slidesPerView: "auto",
     spaceBetween: 16,
@@ -11282,7 +11301,7 @@ try {
     }
   };
   var swiper = new swiper_esm/* default */.ZP('.includes-swiper', optionsIncluded);
-  var swiperDoctors = new swiper_esm/* default */.ZP('.doctors__swiper', optionsDoctors);
+  var swiperDoctors = new swiper_esm/* default */.ZP('.doctors__swiper', _optionsDoctors);
   var swiperPromo = new swiper_esm/* default */.ZP('.promo-block__swiper', optionsPromo);
   var swiperReviews = new swiper_esm/* default */.ZP('.review-slider__swiper', optionsReviews);
   var swiperHistory = new swiper_esm/* default */.ZP('.history__swiper', optionsHistory);
