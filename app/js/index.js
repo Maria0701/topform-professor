@@ -371,7 +371,13 @@ try {
 try {
 	const mapContainer = document.querySelector('.js-map');
 	if (mapContainer) {
-	  new YmapsInitializer(mapContainer);
+		const coords = {
+			coords: [mapContainer.dataset.fort, mapContainer.dataset.long],
+			name: mapContainer.dataset.name,
+			description: mapContainer.dataset.description,
+		};
+
+	  	new YmapsInitializer(mapContainer, coords);
 	}
   } catch(e) {
 	console.log(e);

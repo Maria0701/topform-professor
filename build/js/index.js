@@ -10896,7 +10896,7 @@ var YmapsInitializer = /*#__PURE__*/function () {
           balloonContent: mapCoords.description
         }, {
           iconLayout: 'default#image',
-          iconImageHref: '/img/logo2.svg',
+          iconImageHref: '../img/logo2.svg',
           iconImageSize: [82, 105],
           iconImageOffset: [-41, -105]
         });
@@ -11340,7 +11340,12 @@ try {
   var mapContainer = document.querySelector('.js-map');
 
   if (mapContainer) {
-    new YmapsInitializer(mapContainer);
+    var js_coords = {
+      coords: [mapContainer.dataset.fort, mapContainer.dataset["long"]],
+      name: mapContainer.dataset.name,
+      description: mapContainer.dataset.description
+    };
+    new YmapsInitializer(mapContainer, js_coords);
   }
 } catch (e) {
   console.log(e);

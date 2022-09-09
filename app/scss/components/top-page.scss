@@ -254,6 +254,8 @@
     z-index: 1;
     display: grid;
     grid-template-columns: minmax(0,1fr);
+    justify-self: flex-start;
+    width: 100%;
 }
 
 .top-page__logo {
@@ -570,6 +572,10 @@
 
     .top-page__subname {
         font-size: 1.125rem;
+    }
+
+    .top-page__timetable-wrap {
+        width: 100%;
     }
    
 }

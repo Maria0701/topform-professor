@@ -774,6 +774,8 @@ button {
   z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+  justify-self: flex-start;
+  width: 100%;
 }
 
 .top-page__logo {
@@ -1074,6 +1076,10 @@ button {
 
   .top-page__subname {
     font-size: 1.125rem;
+  }
+
+  .top-page__timetable-wrap {
+    width: 100%;
   }
 }
 @media (min-width: 1550px) {

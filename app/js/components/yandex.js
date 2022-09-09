@@ -32,7 +32,7 @@ export class YmapsInitializer {
             }, {
     
                 iconLayout: 'default#image',
-                iconImageHref: '/img/logo2.svg',
+                iconImageHref: '../img/logo2.svg',
                 iconImageSize: [82, 105],
                 iconImageOffset: [-41, -105]
             });
