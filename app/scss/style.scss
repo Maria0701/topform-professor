@@ -7,15 +7,14 @@
 /*
 @import "components/header.scss";
 @import "components/header-menu";
-@import "components/header-search";
 @import "components/secondary-menu";
 @import "components/info-menu";
 */
 //@import "components/footer.scss";
+@import "components/header-search";
 @import "components/socials.scss";
 @import "components/search-block.scss";
 @import "components/breadcrumbs.scss";
-
 @import "components/top-page.scss";
 @import "components/pager.scss";
 @import "components/prices.scss";
@@ -51,4 +50,6 @@
 @import "components/contacts.scss";
 @import "components/contacts-time.scss";
 @import "components/404.scss";
+@import "components/search.scss";
+@import "components/search-result.scss";
 @import "components/text.scss";

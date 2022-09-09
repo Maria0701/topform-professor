@@ -72,7 +72,10 @@ gulp.task('sprite', function() {
             }
         ]
     },
-    mode: isDev ? 'development' : 'production'
+    mode: isDev ? 'development' : 'production',
+    optimization: {
+      minimize: false
+    }
   }))
   .pipe(gulp.dest('build/js'))
   .pipe(browserSync.stream());

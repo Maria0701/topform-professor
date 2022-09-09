@@ -1,0 +1,37 @@
+<div class="search-page container container-inside">
+    <div class="search-page__block">
+        <form action="" class="search-page__search search">
+            <label class="search__label">
+                <input type="search" class="search__input">							
+            </label>
+            <span class="search__cancel" tabindex="0" onclick="this.closest('form').reset();">
+                <include src="app/html/svg-icon.html" locals='{ "name": "cancel", "width": "10", "height": "10" }'></include>
+            </span>
+            <button class="btn search__btn"><include src="app/html/svg-icon.html" locals='{ "name": "fa_search", "width": "24", "height": "24" }'></include></button>
+        </form>
+    </div>
+    <div class="search-page__result-line">
+        <p>найдено результатов: <span>2</span></p>
+    </div>
+    <div class="search-page__list">
+        <div class="search-page__result">
+            <include src="app/html/search-result.html" ></include>
+        </div>
+        <div class="search-page__result">
+            <include src="app/html/search-result.html" ></include>
+        </div>
+        <div class="search-page__result">
+            <include src="app/html/search-result.html" ></include>
+        </div>
+        <div class="search-page__result">
+            <include src="app/html/search-result.html" ></include>
+        </div>
+        <div class="search-page__result">
+            <include src="app/html/search-result.html" ></include>
+        </div>
+        <div class="search-page__result">
+            <include src="app/html/search-result.html" ></include>
+        </div>
+    </div>
+    <include src="app/html/pagination.html" locals='{ "name": "search-page__pagination"'></include>
+</div>
