@@ -1938,6 +1938,17 @@ button {
     grid-template-columns: 1fr 1fr;
     padding-bottom: 50px;
   }
+
+  .popup__form {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    -moz-column-gap: 60px;
+         column-gap: 60px;
+    row-gap: 36px;
+  }
+  .popup__form .comment-form__bottom,
+.popup__form .comment-form__label:nth-child(3) {
+    grid-column: span 2;
+  }
 }
 .promotions__wrapper {
   display: grid;
@@ -4948,17 +4959,77 @@ button {
   padding-bottom: 50px;
 }
 
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeout {
+  -webkit-animation: fadeout 0.4s ease-in-out;
+          animation: fadeout 0.4s ease-in-out;
+}
+
+.fadein {
+  -webkit-animation: fadein 0.4s ease-in-out;
+          animation: fadein 0.4s ease-in-out;
+}
+
 .popup {
-  display: none;
   position: fixed;
-  top: 50%;
+  top: -10000px;
   left: 50%;
-  z-index: 4;
+  z-index: 1;
   width: calc(100% - 32px);
   max-width: 593px;
   padding: 12px;
   transform: translate(-50%, -50%);
   background-color: var(--white);
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-overlay.opened {
+  top: 0;
+}
+
+.popup.opened {
+  top: 50%;
 }
 
 .popup__wrapper {
@@ -4985,14 +5056,42 @@ button {
 
 .popup__head {
   margin-bottom: 24px;
+  color: var(--dark-gray);
+}
+
+.popup__name {
   font-family: Elisabethische, serif;
   font-size: 1.5rem;
   line-height: 130%;
   text-align: center;
   text-transform: uppercase;
-  color: var(--dark-gray);
 }
 
+.popup__remark {
+  padding-top: 12px;
+}
+
+@media (min-width: 740px) {
+  .popup__wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .popup__name {
+    font-size: 2.25rem;
+  }
+
+  .popup__head {
+    margin-bottom: 2.25rem;
+  }
+
+  .popup__close {
+    top: -40px;
+    right: -40px;
+  }
+}
 .flatpickr-calendar {
   background: transparent;
   opacity: 0;

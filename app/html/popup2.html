@@ -1,0 +1,30 @@
+<div class="popup-overlay" data-popup="question">
+    <section class="popup">
+        <div class="popup__wrapper">
+            <button class="popup__close">
+                <include src="app/html/svg-icon.html" locals='{  "name": "cancel","width": "12", "height": "12"  }'></include>
+            </button>
+            <div class="popup__head">
+                <p class="popup__name">остались вопросы?</p>
+                <p class="popup__remark">Оставьте заявку и мы подробно ответим на ваши вопросы</p>
+            </div>           
+            <form class="popup__form comment-form" action=".">
+                <label class="comment-form__label">                
+                    <input class="comment-form__input required" type="text" placeholder="Иванова Елена Алексеевна">
+                    <span class="comment-form__name" name="name">ВАШЕ Имя*</span>
+                </label>
+                <label class="comment-form__label">                
+                    <input class="comment-form__input required" type="tel" placeholder="+7 (931) 001-34-34">
+                    <span class="comment-form__name" name="phone" >ВАШ ТЕЛЕФОН*</span>
+                </label>
+                <div class="comment-form__bottom">
+                    <label class="comment-form__label comment-form__label--checkbox">
+                        <input type="checkbox" name="agreed" checked>
+                        <span>Я даю согласие на обработку <a href="#" alt="персональных данных">персональных данных</a></span>
+                    </label>
+                    <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

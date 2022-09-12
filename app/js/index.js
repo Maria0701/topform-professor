@@ -1,10 +1,10 @@
-import flatpickr from 'flatpickr';
-import { Russian } from 'flatpickr/dist/l10n/ru.js';
+
 import Swiper, { Navigation, Pagination } from 'swiper';
 import { clipText } from './components/clip-text';
+import { PopupOpener } from './components/popupOpener';
 import { TabsAutomatic } from './components/tabs-auromatic';
 import { YmapsInitializer } from './components/yandex';
-
+import { phoneMask } from './components/phone-mask';
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
@@ -228,8 +228,10 @@ try {
 	console.log(e)
 }
 
-// свайпер для слайдера включено. Опции можно использовать во всех подобных свайперах
+
 try {
+	// свайпер для слайдера включено. Опции можно использовать во всех подобных свайперах
+	
 	const optionsIncluded = {
 		modules: [ Navigation],
 		slidesPerView: "auto",
@@ -381,23 +383,68 @@ try {
 
 	  	new YmapsInitializer(mapContainer, coords);
 	}
-  } catch(e) {
+} catch(e) {
 	console.log(e);
-  }
+}
 
+// обработка popup 
 try {
-	const myInput = document.querySelector(".comment-form__date");
-	const fp = flatpickr(myInput, {
-		"locale": Russian,
-		alowInput: true,
-		enableTime: false,
-		time24hr: false,
-		altFormat: `d.m.Y`,
-		dateFormat: `d.m.Y`,
-		//mode: `range`,
-		minDate: new Date(),
-		});  // flatpickr
+	const appointmentOpeners = document.querySelectorAll('[data-action="appointment"]');
+	const popupAppointmentElt = document.querySelector('[data-popup="appointment"]');
+	const questionOpeners = document.querySelectorAll('[data-action="question"]');
+	const popupQuestionElt = document.querySelector('[data-popup="question"]');
+
+	let popupInstance = null;
+
+	
+
+	// открытие popup с записью
+	if (popupAppointmentElt && appointmentOpeners.length > 0) {
+
+		const openHandler = (evt) => {
+			evt.preventDefault();
+			popupInstance = new PopupOpener({
+				openElt: evt.target, // элемент, по которому открываем попап
+				overlayClass: '[data-popup="appointment"]', // класс оверлея
+				popupClass: '.popup', //класс попапа
+				closeBtnClass: '.popup__close',
+				animationOpenClass: 'fadein', // оба класса пишем без точки, чтобы их потом не чистить
+				animationCloseClass: 'fadeout', // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
+			});
+	
+			popupInstance.open();
+		}
+		appointmentOpeners.forEach(opener => opener.addEventListener('click', openHandler));
+	}
+
+	// открытие popup с вопросом
+	if (popupQuestionElt && questionOpeners.length > 0) {
+
+		const openHandler = (evt) => {
+			evt.preventDefault();
+			popupInstance = new PopupOpener({
+				openElt: evt.target, // элемент, по которому открываем попап
+				overlayClass: '[data-popup="question"]', // класс оверлея
+				popupClass: '.popup', //класс попапа
+				closeBtnClass: '.popup__close',
+				animationOpenClass: 'fadein', // оба класса пишем без точки, чтобы их потом не чистить
+				animationCloseClass: 'fadeout', // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
+			});
+	
+			popupInstance.open();
+		}
+		questionOpeners.forEach(opener => opener.addEventListener('click', openHandler));
+	}
 
 } catch(e) {
 	console.log(e);
 }
+
+try {
+    const phoneInputs = document.querySelectorAll('[type="tel"]');
+    if (phoneInputs.length) {
+      phoneInputs.forEach(item => phoneMask(item));
+    }
+  } catch(e) {
+    console.log(e);
+  }

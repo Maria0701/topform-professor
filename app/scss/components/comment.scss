@@ -299,4 +299,15 @@
         padding-bottom: 50px;
     }
 
+    .popup__form {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 60px;
+        row-gap: 36px;
+
+        .comment-form__bottom,
+        .comment-form__label:nth-child(3) {
+            grid-column: span 2;
+        }
+    }
+
 }

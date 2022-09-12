@@ -10708,6 +10708,92 @@ var __webpack_exports__ = {};
 (() => {
 "use strict";
 
+// EXTERNAL MODULE: ./node_modules/swiper/swiper.esm.js + 90 modules
+var swiper_esm = __webpack_require__(257);
+;// CONCATENATED MODULE: ./app/js/components/clip-text.js
+var clipText = function clipText(_ref) {
+  var btnsClassName = _ref.btnsClassName,
+      parentEltClass = _ref.parentEltClass,
+      _ref$classForClipped = _ref.classForClipped,
+      classForClipped = _ref$classForClipped === void 0 ? 'clipped' : _ref$classForClipped,
+      textEltClass = _ref.textEltClass;
+  var btns = document.querySelectorAll(btnsClassName);
+  if (btns.length === 0) return;
+  var mobile = window.matchMedia("(max-width: 700px)");
+  var tablet = window.matchMedia("(min-width: 700px)");
+  var desktop = window.matchMedia("(min-width: 1000px)");
+
+  var rowsToClip = function rowsToClip() {
+    if (mobile.matches) {
+      return 12;
+    }
+
+    if (tablet.matches) {
+      return 6;
+    }
+
+    if (desktop.matches) {
+      return 4;
+    }
+  };
+
+  var clipHandler = function clipHandler(evt) {
+    var parent = evt.target.closest(parentEltClass);
+    var textElt = parent.querySelector(textEltClass);
+    var lineHeight = getComputedStyle(textElt).lineHeight;
+    textElt.style.maxHeight = "".concat(parseInt(lineHeight) * rowsToClip(), "px");
+    parent.classList.toggle(classForClipped);
+    var flag = parent.classList.contains(classForClipped);
+    evt.target.innerHTML = flag ? 'Читать полностью' : 'Свернуть';
+    textElt.style.maxHeight = flag ? textElt.style.maxHeight : '4000px';
+  };
+
+  var clipTextInit = function clipTextInit(item) {
+    var parent = item.closest(parentEltClass);
+    var textElt = parent.querySelector(textEltClass);
+    var lineHeight = getComputedStyle(textElt).lineHeight;
+    var textEltHeight = getComputedStyle(textElt).height;
+    var maxheight = parseInt(lineHeight) * rowsToClip();
+
+    if (parseInt(textEltHeight.substring(0, textEltHeight.length - 2)) <= maxheight) {
+      item.style.display = 'none';
+      return;
+    } else {
+      textElt.style.maxHeight = "".concat(maxheight, "px");
+      parent.classList.add(classForClipped);
+      item.addEventListener('click', clipHandler);
+    }
+  };
+
+  btns.forEach(function (btn) {
+    clipTextInit(btn);
+  });
+};
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
 ;// CONCATENATED MODULE: ./node_modules/flatpickr/dist/esm/types/options.js
 var HOOKS = [
     "onChange",
@@ -13275,92 +13361,139 @@ if (typeof window !== "undefined") {
 
 // EXTERNAL MODULE: ./node_modules/flatpickr/dist/l10n/ru.js
 var ru = __webpack_require__(809);
-// EXTERNAL MODULE: ./node_modules/swiper/swiper.esm.js + 90 modules
-var swiper_esm = __webpack_require__(257);
-;// CONCATENATED MODULE: ./app/js/components/clip-text.js
-var clipText = function clipText(_ref) {
-  var btnsClassName = _ref.btnsClassName,
-      parentEltClass = _ref.parentEltClass,
-      _ref$classForClipped = _ref.classForClipped,
-      classForClipped = _ref$classForClipped === void 0 ? 'clipped' : _ref$classForClipped,
-      textEltClass = _ref.textEltClass;
-  var btns = document.querySelectorAll(btnsClassName);
-  if (btns.length === 0) return;
-  var mobile = window.matchMedia("(max-width: 700px)");
-  var tablet = window.matchMedia("(min-width: 700px)");
-  var desktop = window.matchMedia("(min-width: 1000px)");
+;// CONCATENATED MODULE: ./app/js/components/popupOpener.js
 
-  var rowsToClip = function rowsToClip() {
-    if (mobile.matches) {
-      return 12;
-    }
 
-    if (tablet.matches) {
-      return 6;
-    }
 
-    if (desktop.matches) {
-      return 4;
-    }
-  };
 
-  var clipHandler = function clipHandler(evt) {
-    var parent = evt.target.closest(parentEltClass);
-    var textElt = parent.querySelector(textEltClass);
-    var lineHeight = getComputedStyle(textElt).lineHeight;
-    textElt.style.maxHeight = "".concat(parseInt(lineHeight) * rowsToClip(), "px");
-    parent.classList.toggle(classForClipped);
-    var flag = parent.classList.contains(classForClipped);
-    evt.target.innerHTML = flag ? 'Читать полностью' : 'Свернуть';
-    textElt.style.maxHeight = flag ? textElt.style.maxHeight : '4000px';
-  };
+var PopupOpener = /*#__PURE__*/function () {
+  function PopupOpener(_ref) {
+    var openElt = _ref.openElt,
+        overlayClass = _ref.overlayClass,
+        popupClass = _ref.popupClass,
+        closeBtnClass = _ref.closeBtnClass,
+        animationOpenClass = _ref.animationOpenClass,
+        animationCloseClass = _ref.animationCloseClass;
 
-  var clipTextInit = function clipTextInit(item) {
-    var parent = item.closest(parentEltClass);
-    var textElt = parent.querySelector(textEltClass);
-    var lineHeight = getComputedStyle(textElt).lineHeight;
-    var textEltHeight = getComputedStyle(textElt).height;
-    var maxheight = parseInt(lineHeight) * rowsToClip();
+    _classCallCheck(this, PopupOpener);
 
-    if (parseInt(textEltHeight.substring(0, textEltHeight.length - 2)) <= maxheight) {
-      item.style.display = 'none';
-      return;
-    } else {
-      textElt.style.maxHeight = "".concat(maxheight, "px");
-      parent.classList.add(classForClipped);
-      item.addEventListener('click', clipHandler);
-    }
-  };
+    this.openElt = openElt; // кнопка, по которой открывается попап
 
-  btns.forEach(function (btn) {
-    clipTextInit(btn);
-  });
-};
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
+    this.overlayElt = document.querySelector(overlayClass); // выбираем элемент оверлея. В этом случае сам попап находится внутри элемента
+
+    this.popupElt = this.overlayElt.querySelector(popupClass); // сам элемент popup. В этом случае можно его считаю от оверлея. Если оверлей отдельно от попапа - этот элемент переписать
+
+    this.closeBtn = this.popupElt.querySelector(closeBtnClass); // находим кнопку закрытия
+
+    this.dateElt = this.popupElt.querySelector('[data-date="date"]');
+    this.flatpickr = null;
+    this.animationOpenClass = animationOpenClass;
+    this.animationCloseClass = animationCloseClass;
+    this.closeHandler = this.closeHandler.bind(this);
+    this.closeOverlayHandler = this.closeOverlayHandler.bind(this);
+    this.btnEnterCloseHandler = this.keyDownHandler.bind(this);
+    this.keyDownHandler = this.keyDownHandler.bind(this);
   }
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
 
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  Object.defineProperty(Constructor, "prototype", {
-    writable: false
-  });
-  return Constructor;
-}
+  _createClass(PopupOpener, [{
+    key: "open",
+    value: function open() {
+      if (this.animationOpenClass) {
+        this.overlayElt.classList.add(this.animationOpenClass);
+        this.popupElt.classList.add(this.animationOpenClass);
+        this.overlayElt.addEventListener('animationend', this.animationEndHandler);
+        this.popupElt.addEventListener('animationend', this.animationEndHandler);
+      }
+
+      this.overlayElt.classList.add('opened');
+      this.popupElt.classList.add('opened');
+      if (this.dateElt) this.initDate(this.dateElt);
+      this.setCloseListeners();
+    }
+  }, {
+    key: "setCloseListeners",
+    value: function setCloseListeners() {
+      this.overlayElt.addEventListener('click', this.closeOverlayHandler);
+      this.closeBtn.addEventListener('click', this.closeHandler);
+      document.addEventListener('keydown', this.keyDownHandler);
+      this.closeBtn.addEventListener('keydown', this.btnEnterCloseHandler);
+    }
+  }, {
+    key: "closeHandler",
+    value: function closeHandler() {
+      this.close();
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      if (this.animationCloseClass) {
+        this.overlayElt.classList.add(this.animationCloseClass);
+        this.popupElt.classList.add(this.animationCloseClass);
+        this.overlayElt.addEventListener('animationend', this.animationEndHandler);
+        this.popupElt.addEventListener('animationend', this.animationEndHandler);
+      }
+
+      this.popupElt.classList.remove('opened');
+      this.overlayElt.classList.remove('opened');
+      this.overlayElt.removeEventListener('click', this.closeOverlayHandler);
+      this.closeBtn.removeEventListener('click', this.closeHandler);
+      document.removeEventListener('keydown', this.keyDownHandler);
+      this.closeBtn.removeEventListener('keydown', this.btnEnterCloseHandler);
+      if (this.flatpickr) this.flatpickr.destroy();
+    }
+  }, {
+    key: "closeOverlayHandler",
+    value: function closeOverlayHandler(evt) {
+      if (this.popupElt.contains(evt.target)) return;
+      this.closeHandler();
+    }
+  }, {
+    key: "keyDownHandler",
+    value: function keyDownHandler(evt) {
+      if (evt.key === 'Escape') {
+        this.closeHandler();
+      }
+    }
+  }, {
+    key: "btnEnterCloseHandler",
+    value: function btnEnterCloseHandler(evt) {
+      if (evt.key === 'Enter') {
+        this.closHandler();
+      }
+    }
+  }, {
+    key: "initDate",
+    value: function initDate(elt) {
+      if (!this.dateElt) return;
+      this.flatpickr = esm(elt, {
+        "locale": ru.Russian,
+        alowInput: true,
+        enableTime: false,
+        time24hr: false,
+        altFormat: "d.m.Y",
+        dateFormat: "d.m.Y",
+        //mode: `range`,
+        minDate: new Date()
+      }); // flatpickr    
+    }
+  }, {
+    key: "animationEndHandler",
+    value: function animationEndHandler(evt) {
+      var animationName = evt.animationName;
+      evt.target.classList.remove(animationName);
+
+      if (evt.target === this.overlayElt) {
+        this.overlayElt.removeEventListener('animationend', this.animationEndHandler);
+      }
+
+      if (evt.target === this.popupElt) {
+        this.popupElt.removeEventListener('animationend', this.animationEndHandler);
+      }
+    }
+  }]);
+
+  return PopupOpener;
+}();
 ;// CONCATENATED MODULE: ./app/js/components/tabs-auromatic.js
 
 
@@ -13651,6 +13784,88 @@ var YmapsInitializer = /*#__PURE__*/function () {
 
   return YmapsInitializer;
 }();
+;// CONCATENATED MODULE: ./app/js/components/phone-mask.js
+function phoneMask(elt) {
+  var getInputNumbersValue = function getInputNumbersValue(input) {
+    // Return stripped input value — just numbers
+    return input.value.replace(/\D/g, '');
+  };
+
+  var onPhonePaste = function onPhonePaste(e) {
+    var input = e.target;
+    var inputNumbersValue = getInputNumbersValue(input);
+    var pasted = e.clipboardData || window.clipboardData;
+
+    if (pasted) {
+      var pastedText = pasted.getData('Text');
+
+      if (/\D/g.test(pastedText)) {
+        input.value = inputNumbersValue;
+        return;
+      }
+    }
+  };
+
+  var onPhoneInput = function onPhoneInput(e) {
+    var input = e.target,
+        inputNumbersValue = getInputNumbersValue(input),
+        selectionStart = input.selectionStart,
+        formattedInputValue = '';
+
+    if (!inputNumbersValue) {
+      return input.value = '';
+    }
+
+    if (input.value.length != selectionStart) {
+      // Editing in the middle of input, not last symbol
+      if (e.data && /\D/g.test(e.data)) {
+        // Attempt to input non-numeric symbol
+        input.value = inputNumbersValue;
+      }
+
+      return;
+    }
+
+    if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
+      if (inputNumbersValue[0] == '9') inputNumbersValue = '7' + inputNumbersValue;
+      var firstSymbols = inputNumbersValue[0] == '8' ? '+7' : '+7';
+      formattedInputValue = input.value = firstSymbols + ' ';
+
+      if (inputNumbersValue.length > 1) {
+        formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
+      }
+
+      if (inputNumbersValue.length >= 5) {
+        formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+      }
+
+      if (inputNumbersValue.length >= 8) {
+        formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
+      }
+
+      if (inputNumbersValue.length >= 10) {
+        formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
+      }
+    } else {
+      formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
+    }
+
+    input.value = formattedInputValue;
+  };
+
+  var onPhoneKeyDown = function onPhoneKeyDown(e) {
+    // Clear input after remove last symbol
+    var inputValue = e.target.value.replace(/\D/g, '');
+
+    if (e.keyCode == 8 && inputValue.length == 1) {
+      e.target.value = '';
+    }
+  };
+
+  elt.addEventListener('keydown', onPhoneKeyDown);
+  elt.addEventListener('input', onPhoneInput, false);
+  elt.addEventListener('paste', onPhonePaste, false);
+}
 ;// CONCATENATED MODULE: ./app/js/index.js
 
 
@@ -13878,10 +14093,10 @@ try {
   });
 } catch (e) {
   console.log(e);
-} // свайпер для слайдера включено. Опции можно использовать во всех подобных свайперах
-
+}
 
 try {
+  // свайпер для слайдера включено. Опции можно использовать во всех подобных свайперах
   var optionsIncluded = {
     modules: [swiper_esm/* Navigation */.W_],
     slidesPerView: "auto",
@@ -14032,20 +14247,76 @@ try {
   }
 } catch (e) {
   console.log(e);
+} // обработка popup 
+
+
+try {
+  var appointmentOpeners = document.querySelectorAll('[data-action="appointment"]');
+  var popupAppointmentElt = document.querySelector('[data-popup="appointment"]');
+  var questionOpeners = document.querySelectorAll('[data-action="question"]');
+  var popupQuestionElt = document.querySelector('[data-popup="question"]');
+  var popupInstance = null; // открытие popup с записью
+
+  if (popupAppointmentElt && appointmentOpeners.length > 0) {
+    var openHandler = function openHandler(evt) {
+      evt.preventDefault();
+      popupInstance = new PopupOpener({
+        openElt: evt.target,
+        // элемент, по которому открываем попап
+        overlayClass: '[data-popup="appointment"]',
+        // класс оверлея
+        popupClass: '.popup',
+        //класс попапа
+        closeBtnClass: '.popup__close',
+        animationOpenClass: 'fadein',
+        // оба класса пишем без точки, чтобы их потом не чистить
+        animationCloseClass: 'fadeout' // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
+
+      });
+      popupInstance.open();
+    };
+
+    appointmentOpeners.forEach(function (opener) {
+      return opener.addEventListener('click', openHandler);
+    });
+  } // открытие popup с вопросом
+
+
+  if (popupQuestionElt && questionOpeners.length > 0) {
+    var _openHandler = function _openHandler(evt) {
+      evt.preventDefault();
+      popupInstance = new PopupOpener({
+        openElt: evt.target,
+        // элемент, по которому открываем попап
+        overlayClass: '[data-popup="question"]',
+        // класс оверлея
+        popupClass: '.popup',
+        //класс попапа
+        closeBtnClass: '.popup__close',
+        animationOpenClass: 'fadein',
+        // оба класса пишем без точки, чтобы их потом не чистить
+        animationCloseClass: 'fadeout' // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
+
+      });
+      popupInstance.open();
+    };
+
+    questionOpeners.forEach(function (opener) {
+      return opener.addEventListener('click', _openHandler);
+    });
+  }
+} catch (e) {
+  console.log(e);
 }
 
 try {
-  var myInput = document.querySelector(".comment-form__date");
-  var fp = esm(myInput, {
-    "locale": ru.Russian,
-    alowInput: true,
-    enableTime: false,
-    time24hr: false,
-    altFormat: "d.m.Y",
-    dateFormat: "d.m.Y",
-    //mode: `range`,
-    minDate: new Date()
-  }); // flatpickr
+  var phoneInputs = document.querySelectorAll('[type="tel"]');
+
+  if (phoneInputs.length) {
+    phoneInputs.forEach(function (item) {
+      return phoneMask(item);
+    });
+  }
 } catch (e) {
   console.log(e);
 }
