@@ -90,6 +90,14 @@
 
 .popup__remark {
     padding-top: 12px;
+
+    p {
+        margin: 0;
+    }
+
+    p + .popup__phones {
+        padding-top: 12px;
+    }
 }
 
 .popup--success .popup__remark {
@@ -100,6 +108,17 @@
     display: flex;
     justify-content: center;
     margin-bottom: 48px;
+}
+
+.popup__phones {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    justify-content: center;
+    gap: 5px;
+
+    .phone-link {
+        color: var(--green);
+    }
 }
 
 @media (min-width: $small) {

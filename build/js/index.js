@@ -13869,8 +13869,10 @@ function phoneMask(elt) {
   elt.addEventListener('paste', onPhonePaste, false);
 }
 ;// CONCATENATED MODULE: ./app/js/components/success-template.js
-var successTemplate = function successTemplate(success) {
-  return "\n    <div class=\"popup-overlay opened\" data-popup=\"".concat(success, "\">\n    <section class=\"popup popup--success opened\">\n        <div class=\"popup__wrapper\">\n            <button class=\"popup__close js-close\">\n            <svg width=\"12\" height=\"12\">\n                <use xlink:href=\"img/sprite.svg#cancel\"></use>\n            </svg>\n            </button>\n            <div class=\"popup__head\">\n                <div class=\"popup__svg\">\n                <svg width=\"140\" height=\"140\">\n                    <use xlink:href=\"img/sprite.svg#").concat(success, "\"></use>\n                </svg>\n                </div>\n                <p class=\"popup__name\">\u0437\u0430\u044F\u0432\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430!</p>\n                <p class=\"popup__remark\">\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u043E\u0431\u0440\u0430\u0449\u0435\u043D\u0438\u0435.\n                    <br/>\u041C\u044B \u0441\u0432\u044F\u0436\u0435\u043C\u0441\u044F \u0441 \u0432\u0430\u043C\u0438 \u0434\u043B\u044F \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u044F \u0437\u0430\u043F\u0438\u0441\u0438</p>\n            </div>           \n            <button class=\"comment-form__btn btn btn--primary js-close\">\u0425\u043E\u0440\u043E\u0448\u043E</button>\n        </div>\n    </section>\n</div>\n    ");
+var successTemplate = function successTemplate(successMessage) {
+  var successText = successMessage === 'success' ? "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u043E\u0431\u0440\u0430\u0449\u0435\u043D\u0438\u0435.\n        <br/>\u041C\u044B \u0441\u0432\u044F\u0436\u0435\u043C\u0441\u044F \u0441 \u0432\u0430\u043C\u0438 \u0434\u043B\u044F \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u044F \u0437\u0430\u043F\u0438\u0441\u0438" : "<p>\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u0441\u0432\u044F\u0436\u0438\u0442\u0435\u0441\u044C \u0441 \u043D\u0438\u043C\u0438 \u043F\u043E \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430\u043C</p>\n            <div class=\"popup__phones\">\n\t\t\t\t<a href=\"tel:+78122727024\" title=\"\u043F\u043E\u0437\u0432\u043E\u043D\u0438\u0442\u044C \u0432 \u043A\u043B\u0438\u043D\u0438\u043A\u0443\" class=\"phone-link\">+7 (812) 272-70-24</a>\n\t\t\t\t<a href=\"tel:+78122723734\" title=\"\u043F\u043E\u0437\u0432\u043E\u043D\u0438\u0442\u044C \u0432 \u043A\u043B\u0438\u043D\u0438\u043A\u0443\" class=\"phone-link\">+7 (812) 272-37-34</a>\n\t\t\t\t<a href=\"tel:+78122758696\" title=\"\u043F\u043E\u0437\u0432\u043E\u043D\u0438\u0442\u044C \u0432 \u043A\u043B\u0438\u043D\u0438\u043A\u0443\" class=\"phone-link\">+7 (812) 275-86-96</a>\n            </div>\n        ";
+  var successName = successMessage === 'success' ? "\u0437\u0430\u044F\u0432\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430!" : "\u043E\u0448\u0438\u0431\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043A\u0438!";
+  return "\n    <div class=\"popup-overlay opened\" data-popup=\"".concat(successMessage, "\">\n    <section class=\"popup popup--success opened\">\n        <div class=\"popup__wrapper\">\n            <button class=\"popup__close js-close\">\n            <svg width=\"12\" height=\"12\">\n                <use xlink:href=\"img/sprite.svg#cancel\"></use>\n            </svg>\n            </button>\n            <div class=\"popup__head\">\n                <div class=\"popup__svg\">\n                <svg width=\"140\" height=\"140\">\n                    <use xlink:href=\"img/sprite.svg#").concat(successMessage, "\"></use>\n                </svg>\n                </div>\n                <p class=\"popup__name\">").concat(successName, "</p>\n                <div class=\"popup__remark\">").concat(successText, "</div>\n            </div>           \n            <button class=\"comment-form__btn btn btn--primary js-close\">\u0425\u043E\u0440\u043E\u0448\u043E</button>\n        </div>\n    </section>\n</div>\n    ");
 };
 ;// CONCATENATED MODULE: ./app/js/index.js
 
@@ -14270,21 +14272,17 @@ try {
       method: 'POST',
       body: formData
     }).then(function (response) {
-      console.log(response);
-
       if (response.ok) {
         // если ответ от сервера 200
         form.reset(); // очищаем форму
 
         if (popupInstance) popupInstance.close(); // если это был попап, том мы его закрываем и чистим обработчики
-        // создаем попап с саксессом в конце боди
-        //document.querySelector('body').insertAdjacentHTML('beforeerd', successTemp);
+        // создаем попап с саксессом в конце боди					
 
         setTimeout(function () {
           var successTemp = successTemplate('success');
           document.querySelector('body').insertAdjacentHTML('beforeend', successTemp);
           popupInstance = new PopupOpener({
-            //openElt: evt.target, // элемент, по которому открываем попап
             overlayClass: '[data-popup="success"]',
             // класс оверлея
             popupClass: '.popup',
@@ -14297,8 +14295,25 @@ try {
           });
           popupInstance.open();
         }, 0);
-      } // по идее здесь должен быть вариант обработки, если ответ сервера не 200
+      } else {
+        setTimeout(function () {
+          // добавляем форму с ошибкой в конец боди
+          var successTemp = successTemplate('failure');
+          document.querySelector('body').insertAdjacentHTML('beforeend', successTemp);
+          popupInstance = new PopupOpener({
+            overlayClass: '[data-popup="failure"]',
+            // класс оверлея
+            popupClass: '.popup',
+            //класс попапа
+            closeBtnClass: '.js-close',
+            animationOpenClass: 'fadein',
+            // оба класса пишем без точки, чтобы их потом не чистить
+            animationCloseClass: 'fadeout' // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
 
+          });
+          popupInstance.open();
+        }, 0);
+      }
     })["catch"](function (err) {
       // любой обработчик ошибок на ваше усмотрение
       console.log(err);

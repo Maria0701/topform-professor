@@ -404,19 +404,14 @@ try {
 			body: formData,
 		})
 		.then(response => {
-			console.log(response);
 			if (response.ok) { // если ответ от сервера 200
 				form.reset(); // очищаем форму
 				if (popupInstance) popupInstance.close(); // если это был попап, том мы его закрываем и чистим обработчики
-				// создаем попап с саксессом в конце боди
-				
-
-				//document.querySelector('body').insertAdjacentHTML('beforeerd', successTemp);
+				// создаем попап с саксессом в конце боди					
 				setTimeout(() => {
 					const successTemp = successTemplate('success');
 					document.querySelector('body').insertAdjacentHTML('beforeend', successTemp);
-					popupInstance = new PopupOpener({
-						//openElt: evt.target, // элемент, по которому открываем попап
+					popupInstance = new PopupOpener({						
 						overlayClass: '[data-popup="success"]', // класс оверлея
 						popupClass: '.popup', //класс попапа
 						closeBtnClass: '.js-close',
@@ -425,8 +420,21 @@ try {
 					});
 					popupInstance.open();
 				},0);				
-			}
-			// по идее здесь должен быть вариант обработки, если ответ сервера не 200
+			} else {
+				setTimeout(() => {
+					// добавляем форму с ошибкой в конец боди
+					const successTemp = successTemplate('failure');
+					document.querySelector('body').insertAdjacentHTML('beforeend', successTemp);
+					popupInstance = new PopupOpener({
+						overlayClass: '[data-popup="failure"]', // класс оверлея
+						popupClass: '.popup', //класс попапа
+						closeBtnClass: '.js-close',
+						animationOpenClass: 'fadein', // оба класса пишем без точки, чтобы их потом не чистить
+						animationCloseClass: 'fadeout', // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
+					});
+					popupInstance.open();
+				},0);	
+			}			
 		})
 		.catch(err => {
 			// любой обработчик ошибок на ваше усмотрение

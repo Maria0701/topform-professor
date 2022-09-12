@@ -5077,6 +5077,12 @@ button {
 .popup__remark {
   padding-top: 12px;
 }
+.popup__remark p {
+  margin: 0;
+}
+.popup__remark p + .popup__phones {
+  padding-top: 12px;
+}
 
 .popup--success .popup__remark {
   text-align: center;
@@ -5086,6 +5092,16 @@ button {
   display: flex;
   justify-content: center;
   margin-bottom: 48px;
+}
+
+.popup__phones {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: center;
+  gap: 5px;
+}
+.popup__phones .phone-link {
+  color: var(--green);
 }
 
 @media (min-width: 740px) {
