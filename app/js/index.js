@@ -5,6 +5,7 @@ import { PopupOpener } from './components/popupOpener';
 import { TabsAutomatic } from './components/tabs-auromatic';
 import { YmapsInitializer } from './components/yandex';
 import { phoneMask } from './components/phone-mask';
+import { successTemplate } from './components/success-template';
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
@@ -393,10 +394,67 @@ try {
 	const popupAppointmentElt = document.querySelector('[data-popup="appointment"]');
 	const questionOpeners = document.querySelectorAll('[data-action="question"]');
 	const popupQuestionElt = document.querySelector('[data-popup="question"]');
-
+	const forms = document.querySelectorAll('.comment-form');
 	let popupInstance = null;
 
-	
+	// обработчик отправки формы на сервер
+	const ajaxSend = (url, formData, form) => {
+		return fetch(url, {
+			method: 'POST',
+			body: formData,
+		})
+		.then(response => {
+			console.log(response);
+			if (response.ok) { // если ответ от сервера 200
+				form.reset(); // очищаем форму
+				if (popupInstance) popupInstance.close(); // если это был попап, том мы его закрываем и чистим обработчики
+				// создаем попап с саксессом в конце боди
+				
+
+				//document.querySelector('body').insertAdjacentHTML('beforeerd', successTemp);
+				setTimeout(() => {
+					const successTemp = successTemplate('success');
+					document.querySelector('body').insertAdjacentHTML('beforeend', successTemp);
+					popupInstance = new PopupOpener({
+						//openElt: evt.target, // элемент, по которому открываем попап
+						overlayClass: '[data-popup="success"]', // класс оверлея
+						popupClass: '.popup', //класс попапа
+						closeBtnClass: '.js-close',
+						animationOpenClass: 'fadein', // оба класса пишем без точки, чтобы их потом не чистить
+						animationCloseClass: 'fadeout', // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
+					});
+					popupInstance.open();
+				},0);				
+			}
+			// по идее здесь должен быть вариант обработки, если ответ сервера не 200
+		})
+		.catch(err => {
+			// любой обработчик ошибок на ваше усмотрение
+			console.log(err);
+		})
+	}
+
+	const formSubmithandler = (evt) => {
+		evt.preventDefault();
+		const form = evt.target;
+
+		let formData = new FormData(form);
+		ajaxSend('https://jsonplaceholder.typicode.com/posts', formData, form)
+			.then((response) => {
+
+			})
+			.catch((err) => {
+				/* логика ошибки */
+				console.log(err);
+			})
+			.finally(() => {
+
+			})
+	};
+
+	if (forms.length > 0) {
+		forms.forEach(form => form.addEventListener('submit', formSubmithandler));
+	};
 
 	// открытие popup с записью
 	if (popupAppointmentElt && appointmentOpeners.length > 0) {
@@ -407,7 +465,7 @@ try {
 				openElt: evt.target, // элемент, по которому открываем попап
 				overlayClass: '[data-popup="appointment"]', // класс оверлея
 				popupClass: '.popup', //класс попапа
-				closeBtnClass: '.popup__close',
+				closeBtnClass: '.js-close',
 				animationOpenClass: 'fadein', // оба класса пишем без точки, чтобы их потом не чистить
 				animationCloseClass: 'fadeout', // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
 			});
@@ -426,7 +484,7 @@ try {
 				openElt: evt.target, // элемент, по которому открываем попап
 				overlayClass: '[data-popup="question"]', // класс оверлея
 				popupClass: '.popup', //класс попапа
-				closeBtnClass: '.popup__close',
+				closeBtnClass: '.js-close',
 				animationOpenClass: 'fadein', // оба класса пишем без точки, чтобы их потом не чистить
 				animationCloseClass: 'fadeout', // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
 			});
@@ -445,6 +503,7 @@ try {
     if (phoneInputs.length) {
       phoneInputs.forEach(item => phoneMask(item));
     }
-  } catch(e) {
+} catch(e) {
     console.log(e);
-  }
+}
+

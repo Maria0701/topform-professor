@@ -5040,6 +5040,13 @@ button {
   border: 1px solid var(--dark-gray);
 }
 
+.popup--success .popup__wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: center;
+  justify-items: center;
+}
+
 .popup__close {
   position: absolute;
   top: -48px;
@@ -5071,6 +5078,16 @@ button {
   padding-top: 12px;
 }
 
+.popup--success .popup__remark {
+  text-align: center;
+}
+
+.popup__svg {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
 @media (min-width: 740px) {
   .popup__wrapper {
     padding-left: 50px;
@@ -5090,6 +5107,10 @@ button {
   .popup__close {
     top: -40px;
     right: -40px;
+  }
+
+  .popup--success .comment-form__btn {
+    width: 132px;
   }
 }
 .flatpickr-calendar {

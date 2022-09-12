@@ -22,6 +22,8 @@ export class PopupOpener {
         this.closeOverlayHandler = this.closeOverlayHandler.bind(this);
         this.btnEnterCloseHandler = this.keyDownHandler.bind(this);
         this. keyDownHandler = this.keyDownHandler.bind(this);
+
+        console.log(this.overlayElt);
     }
 
     open() {
@@ -31,10 +33,10 @@ export class PopupOpener {
             this.overlayElt.addEventListener('animationend', this.animationEndHandler);
             this.popupElt.addEventListener('animationend', this.animationEndHandler);
         }
-
-
+        
         this.overlayElt.classList.add('opened');        
         this.popupElt.classList.add('opened');
+        console.log(this.overlayElt);
         if (this.dateElt) this.initDate(this.dateElt);
         this.setCloseListeners();
     }
@@ -57,7 +59,7 @@ export class PopupOpener {
             this.overlayElt.addEventListener('animationend', this.animationEndHandler);
             this.popupElt.addEventListener('animationend', this.animationEndHandler);
         }
-
+        if (this.flatpickr) this.flatpickr.destroy();
         this.popupElt.classList.remove('opened');
         this.overlayElt.classList.remove('opened');
         this.overlayElt.removeEventListener('click', this.closeOverlayHandler);
@@ -65,7 +67,7 @@ export class PopupOpener {
         document.removeEventListener('keydown', this.keyDownHandler);
         this.closeBtn.removeEventListener('keydown', this.btnEnterCloseHandler);
 
-        if (this.flatpickr) this.flatpickr.destroy();
+        
     }
 
     closeOverlayHandler(evt) {

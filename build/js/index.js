@@ -13393,6 +13393,7 @@ var PopupOpener = /*#__PURE__*/function () {
     this.closeOverlayHandler = this.closeOverlayHandler.bind(this);
     this.btnEnterCloseHandler = this.keyDownHandler.bind(this);
     this.keyDownHandler = this.keyDownHandler.bind(this);
+    console.log(this.overlayElt);
   }
 
   _createClass(PopupOpener, [{
@@ -13407,6 +13408,7 @@ var PopupOpener = /*#__PURE__*/function () {
 
       this.overlayElt.classList.add('opened');
       this.popupElt.classList.add('opened');
+      console.log(this.overlayElt);
       if (this.dateElt) this.initDate(this.dateElt);
       this.setCloseListeners();
     }
@@ -13433,13 +13435,13 @@ var PopupOpener = /*#__PURE__*/function () {
         this.popupElt.addEventListener('animationend', this.animationEndHandler);
       }
 
+      if (this.flatpickr) this.flatpickr.destroy();
       this.popupElt.classList.remove('opened');
       this.overlayElt.classList.remove('opened');
       this.overlayElt.removeEventListener('click', this.closeOverlayHandler);
       this.closeBtn.removeEventListener('click', this.closeHandler);
       document.removeEventListener('keydown', this.keyDownHandler);
       this.closeBtn.removeEventListener('keydown', this.btnEnterCloseHandler);
-      if (this.flatpickr) this.flatpickr.destroy();
     }
   }, {
     key: "closeOverlayHandler",
@@ -13866,7 +13868,12 @@ function phoneMask(elt) {
   elt.addEventListener('input', onPhoneInput, false);
   elt.addEventListener('paste', onPhonePaste, false);
 }
+;// CONCATENATED MODULE: ./app/js/components/success-template.js
+var successTemplate = function successTemplate(success) {
+  return "\n    <div class=\"popup-overlay opened\" data-popup=\"".concat(success, "\">\n    <section class=\"popup popup--success opened\">\n        <div class=\"popup__wrapper\">\n            <button class=\"popup__close js-close\">\n            <svg width=\"12\" height=\"12\">\n                <use xlink:href=\"img/sprite.svg#cancel\"></use>\n            </svg>\n            </button>\n            <div class=\"popup__head\">\n                <div class=\"popup__svg\">\n                <svg width=\"140\" height=\"140\">\n                    <use xlink:href=\"img/sprite.svg#").concat(success, "\"></use>\n                </svg>\n                </div>\n                <p class=\"popup__name\">\u0437\u0430\u044F\u0432\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430!</p>\n                <p class=\"popup__remark\">\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u043E\u0431\u0440\u0430\u0449\u0435\u043D\u0438\u0435.\n                    <br/>\u041C\u044B \u0441\u0432\u044F\u0436\u0435\u043C\u0441\u044F \u0441 \u0432\u0430\u043C\u0438 \u0434\u043B\u044F \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u044F \u0437\u0430\u043F\u0438\u0441\u0438</p>\n            </div>           \n            <button class=\"comment-form__btn btn btn--primary js-close\">\u0425\u043E\u0440\u043E\u0448\u043E</button>\n        </div>\n    </section>\n</div>\n    ");
+};
 ;// CONCATENATED MODULE: ./app/js/index.js
+
 
 
 
@@ -14255,7 +14262,66 @@ try {
   var popupAppointmentElt = document.querySelector('[data-popup="appointment"]');
   var questionOpeners = document.querySelectorAll('[data-action="question"]');
   var popupQuestionElt = document.querySelector('[data-popup="question"]');
-  var popupInstance = null; // открытие popup с записью
+  var js_forms = document.querySelectorAll('.comment-form');
+  var popupInstance = null; // обработчик отправки формы на сервер
+
+  var ajaxSend = function ajaxSend(url, formData, form) {
+    return fetch(url, {
+      method: 'POST',
+      body: formData
+    }).then(function (response) {
+      console.log(response);
+
+      if (response.ok) {
+        // если ответ от сервера 200
+        form.reset(); // очищаем форму
+
+        if (popupInstance) popupInstance.close(); // если это был попап, том мы его закрываем и чистим обработчики
+        // создаем попап с саксессом в конце боди
+        //document.querySelector('body').insertAdjacentHTML('beforeerd', successTemp);
+
+        setTimeout(function () {
+          var successTemp = successTemplate('success');
+          document.querySelector('body').insertAdjacentHTML('beforeend', successTemp);
+          popupInstance = new PopupOpener({
+            //openElt: evt.target, // элемент, по которому открываем попап
+            overlayClass: '[data-popup="success"]',
+            // класс оверлея
+            popupClass: '.popup',
+            //класс попапа
+            closeBtnClass: '.js-close',
+            animationOpenClass: 'fadein',
+            // оба класса пишем без точки, чтобы их потом не чистить
+            animationCloseClass: 'fadeout' // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
+
+          });
+          popupInstance.open();
+        }, 0);
+      } // по идее здесь должен быть вариант обработки, если ответ сервера не 200
+
+    })["catch"](function (err) {
+      // любой обработчик ошибок на ваше усмотрение
+      console.log(err);
+    });
+  };
+
+  var formSubmithandler = function formSubmithandler(evt) {
+    evt.preventDefault();
+    var form = evt.target;
+    var formData = new FormData(form);
+    ajaxSend('https://jsonplaceholder.typicode.com/posts', formData, form).then(function (response) {})["catch"](function (err) {
+      /* логика ошибки */
+      console.log(err);
+    })["finally"](function () {});
+  };
+
+  if (js_forms.length > 0) {
+    js_forms.forEach(function (form) {
+      return form.addEventListener('submit', formSubmithandler);
+    });
+  }
+
+  ; // открытие popup с записью
 
   if (popupAppointmentElt && appointmentOpeners.length > 0) {
     var openHandler = function openHandler(evt) {
@@ -14267,7 +14333,7 @@ try {
         // класс оверлея
         popupClass: '.popup',
         //класс попапа
-        closeBtnClass: '.popup__close',
+        closeBtnClass: '.js-close',
         animationOpenClass: 'fadein',
         // оба класса пишем без точки, чтобы их потом не чистить
         animationCloseClass: 'fadeout' // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
@@ -14292,7 +14358,7 @@ try {
         // класс оверлея
         popupClass: '.popup',
         //класс попапа
-        closeBtnClass: '.popup__close',
+        closeBtnClass: '.js-close',
         animationOpenClass: 'fadein',
         // оба класса пишем без точки, чтобы их потом не чистить
         animationCloseClass: 'fadeout' // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
