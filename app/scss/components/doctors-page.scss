@@ -1,14 +1,33 @@
-.doctors-page__lists {
+.doctors-page {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    row-gap: 36px;
+    padding-bottom: 50px;
 }
 
 .doctors-page__list {
-    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    column-gap: 16px;
+    row-gap: 24px;
+}
 
-    &:last-child {
-        margin-bottom: 0;
+@media (min-width: $small) {
+    .doctors-page {
+        column-gap: 40px;
+        row-gap: 50px;
+    }
+
+    .doctors-page__list {
+        grid-template-columns: repeat(3,minmax(0,1fr));
+
     }
 }
 
-.doctors-page__search {
-    margin-bottom: 36px;
+@media (min-width: 1000px) {
+    .doctors-page__list {
+        grid-template-columns: repeat(4,minmax(0,1fr));
+        column-gap: 53px;
+        row-gap: 51px;
+    }
 }

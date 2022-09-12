@@ -434,21 +434,20 @@
     <div class="doctors-page__search search-block">
     <p class="search-block__name">НАПРАВЛЕНИЕ</p>
     <label class="search-block__label">
-        <input type="search" class="search-block__input" placeholder="Выберите направление">
+        <select class="search-block__select" name="specialist">
+            <option value="0">Выберите специалиста/услугу</option>
+            <option value="1">Диабетолог</option>
+            <option value="2">Гинеколог-эндокринолог</option>
+            <option value="3">Дерматолог-эндокринолог</option>
+            <option value="4">Диабетолог</option>
+            <option value="5">Гастроэнтеролог</option>
+        </select>
     </label>
 </div>
 
-    <div class="doctors-page__lists">
-        <section class="doctors-page__list doctors doctors--nobg">
-    <div class="doctors__container container">
-        <div class="h2__wrapper">
-            <h2 class="doctors__h2 h2 h2--star h2--underlined">гиенкология</h2>
-        </div>
-        <div class="doctors__wrapper-out">
-            <div class="doctors__wrapper doctors-page__swiper">
-                <div class="doctors__wrapper-inside swiper-wrapper">
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
+    <div class="doctors-page__list">
+        <div class="doctors-page__item ">
+            <div class="doctor">
     <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
         <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">        
     </a>
@@ -465,9 +464,9 @@
         <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
     </div> 
 </div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
+        </div>
+        <div class="doctors-page__item ">
+            <div class="doctor">
     <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
         <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">        
     </a>
@@ -484,9 +483,9 @@
         <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
     </div> 
 </div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
+        </div>
+        <div class="doctors-page__item ">
+            <div class="doctor">
     <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
         <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">        
     </a>
@@ -503,9 +502,9 @@
         <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
     </div> 
 </div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
+        </div>
+        <div class="doctors-page__item ">
+            <div class="doctor">
     <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
         <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">        
     </a>
@@ -522,9 +521,9 @@
         <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
     </div> 
 </div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
+        </div>
+        <div class="doctors-page__item ">
+            <div class="doctor">
     <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
         <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">        
     </a>
@@ -541,9 +540,9 @@
         <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
     </div> 
 </div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
+        </div>
+        <div class="doctors-page__item ">
+            <div class="doctor">
     <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
         <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">        
     </a>
@@ -560,9 +559,9 @@
         <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
     </div> 
 </div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
+        </div>
+        <div class="doctors-page__item ">
+            <div class="doctor">
     <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
         <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">        
     </a>
@@ -579,9 +578,9 @@
         <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
     </div> 
 </div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
+        </div>
+        <div class="doctors-page__item ">
+            <div class="doctor">
     <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
         <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">        
     </a>
@@ -598,674 +597,24 @@
         <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
     </div> 
 </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div>        
     </div>
-</section>
-        <section class="doctors-page__list doctors doctors--nobg">
-    <div class="doctors__container container">
-        <div class="h2__wrapper">
-            <h2 class="doctors__h2 h2 h2--star h2--underlined">Ангиология ( флебология)</h2>
-        </div>
-        <div class="doctors__wrapper-out">
-            <div class="doctors__wrapper doctors-page__swiper">
-                <div class="doctors__wrapper-inside swiper-wrapper">
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Аржанова</span>
-            <span class="doctor__name">Ольга Николаевна </span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1600 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кулагина</span>
-            <span class="doctor__name">Наталья Владимировна</span>
-            <span class="doctor__position">Гинеколог-эндокринолог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Гогуа</span>
-            <span class="doctor__name">Манана Спиридоновна</span>
-            <span class="doctor__position">Гинеколог-эндокринолог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Кандидат медицинских наук</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="pager doctors-page__pages">
+    <input type="hidden" id="page_number" value="1">
+    <input type="hidden" id="max_page_number" value="8">
+    <div class="pager__list">
+        <a class="pager__item pager__item--first" href="#"></a> <!--hidden-->
+        <a class="pager__item pager__item--prev" href="#"></a><!--hidden-->
+        <a class="pager-num-1 pager__item" href="#">1</a>
+        <a class="pager-num-2 pager__item" href="#">2</a>
+        <a class="pager-num-3 pager__item pager__item--active" href="#">3</a>
+        <a class="pager-num-4 pager__item" href="#">4</a>
+        <a class="pager-num-6 pager__item pager__item--more" href="#">...</a>
+        <a class="pager-num-8 pager__item" href="#">8</a>
+        <a class="pager__item pager__item--next" href="#"></a><!--hidden-->
+        <a class="pager__item pager__item--last" href="#"></a><!--hidden-->
     </div>
-</section>
-        <section class="doctors-page__list doctors doctors--nobg">
-    <div class="doctors__container container">
-        <div class="h2__wrapper">
-            <h2 class="doctors__h2 h2 h2--star h2--underlined">Андрология</h2>
-        </div>
-        <div class="doctors__wrapper-out">
-            <div class="doctors__wrapper doctors-page__swiper">
-                <div class="doctors__wrapper-inside swiper-wrapper">
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
 </div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Аржанова</span>
-            <span class="doctor__name">Ольга Николаевна </span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1600 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кулагина</span>
-            <span class="doctor__name">Наталья Владимировна</span>
-            <span class="doctor__position">Гинеколог-эндокринолог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Гогуа</span>
-            <span class="doctor__name">Манана Спиридоновна</span>
-            <span class="doctor__position">Гинеколог-эндокринолог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Кандидат медицинских наук</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-        <section class="doctors-page__list doctors doctors--nobg">
-    <div class="doctors__container container">
-        <div class="h2__wrapper">
-            <h2 class="doctors__h2 h2 h2--star h2--underlined">гиенкология</h2>
-        </div>
-        <div class="doctors__wrapper-out">
-            <div class="doctors__wrapper doctors-page__swiper">
-                <div class="doctors__wrapper-inside swiper-wrapper">
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Аржанова</span>
-            <span class="doctor__name">Ольга Николаевна </span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1600 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кулагина</span>
-            <span class="doctor__name">Наталья Владимировна</span>
-            <span class="doctor__position">Гинеколог-эндокринолог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Гогуа</span>
-            <span class="doctor__name">Манана Спиридоновна</span>
-            <span class="doctor__position">Гинеколог-эндокринолог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Кандидат медицинских наук</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-        <section class="doctors-page__list doctors doctors--nobg">
-    <div class="doctors__container container">
-        <div class="h2__wrapper">
-            <h2 class="doctors__h2 h2 h2--star h2--underlined">Ангиология ( флебология)</h2>
-        </div>
-        <div class="doctors__wrapper-out">
-            <div class="doctors__wrapper doctors-page__swiper">
-                <div class="doctors__wrapper-inside swiper-wrapper">
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Аржанова</span>
-            <span class="doctor__name">Ольга Николаевна </span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1600 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кулагина</span>
-            <span class="doctor__name">Наталья Владимировна</span>
-            <span class="doctor__position">Гинеколог-эндокринолог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Гогуа</span>
-            <span class="doctor__name">Манана Спиридоновна</span>
-            <span class="doctor__position">Гинеколог-эндокринолог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Кандидат медицинских наук</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                    <div class="doctors__item swiper-slide">
-                        <div class="doctor">
-    <a class="doctor__img-wrapper" href="doctor-item.html" title="gewrsrgsrar">
-        <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">        
-    </a>
-    <div class="doctor__content">
-        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
-            <span class="doctor__surname">Кольцова</span>
-            <span class="doctor__name">Татьяна Владимировна</span>
-            <span class="doctor__position">Акушер-гинеколог</span>
-        </a>
-        <div class="doctor__content-bottom">
-            <p class="doctor__education">Доктор медицинских наук, профессор</p>
-            <p class="doctor__price">от 1500 ₽</p>
-        </div>
-        <button class="btn btn--primary doctor__btn-inside" data-action="undefined">ЗАПИСь на прием</button> 
-    </div> 
-</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-    </div>
-
 </div>      
     </main> 
     <footer class="footer">
@@ -1436,34 +785,6 @@
                     <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>
                 </div>
             </form>
-        </div>
-    </section>
-</div>
-<div class="popup-overlay opened" data-popup="success">
-    <section class="popup popup--success opened">
-        <div class="popup__wrapper">
-            <button class="popup__close js-close">
-                <svg width="12" height="12">
-	<use xlink:href="img/sprite.svg#cancel"></use>
-</svg>
-            </button>
-            <div class="popup__head">
-                <div class="popup__svg">
-                    <svg width="140" height="140">
-	<use xlink:href="img/sprite.svg#success"></use>
-</svg>
-                </div>
-                <p class="popup__name">заявка отправлена!</p>
-                <div class="popup__remark">
-                    <p>Пожалуйста, свяжитесь с ними по телефонам</p>
-                    <div class="popup__phones">
-                        <a href="tel:+78122727024" title="позвонить в клинику" class="phone-link">+7 (812) 272-70-24</a>
-                        <a href="tel:+78122723734" title="позвонить в клинику" class="phone-link">+7 (812) 272-37-34</a>
-                        <a href="tel:+78122758696" title="позвонить в клинику" class="phone-link">+7 (812) 275-86-96</a>
-                    </div>
-                </div>
-            </div>           
-            <button class="comment-form__btn btn btn--primary js-close">Хорошо</button>
         </div>
     </section>
 </div>

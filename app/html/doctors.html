@@ -1,11 +1,30 @@
 <div class="doctors-page container container-inside">
-    <include src="app/html/search-block.html" locals='{"class": "doctors-page__search"}'></include>
-    <div class="doctors-page__lists">
-        <include src="app/html/doctors-block-doctors.html" locals='{"class": "doctors-page__list", "name": "гиенкология"}'></include>
-        <include src="app/html/doctors-block-doctors.html" locals='{"class": "doctors-page__list", "name": "Ангиология ( флебология)"}'></include>
-        <include src="app/html/doctors-block-doctors.html" locals='{"class": "doctors-page__list", "name": "Андрология"}'></include>
-        <include src="app/html/doctors-block-doctors.html" locals='{"class": "doctors-page__list", "name": "гиенкология"}'></include>
-        <include src="app/html/doctors-block-doctors.html" locals='{"class": "doctors-page__list", "name": "Ангиология ( флебология)"}'></include>
+    <include src="app/html/search-block-select.html" locals='{"class": "doctors-page__search"}'></include>
+    <div class="doctors-page__list">
+        <div class="doctors-page__item ">
+            <include src="app/html/doctor-item-doctors.html" locals='{"class": "", "surname": "Кольцова", "name": "Татьяна Владимировна", "position": "Акушер-гинеколог", "education":"Доктор медицинских наук, профессор", "icon": "doc-img-1.png", "price": "1500" }'></include>
+        </div>
+        <div class="doctors-page__item ">
+            <include src="app/html/doctor-item-doctors.html" locals='{"class": "", "surname": "Аржанова", "name": "Ольга Николаевна ", "position": "Акушер-гинеколог", "education":"Доктор медицинских наук, профессор", "icon": "doc-img-2.png", "price": "1600" }'></include>
+        </div>
+        <div class="doctors-page__item ">
+            <include src="app/html/doctor-item-doctors.html" locals='{"class": "", "surname": "Кулагина", "name": "Наталья Владимировна", "position": "Гинеколог-эндокринолог", "education":"Доктор медицинских наук, профессор", "icon": "doc-img-3.png", "price": "1500" }'></include>
+        </div>
+        <div class="doctors-page__item ">
+            <include src="app/html/doctor-item-doctors.html" locals='{"class": "", "surname": "Гогуа", "name": "Манана Спиридоновна", "position": "Гинеколог-эндокринолог", "education":"Кандидат медицинских наук", "icon": "doc-img-4.png", "price": "1500" }'></include>
+        </div>
+        <div class="doctors-page__item ">
+            <include src="app/html/doctor-item-doctors.html" locals='{"class": "", "surname": "Кольцова", "name": "Татьяна Владимировна", "position": "Акушер-гинеколог", "education":"Доктор медицинских наук, профессор", "icon": "doc-img-1.png", "price": "1500" }'></include>
+        </div>
+        <div class="doctors-page__item ">
+            <include src="app/html/doctor-item-doctors.html" locals='{"class": "", "surname": "Кольцова", "name": "Татьяна Владимировна", "position": "Акушер-гинеколог", "education":"Доктор медицинских наук, профессор", "icon": "doc-img-2.png", "price": "1500" }'></include>
+        </div>
+        <div class="doctors-page__item ">
+            <include src="app/html/doctor-item-doctors.html" locals='{"class": "", "surname": "Кольцова", "name": "Татьяна Владимировна", "position": "Акушер-гинеколог", "education":"Доктор медицинских наук, профессор", "icon": "doc-img-3.png", "price": "1500" }'></include>
+        </div>
+        <div class="doctors-page__item ">
+            <include src="app/html/doctor-item-doctors.html" locals='{"class": "", "surname": "Кольцова", "name": "Татьяна Владимировна", "position": "Акушер-гинеколог", "education":"Доктор медицинских наук, профессор", "icon": "doc-img-4.png", "price": "1500" }'></include>
+        </div>        
     </div>
-
+    <include src="app/html/pagination.html" locals='{"class": "doctors-page__pages"}'></include>
 </div>

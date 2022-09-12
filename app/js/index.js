@@ -192,26 +192,6 @@ try {
         spaceBetween: 16,
 	};
 
-	const optionsDoctors = {
-		slidesPerView: "auto",
-        spaceBetween: 16,
-		loop: true,
-		observer: true,
-		observeParents: true,
-		breakpoints: {
-			320: {
-			  spaceBetween: 16
-			},
-			740: {
-			  spaceBetween: 40
-			},
-			1200: {
-				slidesPerView: 4,
-			  spaceBetween: 53
-			}
-		},
-	};
-
 	window.addEventListener('load', function() {
 		swiperMode('.btns-swiper', options, 740);
 	});
@@ -219,11 +199,6 @@ try {
 	window.addEventListener('resize', function() {
 		swiperMode('.btns-swiper', options, 740);
 	});
-
-	window.addEventListener('load', function() {
-		swiperMode('.doctors-page__swiper',optionsDoctors);
-	});
-
 
 } catch(e) {
 	console.log(e)

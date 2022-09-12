@@ -26,7 +26,8 @@
 }
 
 .search-block__input,
-.prices__search-block-input {
+.prices__search-block-input,
+.search-block__select {
     padding-bottom: 5px;
     width: 100%;
     font-weight: 400;
@@ -35,5 +36,12 @@
     color: var(--mid-grey);
     border:0;    
     border-radius: 0;
+    background-color: transparent;
     cursor: auto;
+}
+
+.search-block__select option {
+    line-height: 24px;
+    background-color: var(--white);
+    border-bottom: 1px gray;
 }

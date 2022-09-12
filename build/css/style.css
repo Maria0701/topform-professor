@@ -463,7 +463,8 @@ button {
 }
 
 .search-block__input,
-.prices__search-block-input {
+.prices__search-block-input,
+.search-block__select {
   padding-bottom: 5px;
   width: 100%;
   font-weight: 400;
@@ -472,7 +473,14 @@ button {
   color: var(--mid-grey);
   border: 0;
   border-radius: 0;
+  background-color: transparent;
   cursor: auto;
+}
+
+.search-block__select option {
+  line-height: 24px;
+  background-color: var(--white);
+  border-bottom: 1px gray;
 }
 
 .bread {
@@ -4931,17 +4939,40 @@ button {
     font-size: 1.125rem;
   }
 }
+.doctors-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 36px;
+  padding-bottom: 50px;
+}
+
 .doctors-page__list {
-  margin-bottom: 50px;
-}
-.doctors-page__list:last-child {
-  margin-bottom: 0;
-}
-
-.doctors-page__search {
-  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  row-gap: 24px;
 }
 
+@media (min-width: 740px) {
+  .doctors-page {
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+    row-gap: 50px;
+  }
+
+  .doctors-page__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1000px) {
+  .doctors-page__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    -moz-column-gap: 53px;
+         column-gap: 53px;
+    row-gap: 51px;
+  }
+}
 .doctor-page__about,
 .doctor-page__menu,
 .doctor-page__rates,
