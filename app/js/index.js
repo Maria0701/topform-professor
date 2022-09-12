@@ -379,22 +379,36 @@ try {
 			body: formData,
 		})
 		.then(response => {
-			if (response.ok) { // если ответ от сервера 200
-				form.reset(); // очищаем форму
-				if (popupInstance) popupInstance.close(); // если это был попап, том мы его закрываем и чистим обработчики
-				// создаем попап с саксессом в конце боди					
-				setTimeout(() => {
-					const successTemp = successTemplate('success');
-					document.querySelector('body').insertAdjacentHTML('beforeend', successTemp);
-					popupInstance = new PopupOpener({						
-						overlayClass: '[data-popup="success"]', // класс оверлея
-						popupClass: '.popup', //класс попапа
-						closeBtnClass: '.js-close',
-						animationOpenClass: 'fadein', // оба класса пишем без точки, чтобы их потом не чистить
-						animationCloseClass: 'fadeout', // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться. 
-					});
-					popupInstance.open();
-				},0);				
+			if (response.ok) {
+				// если ответ от сервера 200
+				let json =  response.json();		
+				json.then(function(data) {
+					if(!data.status) {
+						  data.errors.forEach(name => document.getElementsByName(name)[0].closest('.comment-form__label').classList.add('comment-form__label--error'))
+					  	} else {
+						  form.reset(); // очищаем форму
+		
+						  if (popupInstance) popupInstance.close(); // если это был попап, том мы его закрываем и чистим обработчики
+						  // создаем попап с саксессом в конце боди
+		
+						setTimeout(function () {
+							  var successTemp = successTemplate('success');
+							  document.querySelector('body').insertAdjacentHTML('beforeend', successTemp);
+							  popupInstance = new PopupOpener({
+								  overlayClass: '[data-popup="success"]',
+								  // класс оверлея
+								  popupClass: '.popup',
+								  //класс попапа
+								  closeBtnClass: '.js-close',
+								  animationOpenClass: 'fadein',
+								  // оба класса пишем без точки, чтобы их потом не чистить
+								  animationCloseClass: 'fadeout' // класс анимации совпадает с названием анимации (в идеале), чтобы не путаться.
+		
+							  });
+							  popupInstance.open();
+						}, 0);
+					}
+				})					
 			} else {
 				setTimeout(() => {
 					// добавляем форму с ошибкой в конец боди
@@ -422,7 +436,8 @@ try {
 		const form = evt.target;
 
 		let formData = new FormData(form);
-		ajaxSend('https://jsonplaceholder.typicode.com/posts', formData, form)
+		var url = form.getAttribute('action');
+		ajaxSend(url, formData, form)
 			.then((response) => {
 
 			})

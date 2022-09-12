@@ -99,7 +99,7 @@ gulp.task('sprite', function() {
   
   gulp.task('copy', function () {
     return gulp.src([
-      'app/fonts/**/*.{woff,woff2}',
+      'app/fonts/**/*.{woff,woff2,ttf}',
       'app/*.ico',
       'app/img/**/*.{png,jpg,svg,webp}',
       'app/js/*.json',

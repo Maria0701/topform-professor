@@ -96,12 +96,17 @@
     position: absolute;
     top: 0;
     left: 0;
+    display: none;
 }
 
 .list-service {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.header-menu-back {
+    display: none;
 }
 
 .list-service__item {

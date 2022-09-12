@@ -44,7 +44,7 @@
 
 .comment-form__label {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0,1fr);
     gap: 6px;
 
     a {
@@ -106,7 +106,7 @@
 }
 
 .comment-form__label--checkbox {    
-    grid-template-columns: 12px 1fr;
+    grid-template-columns: 12px minmax(0,1fr);
     gap: 12px;
     align-items: flex-start;
     order: 2;
@@ -189,7 +189,7 @@
 @media (min-width: $small) {
     .comment__wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr);
         grid-template-rows: auto auto 1fr;
     }
 
