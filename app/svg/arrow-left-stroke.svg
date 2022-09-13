@@ -1,7 +1,7 @@
 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.5">
-<path d="M13.627 1C13.627 1 9.45108 9.9889 0.999896 10.0922" stroke="#5F5F5F" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M13.627 19.7011C13.627 19.7011 9.45108 10.7122 0.999897 10.6089" stroke="#5F5F5F" stroke-width="2" stroke-miterlimit="10"/>
-<line y1="-1" x2="17.5097" y2="-1" transform="matrix(-1 8.74228e-08 8.74228e-08 1 20.6309 11.3999)" stroke="#5F5F5F" stroke-width="2"/>
+<path d="M13.627 1C13.627 1 9.45108 9.9889 0.999896 10.0922" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M13.627 19.7011C13.627 19.7011 9.45108 10.7122 0.999897 10.6089" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
+<line y1="-1" x2="17.5097" y2="-1" transform="matrix(-1 8.74228e-08 8.74228e-08 1 20.6309 11.3999)" stroke="currentColor" stroke-width="2"/>
 </g>
 </svg>

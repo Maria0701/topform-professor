@@ -2,7 +2,6 @@
 .tabs-horizon {
     margin-right: -16px;
     width: calc(100% + 16px);
-    padding-right: 16px;
 }
 
 .tabs-horizon__wrapper {
@@ -24,6 +23,10 @@
     position: relative;
     z-index: 2;
     margin: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
     padding-top: 24px;
     padding-bottom: 24px;
     padding-left: 16px;
@@ -44,18 +47,29 @@
     &:last-child {
         border-right:  1px solid var(--mid-grey);
     }
+
+    svg {
+        fill: var(--dark-gray);
+    }
 }
 
 [role="tab"]:focus,
 [role="tab"]:hover {
     color: var(--green);
     background-color: var(--white);
+
+    svg {
+        fill: var(--green);
+    }
 }
   
 [role="tab"][aria-selected="true"] {
     color: var(--white);
     background-color: var(--green);
     border-color: var(--green);
+    svg {
+        fill: var(--white);
+    }
 }
   
 [role="tabpanel"] {

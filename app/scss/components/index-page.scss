@@ -8,14 +8,21 @@
 .index__advantages,
 .index__years,
 .index__tour,
-.index__text {
+.index__text,
+.index__promo,
+.index__services {
     margin-bottom: 50px;
 }
+
 
 @media (min-width: $desktop-large) { 
     .index__doctors {
         .h2--star::after { 
             background-image: url(../img/star-white.svg);
         }
+    }
+
+    .index__services {
+        margin-bottom: 36px;
     }
 }

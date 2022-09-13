@@ -122,8 +122,10 @@
         font-size: 0.875rem;
         line-height: 130%;
         color: var(--dark-gray);
+        text-decoration: none;
 
         svg {
+            flex-shrink: 0;
             width: 24px;
             height: 24px;
             fill: var(--dark-gray);
@@ -211,16 +213,22 @@
     .list-service__item a {
         font-style: 1rem;
         align-items: center;
+        transition: color 0.3s ease-in-out;
 
         svg {
             width: 36px;
             height: 36px;
         }
+
+        &:hover,
+        &:focus {
+            color: var(--green);           
+        }
     }
 
     .header-menu__item:hover,
     .header-menu__item:focus {
-        a {
+        & > a {
             color: var(--dark-gray);
         }
     }
