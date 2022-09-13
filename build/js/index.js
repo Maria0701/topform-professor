@@ -13874,7 +13874,56 @@ var successTemplate = function successTemplate(successMessage) {
   var successName = successMessage === 'success' ? "\u0437\u0430\u044F\u0432\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430!" : "\u043E\u0448\u0438\u0431\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043A\u0438!";
   return "\n    <div class=\"popup-overlay opened\" data-popup=\"".concat(successMessage, "\">\n    <section class=\"popup popup--success opened\">\n        <div class=\"popup__wrapper\">\n            <button class=\"popup__close js-close\">\n            <svg width=\"12\" height=\"12\">\n                <use xlink:href=\"../img/sprite.svg#cancel\"></use>\n            </svg>\n            </button>\n            <div class=\"popup__head\">\n                <div class=\"popup__svg\">\n                <svg width=\"140\" height=\"140\">\n                    <use xlink:href=\"../img/sprite.svg#").concat(successMessage, "\"></use>\n                </svg>\n                </div>\n                <p class=\"popup__name\">").concat(successName, "</p>\n                <div class=\"popup__remark\">").concat(successText, "</div>\n            </div>           \n            <button class=\"comment-form__btn btn btn--primary js-close\">\u0425\u043E\u0440\u043E\u0448\u043E</button>\n        </div>\n    </section>\n</div>\n    ");
 };
+;// CONCATENATED MODULE: ./app/js/components/menu-opener.js
+var menuOpener = function menuOpener() {
+  var menuToggler = document.querySelector('.js-menu-mobile-button');
+  var menu = document.querySelector('.js-menu-mobile');
+  var subMenuTogglers;
+  var activeSubMenu = null;
+  var backItem = null;
+
+  var closeSubMenu = function closeSubMenu() {
+    activeSubMenu.classList.remove('submenu-opened');
+    menu.classList.remove('sub-opened');
+    activeSubMenu = null;
+  };
+
+  var closeMenuHandler = function closeMenuHandler() {
+    if (activeSubMenu) closeSubMenu();
+    document.querySelector('header').classList.remove('opened');
+    menuToggler.removeEventListener('click', closeMenuHandler);
+    menuToggler.addEventListener('click', openMenuHandler);
+    subMenuTogglers.forEach(function (item) {
+      return item.removeEventListener('click', subMenuHandler);
+    });
+  };
+
+  var subMenuHandler = function subMenuHandler(evt) {
+    evt.preventDefault();
+    if (activeSubMenu) closeSubMenu();
+    activeSubMenu = evt.target.closest('.header-menu__item').querySelector('.inner-menu');
+    if (!activeSubMenu) return;
+    backItem = menu.querySelector('.btn-menu-back');
+    menu.classList.add('sub-opened');
+    activeSubMenu.classList.add('submenu-opened');
+    backItem.addEventListener('click', closeSubMenu);
+  };
+
+  var openMenuHandler = function openMenuHandler(evt) {
+    evt.preventDefault();
+    document.querySelector('header').classList.add('opened');
+    subMenuTogglers = menu.querySelectorAll('.js-submenu');
+    subMenuTogglers.forEach(function (item) {
+      return item.addEventListener('click', subMenuHandler);
+    });
+    menuToggler.removeEventListener('click', openMenuHandler);
+    menuToggler.addEventListener('click', closeMenuHandler);
+  };
+
+  menuToggler.addEventListener('click', openMenuHandler);
+};
 ;// CONCATENATED MODULE: ./app/js/index.js
+
 
 
 
@@ -14386,6 +14435,12 @@ try {
       return phoneMask(item);
     });
   }
+} catch (e) {
+  console.log(e);
+}
+
+try {
+  menuOpener();
 } catch (e) {
   console.log(e);
 }

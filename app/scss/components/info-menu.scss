@@ -66,3 +66,14 @@
     color: var(--dark-gray);
     text-decoration: none;
 }
+
+@media (min-width: 1000px) {
+    .info-menu {
+        display: flex;
+    }
+
+    .info-menu-search {
+        max-width: 153px;
+        box-sizing: border-box;
+    }
+}

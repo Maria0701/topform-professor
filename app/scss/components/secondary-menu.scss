@@ -36,3 +36,15 @@
     height: 24px;
 
 }
+
+@media (min-width: 1000px) {
+    .secondary-menu {
+		order: 0;
+        display: flex;
+	}
+
+    .secondary-menu-list {
+        display: flex;
+        gap: 0;
+    }
+}

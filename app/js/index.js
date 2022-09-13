@@ -6,6 +6,7 @@ import { TabsAutomatic } from './components/tabs-auromatic';
 import { YmapsInitializer } from './components/yandex';
 import { phoneMask } from './components/phone-mask';
 import { successTemplate } from './components/success-template';
+import { menuOpener } from './components/menu-opener';
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
@@ -505,3 +506,9 @@ try {
     console.log(e);
 }
 
+
+try {
+	menuOpener();
+} catch(e) {
+	console.log(e)
+}

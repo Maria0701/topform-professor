@@ -72,6 +72,10 @@
     }
 }
 
+.search__label {
+    max-width: 100%;
+}
+
 @media (min-width: $small) {
     .search-page {
         row-gap: 36px;
