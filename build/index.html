@@ -615,14 +615,16 @@
           <div class="hero-slider__item swiper-slide">
             <div class="hero-slider__col">
               <h1 class="hero-slider__title">медицинский центр <span>«профессор»</span></h1>
-              <div class="hero-slider__text">Медцентр «Профессор» был создан чтобы объединить в одном учреждении группу специалистов-профессоров </div>
-              <ul class="info-list">
-                <li>Высокое качество обслуживания</li>
-                <li>Квалифицированный персонал</li>
-                <li>Доступные цены</li>
-              </ul>
+              <div class="hero-slider__text text">
+                <p>Медцентр «Профессор» был создан чтобы объединить в одном учреждении группу специалистов-профессоров </p>
+                <ul class="info-list">
+                    <li>Высокое качество обслуживания</li>
+                    <li>Квалифицированный персонал</li>
+                    <li>Доступные цены</li>
+                </ul>
+                </div>
               <div class="hero-slider__actions">
-                <button class="btn btn--primary">Запись на прием</button>
+                <button class="btn btn--primary hero-slider__btn">Запись на прием</button>
               </div>
             </div>
             <div class="hero-slider__col">
@@ -652,22 +654,22 @@
         <div class="hero-slider__nav">
           <div class="swiper-pagination"></div>
           <div class="section-slider-actions">
-            <div class="swiper-button swiper-button-prev">
-              <svg class="icon">
-    <use xlink:href="img/sprite.svg#arrow-left"></use>
-  </svg>
+            <div class="hero__left">
+              <svg width-="36" height="36">
+                    <use xlink:href="../img/sprite.svg#arrow-left"></use>
+                </svg>
             </div>
-            <div class="swiper-button swiper-button-next">
-              <svg class="icon">
-    <use xlink:href="img/sprite.svg#arrow-right"></use>
-  </svg>
+            <div class="hero__right">
+              <svg width-="36" height="36">
+                <use xlink:href="../img/sprite.svg#arrow-right"></use>
+            </svg>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="index__promo promo-block--years promo-block">
+      <section class="index__promo promo-block--years promo-block">
     <div class="promo-block__container container">
         <div class="h2__wrapper">
             <h2 class="promo-block__h2 h2 h2--star h2--underlined">Акции</h2>
@@ -761,12 +763,12 @@
         </div>
     </div>
 </section>
-  <section class="services index__services">
-    <div class="container">
-      <div class="h2__wrapper">
-        <h2 class="review-slider__h2 h2 h2--star h2--underlined">Наши услуги</h2>
-      </div>
-      <div class="index__tabs tabs-horizon">
+      <section class="services index__services">
+        <div class="container">
+          <div class="h2__wrapper">
+            <h2 class="review-slider__h2 h2 h2--star h2--underlined">Наши услуги</h2>
+          </div>
+          <div class="index__tabs tabs-horizon">
     <div class="tabs-horizon__wrapper">
         <div role="tablist" aria-labelledby="tablist-1" class="tabs-horizon__btns">
         <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1">
@@ -1180,9 +1182,9 @@
     <button class="btn btn--primary index-tabs__btn" data-action="appointment">Запись на прием</button>
     </div>
 </div>
-    </div>
-  </section>
-  <section class=" index__years years">
+        </div>
+      </section>
+      <section class=" index__years years">
     <div class="years__container container">
       <div class="years__content">
         <img class="years__img" src="../img/banner-30.png" alt="Баннер">
@@ -1192,7 +1194,7 @@
       </div>
     </div>
   </section>
-  <section class="advantages index__advantages">
+      <section class="advantages index__advantages">
     <div class="advantages__container container">
         <div class="h2__wrapper">
             <h2 class="advantages__h2 h2 h2--star h2--underlined">преимущества нашей клиники</h2>
@@ -1267,7 +1269,7 @@
       </div>  
     </div>
 </section>
-  <section class="index__doctors doctors">
+      <section class="index__doctors doctors">
     <div class="doctors__container container">
         <div class="h2__wrapper">
             <h2 class="doctors__h2 h2 h2--star h2--underlined">Специалисты высшей квалификации</h2>
@@ -1458,9 +1460,9 @@
         </div>
     </div>
 </section>
-  <div class="index__tour">
-    <div class="container tour--flowers2">
-        <div class="tour ">
+      <div class="index__tour">
+        <div class="container tour--flowers2">
+            <div class="tour ">
     <div class="tour__head">3D-тур по клинике</div>
     <div class="tour__content">
         <div class="tour__media">
@@ -1468,9 +1470,9 @@
         </div>
     </div>
 </div>
-    </div>
-  </div>
-  <section class="index-text index__text gray">
+        </div>
+      </div>
+      <section class="index-text index__text gray">
     <div class="index-text__top container">
         <div class="index-text__top-text ">
             <div class="h2__wrapper">
@@ -1521,7 +1523,7 @@
 
     </div>
 </section>
-  <section class="review-slider index__advantages">
+      <section class="review-slider index__advantages">
     <div class="container">
         <div class="h2__wrapper">
             <h2 class="review-slider__h2 h2 h2--star h2--underlined">Отзывы</h2>
@@ -1635,18 +1637,74 @@
         </div>
     </div>
 </section>
-  <section class="reviews">
-    <div class="container">  
-      <div class="news-block">
-        <div class="news-block__block">
-          <div class="news-block__head">
-            <div class="h2__wrapper">
-              <h2 class="review-slider__h2 h2 h2--star h2--underlined">Блог</h2>
+      <section class="index__news">
+        <div class="container">  
+          <div class="news-block">
+            <div class="news-block__block">
+              <div class="news-block__head">
+                <div class="h2__wrapper">
+                  <h2 class="review-slider__h2 h2 h2--star h2--underlined">Блог</h2>
+                </div>
+                <a class="news-block__link-green link-green" href="#">Все статьи</a>
+              </div>
+              <div class="news-block__list">
+                <div class="news-block__item">
+    <div class="news-block__img">
+        <div class="news-block__inner">
+            <a class="btn btn--secondary" href="#" title="название статьи">Читать полностью</a>
+        </div>
+        <img src="../img/info-1.jpg" alt="Статья 1" width="240" height="210">
+    </div>
+    <div class="news-block__caption">
+      О варикозном расширении вен
+    </div>
+    <div class="news-block__text">
+      Варикозное расширение вен – одно из самых распространенных заболеваний. По статистическим данным женщины в 3-4 раза чаще, чем мужчины, страдают варикозом вен ног
+    </div>
+    <div class="news-block__sub">
+        <div class="date">25.06.2022</div>
+        <div class="view">
+            <svg class="icon" width="16" height="16">
+                <use xlink:href="../img/sprite.svg#fa_eye-line"></use>
+            </svg>
+            <span>36</span>
+        </div>
+    </div>
+</div>
+                <div class="news-block__item">
+    <div class="news-block__img">
+        <div class="news-block__inner">
+            <a class="btn btn--secondary" href="#" title="название статьи">Читать полностью</a>
+        </div>
+        <img src="../img/info-1.jpg" alt="Статья 1" width="240" height="210">
+    </div>
+    <div class="news-block__caption">
+      О варикозном расширении вен
+    </div>
+    <div class="news-block__text">
+      Варикозное расширение вен – одно из самых распространенных заболеваний. По статистическим данным женщины в 3-4 раза чаще, чем мужчины, страдают варикозом вен ног
+    </div>
+    <div class="news-block__sub">
+        <div class="date">25.06.2022</div>
+        <div class="view">
+            <svg class="icon" width="16" height="16">
+                <use xlink:href="../img/sprite.svg#fa_eye-line"></use>
+            </svg>
+            <span>36</span>
+        </div>
+    </div>
+</div>
+              </div>
             </div>
-            <a class="news-block__link-green link-green" href="#">Все статьи</a>
-          </div>
-          <div class="news-block__list">
-            <div class="news-block__item">
+            <div class="news-block__block">
+              <div class="news-block__head">
+                <div class="h2__wrapper">
+                  <h2 class="review-slider__h2 h2 h2--short">Новости</h2>
+                </div>
+                <a class="link-green" href="#">Все новости</a>
+              </div>
+              <div class="news-block__list">
+                <div class="news-block__item">
     <div class="news-block__img">
         <div class="news-block__inner">
             <a class="btn btn--secondary" href="#" title="название статьи">Читать полностью</a>
@@ -1669,7 +1727,7 @@
         </div>
     </div>
 </div>
-            <div class="news-block__item">
+                <div class="news-block__item">
     <div class="news-block__img">
         <div class="news-block__inner">
             <a class="btn btn--secondary" href="#" title="название статьи">Читать полностью</a>
@@ -1692,67 +1750,11 @@
         </div>
     </div>
 </div>
-          </div>
-        </div>
-        <div class="news-block__block">
-          <div class="news-block__head">
-            <div class="h2__wrapper">
-              <h2 class="review-slider__h2 h2 h2--short">Новости</h2>
+              </div>
             </div>
-            <a class="link-green" href="#">Все новости</a>
-          </div>
-          <div class="news-block__list">
-            <div class="news-block__item">
-    <div class="news-block__img">
-        <div class="news-block__inner">
-            <a class="btn btn--secondary" href="#" title="название статьи">Читать полностью</a>
-        </div>
-        <img src="../img/info-1.jpg" alt="Статья 1" width="240" height="210">
-    </div>
-    <div class="news-block__caption">
-      О варикозном расширении вен
-    </div>
-    <div class="news-block__text">
-      Варикозное расширение вен – одно из самых распространенных заболеваний. По статистическим данным женщины в 3-4 раза чаще, чем мужчины, страдают варикозом вен ног
-    </div>
-    <div class="news-block__sub">
-        <div class="date">25.06.2022</div>
-        <div class="view">
-            <svg class="icon" width="16" height="16">
-                <use xlink:href="../img/sprite.svg#fa_eye-line"></use>
-            </svg>
-            <span>36</span>
-        </div>
-    </div>
-</div>
-            <div class="news-block__item">
-    <div class="news-block__img">
-        <div class="news-block__inner">
-            <a class="btn btn--secondary" href="#" title="название статьи">Читать полностью</a>
-        </div>
-        <img src="../img/info-1.jpg" alt="Статья 1" width="240" height="210">
-    </div>
-    <div class="news-block__caption">
-      О варикозном расширении вен
-    </div>
-    <div class="news-block__text">
-      Варикозное расширение вен – одно из самых распространенных заболеваний. По статистическим данным женщины в 3-4 раза чаще, чем мужчины, страдают варикозом вен ног
-    </div>
-    <div class="news-block__sub">
-        <div class="date">25.06.2022</div>
-        <div class="view">
-            <svg class="icon" width="16" height="16">
-                <use xlink:href="../img/sprite.svg#fa_eye-line"></use>
-            </svg>
-            <span>36</span>
-        </div>
-    </div>
-</div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
     </main>
     <footer class="footer">
 	<div class="container">

@@ -11,114 +11,56 @@
   <body >
     <include src="app/html/header.html"></include>
     <main class="main">
-      <section class="hero">
-    <div class="container">
-      <div class="hero-slider swiper">
-        <div class="swiper-wrapper">
-          <div class="hero-slider__item swiper-slide">
-            <div class="hero-slider__col">
-              <h1 class="hero-slider__title">медицинский центр <span>«профессор»</span></h1>
-              <div class="hero-slider__text">Медцентр «Профессор» был создан чтобы объединить в одном учреждении группу специалистов-профессоров </div>
-              <ul class="info-list">
-                <li>Высокое качество обслуживания</li>
-                <li>Квалифицированный персонал</li>
-                <li>Доступные цены</li>
-              </ul>
-              <div class="hero-slider__actions">
-                <button class="btn btn--primary">Запись на прием</button>
+      <include src="app/html/index-slider.html" locals='{"class": "index__promo promo-block--years" }'></include>
+      <include src="app/html/promo-block.html" locals='{"class": "index__promo promo-block--years" }'></include>
+      <section class="services index__services">
+        <div class="container">
+          <div class="h2__wrapper">
+            <h2 class="review-slider__h2 h2 h2--star h2--underlined">Наши услуги</h2>
+          </div>
+          <include src="app/html/index-tabs.html"></include>
+        </div>
+      </section>
+      <include src="app/html/banner-years.html" locals='{"class": "index__years" }' ></include>
+      <include src="app/html/advantages-block.html" locals='{"class": "index__advantages" }'></include>
+      <include src="app/html/doctors-block.html" locals='{"class": "index__doctors", "name": "Специалисты высшей квалификации" }'></include>
+      <div class="index__tour">
+        <div class="container tour--flowers2">
+            <include src="app/html/tour.html" locals='{"class": ""}'></include>
+        </div>
+      </div>
+      <include src="app/html/index-text.html"></include>
+      <include src="app/html/review-slider.html" locals='{"class": "index__advantages" }'></include>
+      <section class="index__news">
+        <div class="container">  
+          <div class="news-block">
+            <div class="news-block__block">
+              <div class="news-block__head">
+                <div class="h2__wrapper">
+                  <h2 class="review-slider__h2 h2 h2--star h2--underlined">Блог</h2>
+                </div>
+                <a class="news-block__link-green link-green" href="#">Все статьи</a>
+              </div>
+              <div class="news-block__list">
+                <include src="app/html/news-item.html" locals='{"class": "news-block__item" }'></include>
+                <include src="app/html/news-item.html" locals='{"class": "news-block__item" }'></include>
               </div>
             </div>
-            <div class="hero-slider__col">
-              <img class="hero-slider__img" src="img/doctor-img.png" alt="">
-              <img class="art-30" src="img/30.png" alt="">
-            </div>
-          </div>
-          <div class="hero-slider__item swiper-slide">
-            <div class="hero-slider__col">
-              <h1 class="hero-slider__title">медицинский центр <span>«профессор»</span></h1>
-              <div class="hero-slider__text">Медцентр «Профессор» был создан чтобы объединить в одном учреждении группу специалистов-профессоров </div>
-              <ul class="info-list">
-                <li>Высокое качество обслуживания</li>
-                <li>Квалифицированный персонал</li>
-                <li>Доступные цены</li>
-              </ul>
-              <div class="hero-slider__actions">
-                <button class="btn btn--primary">Запись на прием</button>
+            <div class="news-block__block">
+              <div class="news-block__head">
+                <div class="h2__wrapper">
+                  <h2 class="review-slider__h2 h2 h2--short">Новости</h2>
+                </div>
+                <a class="link-green" href="#">Все новости</a>
+              </div>
+              <div class="news-block__list">
+                <include src="app/html/news-item.html" locals='{"class": "news-block__item" }'></include>
+                <include src="app/html/news-item.html" locals='{"class": "news-block__item" }'></include>
               </div>
             </div>
-            <div class="hero-slider__col">
-              <img class="hero-slider__img" src="img/doctor-img.png" alt="">
-              <img class="art-30" src="img/30.png" alt="">
-            </div>
           </div>
         </div>
-        <div class="hero-slider__nav">
-          <div class="swiper-pagination"></div>
-          <div class="section-slider-actions">
-            <div class="swiper-button swiper-button-prev">
-              <svg class="icon">
-    <use xlink:href="img/sprite.svg#arrow-left"/>
-  </svg>
-            </div>
-            <div class="swiper-button swiper-button-next">
-              <svg class="icon">
-    <use xlink:href="img/sprite.svg#arrow-right"/>
-  </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <include src="app/html/promo-block.html" locals='{"class": "index__promo promo-block--years" }'></include>
-  <section class="services index__services">
-    <div class="container">
-      <div class="h2__wrapper">
-        <h2 class="review-slider__h2 h2 h2--star h2--underlined">Наши услуги</h2>
-      </div>
-      <include src="app/html/index-tabs.html"></include>
-    </div>
-  </section>
-  <include src="app/html/banner-years.html" locals='{"class": "index__years" }' ></include>
-  <include src="app/html/advantages-block.html" locals='{"class": "index__advantages" }'></include>
-  <include src="app/html/doctors-block.html" locals='{"class": "index__doctors", "name": "Специалисты высшей квалификации" }'></include>
-  <div class="index__tour">
-    <div class="container tour--flowers2">
-        <include src="app/html/tour.html" locals='{"class": ""}'></include>
-    </div>
-  </div>
-  <include src="app/html/index-text.html"></include>
-  <include src="app/html/review-slider.html" locals='{"class": "index__advantages" }'></include>
-  <section class="reviews">
-    <div class="container">  
-      <div class="news-block">
-        <div class="news-block__block">
-          <div class="news-block__head">
-            <div class="h2__wrapper">
-              <h2 class="review-slider__h2 h2 h2--star h2--underlined">Блог</h2>
-            </div>
-            <a class="news-block__link-green link-green" href="#">Все статьи</a>
-          </div>
-          <div class="news-block__list">
-            <include src="app/html/news-item.html" locals='{"class": "news-block__item" }'></include>
-            <include src="app/html/news-item.html" locals='{"class": "news-block__item" }'></include>
-          </div>
-        </div>
-        <div class="news-block__block">
-          <div class="news-block__head">
-            <div class="h2__wrapper">
-              <h2 class="review-slider__h2 h2 h2--short">Новости</h2>
-            </div>
-            <a class="link-green" href="#">Все новости</a>
-          </div>
-          <div class="news-block__list">
-            <include src="app/html/news-item.html" locals='{"class": "news-block__item" }'></include>
-            <include src="app/html/news-item.html" locals='{"class": "news-block__item" }'></include>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
     </main>
     <include src="app/html/footer.html"></include>
     <script src="js/index.js"></script>

@@ -1,0 +1,43 @@
+.hero {
+    padding-top: 24px;
+    padding-bottom: 60px;
+    background-image: url('../img/banner-bg-mobile.png');
+    background-position: contain;
+    background-size: 100% 700px;
+    background-repeat: no-repeat;
+}
+
+.hero-slider__title {
+    margin: 0;
+    font-family: Elisabethische,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.25rem;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+
+    span {
+        color: var(--green);
+    }
+}
+
+.hero-slider__btn {
+    width: 100%;
+}
+
+.hero-slider__col {
+    position: relative;
+
+    .art-30 {
+        position: absolute;
+        top: 33px;
+        left: 0;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.hero-slider__img {
+    width: 80%;
+}

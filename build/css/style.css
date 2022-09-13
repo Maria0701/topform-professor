@@ -304,7 +304,7 @@ button {
 .btn--primary,
 .btn--secondary {
   height: 50px;
-  line-height: 50px;
+  line-height: 1;
   font-size: 12px;
   font-weight: 700;
   text-align: center;
@@ -785,7 +785,7 @@ button {
   flex-shrink: 0;
   width: 24px;
   height: 24px;
-  fill: var(--dark-gray);
+  fill: none;
 }
 
 .service-content__col:last-child .list-service__item:last-child {
@@ -6106,6 +6106,48 @@ button {
     height: 73px;
   }
 }
+.hero {
+  padding-top: 24px;
+  padding-bottom: 60px;
+  background-image: url("../img/banner-bg-mobile.png");
+  background-position: contain;
+  background-size: 100% 700px;
+  background-repeat: no-repeat;
+}
+
+.hero-slider__title {
+  margin: 0;
+  font-family: Elisabethische, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.25rem;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+}
+.hero-slider__title span {
+  color: var(--green);
+}
+
+.hero-slider__btn {
+  width: 100%;
+}
+
+.hero-slider__col {
+  position: relative;
+}
+.hero-slider__col .art-30 {
+  position: absolute;
+  top: 33px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
+
+.hero-slider__img {
+  width: 80%;
+}
+
 .consult {
   padding-top: 50px;
   padding-bottom: 50px;
