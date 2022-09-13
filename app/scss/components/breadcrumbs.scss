@@ -33,14 +33,11 @@
     padding-right: 10px;
 
     &:after {
-        content: '';
+        content: '-';
         position: absolute;
         right: 0;
         top: 50%;
         display: block;
-        width: 5px;
-        height: 1px;
-        background-color: var(--mid-grey);
         transform: translateY(-50%);
 
     }

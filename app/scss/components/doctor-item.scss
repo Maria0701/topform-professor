@@ -62,12 +62,14 @@
 }
 
 .doctor__education {
+    margin: 0;
     margin-bottom: 12px;
     font-size: 0.75rem;
     color: var(--mid-grey);
 }
 
 .doctor__price {
+    margin: 0;
     font-weight: 600;
     font-size: 1.125rem;
     color: var(--mid-grey);
@@ -78,6 +80,7 @@
     display: grid;
     grid-template-columns: 1fr;
     padding-bottom: 16px;
+    text-decoration: none;
 
     &::after {
         content: '';

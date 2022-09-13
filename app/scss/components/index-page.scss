@@ -1,0 +1,19 @@
+.index__advantages {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+.index__doctors,
+.index__advantages,
+.index__years {
+    margin-bottom: 50px;
+}
+
+@media (min-width: $desktop-large) { 
+    .index__doctors {
+        .h2--star::after { 
+            background-image: url(../img/star-white.svg);
+        }
+    }
+}

@@ -70,10 +70,37 @@
 @media (min-width: 1000px) {
     .info-menu {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        order: 0;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .info-menu::after {
+        display: none;
     }
 
     .info-menu-search {
         max-width: 153px;
         box-sizing: border-box;
+    }
+
+    .info-menu-contact {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 20px;
+    }
+
+    .header .info-menu-phones {
+		font-size: 1rem;
+		line-height: 1.3;
+        white-space: nowrap;
+	}
+}
+
+@media (min-width: $desktop-large) { 
+    .info-menu-contact {
+        column-gap: 42px;
     }
 }

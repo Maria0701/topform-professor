@@ -171,6 +171,12 @@
 }
 
 @media (min-width: 1000px) {
+	.header-container {
+		position: relative;
+		align-items: stretch;
+		column-gap: 16px;
+	}
+
 	.header-sign-up {
 		display: none;
 	}
@@ -180,23 +186,104 @@
 	}
 
 	.header-actions-mobile {
-		grid-template-columns: 1fr;
-	}
-
-	.primary-menu {
 		display: none;
 	}
 
 	.header-main {
-		position: relative;
+		position: static;
 		top:auto;
 		right: auto;
 		display: flex;
 		flex-wrap: wrap;
+		padding-top: 0;
+		padding-right: 0;
 		max-width: unset;
 		transform: translate3d(0, 0, 0);
 		box-shadow: none;
+		overflow: visible;
 	}
 
+	.header-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 0;
+        
+    }
+
+	.header-logo__img {
+		grid-template-columns: minmax(0,1fr);
+		justify-items: center;
+		width: 180px;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+		
+	}
+
+	.header-logo__text {
+		max-width: unset;
+		font-size: 15px;
+		line-height: 16px;
+		text-align: center;
+
+	}
 	
+	.primary-menu {
+		display: flex;
+		flex-basis: 100%;
+		column-gap: 26px;
+	}	
+
+    .header-logo__caption {
+		position: relative;
+        display: block;
+        margin-left: -16px;
+        margin-right: -16px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 10px;
+        line-height: 12px;
+        text-align: center;
+        color: var(--dark-gray);
+        background-color: var(--bege);
+
+        &::before {
+            content: '';
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			display: block;
+			width: calc(100% - 6px);
+			height: calc(100% - 6px);
+			border: 1px solid var(--mid-grey);
+        }
+	}
 }
+
+@media (min-width: 1200px) {
+	.header-actions {
+		display: flex;
+		column-gap: 10px;
+	}
+
+	.header__action {
+		display: block;
+		line-height: 1;
+	}
+}
+
+@media (min-width: $desktop-large) {
+	.header__action {
+		white-space: nowrap;
+	}
+
+	.header-actions {
+		column-gap: 26px;
+	}
+}
+
