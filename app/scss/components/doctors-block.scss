@@ -9,7 +9,7 @@
         width: 100%;
         background-image: url('../img/banner-bg.jpg');
         background-repeat: repeat-x;
-        background-size: cover;
+        background-size: contain;
     }
 }
 
@@ -67,11 +67,7 @@
         width: 300px;
     }
 
-    .doctors {  
-        &::before {
-            top: -48%;
-        }
-    }
+
 }
 
 @media (min-width: 1200px) {

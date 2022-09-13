@@ -3731,7 +3731,7 @@ button {
   width: 100%;
   background-image: url("../img/banner-bg.jpg");
   background-repeat: repeat-x;
-  background-size: cover;
+  background-size: contain;
 }
 
 .doctors--nobg::before {
@@ -3781,10 +3781,6 @@ button {
 @media (min-width: 740px) {
   .doctors__item {
     width: 300px;
-  }
-
-  .doctors::before {
-    top: -48%;
   }
 }
 @media (min-width: 1200px) {
@@ -5908,13 +5904,98 @@ button {
 
 .index__doctors,
 .index__advantages,
-.index__years {
+.index__years,
+.index__tour,
+.index__text {
   margin-bottom: 50px;
 }
 
 @media (min-width: 1472px) {
   .index__doctors .h2--star::after {
     background-image: url(../img/star-white.svg);
+  }
+}
+.index-text {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 24px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.index-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 495px;
+  background-image: url(../img/licence-bg.png);
+  background-size: contain;
+  background-position: bottom center;
+}
+
+.index-text__top {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 24px;
+  z-index: 1;
+}
+
+.index-text__bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 50px;
+  z-index: 1;
+}
+
+@media (min-width: 740px) {
+  .index-text__top {
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+  }
+
+  .index-text__bottom .licence-block__content p {
+    display: block;
+  }
+}
+@media (min-width: 900px) {
+  .index-text {
+    row-gap: 0;
+  }
+
+  .index-text::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: -95px;
+    z-index: 0;
+    width: 1420px;
+    height: 795px;
+  }
+
+  .index-text__bottom {
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 53px;
+         column-gap: 53px;
+  }
+  .index-text__bottom .index-text__top-text {
+    padding-top: 93px;
+  }
+
+  .index-text__licence {
+    order: -1;
+  }
+
+  .index-text__top {
+    -moz-column-gap: 53px;
+         column-gap: 53px;
+  }
+  .index-text__top .index-text__top-text {
+    max-width: 600px;
   }
 }
 .consult {
@@ -7220,6 +7301,7 @@ span.flatpickr-weekday {
     padding-top: 36px;
     padding-bottom: 36px;
     padding-right: 36px;
+    min-height: 130px;
   }
   .text blockquote::before {
     top: 36px;

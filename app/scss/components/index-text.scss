@@ -1,0 +1,87 @@
+.index-text {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.index-text::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 495px;
+    background-image: url(../img/licence-bg.png);
+    background-size: contain;
+    background-position: bottom center;
+}
+
+.index-text__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    z-index: 1;
+}
+
+.index-text__bottom  {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    z-index: 1;
+}
+
+@media (min-width: $small) {
+    .index-text__top {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+    }
+
+    .index-text__bottom .licence-block__content {
+        p {
+            display: block;
+        }
+    }
+    
+}
+
+@media (min-width: 900px) {
+    .index-text {
+        row-gap: 0;
+    }
+
+    .index-text::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: -95px;
+        z-index: 0;
+        width: 1420px;
+        height: 795px;
+    }
+
+    .index-text__bottom  {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 53px;
+
+        .index-text__top-text  {
+            padding-top: 93px;
+        }
+    }
+
+    .index-text__licence {
+        order: -1;
+    }
+
+    .index-text__top {
+        column-gap: 53px;
+
+        .index-text__top-text  {
+            max-width: 600px;
+        }
+    }
+}
