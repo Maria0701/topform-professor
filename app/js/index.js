@@ -369,7 +369,7 @@ try {
 
 try {
 	const selectsToPretify = document.querySelectorAll('.pretty-select');
-	if (selectsToPretify.length > 0) {
+	if (selectsToPretify.length > 0 && window.matchMedia("(min-width: 800px)").matches) {
 		selectsToPretify.forEach(select => new CustomSelect(select, 'custom-select'));
 	}
 

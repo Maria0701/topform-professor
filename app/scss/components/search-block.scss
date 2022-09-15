@@ -27,6 +27,7 @@
 
 .custom-select {
     position: relative;
+    min-height: 20px;
 }
 
 .search-block__input,
@@ -43,6 +44,11 @@
     border-radius: 0;
     background-color: transparent;
     cursor: auto;
+}
+
+.search-block__select,
+.custom-select__select {
+    cursor: pointer;
 }
 
 .search-block__select option {
@@ -79,6 +85,7 @@
     top: 100%;
     width: 100%;
     z-index: 2;
+    display: none;
     padding-top: 16px;
     padding-left: 16px;
     padding-right: 24px;
@@ -110,5 +117,13 @@
             border-bottom: 0;
         }
     }
+
+    .selected {
+        background-color: var(--light-gray);
+    }
 }
 
+
+.custom-select__select.custom-select__select--active + .custom-select__options {
+    display: block;
+}

@@ -13980,7 +13980,49 @@ function fixHeader() {
     });
   }
 }
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js
+
+
+
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
 ;// CONCATENATED MODULE: ./app/js/components/custom-select.js
+
 
 
 
@@ -13992,19 +14034,135 @@ var CustomSelect = /*#__PURE__*/function () {
     this.customClass = customClass;
     this.selectBlock = this.container.querySelector('select');
     this.options = null;
-    this.selectBlock = null;
-    this.optionsBlock = null;
+    this.selectDiv = null;
+    this.optionsDiv = null;
+    this.currentOption = null;
+    this.openSelect = this.openSelect.bind(this);
+    this.optionsHandler = this.optionsHandler.bind(this);
+    this.outOfAreaHandler = this.outOfAreaHandler.bind(this);
+    this.optionsHandler = this.optionsHandler.bind(this);
+    this.keySelectHandler = this.keySelectHandler.bind(this);
+    this.keyOutOfAreaHandler = this.keyOutOfAreaHandler.bind(this);
+    this.optionsKeyHandler = this.optionsKeyHandler.bind(this);
     this.init();
   }
 
   _createClass(CustomSelect, [{
     key: "init",
     value: function init() {
+      var _this = this;
+
       if (!this.selectBlock) return;
       this.container.classList.add(this.customClass);
       this.options = this.selectBlock.querySelectorAll('option');
-      this.selectBlock = new CreateNewElement(this.container, 'div', "".concat(this.customClass, "--select"));
-      this.optionsBlock = new CreateNewElement(this.container, 'div', "".concat(this.customClass, "--options"));
+      this.selectDiv = new CreateNewElement(this.container, 'div', "".concat(this.customClass, "__select"));
+      this.selectDiv.createElmt();
+      this.selectDiv.setAttribute('tabindex', '0');
+      this.optionsDiv = new CreateNewElement(this.container, 'div', "".concat(this.customClass, "__options"));
+      this.optionsDiv.createElmt();
+      this.optionsDiv.setAttribute('tabindex', '0');
+      this.options.forEach(function (opt) {
+        return _this.createOption(opt);
+      });
+      setTimeout(function () {
+        _this.selectDiv = _this.container.querySelector(".".concat(_this.customClass, "__select"));
+
+        _this.selectDiv.addEventListener('click', _this.openSelect);
+
+        _this.selectDiv.addEventListener('keyup', _this.keySelectHandler);
+      }, 0);
+    }
+  }, {
+    key: "createOption",
+    value: function createOption(opt) {
+      var optText = opt.innerText;
+      var optId = opt.value;
+      var optContainer = this.container.querySelector(".".concat(this.customClass, "__options"));
+      var newOpt = new CreateNewElement(optContainer, 'div');
+      newOpt.createElmt();
+      newOpt.setAttribute('data-id', optId);
+      newOpt.setAttribute('tabindex', '0');
+      newOpt.insertText(optText);
+
+      if (opt.selected) {
+        this.currentOption = optId;
+        this.selectDiv.insertText(optText);
+        newOpt.setAttribute('class', 'selected');
+      }
+
+      ;
+    }
+  }, {
+    key: "openSelect",
+    value: function openSelect(evt) {
+      var _this2 = this;
+
+      this.selectDiv.classList.add("".concat(this.customClass, "__select--active"));
+      setTimeout(function () {
+        _this2.optionsDiv = _this2.container.querySelector(".".concat(_this2.customClass, "__options"));
+
+        _this2.optionsDiv.addEventListener('click', _this2.optionsHandler);
+
+        _this2.optionsDiv.addEventListener('keyup', _this2.optionsKeyHandler);
+
+        _this2.optionsDiv.querySelector('.selected').focus();
+      }, 0);
+      document.addEventListener('click', this.outOfAreaHandler);
+      document.addEventListener('keyup', this.keyOutOfAreaHandler);
+    }
+  }, {
+    key: "optionsHandler",
+    value: function optionsHandler(evt) {
+      var _this3 = this;
+
+      _toConsumableArray(this.options).find(function (option) {
+        return option.value === _this3.currentOption;
+      }).selected = false;
+      this.optionsDiv.querySelector('.selected').classList.remove('selected');
+      var target = evt.target.closest('[data-id]');
+      target.classList.add('selected');
+      this.currentOption = target.dataset.id;
+      _toConsumableArray(this.options).find(function (option) {
+        return option.value === _this3.currentOption;
+      }).selected = true;
+      this.selectDiv.innerText = target.innerText;
+      this.closeSelect();
+    }
+  }, {
+    key: "closeSelect",
+    value: function closeSelect() {
+      this.selectDiv.classList.remove("".concat(this.customClass, "__select--active"));
+      this.optionsDiv.removeEventListener('click', this.optionsHandler);
+      this.optionsDiv.removeEventListener('keyup', this.optionsKeyHandler);
+      document.removeEventListener('click', this.outOfAreaHandler);
+      document.removeEventListener('keyup', this.keyOutOfAreaHandler);
+    }
+  }, {
+    key: "outOfAreaHandler",
+    value: function outOfAreaHandler(evt) {
+      if (this.container.contains(evt.target)) return;
+      this.closeSelect();
+    }
+  }, {
+    key: "keySelectHandler",
+    value: function keySelectHandler(evt) {
+      if (evt.code === 'Space') {
+        this.openSelect(evt);
+      }
+    }
+  }, {
+    key: "keyOutOfAreaHandler",
+    value: function keyOutOfAreaHandler(evt) {
+      if (evt.code === 'Escape') {
+        this.closeSelect(evt);
+      }
+    }
+  }, {
+    key: "optionsKeyHandler",
+    value: function optionsKeyHandler(evt) {
+      if (evt.code === 'Enter') {
+        this.optionsHandler(evt);
+      }
     }
   }]);
 
@@ -14386,7 +14544,7 @@ try {
 try {
   var selectsToPretify = document.querySelectorAll('.pretty-select');
 
-  if (selectsToPretify.length > 0) {
+  if (selectsToPretify.length > 0 && window.matchMedia("(min-width: 800px)").matches) {
     selectsToPretify.forEach(function (select) {
       return new CustomSelect(select, 'custom-select');
     });
