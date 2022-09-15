@@ -9,6 +9,7 @@ import { successTemplate } from './components/success-template';
 import { menuOpener } from './components/menu-opener';
 import { fixHeader } from './components/fix-header';
 import { checkField } from './components/utils';
+import { CustomSelect } from './components/custom-select';
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
@@ -364,3 +365,12 @@ try {
 } catch(e) {
 	console.log(e)
 }
+
+
+try {
+	const selectsToPretify = document.querySelectorAll('.pretty-select');
+	if (selectsToPretify.length > 0) {
+		selectsToPretify.forEach(select => new CustomSelect(select, 'custom-select'));
+	}
+
+}catch(e) {console.log(e)}

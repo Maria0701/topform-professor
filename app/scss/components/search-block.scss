@@ -25,9 +25,14 @@
     border-bottom: 1px solid var(--dark-gray);
 }
 
+.custom-select {
+    position: relative;
+}
+
 .search-block__input,
 .prices__search-block-input,
-.search-block__select {
+.search-block__select,
+.custom-select__select {
     padding-bottom: 5px;
     width: 100%;
     font-weight: 400;
@@ -45,3 +50,65 @@
     background-color: var(--white);
     border-bottom: 1px gray;
 }
+
+.custom-select__select:after {
+    position: absolute;
+    content: "";
+    bottom: 5px;
+    right: 0px;
+    display: block;
+    width: 10px;
+    height: 8px;
+    background-image: url('../img/chevron.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-select__select.custom-select__select--active:after {
+    transform: rotate(180deg);
+}
+
+.custom-select .search-block__select {
+    display: none;
+}
+
+.custom-select__options {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    z-index: 2;
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+    max-height: 250px;
+    background-color: var(--white);
+    overflow-y: auto;
+    border: 1px solid var(--dark-gray);
+
+    div {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 0.875rem;
+        line-height: 130%;
+        color: var(--dark-gray);
+        border-bottom: 1px solid var(--light-gray);
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background-color: var(--light-gray);
+        }
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}
+

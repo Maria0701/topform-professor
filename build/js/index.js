@@ -13965,7 +13965,7 @@ var menuOpener = function menuOpener() {
 ;// CONCATENATED MODULE: ./app/js/components/fix-header.js
 function fixHeader() {
   var header = document.querySelector('.header');
-  var main = document.querySelector('.main');
+  var main = document.querySelector('main');
 
   if (header) {
     var sticky = header.offsetHeight;
@@ -13980,7 +13980,38 @@ function fixHeader() {
     });
   }
 }
+;// CONCATENATED MODULE: ./app/js/components/custom-select.js
+
+
+
+var CustomSelect = /*#__PURE__*/function () {
+  function CustomSelect(container, customClass) {
+    _classCallCheck(this, CustomSelect);
+
+    this.container = container;
+    this.customClass = customClass;
+    this.selectBlock = this.container.querySelector('select');
+    this.options = null;
+    this.selectBlock = null;
+    this.optionsBlock = null;
+    this.init();
+  }
+
+  _createClass(CustomSelect, [{
+    key: "init",
+    value: function init() {
+      if (!this.selectBlock) return;
+      this.container.classList.add(this.customClass);
+      this.options = this.selectBlock.querySelectorAll('option');
+      this.selectBlock = new CreateNewElement(this.container, 'div', "".concat(this.customClass, "--select"));
+      this.optionsBlock = new CreateNewElement(this.container, 'div', "".concat(this.customClass, "--options"));
+    }
+  }]);
+
+  return CustomSelect;
+}();
 ;// CONCATENATED MODULE: ./app/js/index.js
+
 
 
 
@@ -14348,6 +14379,18 @@ try {
 try {
   menuOpener();
   fixHeader();
+} catch (e) {
+  console.log(e);
+}
+
+try {
+  var selectsToPretify = document.querySelectorAll('.pretty-select');
+
+  if (selectsToPretify.length > 0) {
+    selectsToPretify.forEach(function (select) {
+      return new CustomSelect(select, 'custom-select');
+    });
+  }
 } catch (e) {
   console.log(e);
 }

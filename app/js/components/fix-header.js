@@ -1,6 +1,6 @@
 export function fixHeader() {
     var header = document.querySelector('.header');
-    var main = document.querySelector('.main');
+    var main = document.querySelector('main');
     if (header) {
       var sticky = header.offsetHeight;
       window.addEventListener('scroll', function() {
