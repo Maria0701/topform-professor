@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
+    "@fancyapps/ui": "^4.0.31",
     "autoprefixer": "^10.3.7",
     "browser-sync": "^2.27.5",
     "css-loader": "^6.4.0",

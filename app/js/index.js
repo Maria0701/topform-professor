@@ -10,9 +10,14 @@ import { menuOpener } from './components/menu-opener';
 import { fixHeader } from './components/fix-header';
 import { checkField } from './components/utils';
 import { CustomSelect } from './components/custom-select';
+import { Fancybox } from "@fancyapps/ui";
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
+
+Fancybox.bind('[data-fancybox="gallery"]', {
+	infinite: false
+});
 
 try {
 	tabsOpener('.js-tabs');
@@ -372,5 +377,4 @@ try {
 	if (selectsToPretify.length > 0 && window.matchMedia("(min-width: 800px)").matches) {
 		selectsToPretify.forEach(select => new CustomSelect(select, 'custom-select'));
 	}
-
 }catch(e) {console.log(e)}
