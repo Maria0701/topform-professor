@@ -16,6 +16,15 @@
     border: 1px solid var(--mid-grey);
 }
 
+.mistake {
+    color: red;
+
+    .comment-form__input, .comment-form__select {
+        border-bottom-color: red;
+    }
+    
+}
+
 .comment__name {
     margin: 0;
     margin-bottom: 12px;

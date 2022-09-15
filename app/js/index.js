@@ -8,6 +8,7 @@ import { phoneMask } from './components/phone-mask';
 import { successTemplate } from './components/success-template';
 import { menuOpener } from './components/menu-opener';
 import { fixHeader } from './components/fix-header';
+import { checkField } from './components/utils';
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
@@ -235,7 +236,7 @@ try {
 					  	} else {
 						  form.reset(); // очищаем форму
 		
-						  if (popupInstance) popupInstance.close(); // если это был попап, том мы его закрываем и чистим обработчики
+						if (popupInstance) popupInstance.close(); // если это был попап, том мы его закрываем и чистим обработчики
 						  // создаем попап с саксессом в конце боди
 		
 						setTimeout(function () {
@@ -257,6 +258,7 @@ try {
 					}
 				})					
 			} else {
+				if (popupInstance) popupInstance.close(); 
 				setTimeout(() => {
 					// добавляем форму с ошибкой в конец боди
 					const successTemp = successTemplate('failure');
@@ -281,6 +283,9 @@ try {
 	const formSubmithandler = (evt) => {
 		evt.preventDefault();
 		const form = evt.target;
+
+		const fieldsToCheck = form.querySelectorAll('.required');
+		if (!checkField(fieldsToCheck)) return;
 
 		let formData = new FormData(form);
 		var url = form.getAttribute('action');
@@ -355,7 +360,6 @@ try {
 
 try {
 	menuOpener();
-
 	fixHeader();
 } catch(e) {
 	console.log(e)

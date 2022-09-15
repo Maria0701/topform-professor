@@ -847,7 +847,7 @@
                     <span class="comment-form__name" name="phone">ВАШ ТЕЛЕФОН*</span>
                 </label>
                 <label class="comment-form__label">                
-                    <select class="comment-form__select required" name="specialist">
+                    <select class="comment-form__select " name="specialist">
                         <option value="0">Выберите специалиста/услугу</option>
                         <option value="1">Диабетолог</option>
                         <option value="2">Гинеколог-эндокринолог</option>
@@ -858,14 +858,14 @@
                     <span class="comment-form__name" name="surname">Специалист/услуга*</span>
                 </label>
                 <label class="comment-form__label comment-form__label--date">                
-                    <input class="comment-form__input required comment-form__date" type="mail" placeholder="Выберите дату" data-date="date">                
+                    <input class="comment-form__input comment-form__date" type="mail" placeholder="Выберите дату" data-date="date">                
                     <span class="comment-form__name" name="mail">ДАТА*</span>
                     <svg width="16" height="16">
 	<use xlink:href="../img/sprite.svg#calendar"></use>
 </svg>
                 </label>
                 <label class="comment-form__label">                
-                    <select class="comment-form__select required" name="specialist">
+                    <select class="comment-form__select" name="specialist">
                         <option value="0">Выберите время</option>
                         <option value="1">13:00</option>
                         <option value="2">13:15</option>
@@ -878,7 +878,7 @@
 
                 <div class="comment-form__bottom">
                     <label class="comment-form__label comment-form__label--checkbox">
-                        <input type="checkbox" name="agreed" checked="">
+                        <input type="checkbox" name="agreed" class="required" checked="">
                         <span>Я даю согласие на обработку <a href="#" alt="персональных данных">персональных данных</a></span>
                     </label>
                     <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>
@@ -910,7 +910,7 @@
                 </label>
                 <div class="comment-form__bottom">
                     <label class="comment-form__label comment-form__label--checkbox">
-                        <input type="checkbox" name="agreed" checked="">
+                        <input type="checkbox" name="agreed" class="required" checked="">
                         <span>Я даю согласие на обработку <a href="#" alt="персональных данных">персональных данных</a></span>
                     </label>
                     <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>

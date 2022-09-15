@@ -13670,7 +13670,47 @@ var CreateNewElement = /*#__PURE__*/function () {
   }]);
 
   return CreateNewElement;
-}();
+}(); // проверяем поле на соответстве правилу для типов (здесь указаны только поля, используемые в квизе)
+// при необходимости можно дополнить любыми другими полями
+
+var checkType = function checkType(field) {
+  var booleanItem;
+  var re = /^[a-zA-Zа-яА-ЯЁё ]*$/;
+
+  switch (field.type) {
+    case 'number':
+      booleanItem = !isNaN(parseFloat(field.value));
+      break;
+
+    case 'text':
+      booleanItem = field.value.length > 2 && re.test(field.value);
+      break;
+
+    case 'tel':
+      booleanItem = true;
+      break;
+
+    case 'checkbox':
+      booleanItem = field.checked === true;
+      break;
+  }
+
+  return booleanItem;
+}; // проверяем поле на непустое и на соответствие правилу для типов
+
+
+var checkField = function checkField(fields) {
+  var mistakes = 0;
+  fields.forEach(function (field) {
+    if (field.closest('label').classList.contains('mistake')) field.closest('label').classList.remove('mistake');
+
+    if (field.value === '' || !checkType(field)) {
+      field.closest('label').classList.add('mistake');
+      mistakes++;
+    }
+  });
+  return mistakes === 0;
+};
 ;// CONCATENATED MODULE: ./app/js/components/yandex.js
 
 
@@ -13951,6 +13991,7 @@ function fixHeader() {
 
 
 
+
 var _require = __webpack_require__(405),
     swiperMode = _require.swiperMode;
 
@@ -14194,6 +14235,7 @@ try {
           }
         });
       } else {
+        if (popupInstance) popupInstance.close();
         setTimeout(function () {
           // добавляем форму с ошибкой в конец боди
           var successTemp = successTemplate('failure');
@@ -14221,6 +14263,8 @@ try {
   var formSubmithandler = function formSubmithandler(evt) {
     evt.preventDefault();
     var form = evt.target;
+    var fieldsToCheck = form.querySelectorAll('.required');
+    if (!checkField(fieldsToCheck)) return;
     var formData = new FormData(form);
     var url = form.getAttribute('action');
     ajaxSend(url, formData, form).then(function (response) {})["catch"](function (err) {

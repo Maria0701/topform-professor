@@ -1139,6 +1139,7 @@ button.swiper-pagination-bullet {
   top: 0;
   left: 0;
   width: 100%;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.25);
 }
 
 .header-container {
@@ -3316,6 +3317,13 @@ button.swiper-pagination-bullet {
   padding-left: 16px;
   padding-right: 16px;
   border: 1px solid var(--mid-grey);
+}
+
+.mistake {
+  color: red;
+}
+.mistake .comment-form__input, .mistake .comment-form__select {
+  border-bottom-color: red;
 }
 
 .comment__name {
