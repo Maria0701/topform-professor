@@ -7,6 +7,7 @@ import { YmapsInitializer } from './components/yandex';
 import { phoneMask } from './components/phone-mask';
 import { successTemplate } from './components/success-template';
 import { menuOpener } from './components/menu-opener';
+import { fixHeader } from './components/fix-header';
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
@@ -354,6 +355,8 @@ try {
 
 try {
 	menuOpener();
+
+	fixHeader();
 } catch(e) {
 	console.log(e)
 }
