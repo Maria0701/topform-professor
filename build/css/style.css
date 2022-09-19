@@ -1591,6 +1591,9 @@ button {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
+  .inner-menu .service-content {
+    flex-grow: 1;
+  }
 
   .service-content__item {
     display: grid;
