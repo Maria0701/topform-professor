@@ -2953,7 +2953,7 @@ button {
   .prices__list::before {
     content: "";
     position: absolute;
-    right: -156px;
+    right: -16px;
     top: -185px;
     z-index: 0;
     width: 503px;
