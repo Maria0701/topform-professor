@@ -217,12 +217,18 @@
     }
 
     .hero-slider__actions {
-        bottom: 152px;
+        bottom: 52px;
     }
 
     .hero-slider__col .art-30 {
         top: 50px;
         width: 160px;
         height: 160px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .hero-slider__actions {
+        bottom: 152px;
     }
 }

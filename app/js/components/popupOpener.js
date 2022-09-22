@@ -21,7 +21,7 @@ export class PopupOpener {
         this.closeHandler = this.closeHandler.bind(this);
         this.closeOverlayHandler = this.closeOverlayHandler.bind(this);
         this.btnEnterCloseHandler = this.keyDownHandler.bind(this);
-        this. keyDownHandler = this.keyDownHandler.bind(this);
+        this.keyDownHandler = this.keyDownHandler.bind(this);
 
         console.log(this.overlayElt);
     }

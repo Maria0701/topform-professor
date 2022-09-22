@@ -838,7 +838,7 @@ body {
   font-size: 16px;
   line-height: 130%;
   color: var(--dark-gray);
-  font-family: "Rubik", "Arial", sans-serif;
+  font-family: "Rubik", Verdana, "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
   background-color: var(--white);
@@ -883,7 +883,7 @@ input:hover, input:focus {
 
 .h1 {
   margin: 0;
-  font-family: Elisabethische, serif;
+  font-family: Elisabethische, Arial, Times, serif;
   font-style: normal;
   font-weight: 400;
   font-size: 2.25rem;
@@ -895,7 +895,7 @@ input:hover, input:focus {
 .h2 {
   margin: 0;
   position: relative;
-  font-family: Elisabethische, serif;
+  font-family: Elisabethische, Arial, serif;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 130%;
@@ -1522,7 +1522,7 @@ button {
   padding-left: 0;
   padding-right: 0;
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.87rem;
   line-height: 130%;
   color: var(--dark-gray);
   text-decoration: none;
@@ -1609,7 +1609,7 @@ button {
   }
 
   .list-service__item a {
-    font-style: 1rem;
+    font-size: 1rem;
     align-items: center;
     transition: color 0.3s ease-in-out;
   }
@@ -2052,11 +2052,12 @@ button {
   display: flex;
   flex-basis: 100%;
   height: 30px;
-  border: 1px solid var(--mid-grey);
+  border: 1px solid var(--orange);
   border-radius: 8px;
 }
 
 .search__input {
+  width: 100%;
   flex-basis: 100%;
   padding-left: 12px;
   padding-right: 26px;
@@ -3897,6 +3898,11 @@ button {
   margin-bottom: 50px;
 }
 
+.service-page__rates {
+  position: relative;
+  z-index: 2;
+}
+
 .service-page__indications {
   position: relative;
   z-index: 1;
@@ -4744,11 +4750,17 @@ button {
     top: 40px;
   }
 }
+@media (min-width: 1000px) {
+  .promo-block--years {
+    padding-bottom: 150px;
+  }
+}
 @media (min-width: 1478px) {
   .promo-block__left,
 .promo-block__right {
     position: absolute;
     top: 50%;
+    z-index: 1;
     display: block;
     width: 36px;
     height: 36px;
@@ -4756,16 +4768,20 @@ button {
   }
 
   .promo-block__left {
+    left: -12px;
+  }
+
+  .promo-block__right {
+    right: -12px;
+  }
+}
+@media (min-width: 1644px) {
+  .promo-block__left {
     left: -72px;
   }
 
   .promo-block__right {
     right: -72px;
-  }
-}
-@media (min-width: 1000px) {
-  .promo-block--years {
-    padding-bottom: 150px;
   }
 }
 .years {
@@ -7156,13 +7172,18 @@ button {
   }
 
   .hero-slider__actions {
-    bottom: 152px;
+    bottom: 52px;
   }
 
   .hero-slider__col .art-30 {
     top: 50px;
     width: 160px;
     height: 160px;
+  }
+}
+@media (min-width: 1400px) {
+  .hero-slider__actions {
+    bottom: 152px;
   }
 }
 .consult {

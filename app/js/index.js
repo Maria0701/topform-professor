@@ -314,7 +314,7 @@ try {
 
 	// открытие popup с записью
 	if (popupAppointmentElt && appointmentOpeners.length > 0) {
-
+		if (popupInstance) popupInstance.close();
 		const openHandler = (evt) => {
 			evt.preventDefault();
 			popupInstance = new PopupOpener({
@@ -333,7 +333,7 @@ try {
 
 	// открытие popup с вопросом
 	if (popupQuestionElt && questionOpeners.length > 0) {
-
+		if (popupInstance) popupInstance.close();
 		const openHandler = (evt) => {
 			evt.preventDefault();
 			popupInstance = new PopupOpener({

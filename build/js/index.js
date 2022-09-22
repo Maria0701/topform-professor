@@ -14480,6 +14480,8 @@ try {
   ; // открытие popup с записью
 
   if (popupAppointmentElt && appointmentOpeners.length > 0) {
+    if (popupInstance) popupInstance.close();
+
     var openHandler = function openHandler(evt) {
       evt.preventDefault();
       popupInstance = new PopupOpener({
@@ -14505,6 +14507,8 @@ try {
 
 
   if (popupQuestionElt && questionOpeners.length > 0) {
+    if (popupInstance) popupInstance.close();
+
     var _openHandler = function _openHandler(evt) {
       evt.preventDefault();
       popupInstance = new PopupOpener({
