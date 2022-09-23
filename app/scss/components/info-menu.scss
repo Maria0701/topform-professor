@@ -30,7 +30,7 @@
         font-weight: 700;
         font-size: 1rem;
         line-height: 1.2;
-        color: var(--green);
+        color: var(--green-text);
         text-decoration: none;
     }    
 }
@@ -45,8 +45,8 @@
     svg {        
         width: 24px;
         height: 24px;
-        color: var(--green);
-        fill: var(--green);
+        color: var(--green-text);
+        fill: var(--green-text);
     }
 }
 

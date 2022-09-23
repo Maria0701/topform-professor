@@ -11,6 +11,7 @@ import { fixHeader } from './components/fix-header';
 import { checkField } from './components/utils';
 import { CustomSelect } from './components/custom-select';
 import { Fancybox } from "@fancyapps/ui";
+import { colorSwitcher } from './components/sight-form';
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
@@ -378,3 +379,5 @@ try {
 		selectsToPretify.forEach(select => new CustomSelect(select, 'custom-select'));
 	}
 }catch(e) {console.log(e)}
+
+colorSwitcher();

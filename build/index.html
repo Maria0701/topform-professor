@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="html--white">
   <head>
     <meta charset="utf-8">
     <title>Название сайта</title>
@@ -10,6 +10,52 @@
   </head>
   <body>
     <header class="header">
+	<div class="sight">
+    <div class="container sight__container">
+        <form class="sight__form">
+            <label class="sight__label sight__label--font">
+                <span class="sight__name">Шрифт</span>
+                <span class="sight__switcher switcher" tabindex="0" data-font="minus">-</span>
+                <span class="sight__switcher switcher" tabindex="0" data-font="plus">+</span>
+                <input type="number" value="16">                
+            </label>
+            <div class="sight__label">
+                <span class="sight__name">Цвет</span>
+                <label class="sight__color sight__color--white">
+                    Ф
+                    <input type="radio" name="color" value="white">
+                </label>
+                <label class="sight__color sight__color--black">
+                    Ф
+                    <input type="radio" name="color" value="dark">
+                </label>
+                <label class="sight__color sight__color--blue">
+                    Ф
+                    <input type="radio" name="color" value="blue">
+                </label>
+                <label class="sight__color sight__color--green">
+                    Ф
+                    <input type="radio" name="color" value="green">
+                </label>
+                <label class="sight__color sight__color--normal">
+                    Ф
+                    <input type="radio" name="color" value="normal">
+                </label>
+              </div>
+            <div class="sight__label">
+                <span class="sight__name">Изображения</span>
+                <label class="sight__img sight__img--on">
+                   вкл
+                    <input type="radio" name="img" value="yes">
+                </label>
+                <label class="sight__img sight__img--off">
+                    выкл
+                    <input type="radio" name="img" value="no">
+                </label>
+            </div>
+        </form>
+    </div>
+</div>
 	<div class="header-container container">
 		<div class="header-logo">
 			<a href="/" class="header-logo__img" title="На Главную">

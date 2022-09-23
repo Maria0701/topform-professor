@@ -19,9 +19,11 @@ button {
 
 .btn--primary,
 .btn--secondary {    
-    height: 50px;
+    //height: 50px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     line-height: 1;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
     text-align: center;
     text-decoration: none;
@@ -41,8 +43,8 @@ button {
     transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 
     &:hover {
-        border-color: var(--green);
-        color: var(--green);
+        border-color: var(--green-text);
+        color: var(--green-text);
     }
 }
 
@@ -58,14 +60,14 @@ button {
 
 .btn--primary {
     background-color: var(--orange);
-    color: var(--white);
-    border: 1px solid var(--orange);
+    color: var(--white-text);
+    border: 1px solid var(--orange-text);
     padding-left: 13px;
     padding-right: 13px;
     position: relative;
 
     &:hover {
-        background-color: #dd8c42;
+        background-color: var(--orange2);
     }
 
     &::after {
@@ -83,7 +85,8 @@ button {
 .btn--green {
     padding-right: 24px;
     padding-left: 24px;
-    height: 50px;
+    padding-top: 17px;
+    padding-bottom: 17px;
     width: fit-content;
     font-weight: 700;
     font-size: 0.75rem;
@@ -99,14 +102,14 @@ button {
 
     &:hover,
     &:focus {
-        color: var(--green);
+        color: var(--green-text);
         text-decoration: none;
-        border-color: var(--green);
+        border-color: var(--green-text);
     }
 }
 
 .btn--green.btn--active {
     color: var(--white);
-    background-color: var(--green);
-    border-color: var(--green);
+    background-color: var(--green-text);
+    border-color: var(--green-text);
 }

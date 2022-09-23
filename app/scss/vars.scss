@@ -1,11 +1,16 @@
 :root {
     --white: #ffffff;
+    --white-text: #ffffff;
     --green: #5F8D6E;
+    --green-text: #5F8D6E;
     --light-gray: #F3F3F3;
     --dark-gray: #5F5F5F;
     --mid-grey: #8d8d8d;
     --gray2: #4f4f4f;
+    --gray3: #C9C9C9;
     --orange: #E8A05E;
+    --orange-text: #E8A05E;
+    --orange2: #dd8c42;
     --bege:#F0EEE0;
     --bege2: #f9f8f3;
     --background: #F5F5F5;
@@ -15,7 +20,6 @@
     --tablet-screen: 740px;
     --mobile-screen: 320px;
     --padding: 16px;
-
 }
 
 $small: 740px;

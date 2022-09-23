@@ -142,6 +142,10 @@
     opacity: 1;
 }
 
+.hero-slider__text {
+    margin-bottom: 16px;
+}
+
 @media (min-width: $small) {
     .hero-slider__item .container {
         position:relative;

@@ -1,0 +1,310 @@
+.sight__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+.sight__switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+    background: var(--green-text);
+    color: var(--white);    
+    cursor: pointer;
+}
+
+.sight__label--font {
+    display: flex;
+    input {
+        display: none;
+    }
+}
+
+.sight__name {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.sight__label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sight__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: uppercase;
+    border: 1px solid var(--dark-gray);
+    color: var(--dark-gray)
+}
+
+.sight__color {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--green);
+    border-radius: 2px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;    
+}
+
+.sight__color--white {
+    background-color: #ffffff;
+    border: 1px solid #000;
+    color: #000;
+}
+
+.sight__color--black {
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.sight__color--blue {
+    border: 1px solid #063462;
+    color: #063462;
+    background-color: #9DD1FF;
+}
+
+.sight__color--green {
+    border: 1px solid #A9E44D;
+    color: #A9E44D;
+    background-color: #3B2716;
+}
+
+.sight__color--normal {
+    border: 1px solid #5F8D6E;
+    color: #E8A05E;
+    background-color: #5F8D6E;
+}
+
+.html--dark {
+        --white: #000000;
+        --white-text:#ffffff;
+        --green: #000000;
+        --green-text:#ffffff;
+        --light-gray: #000000;
+        --dark-gray: #ffffff;
+        --mid-grey: #ffffff;
+        --gray2: #ffffff;
+        --gray3: #ffffff;
+        --orange: #000000;
+        --orange-text: #ffffff;
+        --orange2: transparent;
+        --bege:#000000;
+        --bege2: #000000;
+        --background: #000000;
+        --background-gray: #fafafa;
+        --lirear: rgb(99, 158, 117);
+
+    img,
+    .text ul li::before,
+    .header-menu__item--inner > a::after,
+    .advantages__item svg {
+        filter: grayscale(100%);
+    }
+
+    .doctors::before {
+        display: none;
+    }
+
+    .hero-slider__item,
+    .review-slider__wrapper {
+        background-image: none;
+    }
+
+     .footer {
+        background-image: none;
+        border-top: 1px solid var(--white-text);
+    }
+
+    .header {
+        border-bottom: 1px solid white;
+    }
+
+    .years__container {
+        border-bottom: 1px solid var(--white-text);
+        border-top: 1px solid var(--white-text);
+    }
+}
+
+.html--blue {
+    --white: rgb(157, 209, 255);
+    --white-text:rgb(6, 52, 98);
+    --green: rgb(157, 209, 255);
+    --green-text:rgb(6, 52, 98);
+    --light-gray: rgb(157, 209, 255);
+    --dark-gray: rgb(6, 52, 98);
+    --mid-grey: rgb(6, 52, 98);
+    --gray2: rgb(6, 52, 98);
+    --gray3: rgb(6, 52, 98);
+    --orange: rgb(157, 209, 255);
+    --orange-text: rgb(6, 52, 98);
+    --orange2: transparent;
+    --bege:rgb(157, 209, 255);
+    --bege2: rgb(157, 209, 255);
+    --background: rgb(157, 209, 255);
+    --background-gray: rgb(6, 52, 98);
+    --lirear: rgb(99, 158, 117);
+
+    img,
+    .advantages__item svg,
+    .text ul li::before,
+    .header-menu__item--inner > a::after {
+        filter: sepia(100%) hue-rotate(170deg) saturate(150%);
+    }
+
+    .doctors::before,
+    .index-text::after {
+        display: none;
+    }
+
+    .hero-slider__item,
+    .review-slider__wrapper {
+        background-image: none;    
+        background-image: none;
+    }
+
+    .footer {
+        background-image: none;
+        border-top: 1px solid var(--white-text);
+    }
+
+    .header {
+        border-bottom: 1px solid rgb(6, 52, 98);
+    }
+
+    .years__container {
+        border-bottom: 1px solid var(--white-text);
+        border-top: 1px solid var(--white-text);
+    }
+}
+
+.html--green {
+    --white: rgb(59, 39, 22);
+    --white-text:rgb(169, 228, 77);
+    --green: rgb(59, 39, 22);
+    --green-text:rgb(169, 228, 77);
+    --light-gray: rgb(59, 39, 22);
+    --dark-gray: rgb(169, 228, 77);
+    --mid-grey: rgb(169, 228, 77);
+    --gray2: rgb(169, 228, 77);
+    --gray3: rgb(169, 228, 77);
+    --orange: rgb(59, 39, 22);
+    --orange-text: rgb(169, 228, 77);
+    --orange2: transparent;
+    --bege:rgb(59, 39, 22);
+    --bege2: rgb(59, 39, 22);
+    --background: rgb(59, 39, 22);
+    --background-gray: rgb(169, 228, 77);
+    --lirear: rgb(99, 158, 117);
+
+    img,
+    .advantages__item svg,
+    .text ul li::before,
+    .header-menu__item--inner > a::after {
+        filter: sepia(100%) hue-rotate(70deg) saturate(150%);
+    }
+
+    .doctors::before,
+    .index-text::after {
+        display: none;
+    }
+
+    .hero-slider__item {
+        background-image: none;
+    }
+
+    .review-slider__wrapper {
+        background-image: none;
+    }
+
+    .footer {
+        background-image: none;
+        border-top: 1px solid var(--white-text);
+    }
+
+    .header {
+        border-bottom: 1px solid rgb(169, 228, 77);
+    }
+
+    .years__container {
+        border-bottom: 1px solid var(--white-text);
+        border-top: 1px solid var(--white-text);
+    }
+}
+
+.no-picture img,
+.no-picture .collage {
+    opacity: 0;
+}
+
+.html--white {
+    --white: #ffffff;
+    --green: #cccccc;
+    --light-gray: #ffffff;
+    --orange: #ffffff;
+    --bege:#ffffff;
+    --bege2: #ffffff;
+    --background: #ffffff;
+    --white-text:#000000;    
+    --green-text:#000000;    
+    --dark-gray: #000000;
+    --mid-grey: #000000;
+    --gray2: #000000;
+    --gray3: #000000;    
+    --orange-text: #000000;
+    --orange2: transparent;
+    
+    --background-gray: #fafafa;
+    --lirear: rgb(99, 158, 117);
+
+    img,
+    .text ul li::before,
+    .header-menu__item--inner > a::after,
+    .advantages__item svg {
+        filter: grayscale(100%);
+    }
+
+    .doctors::before {
+        display: none;
+    }
+
+    .hero-slider__item,
+    .review-slider__wrapper {
+        background-image: none;
+    }
+
+    .footer {
+        background-image: none;
+        border-top: 1px solid var(--white-text);
+    }
+
+    .header {
+        border-bottom: 1px solid white;
+    }
+
+    .years__container {
+        border-bottom: 1px solid var(--white-text);
+        border-top: 1px solid var(--white-text);
+    }
+}

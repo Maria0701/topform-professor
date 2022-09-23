@@ -18,7 +18,7 @@
         display: block;
         width: calc(100% - 32px);
         height: calc(100% - 54px);
-        border: 1px solid var(--white);
+        border: 1px solid var(--white-text);
     }
 }
 
@@ -31,7 +31,7 @@
     line-height: 130%;
     text-transform: uppercase;
     text-align: center;
-    color: var(--white);
+    color: var(--white-text);
     background-color: var(--green);
 }
 

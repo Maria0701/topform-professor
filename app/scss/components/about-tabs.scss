@@ -55,20 +55,20 @@
 
 [role="tab"]:focus,
 [role="tab"]:hover {
-    color: var(--green);
+    color: var(--green-text);
     background-color: var(--white);
 
     svg {
-        fill: var(--green);
+        fill: var(--green-text);
     }
 }
   
 [role="tab"][aria-selected="true"] {
-    color: var(--white);
+    color: var(--white-text);
     background-color: var(--green);
-    border-color: var(--green);
+    border-color: var(--green-text);
     svg {
-        fill: var(--white);
+        fill: var(--whiteText);
     }
 }
   
