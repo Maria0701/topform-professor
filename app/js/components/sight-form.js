@@ -13,6 +13,8 @@ const PicturesOn = {
 
 export function colorSwitcher() {
     const form = document.querySelector('.sight__form');
+
+    if (!form ) return;
     const minusFont = form.querySelector('.sight__label--font');
     const htmlElt = document.querySelector('html');
     const colorChangers = form.querySelectorAll('[name="img"]');

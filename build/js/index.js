@@ -14186,6 +14186,7 @@ var PicturesOn = {
 };
 function colorSwitcher() {
   var form = document.querySelector('.sight__form');
+  if (!form) return;
   var minusFont = form.querySelector('.sight__label--font');
   var htmlElt = document.querySelector('html');
   var colorChangers = form.querySelectorAll('[name="img"]');
