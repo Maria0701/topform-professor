@@ -62,9 +62,7 @@ export class PopupOpener {
         this.overlayElt.removeEventListener('click', this.closeOverlayHandler);
         this.closeBtn.removeEventListener('click', this.closeHandler);
         document.removeEventListener('keydown', this.keyDownHandler);
-        this.closeBtn.removeEventListener('keydown', this.btnEnterCloseHandler);
-
-        
+        this.closeBtn.removeEventListener('keydown', this.btnEnterCloseHandler);        
     }
 
     closeOverlayHandler(evt) {

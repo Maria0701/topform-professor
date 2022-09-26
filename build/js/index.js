@@ -14231,6 +14231,7 @@ var SightCorrector = /*#__PURE__*/function () {
     this.closeHandler = this.closeHandler.bind(this);
     this.keyFontHandler = this.keyFontHandler.bind(this);
     this.keyDefaultHandler = this.keyDefaultHandler.bind(this);
+    this.keyCloseHandler = this.keyCloseHandler.bind(this);
     this.init();
   }
 
@@ -14266,6 +14267,7 @@ var SightCorrector = /*#__PURE__*/function () {
       this.defaultChanger.addEventListener('click', this.defaultHandler);
       this.defaultChanger.addEventListener('keyup', this.keyDefaultHandler);
       this.closer.addEventListener('click', this.closeHandler);
+      this.closer.addEventListener('keyup', this.keyCloseHandler);
     }
   }, {
     key: "closeHandler",
@@ -14283,6 +14285,13 @@ var SightCorrector = /*#__PURE__*/function () {
       this.defaultChanger.removeEventListener('click', this.defaultHandler);
       this.closer.removeEventListener('click', this.closeHandler);
       this.minusFont.removeEventListener('keyup', this.keyFontHandler);
+    }
+  }, {
+    key: "keyCloseHandler",
+    value: function keyCloseHandler(evt) {
+      if (evt.key === 'Enter') {
+        this.closeHandler(evt);
+      }
     }
   }, {
     key: "attrHandler",
