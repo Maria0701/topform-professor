@@ -1553,6 +1553,7 @@ button {
   .header-menu__wrap {
     display: flex;
     flex-basis: 100%;
+    height: 100%;
   }
 
   .header-menu__wrap {
@@ -1625,7 +1626,7 @@ button {
     height: 36px;
   }
   .list-service__item a:hover, .list-service__item a:focus {
-    color: var(--green);
+    color: var(--green-text);
   }
 
   .header-menu__item:hover > a,
@@ -1655,10 +1656,6 @@ button {
 
   .service-content__item {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .header-menu__item > a {
-    height: 50px;
   }
 }
 .secondary-menu {
@@ -1695,6 +1692,7 @@ button {
   margin-left: var(--padding);
   width: 24px;
   height: 24px;
+  color: var(--mid-gray);
 }
 
 @media (min-width: 1000px) {
@@ -2508,12 +2506,14 @@ button {
   grid-row: span 2;
   width: 37px;
   height: 37px;
+  color: var(--green-text);
 }
 .top-page__from-svg svg {
   display: block;
   width: 35px;
   height: 35px;
   box-sizing: border-box;
+  fill: var(--green-text);
 }
 
 .top-page__text,
@@ -2556,6 +2556,7 @@ button {
   width: 50px;
   height: 50px;
   fill: none;
+  color: var(--green-text);
 }
 
 .top-page__about-img {
@@ -2607,7 +2608,7 @@ button {
 .top-page__timetable {
   width: 100%;
   text-align: center;
-  color: var(--white);
+  color: var(--white-text);
   border-collapse: collapse;
   background-color: var(--green);
 }
@@ -2616,12 +2617,12 @@ button {
   padding-bottom: 12px;
   padding-left: 24px;
   padding-right: 24px;
-  border-left: 1px solid var(--white);
-  border-top: 1px solid var(--white);
-  border-bottom: 1px solid var(--white);
+  border-left: 1px solid var(--white-text);
+  border-top: 1px solid var(--white-text);
+  border-bottom: 1px solid var(--white-text);
 }
 .top-page__timetable td:last-child {
-  border-right: 1px solid var(--white);
+  border-right: 1px solid var(--white-text);
 }
 
 .top-page__day {
@@ -2865,8 +2866,8 @@ button {
 }
 
 .pager__item--active {
-  color: var(--green);
-  border: 1px solid var(--green);
+  color: var(--green-text);
+  border: 1px solid var(--green-text);
   border-radius: 12px 12px 0px 0px;
 }
 
@@ -3129,7 +3130,7 @@ button {
 @media (min-width: 740px) {
   .prices-row {
     display: grid;
-    grid-template-columns: 1fr 175px 100px;
+    grid-template-columns: 1fr 175px 150px;
     gap: 50px;
     align-items: center;
   }
@@ -5388,7 +5389,7 @@ button {
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 130%;
-  color: var(--green);
+  color: var(--green-text);
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
@@ -5700,7 +5701,7 @@ button {
   font-size: 2.25rem;
   line-height: 130%;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--white-text);
 }
 
 .history-item__text {
@@ -5712,7 +5713,7 @@ button {
   line-height: 130%;
   text-align: center;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--white-text);
 }
 .history-item__text p {
   margin: 0;
@@ -5881,7 +5882,7 @@ button {
   font-size: 3.125rem;
   line-height: 100%;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--green-text);
 }
 
 .nums-block__text {
@@ -6137,7 +6138,7 @@ button {
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 140%;
-  color: var(--gray2);
+  color: var(--gray2-text);
 }
 .contacts__directions span {
   font-style: normal;
@@ -9500,6 +9501,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   padding-top: 12px;
   border-bottom: 1px solid var(--dark-gray);
 }
+.sight__form [type=radio] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
 
 .sight__switcher {
   display: flex;
@@ -9535,6 +9542,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 
 .sight__img {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9545,8 +9553,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   border: 1px solid var(--dark-gray);
   color: var(--dark-gray);
 }
+.sight__img:hover, .sight__img:focus, .sight__img:focus-within {
+  outline: 2px ridge blue;
+}
 
 .sight__color {
+  position: relative;
   flex-shrink: 0;
   width: 32px;
   height: 32px;
@@ -9558,6 +9570,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.sight__color:hover, .sight__color:focus, .sight__color:focus-within {
+  outline: 2px ridge blue;
 }
 
 .sight__color--white {
@@ -9599,6 +9614,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   --dark-gray: #ffffff;
   --mid-grey: #ffffff;
   --gray2: #ffffff;
+  --gray2-text: #000000;
   --gray3: #ffffff;
   --orange: #000000;
   --orange-text: #ffffff;
@@ -9606,7 +9622,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   --bege:#000000;
   --bege2: #000000;
   --background: #000000;
-  --background-gray: #fafafa;
+  --background-gray: #000000;
   --lirear: rgb(99, 158, 117);
 }
 .html--dark img,
@@ -9619,7 +9635,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   display: none;
 }
 .html--dark .hero-slider__item,
-.html--dark .review-slider__wrapper {
+.html--dark .review-slider__wrapper,
+.html--dark .top-page--bege,
+.html--dark .top-page--gray,
+.html--dark .top-page--doctor-page,
+.html--dark .top-page--about,
+.html--dark .history::after,
+.html--dark .about-license::after {
   background-image: none;
 }
 .html--dark .footer {
@@ -9633,6 +9655,10 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   border-bottom: 1px solid var(--white-text);
   border-top: 1px solid var(--white-text);
 }
+.html--dark .service-menu-wrapper {
+  background-color: var(--white);
+  border: 1px solid var(--white-text);
+}
 
 .html--blue {
   --white: rgb(157, 209, 255);
@@ -9643,6 +9669,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   --dark-gray: rgb(6, 52, 98);
   --mid-grey: rgb(6, 52, 98);
   --gray2: rgb(6, 52, 98);
+  --gray2-text: rgb(6, 52, 98);
   --gray3: rgb(6, 52, 98);
   --orange: rgb(157, 209, 255);
   --orange-text: rgb(6, 52, 98);
@@ -9650,7 +9677,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   --bege:rgb(157, 209, 255);
   --bege2: rgb(157, 209, 255);
   --background: rgb(157, 209, 255);
-  --background-gray: rgb(6, 52, 98);
+  --background-gray: rgb(157, 209, 255);
   --lirear: rgb(99, 158, 117);
 }
 .html--blue img,
@@ -9664,8 +9691,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   display: none;
 }
 .html--blue .hero-slider__item,
-.html--blue .review-slider__wrapper {
-  background-image: none;
+.html--blue .review-slider__wrapper,
+.html--blue .top-page--bege,
+.html--blue .top-page--gray,
+.html--blue .top-page--doctor-page,
+.html--blue .top-page--about,
+.html--blue .history::after,
+.html--blue .about-license::after {
   background-image: none;
 }
 .html--blue .footer {
@@ -9679,6 +9711,10 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   border-bottom: 1px solid var(--white-text);
   border-top: 1px solid var(--white-text);
 }
+.html--blue .service-menu-wrapper {
+  background-color: var(--white);
+  border: 1px solid var(--white-text);
+}
 
 .html--green {
   --white: rgb(59, 39, 22);
@@ -9689,6 +9725,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   --dark-gray: rgb(169, 228, 77);
   --mid-grey: rgb(169, 228, 77);
   --gray2: rgb(169, 228, 77);
+  --gray2-text: rgb(169, 228, 77);
   --gray3: rgb(169, 228, 77);
   --orange: rgb(59, 39, 22);
   --orange-text: rgb(169, 228, 77);
@@ -9696,7 +9733,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   --bege:rgb(59, 39, 22);
   --bege2: rgb(59, 39, 22);
   --background: rgb(59, 39, 22);
-  --background-gray: rgb(169, 228, 77);
+  --background-gray: rgb(59, 39, 22);
   --lirear: rgb(99, 158, 117);
 }
 .html--green img,
@@ -9709,10 +9746,14 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--green .index-text::after {
   display: none;
 }
-.html--green .hero-slider__item {
-  background-image: none;
-}
-.html--green .review-slider__wrapper {
+.html--green .review-slider__wrapper,
+.html--green .hero-slider__item,
+.html--green .top-page--bege,
+.html--green .top-page--gray,
+.html--green .top-page--doctor-page,
+.html--green .top-page--about,
+.html--green .history::after,
+.html--green .about-license::after {
   background-image: none;
 }
 .html--green .footer {
@@ -9726,10 +9767,34 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   border-bottom: 1px solid var(--white-text);
   border-top: 1px solid var(--white-text);
 }
+.html--green .service-menu-wrapper {
+  background-color: var(--white);
+  border: 1px solid var(--white-text);
+}
 
 .no-picture img,
-.no-picture .collage {
+.no-picture svg,
+.no-picture .collage,
+.no-picture .top-page__about-svg {
   opacity: 0;
+}
+
+.no-picture .review-slider__wrapper,
+.no-picture .hero-slider__item,
+.no-picture .top-page--bege,
+.no-picture .top-page--gray,
+.no-picture .top-page--doctor-page,
+.no-picture .top-page--about,
+.no-picture .about-license::after {
+  background-image: none;
+}
+.no-picture .doctors::before,
+.no-picture .index-text::after,
+.no-picture .history::after {
+  display: none;
+}
+.no-picture .contacts {
+  background-image: none !important;
 }
 
 .html--white {
@@ -9745,9 +9810,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   --dark-gray: #000000;
   --mid-grey: #000000;
   --gray2: #000000;
+  --gray2-text: #000000;
   --gray3: #000000;
   --orange-text: #000000;
-  --orange2: transparent;
   --background-gray: #fafafa;
   --lirear: rgb(99, 158, 117);
 }
@@ -9761,7 +9826,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   display: none;
 }
 .html--white .hero-slider__item,
-.html--white .review-slider__wrapper {
+.html--white .review-slider__wrapper,
+.html--white .top-page--bege,
+.html--white .top-page--gray,
+.html--white .top-page--doctor-page,
+.html--white .top-page--about .history::after,
+.html--white .about-license::after {
   background-image: none;
 }
 .html--white .footer {
@@ -9774,5 +9844,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--white .years__container {
   border-bottom: 1px solid var(--white-text);
   border-top: 1px solid var(--white-text);
+}
+.html--white .service-menu-wrapper {
+  background-color: var(--white);
+  border: 1px solid var(--white-text);
 }
 /*# sourceMappingURL=style.css.map */

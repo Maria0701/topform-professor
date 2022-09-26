@@ -13938,6 +13938,11 @@ var menuOpener = function menuOpener() {
     });
   };
 
+  var outOfAreHandler = function outOfAreHandler(evt) {
+    if (menu.contains(evt.target) || menuToggler.contains(evt.target)) return;
+    closeMenuHandler();
+  };
+
   var subMenuHandler = function subMenuHandler(evt) {
     evt.preventDefault();
     if (activeSubMenu) closeSubMenu();
@@ -13958,6 +13963,7 @@ var menuOpener = function menuOpener() {
     });
     menuToggler.removeEventListener('click', openMenuHandler);
     menuToggler.addEventListener('click', closeMenuHandler);
+    document.addEventListener('click', outOfAreHandler);
   };
 
   menuToggler.addEventListener('click', openMenuHandler);
@@ -14185,16 +14191,48 @@ var PicturesOn = {
   off: 'no-picture'
 };
 function colorSwitcher() {
+  var currSize;
+  var currColorScheme;
+  var currentPictures;
+  var storage = JSON.parse(sessionStorage.getItem('professorSight'));
   var form = document.querySelector('.sight__form');
-  if (!form) return;
   var minusFont = form.querySelector('.sight__label--font');
   var htmlElt = document.querySelector('html');
-  var colorChangers = form.querySelectorAll('[name="img"]');
+  var colorChangers = form.querySelectorAll('[name="color"]');
   var pictureChangers = form.querySelectorAll('[name="img"]');
-  var currColorScheme = ColorSchemes.normal;
-  var currentPictures = PicturesOn.on;
   var fontSize = window.getComputedStyle(htmlElt).fontSize;
-  var currSize = parseInt(fontSize.slice(0, fontSize.length - 2));
+
+  var attrHandler = function attrHandler(_ref) {
+    var _ref$color = _ref.color,
+        color = _ref$color === void 0 ? currColorScheme : _ref$color,
+        _ref$picture = _ref.picture,
+        picture = _ref$picture === void 0 ? currentPictures : _ref$picture;
+    return htmlElt.setAttribute("class", "".concat(color, " ").concat(picture));
+  };
+
+  var updateStorage = function updateStorage() {
+    return sessionStorage.setItem('professorSight', JSON.stringify({
+      font: currSize,
+      color: currColorScheme,
+      pictures: currentPictures
+    }));
+  };
+
+  if (storage) {
+    currSize = storage.font;
+    currColorScheme = storage.color;
+    currentPictures = storage.pictures;
+    attrHandler({
+      color: currColorScheme,
+      picture: currentPictures
+    });
+    htmlElt.style.fontSize = "".concat(currSize, "px");
+  } else {
+    currSize = parseInt(fontSize.slice(0, fontSize.length - 2));
+    currColorScheme = ColorSchemes.normal;
+    currentPictures = PicturesOn.on;
+    updateStorage();
+  }
 
   var fontHandler = function fontHandler(evt) {
     if (evt.target.closest('.switcher')) {
@@ -14204,42 +14242,53 @@ function colorSwitcher() {
         currSize += 1;
       }
 
+      updateStorage();
       htmlElt.style.fontSize = "".concat(currSize, "px");
     }
   };
 
+  var pictureHandler = function pictureHandler(evt) {
+    currentPictures = evt.target.value === 'yes' ? PicturesOn.on : PicturesOn.off;
+    updateStorage();
+    return attrHandler({
+      picture: currentPictures
+    });
+  };
+
   var colorHandler = function colorHandler(evt) {
-    console.log(htmlElt.getAttribute("class"));
     var colorScheme = evt.target.value;
 
     switch (colorScheme) {
       case 'white':
         currColorScheme = ColorSchemes.white;
-        htmlElt.setAttribute("class", [currColorScheme, currentPictures]);
         break;
 
       case 'green':
         currColorScheme = ColorSchemes.green;
-        htmlElt.setAttribute("class", [currColorScheme, currentPictures]);
         break;
 
       case 'blue':
         currColorScheme = ColorSchemes.blue;
-        htmlElt.setAttribute("class", [currColorScheme, currentPictures]);
         break;
 
       case 'dark':
         currColorScheme = ColorSchemes.dark;
-        htmlElt.setAttribute("class", [currColorScheme, currentPictures]);
         break;
 
       case 'normal':
         currColorScheme = ColorSchemes.normal;
-        htmlElt.setAttribute("class", [currColorScheme, currentPictures]);
         break;
     }
+
+    updateStorage();
+    return attrHandler({
+      color: currColorScheme
+    });
   };
 
+  pictureChangers.forEach(function (picture) {
+    return picture.addEventListener('click', pictureHandler);
+  });
   colorChangers.forEach(function (color) {
     return color.addEventListener('click', colorHandler);
   });

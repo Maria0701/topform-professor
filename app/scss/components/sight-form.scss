@@ -6,9 +6,16 @@
     padding-bottom: 12px;
     padding-top: 12px;
     border-bottom: 1px solid var(--dark-gray);
+
+    [type="radio"] {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    } 
 }
 
-.sight__switcher {
+.sight__switcher {   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,6 +49,7 @@
 }
 
 .sight__img {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,10 +58,17 @@
     padding-right: 10px;
     text-transform: uppercase;
     border: 1px solid var(--dark-gray);
-    color: var(--dark-gray)
+    color: var(--dark-gray);
+
+    &:hover, 
+    &:focus,
+    &:focus-within {
+        outline: 2px ridge blue;
+    }
 }
 
 .sight__color {
+    position: relative;
     flex-shrink: 0;
     width: 32px;
     height: 32px;
@@ -64,7 +79,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;    
+    cursor: pointer;
+
+    &:hover, 
+    &:focus,
+    &:focus-within {
+        outline: 2px ridge blue;
+    }
 }
 
 .sight__color--white {
@@ -106,6 +127,7 @@
         --dark-gray: #ffffff;
         --mid-grey: #ffffff;
         --gray2: #ffffff;
+        --gray2-text: #000000;
         --gray3: #ffffff;
         --orange: #000000;
         --orange-text: #ffffff;
@@ -113,7 +135,7 @@
         --bege:#000000;
         --bege2: #000000;
         --background: #000000;
-        --background-gray: #fafafa;
+        --background-gray: #000000;
         --lirear: rgb(99, 158, 117);
 
     img,
@@ -128,7 +150,13 @@
     }
 
     .hero-slider__item,
-    .review-slider__wrapper {
+    .review-slider__wrapper,
+    .top-page--bege,
+    .top-page--gray,
+    .top-page--doctor-page,
+    .top-page--about,
+    .history::after,
+    .about-license::after {
         background-image: none;
     }
 
@@ -145,6 +173,11 @@
         border-bottom: 1px solid var(--white-text);
         border-top: 1px solid var(--white-text);
     }
+
+    .service-menu-wrapper {
+        background-color: var(--white);
+        border: 1px solid var(--white-text);
+    }
 }
 
 .html--blue {
@@ -156,6 +189,7 @@
     --dark-gray: rgb(6, 52, 98);
     --mid-grey: rgb(6, 52, 98);
     --gray2: rgb(6, 52, 98);
+    --gray2-text: rgb(6, 52, 98);
     --gray3: rgb(6, 52, 98);
     --orange: rgb(157, 209, 255);
     --orange-text: rgb(6, 52, 98);
@@ -163,7 +197,7 @@
     --bege:rgb(157, 209, 255);
     --bege2: rgb(157, 209, 255);
     --background: rgb(157, 209, 255);
-    --background-gray: rgb(6, 52, 98);
+    --background-gray: rgb(157, 209, 255);
     --lirear: rgb(99, 158, 117);
 
     img,
@@ -179,9 +213,14 @@
     }
 
     .hero-slider__item,
-    .review-slider__wrapper {
+    .review-slider__wrapper,
+    .top-page--bege,
+    .top-page--gray,
+    .top-page--doctor-page,
+    .top-page--about,
+    .history::after,
+    .about-license::after {
         background-image: none;    
-        background-image: none;
     }
 
     .footer {
@@ -197,6 +236,11 @@
         border-bottom: 1px solid var(--white-text);
         border-top: 1px solid var(--white-text);
     }
+
+    .service-menu-wrapper {
+        background-color: var(--white);
+        border: 1px solid var(--white-text);
+    }
 }
 
 .html--green {
@@ -208,6 +252,7 @@
     --dark-gray: rgb(169, 228, 77);
     --mid-grey: rgb(169, 228, 77);
     --gray2: rgb(169, 228, 77);
+    --gray2-text: rgb(169, 228, 77);
     --gray3: rgb(169, 228, 77);
     --orange: rgb(59, 39, 22);
     --orange-text: rgb(169, 228, 77);
@@ -215,7 +260,7 @@
     --bege:rgb(59, 39, 22);
     --bege2: rgb(59, 39, 22);
     --background: rgb(59, 39, 22);
-    --background-gray: rgb(169, 228, 77);
+    --background-gray: rgb(59, 39, 22);
     --lirear: rgb(99, 158, 117);
 
     img,
@@ -230,11 +275,14 @@
         display: none;
     }
 
-    .hero-slider__item {
-        background-image: none;
-    }
-
-    .review-slider__wrapper {
+    .review-slider__wrapper,
+    .hero-slider__item,
+    .top-page--bege,
+    .top-page--gray,
+    .top-page--doctor-page,
+    .top-page--about,
+    .history::after,
+    .about-license::after {
         background-image: none;
     }
 
@@ -251,11 +299,41 @@
         border-bottom: 1px solid var(--white-text);
         border-top: 1px solid var(--white-text);
     }
+
+    .service-menu-wrapper {
+        background-color: var(--white);
+        border: 1px solid var(--white-text);
+    }
 }
 
 .no-picture img,
-.no-picture .collage {
+.no-picture svg,
+.no-picture .collage,
+.no-picture .top-page__about-svg {
     opacity: 0;
+}
+
+.no-picture {
+    .review-slider__wrapper,
+    .hero-slider__item,
+    .top-page--bege,
+    .top-page--gray,
+    .top-page--doctor-page,
+    .top-page--about,
+    .about-license::after {
+        background-image: none;
+    }
+
+    .doctors::before,
+    .index-text::after,
+    .history::after {
+        display: none;
+    }
+
+    .contacts {
+        background-image: none !important;
+    }
+
 }
 
 .html--white {
@@ -271,10 +349,9 @@
     --dark-gray: #000000;
     --mid-grey: #000000;
     --gray2: #000000;
+    --gray2-text: #000000;
     --gray3: #000000;    
     --orange-text: #000000;
-    --orange2: transparent;
-    
     --background-gray: #fafafa;
     --lirear: rgb(99, 158, 117);
 
@@ -290,10 +367,17 @@
     }
 
     .hero-slider__item,
-    .review-slider__wrapper {
+    .review-slider__wrapper,
+    .top-page--bege,
+    .top-page--gray,
+    .top-page--doctor-page,
+    .top-page--about
+    .history::after,
+    .about-license::after {
         background-image: none;
     }
 
+    
     .footer {
         background-image: none;
         border-top: 1px solid var(--white-text);
@@ -306,5 +390,10 @@
     .years__container {
         border-bottom: 1px solid var(--white-text);
         border-top: 1px solid var(--white-text);
+    }
+
+    .service-menu-wrapper {
+        background-color: var(--white);
+        border: 1px solid var(--white-text);
     }
 }

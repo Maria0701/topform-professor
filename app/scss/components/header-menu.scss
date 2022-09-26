@@ -152,6 +152,7 @@
     .header-menu__wrap {
         display: flex;
         flex-basis: 100%;
+        height: 100%;
     }
 
     .header-menu__wrap {
@@ -226,7 +227,7 @@
 
         &:hover,
         &:focus {
-            color: var(--green);           
+            color: var(--green-text);           
         }
     }
 
@@ -262,9 +263,5 @@
 
     .service-content__item {
         grid-template-columns: repeat(5, minmax(0,1fr));
-    }
-
-    .header-menu__item > a {
-        height: 50px;
     }
 }

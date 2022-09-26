@@ -19,6 +19,11 @@ export const menuOpener = () => {
         subMenuTogglers.forEach(item => item.removeEventListener('click', subMenuHandler));
     }
 
+    const outOfAreHandler = (evt) => {
+        if (menu.contains(evt.target) || menuToggler.contains(evt.target)) return;
+        closeMenuHandler();
+    }
+
     const subMenuHandler = (evt) => {
         evt.preventDefault();
         if (activeSubMenu) closeSubMenu();
@@ -38,6 +43,7 @@ export const menuOpener = () => {
         subMenuTogglers.forEach(item => item.addEventListener('click', subMenuHandler));
         menuToggler.removeEventListener('click', openMenuHandler);
         menuToggler.addEventListener('click', closeMenuHandler);
+        document.addEventListener('click', outOfAreHandler);
     }
 
     menuToggler.addEventListener('click', openMenuHandler);

@@ -12,19 +12,45 @@ const PicturesOn = {
 };
 
 export function colorSwitcher() {
+    let currSize;
+    let currColorScheme;
+    let currentPictures;
+    const storage = JSON.parse(sessionStorage.getItem('professorSight'));
     const form = document.querySelector('.sight__form');
-
-    if (!form ) return;
     const minusFont = form.querySelector('.sight__label--font');
     const htmlElt = document.querySelector('html');
-    const colorChangers = form.querySelectorAll('[name="img"]');
+    const colorChangers = form.querySelectorAll('[name="color"]');
     const pictureChangers = form.querySelectorAll('[name="img"]');
-    let currColorScheme = ColorSchemes.normal;
-    let currentPictures = PicturesOn.on;
-
+   
     const fontSize = window.getComputedStyle(htmlElt).fontSize;
-    let currSize = parseInt(fontSize.slice(0, fontSize.length - 2));
 
+    const attrHandler = ({color = currColorScheme, picture = currentPictures}) => {
+        return htmlElt.setAttribute("class",`${color} ${picture}`);
+    }
+
+    const updateStorage = () => {
+        return sessionStorage.setItem('professorSight', JSON.stringify({
+            font: currSize,
+            color: currColorScheme,
+            pictures: currentPictures
+        }));
+    }
+
+    if (storage) {
+        currSize = storage.font;
+        currColorScheme = storage.color;
+        currentPictures = storage.pictures;
+        attrHandler({color: currColorScheme, picture: currentPictures})
+        htmlElt.style.fontSize = `${currSize}px`;
+    } else {
+        currSize = parseInt(fontSize.slice(0, fontSize.length - 2));
+        currColorScheme = ColorSchemes.normal;
+        currentPictures = PicturesOn.on;
+        updateStorage();
+    }
+    
+    
+    
     const fontHandler = (evt) => {
         if (evt.target.closest('.switcher')) {
             if (evt.target.dataset.font === 'minus') {
@@ -32,40 +58,45 @@ export function colorSwitcher() {
             }  else {
                 currSize += 1;
             }
+            updateStorage();
             htmlElt.style.fontSize = `${currSize}px`;
         }
     }
-
+ 
+    const pictureHandler = (evt) => {
+        currentPictures = evt.target.value === 'yes'
+            ? PicturesOn.on
+            : PicturesOn.off;            
+        updateStorage();
+        return attrHandler({picture: currentPictures});
+    }
     
 
     const colorHandler = (evt) => {
-        console.log(htmlElt.getAttribute("class"))
         const colorScheme = evt.target.value;
         switch (colorScheme) {
             case 'white':
                 currColorScheme = ColorSchemes.white;
-                htmlElt.setAttribute("class",[currColorScheme, currentPictures]);
               break;
             case 'green':
                 currColorScheme = ColorSchemes.green;
-                htmlElt.setAttribute("class",[currColorScheme, currentPictures]);
               break;
             case 'blue':
                 currColorScheme = ColorSchemes.blue;
-                htmlElt.setAttribute("class",[currColorScheme, currentPictures]);
               break;
             case 'dark':
                 currColorScheme = ColorSchemes.dark;
-                htmlElt.setAttribute("class",[currColorScheme, currentPictures]);
               break;
             case 'normal':
                 currColorScheme = ColorSchemes.normal;
-                htmlElt.setAttribute("class",[currColorScheme, currentPictures]);
                 break;
         }
 
+        updateStorage();
+        return attrHandler({color: currColorScheme});
     };
 
+    pictureChangers.forEach(picture => picture.addEventListener('click', pictureHandler));
     colorChangers.forEach(color => color.addEventListener('click', colorHandler));
     minusFont.addEventListener('click', fontHandler);
 }
