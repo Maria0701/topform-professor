@@ -3014,7 +3014,7 @@ button {
 }
 
 .opened .prices-block__header {
-  background-color: var(--green);
+  background-color: var(--green-text);
 }
 
 .closed .prices-block__header {
@@ -3544,7 +3544,7 @@ button {
 .comment-form__btn {
   width: 100%;
   background-color: var(--green);
-  border-color: var(--green);
+  border-color: var(--green-text);
 }
 .comment-form__btn:hover {
   border-color: var(--orange);
@@ -4107,9 +4107,9 @@ button {
   font-size: 0.875rem;
   line-height: 130%;
   text-align: center;
-  color: var(--white);
+  color: var(--white-text);
   text-transform: uppercase;
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid var(--white-text);
 }
 
 .includes-item__price {
@@ -4118,7 +4118,7 @@ button {
   font-size: 1.25rem;
   line-height: 130%;
   text-align: center;
-  color: var(--white);
+  color: var(--white-text);
 }
 
 @media (min-width: 740px) {
@@ -5426,7 +5426,7 @@ button {
   background-color: var(--dark-gray);
 }
 .service-menu__sub .service-menu__link:hover, .service-menu__sub .service-menu__link:focus {
-  color: var(--green);
+  color: var(--green-text);
 }
 
 .service-menu__sub .service-menu__item:first-child .service-menu__link {
@@ -6154,7 +6154,7 @@ button {
   font-weight: 500;
   font-size: 1.125rem;
   line-height: 130%;
-  color: var(--green);
+  color: var(--green-text);
 }
 
 .contacts__time {
@@ -9492,11 +9492,23 @@ body:not(.is-using-mouse) .fancybox__container :focus {
     flex-grow: 1;
   }
 }
+.sight {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.sight-opened .sight {
+  max-height: 1000px;
+}
+
 .sight__form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   padding-bottom: 12px;
   padding-top: 12px;
   border-bottom: 1px solid var(--dark-gray);
@@ -9528,20 +9540,17 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   display: none;
 }
 
-.sight__name {
-  flex-basis: 100%;
-  text-align: center;
-}
-
 .sight__label {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
-.sight__img {
+.sight__img,
+.sight__default,
+.sight__close {
   position: relative;
   display: flex;
   align-items: center;
@@ -9553,7 +9562,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   border: 1px solid var(--dark-gray);
   color: var(--dark-gray);
 }
-.sight__img:hover, .sight__img:focus, .sight__img:focus-within {
+.sight__img:hover, .sight__img:focus, .sight__img:focus-within,
+.sight__default:hover,
+.sight__default:focus,
+.sight__default:focus-within,
+.sight__close:hover,
+.sight__close:focus,
+.sight__close:focus-within {
   outline: 2px ridge blue;
 }
 
@@ -9628,7 +9643,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--dark img,
 .html--dark .text ul li::before,
 .html--dark .header-menu__item--inner > a::after,
-.html--dark .advantages__item svg {
+.html--dark .advantages__item svg,
+.html--dark .text ul li::before,
+.html--dark .h2--star::after {
   filter: grayscale(100%);
 }
 .html--dark .doctors::before {
@@ -9641,7 +9658,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--dark .top-page--doctor-page,
 .html--dark .top-page--about,
 .html--dark .history::after,
-.html--dark .about-license::after {
+.html--dark .about-license::after,
+.html--dark .review-slider::before,
+.html--dark .tour--flowers2::after,
+.html--dark .prices__list::before,
+.html--dark .top-page--promo,
+.html--dark .service-menu-block::before {
   background-image: none;
 }
 .html--dark .footer {
@@ -9651,6 +9673,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--dark .header {
   border-bottom: 1px solid white;
 }
+.html--dark .includes-item {
+  border: 1px solid var(--white-text);
+}
 .html--dark .years__container {
   border-bottom: 1px solid var(--white-text);
   border-top: 1px solid var(--white-text);
@@ -9658,6 +9683,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--dark .service-menu-wrapper {
   background-color: var(--white);
   border: 1px solid var(--white-text);
+}
+.html--dark .contacts__map {
+  filter: grayscale(100%);
+}
+.html--dark .doctors__right,
+.html--dark .doctors__left {
+  color: var(--gray2);
 }
 
 .html--blue {
@@ -9683,8 +9715,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--blue img,
 .html--blue .advantages__item svg,
 .html--blue .text ul li::before,
-.html--blue .header-menu__item--inner > a::after {
+.html--blue .header-menu__item--inner > a::after,
+.html--blue .text ul li::before,
+.html--blue .h2--star::after {
   filter: sepia(100%) hue-rotate(170deg) saturate(150%);
+}
+.html--blue .contacts__map {
+  filter: grayscale(100%);
 }
 .html--blue .doctors::before,
 .html--blue .index-text::after {
@@ -9697,7 +9734,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--blue .top-page--doctor-page,
 .html--blue .top-page--about,
 .html--blue .history::after,
-.html--blue .about-license::after {
+.html--blue .about-license::after,
+.html--blue .review-slider::before,
+.html--blue .tour--flowers2::after,
+.html--blue .prices__list::before,
+.html--blue .top-page--promo,
+.html--blue .service-menu-block::before {
   background-image: none;
 }
 .html--blue .footer {
@@ -9714,6 +9756,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--blue .service-menu-wrapper {
   background-color: var(--white);
   border: 1px solid var(--white-text);
+}
+.html--blue .includes-item {
+  border: 1px solid var(--white-text);
+}
+.html--blue .doctors__right,
+.html--blue .doctors__left {
+  color: var(--gray2);
 }
 
 .html--green {
@@ -9739,8 +9788,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--green img,
 .html--green .advantages__item svg,
 .html--green .text ul li::before,
-.html--green .header-menu__item--inner > a::after {
+.html--green .header-menu__item--inner > a::after,
+.html--green .text ul li::before,
+.html--green .h2--star::after {
   filter: sepia(100%) hue-rotate(70deg) saturate(150%);
+}
+.html--green .contacts__map {
+  filter: grayscale(100%);
 }
 .html--green .doctors::before,
 .html--green .index-text::after {
@@ -9753,7 +9807,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--green .top-page--doctor-page,
 .html--green .top-page--about,
 .html--green .history::after,
-.html--green .about-license::after {
+.html--green .about-license::after,
+.html--green .review-slider::before,
+.html--green .tour--flowers2::after,
+.html--green .prices__list::before,
+.html--green .top-page--promo,
+.html--green .service-menu-block::before {
   background-image: none;
 }
 .html--green .footer {
@@ -9771,6 +9830,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   background-color: var(--white);
   border: 1px solid var(--white-text);
 }
+.html--green .includes-item {
+  border: 1px solid var(--white-text);
+}
+.html--green .doctors__right,
+.html--green .doctors__left {
+  color: var(--gray2);
+}
 
 .no-picture img,
 .no-picture svg,
@@ -9785,7 +9851,15 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .no-picture .top-page--gray,
 .no-picture .top-page--doctor-page,
 .no-picture .top-page--about,
-.no-picture .about-license::after {
+.no-picture .about-license::after,
+.no-picture .review-slider::before,
+.no-picture .tour--flowers2::after,
+.no-picture .text ul li::before,
+.no-picture .h2--star::after,
+.no-picture .prices__list::before,
+.no-picture .text blockquote::before,
+.no-picture .top-page--promo,
+.no-picture .service-menu-block::before {
   background-image: none;
 }
 .no-picture .doctors::before,
@@ -9795,6 +9869,21 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 .no-picture .contacts {
   background-image: none !important;
+}
+.no-picture .includes-item {
+  border: 1px solid var(--white-text);
+}
+.no-picture .svg-disclaimer {
+  font-size: 0.7rem;
+  display: block;
+}
+.no-picture .secondary-menu__btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .html--white {
@@ -9819,7 +9908,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--white img,
 .html--white .text ul li::before,
 .html--white .header-menu__item--inner > a::after,
-.html--white .advantages__item svg {
+.html--white .advantages__item svg,
+.html--white .text ul li::before,
+.html--white .h2--star::after {
   filter: grayscale(100%);
 }
 .html--white .doctors::before {
@@ -9831,7 +9922,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--white .top-page--gray,
 .html--white .top-page--doctor-page,
 .html--white .top-page--about .history::after,
-.html--white .about-license::after {
+.html--white .about-license::after,
+.html--white .review-slider::before,
+.html--white .tour--flowers2::after,
+.html--white .prices__list::before,
+.html--white .top-page--promo,
+.html--white .service-menu-block::before {
   background-image: none;
 }
 .html--white .footer {
@@ -9848,5 +9944,19 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .html--white .service-menu-wrapper {
   background-color: var(--white);
   border: 1px solid var(--white-text);
+}
+.html--white .contacts__map {
+  filter: grayscale(100%);
+}
+.html--white .includes-item {
+  border: 1px solid var(--white-text);
+}
+.html--white .doctors__right,
+.html--white .doctors__left {
+  color: var(--gray2);
+}
+
+.svg-disclaimer {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

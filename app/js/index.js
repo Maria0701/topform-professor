@@ -11,7 +11,7 @@ import { fixHeader } from './components/fix-header';
 import { checkField } from './components/utils';
 import { CustomSelect } from './components/custom-select';
 import { Fancybox } from "@fancyapps/ui";
-import { colorSwitcher } from './components/sight-form';
+import { sightSwitcher } from './components/sight-form';
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
@@ -380,4 +380,11 @@ try {
 	}
 }catch(e) {console.log(e)}
 
-colorSwitcher();
+
+
+try {
+	const switcher = document.querySelector('[data-action="sight-panel"]');
+	sightSwitcher(switcher);
+} catch(e) {
+	console.log(e)
+}

@@ -22,8 +22,6 @@ export class PopupOpener {
         this.closeOverlayHandler = this.closeOverlayHandler.bind(this);
         this.btnEnterCloseHandler = this.keyDownHandler.bind(this);
         this.keyDownHandler = this.keyDownHandler.bind(this);
-
-        console.log(this.overlayElt);
     }
 
     open() {
@@ -36,7 +34,6 @@ export class PopupOpener {
         
         this.overlayElt.classList.add('opened');        
         this.popupElt.classList.add('opened');
-        console.log(this.overlayElt);
         if (this.dateElt) this.initDate(this.dateElt);
         this.setCloseListeners();
     }

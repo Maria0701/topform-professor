@@ -36,9 +36,9 @@
     font-size: 0.875rem;
     line-height: 130%;
     text-align: center;
-    color: var(--white);
+    color: var(--white-text);
     text-transform: uppercase;
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid var(--white-text);
 }
 
 .includes-item__price {
@@ -47,7 +47,7 @@
     font-size: 1.25rem;
     line-height: 130%;
     text-align: center;
-    color: var(--white);
+    color: var(--white-text);
 }
 
 @media (min-width: $small) {

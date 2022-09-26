@@ -1,8 +1,19 @@
+.sight {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.sight-opened .sight {
+    max-height: 1000px;
+}
+
 .sight__form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    column-gap: 20px;
     padding-bottom: 12px;
     padding-top: 12px;
     border-bottom: 1px solid var(--dark-gray);
@@ -35,20 +46,17 @@
     }
 }
 
-.sight__name {
-    flex-basis: 100%;
-    text-align: center;
-}
-
 .sight__label {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
 }
 
-.sight__img {
+.sight__img,
+.sight__default,
+.sight__close {
     position: relative;
     display: flex;
     align-items: center;
@@ -141,7 +149,9 @@
     img,
     .text ul li::before,
     .header-menu__item--inner > a::after,
-    .advantages__item svg {
+    .advantages__item svg,
+    .text ul li::before,
+    .h2--star::after {
         filter: grayscale(100%);
     }
 
@@ -156,7 +166,12 @@
     .top-page--doctor-page,
     .top-page--about,
     .history::after,
-    .about-license::after {
+    .about-license::after,
+    .review-slider::before,
+    .tour--flowers2::after,
+    .prices__list::before,
+    .top-page--promo,
+    .service-menu-block::before {
         background-image: none;
     }
 
@@ -169,6 +184,10 @@
         border-bottom: 1px solid white;
     }
 
+    .includes-item {
+        border: 1px solid var(--white-text);
+    }
+
     .years__container {
         border-bottom: 1px solid var(--white-text);
         border-top: 1px solid var(--white-text);
@@ -177,6 +196,15 @@
     .service-menu-wrapper {
         background-color: var(--white);
         border: 1px solid var(--white-text);
+    }
+
+    .contacts__map {
+        filter:grayscale(100%);
+    }
+
+    .doctors__right,
+    .doctors__left {
+        color: var(--gray2);
     }
 }
 
@@ -203,8 +231,14 @@
     img,
     .advantages__item svg,
     .text ul li::before,
-    .header-menu__item--inner > a::after {
+    .header-menu__item--inner > a::after,
+    .text ul li::before,
+    .h2--star::after {
         filter: sepia(100%) hue-rotate(170deg) saturate(150%);
+    }
+
+    .contacts__map {
+        filter: grayscale(100%);
     }
 
     .doctors::before,
@@ -219,7 +253,12 @@
     .top-page--doctor-page,
     .top-page--about,
     .history::after,
-    .about-license::after {
+    .about-license::after,
+    .review-slider::before,
+    .tour--flowers2::after,
+    .prices__list::before,
+    .top-page--promo,
+    .service-menu-block::before {
         background-image: none;    
     }
 
@@ -241,6 +280,16 @@
         background-color: var(--white);
         border: 1px solid var(--white-text);
     }
+
+    .includes-item {
+        border: 1px solid var(--white-text);
+    }
+
+    .doctors__right,
+    .doctors__left {
+        color: var(--gray2);
+    }
+
 }
 
 .html--green {
@@ -266,8 +315,14 @@
     img,
     .advantages__item svg,
     .text ul li::before,
-    .header-menu__item--inner > a::after {
+    .header-menu__item--inner > a::after,
+    .text ul li::before,
+    .h2--star::after {
         filter: sepia(100%) hue-rotate(70deg) saturate(150%);
+    }
+
+    .contacts__map {
+        filter: grayscale(100%);
     }
 
     .doctors::before,
@@ -282,7 +337,12 @@
     .top-page--doctor-page,
     .top-page--about,
     .history::after,
-    .about-license::after {
+    .about-license::after,
+    .review-slider::before,
+    .tour--flowers2::after,
+    .prices__list::before,
+    .top-page--promo,
+    .service-menu-block::before {
         background-image: none;
     }
 
@@ -304,6 +364,16 @@
         background-color: var(--white);
         border: 1px solid var(--white-text);
     }
+
+    .includes-item {
+        border: 1px solid var(--white-text);
+    }
+
+    .doctors__right,
+    .doctors__left {
+        color: var(--gray2);
+    }
+
 }
 
 .no-picture img,
@@ -320,7 +390,15 @@
     .top-page--gray,
     .top-page--doctor-page,
     .top-page--about,
-    .about-license::after {
+    .about-license::after,
+    .review-slider::before,
+    .tour--flowers2::after,
+    .text ul li::before,
+    .h2--star::after,
+    .prices__list::before,
+    .text blockquote::before,
+    .top-page--promo,
+    .service-menu-block::before {
         background-image: none;
     }
 
@@ -334,6 +412,19 @@
         background-image: none !important;
     }
 
+    .includes-item {
+        border: 1px solid var(--white-text);
+    }
+
+    .svg-disclaimer {
+        font-size: 0.7rem;
+        display:block;
+    }
+
+    .secondary-menu__btn {
+        width: fit-content;
+        height: fit-content;
+    }
 }
 
 .html--white {
@@ -358,7 +449,9 @@
     img,
     .text ul li::before,
     .header-menu__item--inner > a::after,
-    .advantages__item svg {
+    .advantages__item svg,
+    .text ul li::before,
+    .h2--star::after {
         filter: grayscale(100%);
     }
 
@@ -373,7 +466,12 @@
     .top-page--doctor-page,
     .top-page--about
     .history::after,
-    .about-license::after {
+    .about-license::after,
+    .review-slider::before,
+    .tour--flowers2::after,
+    .prices__list::before,
+    .top-page--promo,
+    .service-menu-block::before {
         background-image: none;
     }
 
@@ -396,4 +494,21 @@
         background-color: var(--white);
         border: 1px solid var(--white-text);
     }
+
+    .contacts__map {
+        filter:grayscale(100%);
+    }
+
+    .includes-item {
+        border: 1px solid var(--white-text);
+    }
+
+    .doctors__right,
+    .doctors__left {
+        color: var(--gray2);
+    }
+}
+
+.svg-disclaimer {
+    display: none;
 }

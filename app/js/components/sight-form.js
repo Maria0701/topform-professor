@@ -11,92 +11,157 @@ const PicturesOn = {
     off: 'no-picture',
 };
 
-export function colorSwitcher() {
-    let currSize;
-    let currColorScheme;
-    let currentPictures;
-    const storage = JSON.parse(sessionStorage.getItem('professorSight'));
-    const form = document.querySelector('.sight__form');
-    const minusFont = form.querySelector('.sight__label--font');
-    const htmlElt = document.querySelector('html');
-    const colorChangers = form.querySelectorAll('[name="color"]');
-    const pictureChangers = form.querySelectorAll('[name="img"]');
-   
-    const fontSize = window.getComputedStyle(htmlElt).fontSize;
+let storage = JSON.parse(sessionStorage.getItem('professorSight'));
+let storageHandler;
 
-    const attrHandler = ({color = currColorScheme, picture = currentPictures}) => {
-        return htmlElt.setAttribute("class",`${color} ${picture}`);
+const sightBlockHandler = () => {
+    document.querySelector('header').classList.add('sight-opened');
+    new SightCorrector();
+}
+
+export function sightSwitcher(switcher) {
+    if (storage) {
+        storageHandler = new SightCorrector();
+    }
+    if (!switcher) return;
+
+    switcher.addEventListener('click', sightBlockHandler);
+
+};
+
+class SightCorrector {
+    constructor() {
+        this.currSize = null;
+        this.currColorScheme = null;
+        this.currentPictures = null;
+        this.htmlElt = document.querySelector('html');
+        this.defaultFontSize = window.getComputedStyle(this.htmlElt).fontSize;
+        this.storage = JSON.parse(sessionStorage.getItem('professorSight'));
+        this.form = document.querySelector('.sight__form');
+        this.minusFont = this.form.querySelector('.sight__label--font');        
+        this.colorChangers = this.form.querySelectorAll('[name="color"]');
+        this.pictureChangers = this.form.querySelectorAll('[name="img"]');
+        this.defaultChanger = this.form.querySelector('.sight__default');
+        this.closer = this.form.querySelector('.sight__close');
+        this.pictureHandler = this.pictureHandler.bind(this);
+        this.colorHandler = this.colorHandler.bind(this);
+        this.fontHandler = this.fontHandler.bind(this);
+        this.defaultHandler = this.defaultHandler.bind(this);
+        this.closeHandler = this.closeHandler.bind(this);
+        this.keyFontHandler = this.keyFontHandler.bind(this);
+        this.keyDefaultHandler = this.keyDefaultHandler.bind(this);
+        this.init();
     }
 
-    const updateStorage = () => {
+    init() {
+        if (this.storage) {
+            this.currSize = this.storage.font;
+            this.currColorScheme = this.storage.color;
+            this.currentPictures = this.storage.pictures;
+            this.attrHandler({color: this.currColorScheme, picture: this.currentPictures})
+            this.htmlElt.style.fontSize = `${this.currSize}px`;
+        } else {
+            this.currSize = parseInt(this.defaultFontSize.slice(0, this.defaultFontSize.length - 2));
+            this.currColorScheme = ColorSchemes.normal;
+            this.currentPictures = PicturesOn.on;
+            this.updateStorage();
+        }
+
+        this.pictureChangers.forEach(picture => picture.addEventListener('click', this.pictureHandler));
+        this.colorChangers.forEach(color => color.addEventListener('click', this.colorHandler));
+        this.minusFont.addEventListener('click', this.fontHandler);
+        this.minusFont.addEventListener('keyup', this.keyFontHandler);
+        this.defaultChanger.addEventListener('click', this.defaultHandler);
+        this.defaultChanger.addEventListener('keyup', this.keyDefaultHandler);
+        this.closer.addEventListener('click',this.closeHandler);
+    }
+
+    closeHandler(evt) {
+        document.querySelector('header').classList.remove('sight-opened');
+        this.pictureChangers.forEach(picture => picture.removeEventListener('click', this.pictureHandler));
+        this.colorChangers.forEach(color => color.removeEventListener('click', this.colorHandler));
+        this.minusFont.removeEventListener('click', this.fontHandler);
+        this.defaultChanger.removeEventListener('click', this.defaultHandler);
+        this.closer.removeEventListener('click',this.closeHandler);
+        this.minusFont.removeEventListener('keyup', this.keyFontHandler);
+    }
+
+    attrHandler({color = this.currColorScheme, picture = this.currentPictures}) {
+        return this.htmlElt.setAttribute("class",`${color} ${picture}`);
+    }
+
+    defaultHandler() {
+        this.defaultFontSize = '16px';
+        this.currColorScheme = ColorSchemes.normal;
+        this.currentPictures = PicturesOn.on;
+        this.currSize = parseInt(this.defaultFontSize.slice(0, this.defaultFontSize.length - 2));
+        this.htmlElt.style.fontSize = `${this.defaultFontSize}`;
+        this.updateStorage();
+        this.htmlElt.setAttribute("class",`${this.currColorScheme} ${this.currentPictures}`);
+    }
+
+    keyDefaultHandler(evt) {
+        if (evt.key === 'Enter') {
+            this.defaultHandler(evt);
+        }
+    }
+
+    updateStorage() {
         return sessionStorage.setItem('professorSight', JSON.stringify({
-            font: currSize,
-            color: currColorScheme,
-            pictures: currentPictures
+            font: this.currSize,
+            color: this.currColorScheme,
+            pictures: this.currentPictures
         }));
     }
 
-    if (storage) {
-        currSize = storage.font;
-        currColorScheme = storage.color;
-        currentPictures = storage.pictures;
-        attrHandler({color: currColorScheme, picture: currentPictures})
-        htmlElt.style.fontSize = `${currSize}px`;
-    } else {
-        currSize = parseInt(fontSize.slice(0, fontSize.length - 2));
-        currColorScheme = ColorSchemes.normal;
-        currentPictures = PicturesOn.on;
-        updateStorage();
-    }
-    
-    
-    
-    const fontHandler = (evt) => {
+    fontHandler(evt) {
         if (evt.target.closest('.switcher')) {
             if (evt.target.dataset.font === 'minus') {
-                currSize -= 1;
+                this.currSize -= 1;
             }  else {
-                currSize += 1;
+                this.currSize += 1;
             }
-            updateStorage();
-            htmlElt.style.fontSize = `${currSize}px`;
+            this.updateStorage();
+            this.htmlElt.style.fontSize = `${this.currSize}px`;
         }
     }
- 
-    const pictureHandler = (evt) => {
-        currentPictures = evt.target.value === 'yes'
+
+    keyFontHandler(evt) {
+        if (evt.key === 'Enter') {
+            this.fontHandler(evt);
+        }
+    }
+
+    pictureHandler(evt) {
+        this.currentPictures = evt.target.value === 'yes'
             ? PicturesOn.on
             : PicturesOn.off;            
-        updateStorage();
-        return attrHandler({picture: currentPictures});
+            this.updateStorage();
+        return this.attrHandler({picture: this.currentPictures});
     }
     
 
-    const colorHandler = (evt) => {
+    colorHandler(evt) {
         const colorScheme = evt.target.value;
         switch (colorScheme) {
             case 'white':
-                currColorScheme = ColorSchemes.white;
+                this.currColorScheme = ColorSchemes.white;
               break;
             case 'green':
-                currColorScheme = ColorSchemes.green;
+                this.currColorScheme = ColorSchemes.green;
               break;
             case 'blue':
-                currColorScheme = ColorSchemes.blue;
+                this.currColorScheme = ColorSchemes.blue;
               break;
             case 'dark':
-                currColorScheme = ColorSchemes.dark;
+                this.currColorScheme = ColorSchemes.dark;
               break;
             case 'normal':
-                currColorScheme = ColorSchemes.normal;
+                this.currColorScheme = ColorSchemes.normal;
                 break;
         }
 
-        updateStorage();
-        return attrHandler({color: currColorScheme});
+        this.updateStorage();
+        return this.attrHandler({color: this.currColorScheme});
     };
-
-    pictureChangers.forEach(picture => picture.addEventListener('click', pictureHandler));
-    colorChangers.forEach(color => color.addEventListener('click', colorHandler));
-    minusFont.addEventListener('click', fontHandler);
 }
