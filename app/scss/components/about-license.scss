@@ -91,6 +91,22 @@
     color: var(--dark-gray);
 }
 
+.licence-block__imgs {
+    position: relative;
+    display: flex;
+    column-gap: 20px;
+    aspect-ratio: 544/200;
+
+    img {
+        aspect-ratio: 703/1015;
+    }
+
+    
+}
+
+.licence-block__item {
+}
+
 @media (min-width: 800px) {
     .about-license__container {
         display: grid;

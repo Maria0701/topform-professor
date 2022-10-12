@@ -5706,6 +5706,11 @@ button {
     font-size: 0.875rem;
   }
 }
+.gallery {
+  position: relative;
+  z-index: 2;
+}
+
 .gallery__h2 {
   margin-bottom: 36px;
 }
@@ -5864,6 +5869,17 @@ button {
   line-height: 130%;
   text-align: center;
   color: var(--dark-gray);
+}
+
+.licence-block__imgs {
+  position: relative;
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  aspect-ratio: 544/200;
+}
+.licence-block__imgs img {
+  aspect-ratio: 703/1015;
 }
 
 @media (min-width: 800px) {
