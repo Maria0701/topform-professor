@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">   
+  </head>
+  <body>
+    <header class="header">
+	<div class="sight">
+    <div class="container sight__container">
+        <form class="sight__form">
+            <label class="sight__label sight__label--font">
+                <span class="sight__name">Шрифт</span>
+                <span class="sight__switcher switcher" tabindex="0" data-font="minus">-</span>
+                <span class="sight__switcher switcher" tabindex="0" data-font="plus">+</span>
+                <input type="number" value="16">                
+            </label>
+            <div class="sight__label">
+                <span class="sight__name">Цвет</span>
+                <label class="sight__color sight__color--white">
+                    Ф
+                    <input type="radio" name="color" value="white">
+                </label>
+                <label class="sight__color sight__color--black">
+                    Ф
+                    <input type="radio" name="color" value="dark">
+                </label>
+                <label class="sight__color sight__color--blue">
+                    Ф
+                    <input type="radio" name="color" value="blue">
+                </label>
+                <label class="sight__color sight__color--green">
+                    Ф
+                    <input type="radio" name="color" value="green">
+                </label>
+                <label class="sight__color sight__color--normal">
+                    Ф
+                    <input type="radio" name="color" value="normal">
+                </label>
+              </div>
+            <div class="sight__label">
+                <span class="sight__name">Изображения</span>
+                <label class="sight__img sight__img--on">
+                   вкл
+                    <input type="radio" name="img" value="yes">
+                </label>
+                <label class="sight__img sight__img--off">
+                    выкл
+                    <input type="radio" name="img" value="no">
+                </label>
+            </div>
+            <div class="sight__label">
+                <div tabindex="0" class="btn default sight__default">Сбросить</div>
+            </div>
+            <div class="sight__label">
+                <div tabindex="0" class="btn sight__close">Закрыть панель</div>
+            </div>
+        </form>
+    </div>
+</div>
+	<div class="header-container container">
+		<div class="header-logo">
+			<a href="/" class="header-logo__img" title="На Главную">
+				<img 32="" src="img/logo.png" alt="Логотип Медицинского центра Профессор" width="77.5" height:="">
+				<div class="header-logo__text">Медицинский центр</div>
+			</a>
+			<div class="header-logo__caption">
+				Прием ведут только специалисты высшей квалификации!
+			</div>
+		</div>
+	
+		<div class="header-actions-mobile">
+			<a class="header-sign-up" href="#" title="перейти на страницу записи" aria-label="Записаться на прием" data-action="appointment">
+                <svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#appointment"></use>
+</svg>
+			</a>
+			<a class="header-phone-up" href="tel:+7999123456" title="позвонить в центр">
+                <svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#call"></use>
+</svg>
+			</a>
+			<button class="js-menu-mobile-button header-toggler" title="Открыть меню">
+				<svg class="icon icon-menu" width="24" height="24">
+					<use xlink:href="img/sprite.svg#menu"></use>
+				</svg>
+				<svg class="icon icon-cancel" width="24" height="24">
+					<use xlink:href="img/sprite.svg#cancel"></use>
+				</svg>
+				<span class="svg-disclaimer">открыть меню</span>
+			</button>
+		</div>
+	
+		<div class="header-main js-menu-mobile">
+			<div class="secondary-menu">
+				<nav class="secondary-menu__nav">
+					<ul class="secondary-menu-list">
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">О нас</a>
+						</li>
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">Специалисты</a>
+						</li>
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">Расписание специалистов</a>
+						</li>
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">Режим работы</a>
+						</li>
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">Отзывы</a>
+						</li>
+						<li class="secondary-menu-list__item">
+							<a href="#" title="совпадает с названием">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+				<button class="btn btn--icon secondary-menu__btn" aria-label="Версия для плохо видящих" data-action="sight-panel">
+					<span class="svg-disclaimer">Версия для слабовидящих</span>
+                    <svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#fa_eye"></use>
+</svg>
+				</button>
+			</div>
+	
+			<div class="info-menu">
+				<div class="info-menu-search">
+					<form action="" class="info-menu-search search">
+						<label class="input-group search__label">
+							<input type="search" class="search__input">							
+						</label>
+						<button class="btn search__btn"><svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#fa_search"></use>
+</svg></button>
+					</form>
+				</div>
+				<div class="info-menu-contact">
+					<div class="info-menu-contact__item">
+						<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#fa_mail"></use>
+</svg>
+						<div class="info-menu-contact__main">
+							<div class="info-menu-contact__caption">
+								<a href="mailto:zapis@mcprofessor.ru" title="Напишите на почту">zapis@mcprofessor.ru</a>
+							</div>
+						</div>
+					</div>
+					<div class="info-menu-contact__item">
+						<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#fa_map"></use>
+</svg>
+						<div class="info-menu-contact__main">
+							<div class="info-menu-contact__desc">м. Чернышевская</div>
+							<div class="info-menu-contact__caption">ул. Чайковского, 42</div>
+						</div>
+					</div>
+					<div class="info-menu-contact__item">
+						<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#fa_clock"></use>
+</svg>
+						<div class="info-menu-contact__main">
+							<div class="info-menu-contact__desc">Время работы</div>
+							<div class="info-menu-contact__caption">пн-пт: 9-21, сб: 9-20, вс: 9-19</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="info-menu-social socials">
+    <a href="#" class="link-icon socials__link" title="Telegram">
+        <span class="svg-disclaimer">Telegram</span>
+        <svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#telegram"></use>
+</svg>
+    </a>
+    <a href="#" class="link-icon socials__link" title="Viber">
+        <span class="svg-disclaimer">Viber</span>
+        <svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#viber"></use>
+</svg>
+    </a>
+    <a href="#" class="link-icon socials__link" title="Whats App">
+        <span class="svg-disclaimer">Whats App</span>
+        <svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#whatsapp"></use>
+</svg>
+    </a>
+</div>
+				
+				<div class="info-menu-phones">
+					<a href="tel:+7 (812) 272-70-24" title="позвонить в клинику">+7 (812) 272-70-24</a>
+					<a href="tel:+7 (812) 272-37-34" title="позвонить в клинику">+7 (812) 272-37-34</a>
+					<a href="tel:+7 (812) 275-86-96" title="позвонить в клинику">+7 (812) 275-86-96</a>
+				</div>
+			</div>
+			<div class="primary-menu">
+				<nav class="header-menu">
+					<div class="header-menu-back">
+						<button class="btn-menu-back">
+							<svg class="icon" height="7" width="34">
+								<use xlink:href="img/sprite.svg#back"></use>
+							</svg>
+							<span>Назад</span>
+						</button>
+					</div>
+					<ul class="header-menu__wrap">
+						<li class="header-menu__item header-menu__item--inner">
+							<a href="#" title="Врачи" class="js-submenu">Врачи</a>
+							<div class="inner-menu">
+								<div class="service-content">
+									<div class="service-content__item">
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#" title="Ангиолог ( флеболог)">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#feet"></use>
+</svg>
+														<span>Ангиолог ( флеболог)</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#andrology"></use>
+</svg>
+														<span>Андролог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#gastro"></use>
+</svg>
+														<span>Гастроэнтеролог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#blood"></use>
+</svg>
+														<span>Гематолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#gynekologist"></use>
+</svg>
+														<span>Гинеколог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#endokrinology"></use>
+</svg>
+														<span>Гинеколог- эндокринолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#endokrinology"></use>
+</svg>
+														<span>Дерматолог - эндокринолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#diabet"></use>
+</svg>
+														<span>Диабетолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#cardiology"></use>
+</svg>
+														<span>Кардиолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#ent"></use>
+</svg>
+														<span>ЛОР</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#ent-f"></use>
+</svg>
+														<span>ЛОР-фониатр</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#mamology"></use>
+</svg>
+														<span>Маммолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#neurologist"></use>
+</svg>
+														<span>Невролог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#cancer"></use>
+</svg>
+														<span>Онколог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#proctology"></use>
+</svg>
+														<span>Проктолог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#psy"></use>
+</svg>
+														<span>Психотерапевт</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#therapist-psy"></use>
+</svg>
+														<span>Психотерапевт - психолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#lung"></use>
+</svg>
+														<span>Пульмонолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#joint"></use>
+</svg>
+														<span>Ревматолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#sexologist"></use>
+</svg>
+														<span>Сексолог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#therapist"></use>
+</svg>
+														<span>Терапевт</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#hair"></use>
+</svg>
+														<span>Трихолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#urologist"></use>
+</svg>
+														<span>Уролог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#surgeon"></use>
+</svg>
+														<span>Хирург</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#endokrinology"></use>
+</svg>
+														<span>Эндокринолог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="header-menu__item header-menu__item--inner">
+							<a href="#" class="js-submenu">Лечебные процедуры</a>
+							<div class="inner-menu">
+								<div class="service-content">
+									<div class="service-content__item">
+										<div class="service-content__col">
+											<ul class="list-service">						
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#blood"></use>
+</svg>
+														<span>Гематолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#gynekologist"></use>
+</svg>
+														<span>Гинеколог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#endokrinology"></use>
+</svg>
+														<span>Гинеколог- эндокринолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#endokrinology"></use>
+</svg>
+														<span>Дерматолог - эндокринолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#diabet"></use>
+</svg>
+														<span>Диабетолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#cardiology"></use>
+</svg>
+														<span>Кардиолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#ent"></use>
+</svg>
+														<span>ЛОР</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#ent-f"></use>
+</svg>
+														<span>ЛОР-фониатр</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#mamology"></use>
+</svg>
+														<span>Маммолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#neurologist"></use>
+</svg>
+														<span>Невролог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#cancer"></use>
+</svg>
+														<span>Онколог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#proctology"></use>
+</svg>
+														<span>Проктолог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#psy"></use>
+</svg>
+														<span>Психотерапевт</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#therapist-psy"></use>
+</svg>
+														<span>Психотерапевт - психолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#lung"></use>
+</svg>
+														<span>Пульмонолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#joint"></use>
+</svg>
+														<span>Ревматолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#sexologist"></use>
+</svg>
+														<span>Сексолог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="service-content__col">
+											<ul class="list-service">
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#therapist"></use>
+</svg>
+														<span>Терапевт</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#hair"></use>
+</svg>
+														<span>Трихолог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#urologist"></use>
+</svg>
+														<span>Уролог</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#surgeon"></use>
+</svg>
+														<span>Хирург</span>
+													</a>
+												</li>
+												<li class="list-service__item">
+													<a href="#">
+														<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#endokrinology"></use>
+</svg>
+														<span>Эндокринолог</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="header-menu__item header-menu__item--inner">
+							<a href="#" class="js-submenu">Анализы</a>
+						</li>
+						<li class="header-menu__item header-menu__item--inner">
+							<a href="#" class="js-submenu">Диагностика</a>
+						</li>
+						<li class="header-menu__item"><a href="#">Акции</a></li>
+						<li class="header-menu__item"><a href="#">Цены</a></li>
+						<li class="header-menu__item"><a href="#">Пациентам</a></li>
+					</ul>
+				</nav>
+				<div class="header-actions">
+					<button class="btn btn--primary header__action" data-action="appointment">Запись на прием</button>
+					<button class="btn btn--secondary header__action" data-action="question">Обратный звонок</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+    <main class="main">
+      <section class="hero">
+    <div class="hero-slider hero-slider__swiper">
+        <div class="swiper-wrapper">
+          <div class="hero-slider__item swiper-slide">
+            <div class="container">
+                <div class="hero-slider__col">
+                <h1 class="hero-slider__title">медицинский центр <span>«профессор»</span></h1>
+                <div class="hero-slider__text text">
+                    <p>Медцентр «Профессор» был создан чтобы объединить в одном учреждении группу специалистов-профессоров </p>
+                    <ul class="info-list">
+                        <li>Высокое качество обслуживания</li>
+                        <li>Квалифицированный персонал</li>
+                        <li>Доступные цены</li>
+                    </ul>
+                </div>
+                
+                </div>
+                <div class="hero-slider__col hero-slider__col--img">
+                <img class="hero-slider__img" src="img/doctor-img.png" alt="">
+                <img class="art-30" src="img/30.png" alt="" width="100" height="100">
+                </div>
+                <div class="hero-slider__actions">
+                    <button class="btn btn--primary hero-slider__btn">Запись на прием</button>
+                </div>
+            </div>
+          </div>
+          <div class="hero-slider__item swiper-slide">
+            <div class="container">
+                <div class="hero-slider__col">
+                <h1 class="hero-slider__title">медицинский центр <span>«профессор»</span></h1>
+                <div class="hero-slider__text text">
+                    <p>Медцентр «Профессор» был создан чтобы объединить в одном учреждении группу специалистов-профессоров</p>
+                    <ul class="info-list">
+                        <li>Высокое качество обслуживания</li>
+                        <li>Квалифицированный персонал</li>
+                        <li>Доступные цены</li>
+                    </ul>
+                </div>
+                </div>
+                <div class="hero-slider__col hero-slider__col--img">
+                <img class="hero-slider__img" src="img/doctor-img.png" alt="">
+                <img class="art-30" src="img/30.png" alt="">
+                </div>
+                <div class="hero-slider__actions">
+                    <button class="btn btn--primary hero-slider__btn">Запись на прием</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="hero-slider__nav">
+            <div class="hero-slider__pagination"></div>
+            <div class="section-slider-actions">
+                <button class="hero__left">
+                <svg width-="36" height="36">
+                        <use xlink:href="../img/sprite.svg#arrow-left"></use>
+                    </svg>
+                </button>
+                <button class="hero__right">
+                    <svg width-="36" height="36">
+                        <use xlink:href="../img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </button>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+      <section class="index__promo promo-block--years promo-block">
+    <div class="promo-block__container container">
+        <div class="h2__wrapper">
+            <h2 class="promo-block__h2 h2 h2--star h2--underlined">Акции</h2>
+        </div> 
+        <a href="#" class="btn btn--secondary promo-block__btn">Все акции</a> 
+        <div class="promo-block__wrapper">
+            <div class="promo-block__slider promo-block__swiper">
+                <div class="promo-block__slider-wrap swiper-wrapper">
+                    <div class="promo-block__item swiper-slide">
+                        <a href="#" class="promotion promotion--link" title="ljgow">
+    <div class="promotion__img-wrap">
+        <img class="promotion__img" src="/img/promition-img-2.jpg">
+    </div>
+    <div class="promotion__name">скидка 10% на прием косметолога в июле</div>
+    <div class="promotion__text"><p>Скидка действует с 1 по 31 июля в медцентре “Профессор”</p></div>
+    <div class="promotion__link">Подробнее</div>
+</a>
+                    </div>
+                    <div class="promo-block__item swiper-slide">                
+                        <a href="#" class="promotion promotion--link" title="ljgow">
+    <div class="promotion__img-wrap">
+        <img class="promotion__img" src="/img/promition-img.jpg">
+    </div>
+    <div class="promotion__name">акция на полное обследование до 31 июля</div>
+    <div class="promotion__text"><p>Скидка действует с 1 по 31 июля в медцентре “Профессор”</p></div>
+    <div class="promotion__link">Подробнее</div>
+</a>
+                    </div>
+                    <div class="promo-block__item promo-block__item--large  swiper-slide">                
+                        <a href="#" class="promotion promotion--link" title="ljgow">
+    <div class="promotion__img-wrap">
+        <img class="promotion__img" src="/img/promition-img-3.jpg">
+    </div>
+    <div class="promotion__name">скидка 10% на прием косметолога в июле</div>
+    <div class="promotion__text"><p>Скидка действует с 1 по 31 июля в медцентре “Профессор”</p></div>
+    <div class="promotion__link">Подробнее</div>
+</a>
+                    </div>
+                    <div class="promo-block__item promo-block__item--large swiper-slide">                
+                        <a href="#" class="promotion promotion--link" title="ljgow">
+    <div class="promotion__img-wrap">
+        <img class="promotion__img" src="/img/promition-img-3.jpg">
+    </div>
+    <div class="promotion__name">скидка 10% на прием косметолога в июле</div>
+    <div class="promotion__text"><p>Скидка действует с 1 по 31 июля в медцентре “Профессор”</p></div>
+    <div class="promotion__link">Подробнее</div>
+</a>
+                    </div>
+                    <div class="promo-block__item swiper-slide">                
+                        <a href="#" class="promotion promotion--link" title="ljgow">
+    <div class="promotion__img-wrap">
+        <img class="promotion__img" src="/img/promition-img-2.jpg">
+    </div>
+    <div class="promotion__name">акция на полное обследование до 31 июля</div>
+    <div class="promotion__text"><p>Скидка действует с 1 по 31 июля в медцентре “Профессор”</p></div>
+    <div class="promotion__link">Подробнее</div>
+</a>
+                    </div>
+                    <div class="promo-block__item swiper-slide">                
+                        <a href="#" class="promotion promotion--link" title="ljgow">
+    <div class="promotion__img-wrap">
+        <img class="promotion__img" src="/img/promition-img.jpg">
+    </div>
+    <div class="promotion__name">скидка 10% на прием косметолога в июле</div>
+    <div class="promotion__text"><p>Скидка действует с 1 по 31 июля в медцентре “Профессор”</p></div>
+    <div class="promotion__link">Подробнее</div>
+</a>
+                    </div>        
+                    <div class="promo-block__item swiper-slide">                
+                        <a href="#" class="promotion promotion--link" title="ljgow">
+    <div class="promotion__img-wrap">
+        <img class="promotion__img" src="/img/promition-img-2.jpg">
+    </div>
+    <div class="promotion__name">скидка 10% на прием косметолога в июле</div>
+    <div class="promotion__text"><p>Скидка действует с 1 по 31 июля в медцентре “Профессор”</p></div>
+    <div class="promotion__link">Подробнее</div>
+</a>
+                    </div>
+                </div>
+            </div>
+            <button class="btn promo-block__left">
+                <svg width="36" height="36">
+                    <use xlink:href="img/sprite.svg#arrow-left"></use>
+                </svg>
+            </button>
+            <button class="btn promo-block__right">
+                <svg width="36" height="36">
+                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+      <section class="services index__services">
+        <div class="container">
+          <div class="h2__wrapper">
+            <h2 class="review-slider__h2 h2 h2--star h2--underlined">Наши услуги</h2>
+          </div>
+          <div class="index__tabs tabs-horizon">
+    <div class="tabs-horizon__wrapper">
+        <div role="tablist" aria-labelledby="tablist-1" class="tabs-horizon__btns">
+        <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1">
+                <svg width="36" height="36">
+                    <use xlink:href="../img/sprite.svg#doc"></use>
+                </svg>
+                ВРАЧИ
+            </button>
+            <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2">
+                    <svg width="36" height="36">
+                        <use xlink:href="../img/sprite.svg#services"></use>
+                    </svg>
+                    ЛЕЧЕБНЫЕ ПРОЦЕДУРЫ
+            </button>
+            <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3">
+                    <svg width="36" height="36">
+                        <use xlink:href="../img/sprite.svg#analyses"></use>
+                    </svg>
+                    АНАЛИЗЫ 
+            </button>
+            <button id="tab-4" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-4">
+                    <svg width="36" height="36">
+                        <use xlink:href="../img/sprite.svg#diagnostics"></use>
+                    </svg>
+                    ДИАГНОСТИКА
+            </button>
+        </div>
+    </div>
+    <div class="tabs-horizon__panels">
+        <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+        <div class="service-content__item service-content__item--index">
+            <div class="service-content__col">
+              <ul class="list-service">
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+                        <use xlink:href="../img/sprite.svg#feet"></use>
+                    </svg>
+                    <span>Ангиолог ( флеболог)</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#andrology"></use>
+    </svg>
+                    <span>Андролог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#gastro"></use>
+    </svg>
+                    <span>Гастроэнтеролог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#blood"></use>
+    </svg>
+                    <span>Гематолог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#gynekologist"></use>
+    </svg>
+                    <span>Гинеколог</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="service-content__col">
+              <ul class="list-service">
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#endokrinology"></use>
+    </svg>
+                    <span>Гинеколог- эндокринолог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#endokrinology"></use>
+    </svg>
+                    <span>Дерматолог - эндокринолог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#diabet"></use>
+    </svg>
+                    <span>Диабетолог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#cardiology"></use>
+    </svg>
+                    <span>Кардиолог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#ent"></use>
+    </svg>
+                    <span>ЛОР</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="service-content__col">
+              <ul class="list-service">
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#ent-f"></use>
+    </svg>
+                    <span>ЛОР-фониатр</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#mamology"></use>
+    </svg>
+                    <span>Маммолог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#neurologist"></use>
+    </svg>
+                    <span>Невролог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#cancer"></use>
+    </svg>
+                    <span>Онколог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#proctology"></use>
+    </svg>
+                    <span>Проктолог</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="service-content__col">
+              <ul class="list-service">
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#psy"></use>
+    </svg>
+                    <span>Психотерапевт</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#therapist-psy"></use>
+    </svg>
+                    <span>Психотерапевт - психолог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#lung"></use>
+    </svg>
+                    <span>Пульмонолог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#joint"></use>
+    </svg>
+                    <span>Ревматолог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#sexologist"></use>
+    </svg>
+                    <span>Сексолог</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="service-content__col">
+              <ul class="list-service">
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#therapist"></use>
+    </svg>
+                    <span>Терапевт</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#hair"></use>
+    </svg>
+                    <span>Трихолог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#urologist"></use>
+    </svg>
+                    <span>Уролог</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#surgeon"></use>
+    </svg>
+                    <span>Хирург</span>
+                  </a>
+                </li>
+                <li class="list-service__item">
+                  <a href="#">
+                    <svg width="24" height="24">
+      <use xlink:href="../img/sprite.svg#endokrinology"></use>
+    </svg>
+                    <span>Эндокринолог</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="is-hidden">
+            <div class="text text--three-columns">
+    <div>
+        <p>Большинство проблем кожи невозможно решить с помощью косметических средств для наружного применения, т.к. причина их появления лежит не на поверхности эпидермиса, а глубоко внутри. В современной косметологии именно мезотерапия стала той процедурой, которая недорого, но быстро и эффективно возвращает лицу здоровый вид и эстетическую привлекательность. </p>
+        <blockquote>“Разобраться с такими заболеваниями под силу только специалистам с глубокими научными знаниями и большим практическим опытом лечебной, клинической работы.”</blockquote>
+    </div>
+    <div>
+        <h3>Мезотерапия в медицинском центре “Профессор”</h3>
+        <p>Благодаря ей необходимые коже активные вещества доставляются инъекционным путем напрямую к тканям, быстро достигают клеток и начинают незамедлительно работать. Такой подход гарантирует гораздо более длительный и качественный эффект, чем любое наружное косметическое средство.</p>
+        <ul>
+            <li>Самые доступные цены в городе</li>
+            <li>Прием ведут только опытные специалисты-профессора высшей квалификаци</li>
+            <li>Диагностическая аппаратура самых известных фирм Германии и Японии</li>
+        </ul>
+    </div>
+    <div>
+        <img src="../img/specialisty.jpg" width="306" height="286">
+    </div>
+</div>
+        </div>
+        <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" class="is-hidden">
+            <div class="service-content__item service-content__item--index">
+                <div class="service-content__col">
+                <ul class="list-service">
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#urine-test"></use>
+        </svg>
+                        <span>Анализ мочи</span>
+                    </a>
+                    </li>
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#blood"></use>
+        </svg>
+                        <span>Анализы крови</span>
+                    </a>
+                    </li>
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#endokrinology"></use>
+        </svg>
+                        <span>Гормональные исследования щитовидной железы</span>
+                    </a>
+                    </li>
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#injection"></use>
+        </svg>
+                        <span>Инъекции</span>
+                    </a>
+                    </li>
+                </ul>
+                </div>
+                <div class="service-content__col">
+                <ul class="list-service">
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#cancer"></use>
+        </svg>
+                        <span>Онкомаркеры</span>
+                    </a>
+                    </li>
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#sperm-test"></use>
+        </svg>
+                        <span>Исследования спермы</span>
+                    </a>
+                    </li>
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#fecal"></use>
+        </svg>
+                        <span>Исследования кала</span>
+                    </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+        <div id="tabpanel-4" role="tabpanel" tabindex="0" aria-labelledby="tab-4" class="is-hidden">
+            <div class="service-content__item service-content__item--index">
+                <div class="service-content__col">
+                <ul class="list-service">
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#biopsy"></use>
+        </svg>
+                        <span>Биопсия и цитология</span>
+                    </a>
+                    </li>
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#liver"></use>
+        </svg>
+                        <span>Эластография печени</span>
+                    </a>
+                    </li>
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#ultrasound"></use>
+        </svg>
+                        <span>Ультразвуковыее исследования</span>
+                    </a>
+                    </li>
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#cardiology"></use>
+        </svg>
+                        <span>ЭКГ</span>
+                    </a>
+                    </li>
+                </ul>
+                </div>
+                <div class="service-content__col">
+                <ul class="list-service">
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#stomach"></use>
+        </svg>
+                        <span>Эзофагогастродуоденоскопия гастроскопия(ЭГДС)</span>
+                    </a>
+                    </li>
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+        <use xlink:href="../img/sprite.svg#stomach-biopsy"></use>
+        </svg>
+                        <span>Гастробиопсия</span>
+                    </a>
+                    </li>
+                    <li class="list-service__item">
+                    <a href="#">
+                        <svg width="24" height="24">
+                            <use xlink:href="../img/sprite.svg#gynekologist"></use>
+                            </svg>
+                        <span>Гинекологические исследования</span>
+                    </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+
+        </div>
+    <button class="btn btn--primary index-tabs__btn" data-action="appointment">Запись на прием</button>
+    </div>
+</div>
+        </div>
+      </section>
+      <section class=" index__years years">
+    <div class="years__container container">
+      <div class="years__content">
+        <img class="years__img" src="../img/banner-30.png" alt="Баннер">
+        <div class="years__desc">
+          В медицинском центре «ПРОФЕССОР» ведут прием только специалисты высшей квалификации – профессора, доценты, доктора и кандидаты медицинских наук
+        </div>
+      </div>
+    </div>
+  </section>
+      <section class="advantages index__advantages">
+    <div class="advantages__container container">
+        <div class="h2__wrapper">
+            <h2 class="advantages__h2 h2 h2--star h2--underlined">преимущества нашей клиники</h2>
+        </div>
+      <div class="advantages__list">
+        <div class="advantages__item">
+          <svg width="50" height="60">
+                <use xlink:href="img/sprite.svg#ben-prof"></use>
+            </svg>
+          <div class="advantages__content">
+            <div class="advantages__name">Профессионализм</div>
+            <div class="advantages__desc">
+              Врачи с глубокими научными знаниями, большим практическим опытом лечебной, клинической работы
+            </div>
+          </div>
+        </div>
+        <div class="advantages__item">
+            <svg width="50" height="60">
+                <use xlink:href="img/sprite.svg#ben-lab"></use>
+            </svg>
+          <div class="advantages__content">
+            <div class="advantages__name">Собственная лаборатория</div>
+            <div class="advantages__desc">
+              Клинический, гормональный, биохимический анализ крови и исследования биоматериалов проводим в медицинском центре. Анализ проводится уже через 40-50 минут после забора биоматериала
+            </div>
+          </div>
+        </div>
+        <div class="advantages__item">
+          <svg width="50" height="60">
+                <use xlink:href="img/sprite.svg#ben-diag"></use>
+            </svg>
+          <div class="advantages__content">
+            <div class="advantages__name">Оперативная диагностика</div>
+            <div class="advantages__desc">
+              Применяем высокоточное лабораторное оборудование для точных диагностических исследований и постановки диагноза
+            </div>
+          </div>
+        </div>
+        <div class="advantages__item">
+            <svg width="50" height="60">
+                <use xlink:href="img/sprite.svg#ben-oborud"></use>
+            </svg>
+          <div class="advantages__content">
+            <div class="advantages__name">Современное оборудование</div>
+            <div class="advantages__desc">
+              Используем аппараты и лабораторное оборудование известных компаний по производству медицинской техники
+            </div>
+          </div>
+        </div>
+        <div class="advantages__item">
+          <svg width="50" height="60">
+            <use xlink:href="img/sprite.svg#ben-service"></use>
+        </svg>
+          <div class="advantages__content">
+            <div class="advantages__name">Широкий комплекс услуг</div>
+            <div class="advantages__desc">
+              Спектр услуг медицинской помощи: прием врачей разных специальностей, лабораторные и диагностические исследования, лечение и профилактика заболеваний. 
+            </div>
+          </div>
+        </div>
+        <div class="advantages__item">
+          <svg width="50" height="60">
+                <use xlink:href="img/sprite.svg#ben-scince"></use>
+            </svg>
+          <div class="advantages__content">
+            <div class="advantages__name">Развитие в научной сфере</div>
+            <div class="advantages__desc">
+              Наши врачи – практикующие профессора и доценты, ведущие научную деятельность. 
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+</section>
+      <section class="index__doctors doctors">
+    <div class="doctors__container container">
+        <div class="h2__wrapper">
+            <h2 class="doctors__h2 h2 h2--star h2--underlined">Специалисты высшей квалификации</h2>
+        </div>
+        <div class="doctors__wrapper-out">
+            <div class="doctors__wrapper doctors__swiper">
+                <div class="doctors__wrapper-inside swiper-wrapper">
+                    <div class="doctors__item swiper-slide">
+                        <div class="doctor">
+    <div class="doctor__img-wrapper">
+        <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">
+        <div class="doctor__link">
+            <button class="btn btn--primary doctor__btn" data-action="undefined">ЗАПИСь на прием</button> 
+        </div>
+    </div>
+    <div class="doctor__content">
+        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
+            <span class="doctor__surname">Кольцова</span>
+            <span class="doctor__name">Татьяна Владимировна</span>
+            <span class="doctor__position">Акушер-гинеколог</span>
+        </a>
+        <div class="doctor__content-bottom">
+            <p class="doctor__education">Доктор медицинских наук, профессор</p>
+            <p class="doctor__price">от 1500 ₽</p>
+        </div>
+    </div>    
+</div>
+                    </div>
+                    <div class="doctors__item swiper-slide">
+                        <div class="doctor">
+    <div class="doctor__img-wrapper">
+        <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">
+        <div class="doctor__link">
+            <button class="btn btn--primary doctor__btn" data-action="undefined">ЗАПИСь на прием</button> 
+        </div>
+    </div>
+    <div class="doctor__content">
+        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
+            <span class="doctor__surname">Аржанова</span>
+            <span class="doctor__name">Ольга Николаевна </span>
+            <span class="doctor__position">Акушер-гинеколог</span>
+        </a>
+        <div class="doctor__content-bottom">
+            <p class="doctor__education">Доктор медицинских наук, профессор</p>
+            <p class="doctor__price">от 1600 ₽</p>
+        </div>
+    </div>    
+</div>
+                    </div>
+                    <div class="doctors__item swiper-slide">
+                        <div class="doctor">
+    <div class="doctor__img-wrapper">
+        <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">
+        <div class="doctor__link">
+            <button class="btn btn--primary doctor__btn" data-action="undefined">ЗАПИСь на прием</button> 
+        </div>
+    </div>
+    <div class="doctor__content">
+        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
+            <span class="doctor__surname">Кулагина</span>
+            <span class="doctor__name">Наталья Владимировна</span>
+            <span class="doctor__position">Гинеколог-эндокринолог</span>
+        </a>
+        <div class="doctor__content-bottom">
+            <p class="doctor__education">Доктор медицинских наук, профессор</p>
+            <p class="doctor__price">от 1500 ₽</p>
+        </div>
+    </div>    
+</div>
+                    </div>
+                    <div class="doctors__item swiper-slide">
+                        <div class="doctor">
+    <div class="doctor__img-wrapper">
+        <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">
+        <div class="doctor__link">
+            <button class="btn btn--primary doctor__btn" data-action="undefined">ЗАПИСь на прием</button> 
+        </div>
+    </div>
+    <div class="doctor__content">
+        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
+            <span class="doctor__surname">Гогуа</span>
+            <span class="doctor__name">Манана Спиридоновна</span>
+            <span class="doctor__position">Гинеколог-эндокринолог</span>
+        </a>
+        <div class="doctor__content-bottom">
+            <p class="doctor__education">Кандидат медицинских наук</p>
+            <p class="doctor__price">от 1500 ₽</p>
+        </div>
+    </div>    
+</div>
+                    </div>
+                    <div class="doctors__item swiper-slide">
+                        <div class="doctor">
+    <div class="doctor__img-wrapper">
+        <img src="../img/doc-img-1.png" alt="gkeh" width="360" height="360">
+        <div class="doctor__link">
+            <button class="btn btn--primary doctor__btn" data-action="undefined">ЗАПИСь на прием</button> 
+        </div>
+    </div>
+    <div class="doctor__content">
+        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
+            <span class="doctor__surname">Кольцова</span>
+            <span class="doctor__name">Татьяна Владимировна</span>
+            <span class="doctor__position">Акушер-гинеколог</span>
+        </a>
+        <div class="doctor__content-bottom">
+            <p class="doctor__education">Доктор медицинских наук, профессор</p>
+            <p class="doctor__price">от 1500 ₽</p>
+        </div>
+    </div>    
+</div>
+                    </div>
+                    <div class="doctors__item swiper-slide">
+                        <div class="doctor">
+    <div class="doctor__img-wrapper">
+        <img src="../img/doc-img-2.png" alt="gkeh" width="360" height="360">
+        <div class="doctor__link">
+            <button class="btn btn--primary doctor__btn" data-action="undefined">ЗАПИСь на прием</button> 
+        </div>
+    </div>
+    <div class="doctor__content">
+        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
+            <span class="doctor__surname">Кольцова</span>
+            <span class="doctor__name">Татьяна Владимировна</span>
+            <span class="doctor__position">Акушер-гинеколог</span>
+        </a>
+        <div class="doctor__content-bottom">
+            <p class="doctor__education">Доктор медицинских наук, профессор</p>
+            <p class="doctor__price">от 1500 ₽</p>
+        </div>
+    </div>    
+</div>
+                    </div>
+                    <div class="doctors__item swiper-slide">
+                        <div class="doctor">
+    <div class="doctor__img-wrapper">
+        <img src="../img/doc-img-3.png" alt="gkeh" width="360" height="360">
+        <div class="doctor__link">
+            <button class="btn btn--primary doctor__btn" data-action="undefined">ЗАПИСь на прием</button> 
+        </div>
+    </div>
+    <div class="doctor__content">
+        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
+            <span class="doctor__surname">Кольцова</span>
+            <span class="doctor__name">Татьяна Владимировна</span>
+            <span class="doctor__position">Акушер-гинеколог</span>
+        </a>
+        <div class="doctor__content-bottom">
+            <p class="doctor__education">Доктор медицинских наук, профессор</p>
+            <p class="doctor__price">от 1500 ₽</p>
+        </div>
+    </div>    
+</div>
+                    </div>
+                    <div class="doctors__item swiper-slide">
+                        <div class="doctor">
+    <div class="doctor__img-wrapper">
+        <img src="../img/doc-img-4.png" alt="gkeh" width="360" height="360">
+        <div class="doctor__link">
+            <button class="btn btn--primary doctor__btn" data-action="undefined">ЗАПИСь на прием</button> 
+        </div>
+    </div>
+    <div class="doctor__content">
+        <a class="doctor__content-top" href="doctor-item.html" title="gewrsrgsrar">
+            <span class="doctor__surname">Кольцова</span>
+            <span class="doctor__name">Татьяна Владимировна</span>
+            <span class="doctor__position">Акушер-гинеколог</span>
+        </a>
+        <div class="doctor__content-bottom">
+            <p class="doctor__education">Доктор медицинских наук, профессор</p>
+            <p class="doctor__price">от 1500 ₽</p>
+        </div>
+    </div>    
+</div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn doctors__left">
+                <svg width="36" height="36">
+                    <use xlink:href="img/sprite.svg#arrow-left"></use>
+                </svg>
+            </button>
+            <button class="btn doctors__right">
+                <svg width="36" height="36">
+                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+      <div class="index__tour">
+        <div class="container tour--flowers2">
+            <div class="tour ">
+    <div class="tour__head">3D-тур по клинике</div>
+    <div class="tour__content">
+        <div class="tour__media">
+            <img src="img/tour.jpg" alt="3D-тур по клинике">
+        </div>
+    </div>
+</div>
+        </div>
+      </div>
+      <section class="index-text index__text gray">
+    <div class="index-text__top container">
+        <div class="index-text__top-text ">
+            <div class="h2__wrapper">
+                        <h2 class="h2  h2--underlined">О Медицинском центре “Профессор”</h2>
+            </div>
+             <div class="text">            
+                        <ul>
+                            <li>Доступные цены</li>
+                            <li>Прием ведут только специалисты– профессора, доценты, доктора и кандидаты медицинских наук, врачи высшей категории с большим опытом клинической работы</li>
+                            <li>Диагностическая аппаратура самых известных фирм Германии и Японии</li>
+                            <li>Собственные лаборатории с самым современным оборудованием</li>
+                        </ul>                    
+            </div>
+        </div>
+            <div class="index-text__block-collage">
+                <div class="collage">
+        <div class="collage__part collage__left">
+            <img src="../img/info-1.jpg" alt="title" class="collage__img">
+        </div>
+        <img src="../img/collage-part-right.png" alt="title" class="collage__img-right">
+        <img src="../img/collage-part-left.png" alt="title" class="collage__img-left">
+        <div class="collage__part collage__right">
+            <img src="../img/info-2.jpg" alt="title" class="collage__img">
+        </div>
+        <div class="collage__frame"></div>
+</div>
+            </div>
+
+    </div>
+    <div class="index-text__bottom container">
+            <div class="index-text__top-text ">
+                <div class="text">            
+                    <p>Сегодня каждый медцентр в Санкт-Петербурге должен отвечать следующим требованиям: высокое качество обслуживания, квалифицированный персонал и доступные цены. Многие ли медицинские центры в Санкт-Петербурге соответствуют этому? Можно назвать, по крайней мере, один – это медицинский центр «Профессор» на улице Чайковского, 42. Медицинский центр располагается по одному адресу и не имеет филиалов по городу.</p>
+
+                    <p>Известный медцентр «Профессор» был создан в 1992 г., и уже с начала его образования ставилась задача объединить в одном лечебном учреждении группу специалистов-профессоров самой высокой квалификации независимо от их ведомственной принадлежности.</p>
+                    <blockquote>“Разобраться с такими заболеваниями под силу только специалистам с глубокими научными знаниями и большим практическим опытом лечебной, клинической работы.”</blockquote>
+                </div>
+            </div>
+            <div class="licence-block index-text__licence">
+                <div class="h2__wrapper">
+                    <h2 class="licence-block__h2 h2 h2--short">лицензии и сертификаты</h2>
+                </div>
+                <div class="licence-block__content text">
+                    <img src="img/serts.png" alt="сертификаты" width="544" height="200">
+                    <p>Сегодня каждый медцентр в Санкт-Петербурге должен отвечать следующим требованиям: высокое качество обслуживания, квалифицированный персонал и доступные цены. Многие ли медицинские центры в Санкт-Петербурге соответствуют этому? </p>
+                </div>
+            </div>
+
+    </div>
+</section>
+      <section class="review-slider index__advantages">
+    <div class="container">
+        <div class="h2__wrapper">
+            <h2 class="review-slider__h2 h2 h2--star h2--underlined">Отзывы</h2>
+        </div>
+        <div class="review-slider__wrapper">
+            <div class="review-slider__controls">
+                <div class="review-slider__fractions">1/3</div>
+                <div class="review-slider__pagination">
+                    <button class="review-slider__left">
+                        <svg width="20" height="20">
+                            <use xlink:href="img/sprite.svg#arrow-right-stroke"></use>
+                        </svg>
+                    </button>
+                    <button class="review-slider__right">
+                        <svg width="20" height="20">
+                            <use xlink:href="img/sprite.svg#arrow-right-stroke"></use>
+                        </svg>                         
+                    </button>
+                </div>
+            </div>
+            <div class="review-slider__slider review-slider__swiper">
+                <div class="review-slider__slider-inside swiper-wrapper">
+                    <div class="review-slider__item swiper-slide">
+                        <article class="review">    
+    <div class="review__container">
+        <div class="review__photo">
+            <img src="/img/person.jpg" alt="lfvf" class="review__img" width="100" height="100">
+        </div>
+        <div class="review__content">
+            <p class="review__name">Петрова Светлана</p>
+            <date class="review__date">25.06.2020</date>
+            <div class="review__text">
+                <p>Наблюдалась в медицинском центре «Профессор» на протяжении всего срока беременности, делала УЗИ и сдавала анализы. Впечатление от 4D потрясающее, а результаты анализов всегда качественные и готовы в срок. Думаю, что доверять врачам медицинского центра «Профессор» можно и даже нужно.</p>
+            </div>
+            <button class="btn btn--readmore review__btn js-cliptext">Читать полностью</button>
+        </div>
+    </div>
+</article>
+                    </div>
+                    <div class="review-slider__item swiper-slide">
+                        <article class="review">    
+    <div class="review__container">
+        <div class="review__photo">
+            <img src="/img/person-empty.jpg" alt="lfvf" class="review__img" width="100" height="100">
+        </div>
+        <div class="review__content">
+            <p class="review__name">Татьяна Петрова</p>
+            <date class="review__date">25.06.2020</date>
+            <div class="review__text">
+                <p>Я лечусь в центре «Профессор» с 2002 года: у меня целый «букет» заболеваний. Мне очень помогают компетентные и отзывчивые врачи, да и результаты анализов всегда готовы вовремя. В 2009 г. мне пришлось переехать к сыну в Москву. Но там я не смогла найти приемлемый медцентр, т.к. или очень высокие цены (в 3-4 раза), или низкий уровень качества. Поэтому 1-2 раза в квартал езжу в Питер в медицинский центр «Профессор».</p>
+            </div>
+            <button class="btn btn--readmore review__btn js-cliptext">Читать полностью</button>
+        </div>
+    </div>
+</article>
+                    </div>
+                    <div class="review-slider__item swiper-slide">
+                        <article class="review">    
+    <div class="review__container">
+        <div class="review__photo">
+            <img src="/img/person.jpg" alt="lfvf" class="review__img" width="100" height="100">
+        </div>
+        <div class="review__content">
+            <p class="review__name">Петрова Светлана</p>
+            <date class="review__date">25.06.2020</date>
+            <div class="review__text">
+                <p>Наблюдалась в медицинском центре «Профессор» на протяжении всего срока беременности, делала УЗИ и сдавала анализы. Впечатление от 4D потрясающее, а результаты анализов всегда качественные и готовы в срок. Думаю, что доверять врачам медицинского центра «Профессор» можно и даже нужно.</p>
+            </div>
+            <button class="btn btn--readmore review__btn js-cliptext">Читать полностью</button>
+        </div>
+    </div>
+</article>
+                    </div>
+                    <div class="review-slider__item swiper-slide">
+                        <article class="review">    
+    <div class="review__container">
+        <div class="review__photo">
+            <img src="/img/person.jpg" alt="lfvf" class="review__img" width="100" height="100">
+        </div>
+        <div class="review__content">
+            <p class="review__name">Акулина</p>
+            <date class="review__date">15.06.2020</date>
+            <div class="review__text">
+                <p>Больше года, мне в разных клиниках не могли определить заболевание. В медицинском центре «Профессор» обследовали 2 недели. Диагноз неясный, поэтому главврач собрала профессоров, и они опять просмотрели все данные и пришли к единому мнению о моем заболевании. Этот диагноз подтвердился, стали лечить. Сейчас у меня хорошее самочувствие. Не хватает слов благодарности врачам этой клиники, особенно проф. Гаспарян.</p>
+            </div>
+            <button class="btn btn--readmore review__btn js-cliptext">Читать полностью</button>
+        </div>
+    </div>
+</article>
+                    </div>
+                    <div class="review-slider__item swiper-slide">
+                        <article class="review">    
+    <div class="review__container">
+        <div class="review__photo">
+            <img src="/img/person.jpg" alt="lfvf" class="review__img" width="100" height="100">
+        </div>
+        <div class="review__content">
+            <p class="review__name">Петрова Светлана</p>
+            <date class="review__date">25.06.2020</date>
+            <div class="review__text">
+                <p>Наблюдалась в медицинском центре «Профессор» на протяжении всего срока беременности, делала УЗИ и сдавала анализы. Впечатление от 4D потрясающее, а результаты анализов всегда качественные и готовы в срок. Думаю, что доверять врачам медицинского центра «Профессор» можно и даже нужно.</p>
+            </div>
+            <button class="btn btn--readmore review__btn js-cliptext">Читать полностью</button>
+        </div>
+    </div>
+</article>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn btn--secondary review-slider__btn">Все отзывы</a>
+        </div>
+    </div>
+</section>
+      <section class="index__news">
+        <div class="container">  
+          <div class="news-block">
+            <div class="news-block__block">
+              <div class="news-block__head">
+                <div class="h2__wrapper">
+                  <h2 class="review-slider__h2 h2 h2--star h2--underlined">Блог</h2>
+                </div>
+                <a class="news-block__link-green link-green" href="#">Все статьи</a>
+              </div>
+              <div class="news-block__list">
+                <div class="news-block__item">
+    <div class="news-block__img">
+        <div class="news-block__inner">
+            <a class="btn btn--secondary" href="#" title="название статьи">Читать полностью</a>
+        </div>
+        <img src="../img/info-1.jpg" alt="Статья 1" width="240" height="210">
+    </div>
+    <div class="news-block__caption">
+      О варикозном расширении вен
+    </div>
+    <div class="news-block__text">
+      Варикозное расширение вен – одно из самых распространенных заболеваний. По статистическим данным женщины в 3-4 раза чаще, чем мужчины, страдают варикозом вен ног
+    </div>
+    <div class="news-block__sub">
+        <div class="date">25.06.2022</div>
+        <div class="view">
+            <svg class="icon" width="16" height="16">
+                <use xlink:href="../img/sprite.svg#fa_eye-line"></use>
+            </svg>
+            <span>36</span>
+        </div>
+    </div>
+</div>
+                <div class="news-block__item">
+    <div class="news-block__img">
+        <div class="news-block__inner">
+            <a class="btn btn--secondary" href="#" title="название статьи">Читать полностью</a>
+        </div>
+        <img src="../img/info-1.jpg" alt="Статья 1" width="240" height="210">
+    </div>
+    <div class="news-block__caption">
+      О варикозном расширении вен
+    </div>
+    <div class="news-block__text">
+      Варикозное расширение вен – одно из самых распространенных заболеваний. По статистическим данным женщины в 3-4 раза чаще, чем мужчины, страдают варикозом вен ног
+    </div>
+    <div class="news-block__sub">
+        <div class="date">25.06.2022</div>
+        <div class="view">
+            <svg class="icon" width="16" height="16">
+                <use xlink:href="../img/sprite.svg#fa_eye-line"></use>
+            </svg>
+            <span>36</span>
+        </div>
+    </div>
+</div>
+              </div>
+            </div>
+            <div class="news-block__block">
+              <div class="news-block__head">
+                <div class="h2__wrapper">
+                  <h2 class="review-slider__h2 h2 h2--short">Новости</h2>
+                </div>
+                <a class="link-green" href="#">Все новости</a>
+              </div>
+              <div class="news-block__list">
+                <div class="news-block__item">
+    <div class="news-block__img">
+        <div class="news-block__inner">
+            <a class="btn btn--secondary" href="#" title="название статьи">Читать полностью</a>
+        </div>
+        <img src="../img/info-1.jpg" alt="Статья 1" width="240" height="210">
+    </div>
+    <div class="news-block__caption">
+      О варикозном расширении вен
+    </div>
+    <div class="news-block__text">
+      Варикозное расширение вен – одно из самых распространенных заболеваний. По статистическим данным женщины в 3-4 раза чаще, чем мужчины, страдают варикозом вен ног
+    </div>
+    <div class="news-block__sub">
+        <div class="date">25.06.2022</div>
+        <div class="view">
+            <svg class="icon" width="16" height="16">
+                <use xlink:href="../img/sprite.svg#fa_eye-line"></use>
+            </svg>
+            <span>36</span>
+        </div>
+    </div>
+</div>
+                <div class="news-block__item">
+    <div class="news-block__img">
+        <div class="news-block__inner">
+            <a class="btn btn--secondary" href="#" title="название статьи">Читать полностью</a>
+        </div>
+        <img src="../img/info-1.jpg" alt="Статья 1" width="240" height="210">
+    </div>
+    <div class="news-block__caption">
+      О варикозном расширении вен
+    </div>
+    <div class="news-block__text">
+      Варикозное расширение вен – одно из самых распространенных заболеваний. По статистическим данным женщины в 3-4 раза чаще, чем мужчины, страдают варикозом вен ног
+    </div>
+    <div class="news-block__sub">
+        <div class="date">25.06.2022</div>
+        <div class="view">
+            <svg class="icon" width="16" height="16">
+                <use xlink:href="../img/sprite.svg#fa_eye-line"></use>
+            </svg>
+            <span>36</span>
+        </div>
+    </div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+	<div class="container">
+		<div class="footer-line footer-line--top">
+			<a href="/" class="footer-logo" title="На Главную">
+				<img src="img/logo-footer.png" alt="Логотип" width="145" height="66">
+				<div class="footer-logo__text">Медицинский центр</div>
+			</a>
+			<div class="info-menu-contact">
+				<div class="info-menu-contact__item">
+					<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#fa_mail"></use>
+</svg>
+					<div class="info-menu-contact__main">
+						<div class="info-menu-contact__caption">
+							<a href="mailto:zapis@mcprofessor.ru">zapis@mcprofessor.ru</a>
+						</div>
+					</div>
+				</div>
+				<div class="info-menu-contact__item">
+					<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#fa_map"></use>
+</svg>
+					<div class="info-menu-contact__main">
+						<div class="info-menu-contact__desc">м. Чернышевская</div>
+						<div class="info-menu-contact__caption">ул. Чайковского, 42</div>
+					</div>
+				</div>
+				<div class="info-menu-contact__item">
+					<svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#fa_clock"></use>
+</svg>
+					<div class="info-menu-contact__main">
+						<div class="info-menu-contact__desc">Время работы</div>
+						<div class="info-menu-contact__caption">пн-пт: 9-21, сб: 9-20, вс: 9-19</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__socials socials">
+    <a href="#" class="link-icon socials__link" title="Telegram">
+        <span class="svg-disclaimer">Telegram</span>
+        <svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#telegram"></use>
+</svg>
+    </a>
+    <a href="#" class="link-icon socials__link" title="Viber">
+        <span class="svg-disclaimer">Viber</span>
+        <svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#viber"></use>
+</svg>
+    </a>
+    <a href="#" class="link-icon socials__link" title="Whats App">
+        <span class="svg-disclaimer">Whats App</span>
+        <svg width="24" height="24">
+	<use xlink:href="../img/sprite.svg#whatsapp"></use>
+</svg>
+    </a>
+</div>
+			<div class="footer__phones">
+				<a href="tel:+78122727024" title="позвонить в клинику" class="phone-link">+7 (812) 272-70-24</a>
+				<a href="tel:+78122723734" title="позвонить в клинику" class="phone-link">+7 (812) 272-37-34</a>
+				<a href="tel:+78122758696" title="позвонить в клинику" class="phone-link">+7 (812) 275-86-96</a>
+			</div>
+			
+		</div>
+		<div class="footer-line footer-line--mid">
+			<div class="footer-copyright">
+				<span>© Медцентр “Профессор” 2022</span>
+				<a href="/" title="Политика конфиденциальности">Политика конфиденциальности</a>
+			</div>
+			<span>Разработано в <a class="footer__link" href="https://topform.ru/" title="https://topform.ru/">Topform.ru</a></span>
+		</div>
+		<div class="footer-line footer-line--bottom">
+			<img class="footer__qr" src="img/qr.png" alt="QR код">
+			<div class="footer-desc">
+				Материалы, размещенные на данной странице, носят информационный характер и предназначены для образовательных целей. Посетители сайта не должны использовать их в качестве медицинских рекомендаций. Определение диагноза и выбор методики лечения остается исключительной прерогативой лечащего врача! МЦ «Профессор» не несет ответственности за возможные негативные последствия, возникшие в результате использования информации, размещенной на сайте mcprofessor.ru. Информация и цены, представленные на сайте, не являются публичной офертой. 
+			</div>
+			<div class="footer-warning">
+				ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ.<br>НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="popup-overlay" data-popup="appointment">
+    <section class="popup">
+        <div class="popup__wrapper">
+            <button class="popup__close js-close">
+                <svg width="12" height="12">
+	<use xlink:href="../img/sprite.svg#cancel"></use>
+</svg>
+            </button>
+            <div class="popup__head">
+                <p class="popup__name">записаться на прием</p>
+            </div>
+            <form class="popup__form comment-form" action=".">
+                <label class="comment-form__label">                
+                    <input class="comment-form__input required" type="text" placeholder="Иванова Елена Алексеевна">
+                    <span class="comment-form__name" name="name">ВАШЕ ФИО*</span>
+                </label>
+                <label class="comment-form__label">                
+                    <input class="comment-form__input required" type="tel" placeholder="+7 (931) 001-34-34">
+                    <span class="comment-form__name" name="phone">ВАШ ТЕЛЕФОН*</span>
+                </label>
+                <label class="comment-form__label">                
+                    <select class="comment-form__select " name="specialist">
+                        <option value="0">Выберите специалиста/услугу</option>
+                        <option value="1">Диабетолог</option>
+                        <option value="2">Гинеколог-эндокринолог</option>
+                        <option value="3">Дерматолог-эндокринолог</option>
+                        <option value="4">Диабетолог</option>
+                        <option value="5">Гастроэнтеролог</option>
+                    </select>
+                    <span class="comment-form__name" name="surname">Специалист/услуга*</span>
+                </label>
+                <label class="comment-form__label comment-form__label--date">                
+                    <input class="comment-form__input comment-form__date" type="mail" placeholder="Выберите дату" data-date="date">                
+                    <span class="comment-form__name" name="mail">ДАТА*</span>
+                    <svg width="16" height="16">
+	<use xlink:href="../img/sprite.svg#calendar"></use>
+</svg>
+                </label>
+                <label class="comment-form__label">                
+                    <select class="comment-form__select" name="specialist">
+                        <option value="0">Выберите время</option>
+                        <option value="1">13:00</option>
+                        <option value="2">13:15</option>
+                        <option value="3">14:00</option>
+                        <option value="4">15:00</option>
+                        <option value="5">15:15</option>
+                    </select>
+                    <span class="comment-form__name" name="surname">ВРЕМЯ*</span>
+                </label>
+
+                <div class="comment-form__bottom">
+                    <label class="comment-form__label comment-form__label--checkbox">
+                        <input type="checkbox" name="agreed" class="required" checked="">
+                        <span>Я даю согласие на обработку <a href="#" alt="персональных данных">персональных данных</a></span>
+                    </label>
+                    <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<div class="popup-overlay" data-popup="question">
+    <section class="popup">
+        <div class="popup__wrapper">
+            <button class="popup__close js-close">
+                <svg width="12" height="12">
+	<use xlink:href="../img/sprite.svg#cancel"></use>
+</svg>
+            </button>
+            <div class="popup__head">
+                <p class="popup__name">остались вопросы?</p>
+                <p class="popup__remark">Оставьте заявку и мы подробно ответим на ваши вопросы</p>
+            </div>           
+            <form class="popup__form comment-form" action=".">
+                <label class="comment-form__label">                
+                    <input class="comment-form__input required" type="text" placeholder="Иванова Елена Алексеевна">
+                    <span class="comment-form__name" name="name">ВАШЕ Имя*</span>
+                </label>
+                <label class="comment-form__label">                
+                    <input class="comment-form__input required" type="tel" placeholder="+7 (931) 001-34-34">
+                    <span class="comment-form__name" name="phone">ВАШ ТЕЛЕФОН*</span>
+                </label>
+                <div class="comment-form__bottom">
+                    <label class="comment-form__label comment-form__label--checkbox">
+                        <input type="checkbox" name="agreed" class="required" checked="">
+                        <span>Я даю согласие на обработку <a href="#" alt="персональных данных">персональных данных</a></span>
+                    </label>
+                    <button class="comment-form__btn btn btn--primary">ЗАКАЗАТЬ ЗВОНОК</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
