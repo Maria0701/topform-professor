@@ -5873,13 +5873,33 @@ button {
 
 .licence-block__imgs {
   position: relative;
+  margin-bottom: 20px;
   display: flex;
   -moz-column-gap: 20px;
        column-gap: 20px;
   aspect-ratio: 544/200;
+  --shadow-color: 0deg 0% 45%;
+  --shadow-elevation-medium:
+  0.9px 1px 1.5px hsl(var(--shadow-color) / 0.46),
+  2.7px 3px 4.4px -0.7px hsl(var(--shadow-color) / 0.45),
+  5.6px 6.1px 9.1px -1.3px hsl(var(--shadow-color) / 0.44),
+  11.6px 12.7px 19px -2px hsl(var(--shadow-color) / 0.43),
+  22.9px 25px 37.4px -2.7px hsl(var(--shadow-color) / 0.42);
 }
 .licence-block__imgs img {
   aspect-ratio: 703/1015;
+  max-height: 100%;
+  transform: rotateY(-30deg);
+  box-shadow: var(--shadow-elevation-medium);
+  transition: transform 0.3s ease-in-out;
+}
+
+.licence-block__item {
+  perspective: 400px;
+  flex-basis: 24%;
+}
+.licence-block__item:hover img, .licence-block__item:focus img {
+  transform: rotateY(0deg);
 }
 
 @media (min-width: 800px) {

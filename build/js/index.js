@@ -14423,6 +14423,9 @@ var _require2 = __webpack_require__(291),
 R.bind('[data-fancybox="gallery"]', {
   infinite: false
 });
+R.bind('[data-fancybox="gallery2"]', {
+  infinite: false
+});
 
 try {
   tabsOpener('.js-tabs');

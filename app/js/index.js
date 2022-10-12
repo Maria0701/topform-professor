@@ -20,6 +20,10 @@ Fancybox.bind('[data-fancybox="gallery"]', {
 	infinite: false
 });
 
+Fancybox.bind('[data-fancybox="gallery2"]', {
+	infinite: false
+});
+
 try {
 	tabsOpener('.js-tabs');
 } catch(e) {
