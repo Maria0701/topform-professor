@@ -49,6 +49,9 @@ export class CreateNewElement {
             case 'checkbox':
                 booleanItem = field.checked === true;
                 break;
+            case 'email':
+                booleanItem= true;
+                break;
         }
         return booleanItem;
     };
