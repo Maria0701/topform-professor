@@ -756,10 +756,6 @@ button.swiper-pagination-bullet {
   --padding: 16px;
 }
 
-/*@include font-face("Rubik", "Rubik-Italic", 400, 'italic');
-@include font-face("Rubik", "Rubik-Regular", 400);
-@include font-face("Rubik", "Rubik-Medium", 500);
-@include font-face("Rubik", "Rubik-Light", 300);*/
 .container {
   width: 100%;
   padding-left: var(--padding);
@@ -4040,11 +4036,12 @@ button {
 }
 .includes-item {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
   background-color: var(--green);
   color: var(--white);
   text-align: center;
+  text-decoration: none;
   width: 100%;
   height: 100%;
 }
@@ -4067,11 +4064,13 @@ button {
 
 .includes-item__content {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   padding: 16px;
 }
 
 .includes-item__name {
+  margin-top: 0;
+  margin-bottom: 0;
   padding-bottom: 16px;
   font-weight: 500;
   font-size: 0.875rem;
@@ -4083,6 +4082,8 @@ button {
 }
 
 .includes-item__price {
+  margin-top: 0;
+  margin-bottom: 0;
   padding-top: 16px;
   font-weight: 600;
   font-size: 1.25rem;
