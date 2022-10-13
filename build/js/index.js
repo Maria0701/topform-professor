@@ -73,6 +73,21 @@ var tabsOpener = function tabsOpener(className) {
     evt.target.closest(className).parentElement.classList.toggle('opened');
   };
 
+  var observer = new MutationObserver(function (mutationRecords) {
+    togglers.forEach(function (toggler) {
+      return toggler.removeEventListener('click', openHandler);
+    });
+    togglers = document.querySelectorAll(className);
+    togglers.forEach(function (toggler) {
+      return toggler.addEventListener('click', openHandler);
+    });
+  });
+  observer.observe(togglers[0].closest('main'), {
+    childList: true,
+    // наблюдать за непосредственными детьми
+    subtree: true // и более глубокими потомками
+
+  });
   togglers.forEach(function (toggler) {
     return toggler.addEventListener('click', openHandler);
   });
