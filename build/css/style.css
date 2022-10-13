@@ -4085,6 +4085,7 @@ button {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 16px;
+  min-height: 46px;
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 130%;
@@ -4192,6 +4193,15 @@ button {
   padding: 16px;
 }
 
+[role=tab] h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+}
+
 [role=tab] {
   position: relative;
   z-index: 2;
@@ -4226,21 +4236,27 @@ button {
 }
 
 [role=tab]:focus,
-[role=tab]:hover {
+[role=tab]:hover,
+[role=tab] h2:focus,
+[role=tab] h2:hover {
   color: var(--green-text);
   background-color: var(--white);
 }
 [role=tab]:focus svg,
-[role=tab]:hover svg {
+[role=tab]:hover svg,
+[role=tab] h2:focus svg,
+[role=tab] h2:hover svg {
   fill: var(--green-text);
 }
 
-[role=tab][aria-selected=true] {
+[role=tab][aria-selected=true],
+[role=tab][aria-selected=true] h2 {
   color: var(--white-text);
   background-color: var(--green);
   border-color: var(--green-text);
 }
-[role=tab][aria-selected=true] svg {
+[role=tab][aria-selected=true] svg,
+[role=tab][aria-selected=true] h2 svg {
   fill: var(--whiteText);
 }
 

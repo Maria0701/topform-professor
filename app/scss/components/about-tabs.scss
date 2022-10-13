@@ -2,6 +2,7 @@
 .tabs-horizon {
     margin-right: -16px;
     width: calc(100% + 16px);
+
 }
 
 .tabs-horizon__wrapper {
@@ -17,6 +18,15 @@
 
 .tabs-horizon__panels {
     padding: 16px;
+}
+
+[role="tab"] h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--dark-gray);
 }
   
 [role="tab"] {
@@ -54,7 +64,9 @@
 }
 
 [role="tab"]:focus,
-[role="tab"]:hover {
+[role="tab"]:hover, 
+[role="tab"] h2:focus,
+[role="tab"] h2:hover {
     color: var(--green-text);
     background-color: var(--white);
 
@@ -63,7 +75,8 @@
     }
 }
   
-[role="tab"][aria-selected="true"] {
+[role="tab"][aria-selected="true"],
+[role="tab"][aria-selected="true"] h2 {
     color: var(--white-text);
     background-color: var(--green);
     border-color: var(--green-text);
