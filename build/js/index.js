@@ -13383,7 +13383,7 @@ var PopupOpener = /*#__PURE__*/function () {
 
     this.popupElt = this.overlayElt.querySelector(popupClass); // сам элемент popup. В этом случае можно его считаю от оверлея. Если оверлей отдельно от попапа - этот элемент переписать
 
-    this.closeBtn = this.popupElt.querySelector(closeBtnClass); // находим кнопку закрытия
+    this.closeBtns = this.popupElt.querySelectorAll(closeBtnClass); // находим кнопку закрытия
 
     this.dateElt = this.popupElt.querySelector('[data-date="date"]');
     this.flatpickr = null;
@@ -13413,10 +13413,16 @@ var PopupOpener = /*#__PURE__*/function () {
   }, {
     key: "setCloseListeners",
     value: function setCloseListeners() {
+      var _this = this;
+
       this.overlayElt.addEventListener('click', this.closeOverlayHandler);
-      this.closeBtn.addEventListener('click', this.closeHandler);
+      this.closeBtns.forEach(function (item) {
+        return item.addEventListener('click', _this.closeHandler);
+      });
       document.addEventListener('keydown', this.keyDownHandler);
-      this.closeBtn.addEventListener('keydown', this.btnEnterCloseHandler);
+      this.closeBtns.forEach(function (item) {
+        return item.addEventListener('keydown', _this.btnEnterCloseHandler);
+      });
     }
   }, {
     key: "closeHandler",
@@ -13426,6 +13432,8 @@ var PopupOpener = /*#__PURE__*/function () {
   }, {
     key: "close",
     value: function close() {
+      var _this2 = this;
+
       if (this.animationCloseClass) {
         this.overlayElt.classList.add(this.animationCloseClass);
         this.popupElt.classList.add(this.animationCloseClass);
@@ -13434,12 +13442,27 @@ var PopupOpener = /*#__PURE__*/function () {
       }
 
       if (this.flatpickr) this.flatpickr.destroy();
+
+      if (document.querySelector('[data-popup="failure"]')) {
+        document.querySelector('[data-popup="failure"]').remove();
+        this.popupElt = null;
+      }
+
+      if (document.querySelector('[data-action="success"]')) {
+        document.querySelector('[data-action="success"]').remove();
+        this.popupElt = null;
+      }
+
       this.popupElt.classList.remove('opened');
       this.overlayElt.classList.remove('opened');
       this.overlayElt.removeEventListener('click', this.closeOverlayHandler);
-      this.closeBtn.removeEventListener('click', this.closeHandler);
+      this.closeBtns.forEach(function (item) {
+        return item.removeEventListener('click', _this2.closeHandler);
+      });
       document.removeEventListener('keydown', this.keyDownHandler);
-      this.closeBtn.removeEventListener('keydown', this.btnEnterCloseHandler);
+      this.closeBtns.forEach(function (item) {
+        return item.removeEventListener('keydown', _this2.btnEnterCloseHandler);
+      });
     }
   }, {
     key: "closeOverlayHandler",
@@ -13914,7 +13937,7 @@ function phoneMask(elt) {
 var successTemplate = function successTemplate(successMessage) {
   var successText = successMessage === 'success' ? "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u043E\u0431\u0440\u0430\u0449\u0435\u043D\u0438\u0435.\n        <br/>\u041C\u044B \u0441\u0432\u044F\u0436\u0435\u043C\u0441\u044F \u0441 \u0432\u0430\u043C\u0438 \u0434\u043B\u044F \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u044F \u0437\u0430\u043F\u0438\u0441\u0438" : "<p>\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u0441\u0432\u044F\u0436\u0438\u0442\u0435\u0441\u044C \u0441 \u043D\u0438\u043C\u0438 \u043F\u043E \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430\u043C</p>\n            <div class=\"popup__phones\">\n\t\t\t\t<a href=\"tel:+78122727024\" title=\"\u043F\u043E\u0437\u0432\u043E\u043D\u0438\u0442\u044C \u0432 \u043A\u043B\u0438\u043D\u0438\u043A\u0443\" class=\"phone-link\">+7 (812) 272-70-24</a>\n\t\t\t\t<a href=\"tel:+78122723734\" title=\"\u043F\u043E\u0437\u0432\u043E\u043D\u0438\u0442\u044C \u0432 \u043A\u043B\u0438\u043D\u0438\u043A\u0443\" class=\"phone-link\">+7 (812) 272-37-34</a>\n\t\t\t\t<a href=\"tel:+78122758696\" title=\"\u043F\u043E\u0437\u0432\u043E\u043D\u0438\u0442\u044C \u0432 \u043A\u043B\u0438\u043D\u0438\u043A\u0443\" class=\"phone-link\">+7 (812) 275-86-96</a>\n            </div>\n        ";
   var successName = successMessage === 'success' ? "\u0437\u0430\u044F\u0432\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430!" : "\u043E\u0448\u0438\u0431\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043A\u0438!";
-  return "\n    <div class=\"popup-overlay opened\" data-popup=\"".concat(successMessage, "\">\n    <section class=\"popup popup--success opened\">\n        <div class=\"popup__wrapper\">\n            <button class=\"popup__close js-close\">\n            <svg width=\"12\" height=\"12\">\n                <use xlink:href=\"../img/sprite.svg#cancel\"></use>\n            </svg>\n            </button>\n            <div class=\"popup__head\">\n                <div class=\"popup__svg\">\n                <svg width=\"140\" height=\"140\">\n                    <use xlink:href=\"../img/sprite.svg#").concat(successMessage, "\"></use>\n                </svg>\n                </div>\n                <p class=\"popup__name\">").concat(successName, "</p>\n                <div class=\"popup__remark\">").concat(successText, "</div>\n            </div>           \n            <button class=\"comment-form__btn btn btn--primary js-close\">\u0425\u043E\u0440\u043E\u0448\u043E</button>\n        </div>\n    </section>\n</div>\n    ");
+  return "\n    <div class=\"popup-overlay opened\" data-popup=\"".concat(successMessage, "\">\n    <section class=\"popup popup--success opened\">\n        <div class=\"popup__wrapper\">\n            <button class=\"popup__close js-close\">\n            <svg width=\"12\" height=\"12\">\n                <use xlink:href=\"/maria/build/img/sprite.svg#cancel\"></use>\n            </svg>\n            </button>\n            <div class=\"popup__head\">\n                <div class=\"popup__svg\">\n                <svg width=\"140\" height=\"140\">\n                    <use xlink:href=\"/maria/build/img/sprite.svg#").concat(successMessage, "\"></use>\n                </svg>\n                </div>\n                <p class=\"popup__name\">").concat(successName, "</p>\n                <div class=\"popup__remark\">").concat(successText, "</div>\n            </div>           \n            <button class=\"comment-form__btn btn btn--primary js-close\">\u0425\u043E\u0440\u043E\u0448\u043E</button>\n        </div>\n    </section>\n</div>\n    ");
 };
 ;// CONCATENATED MODULE: ./app/js/components/menu-opener.js
 var menuOpener = function menuOpener() {

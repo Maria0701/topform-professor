@@ -7417,9 +7417,12 @@ button {
   z-index: 1;
   width: calc(100% - 32px);
   max-width: 593px;
+  max-height: 100vh;
   padding: 12px;
   transform: translate(-50%, -50%);
   background-color: var(--white);
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .popup-overlay {
@@ -7475,8 +7478,9 @@ button {
 }
 
 .popup__name {
+  margin: 0;
   font-family: Times, serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 130%;
   text-align: center;
   text-transform: uppercase;

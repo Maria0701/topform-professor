@@ -13,7 +13,7 @@ export class PopupOpener {
         this.openElt = openElt; // кнопка, по которой открывается попап
         this.overlayElt = document.querySelector(overlayClass); // выбираем элемент оверлея. В этом случае сам попап находится внутри элемента
         this.popupElt = this.overlayElt.querySelector(popupClass); // сам элемент popup. В этом случае можно его считаю от оверлея. Если оверлей отдельно от попапа - этот элемент переписать
-        this.closeBtn = this.popupElt.querySelector(closeBtnClass); // находим кнопку закрытия
+        this.closeBtns = this.popupElt.querySelectorAll(closeBtnClass); // находим кнопку закрытия
         this.dateElt = this.popupElt.querySelector('[data-date="date"]');
         this.flatpickr = null;
         this.animationOpenClass = animationOpenClass;
@@ -40,9 +40,9 @@ export class PopupOpener {
 
     setCloseListeners() {
         this.overlayElt.addEventListener('click', this.closeOverlayHandler);
-        this.closeBtn.addEventListener('click', this.closeHandler);
+        this.closeBtns.forEach(item => item.addEventListener('click', this.closeHandler));
         document.addEventListener('keydown', this.keyDownHandler);
-        this.closeBtn.addEventListener('keydown', this.btnEnterCloseHandler);
+        this.closeBtns.forEach(item => item.addEventListener('keydown', this.btnEnterCloseHandler));
     }
 
     closeHandler() {
@@ -57,12 +57,24 @@ export class PopupOpener {
             this.popupElt.addEventListener('animationend', this.animationEndHandler);
         }
         if (this.flatpickr) this.flatpickr.destroy();
+        if (document.querySelector('[data-popup="failure"]')) {
+            document.querySelector('[data-popup="failure"]').remove();
+            this.popupElt = null;
+        }
+
+        if (document.querySelector('[data-action="success"]')) {
+            document.querySelector('[data-action="success"]').remove();
+            this.popupElt = null;
+        }
+
         this.popupElt.classList.remove('opened');
         this.overlayElt.classList.remove('opened');
         this.overlayElt.removeEventListener('click', this.closeOverlayHandler);
-        this.closeBtn.removeEventListener('click', this.closeHandler);
+        this.closeBtns.forEach(item => item.removeEventListener('click', this.closeHandler));
         document.removeEventListener('keydown', this.keyDownHandler);
-        this.closeBtn.removeEventListener('keydown', this.btnEnterCloseHandler);        
+        this.closeBtns.forEach(item => item.removeEventListener('keydown', this.btnEnterCloseHandler));
+        
+        
     }
 
     closeOverlayHandler(evt) {
