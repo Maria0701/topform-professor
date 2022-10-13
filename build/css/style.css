@@ -3778,6 +3778,7 @@ button {
 }
 
 .promotion__link {
+  display: none;
   padding-top: 24px;
   font-weight: 500;
   font-size: 0.75;
@@ -3817,7 +3818,6 @@ button {
   /* display: grid;
    grid-template-columns: 1fr;
    row-gap: 50px;*/
-  padding-bottom: 50px;
 }
 
 .service-page__top {
@@ -3925,10 +3925,6 @@ button {
     -moz-column-gap: 36px;
          column-gap: 36px;
     justify-items: center;
-  }
-
-  .service-page__qa-block {
-    margin-bottom: 50px;
   }
 
   .service-page__comment {
@@ -4049,6 +4045,7 @@ button {
 .includes-item__img-wrapper {
   position: relative;
   aspect-ratio: 240/195;
+  overflow: hidden;
 }
 
 .includes-item__img {
@@ -6105,7 +6102,6 @@ button {
   grid-template-columns: 1fr;
   row-gap: 24px;
   padding-top: 36px;
-  padding-bottom: 50px;
 }
 
 .contacts__top-img {
@@ -9397,6 +9393,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   background-size: cover;
 }
 .text h3 {
+  font-family: Times, serif;
   margin-top: 0;
   margin-bottom: 0;
   font-style: normal;

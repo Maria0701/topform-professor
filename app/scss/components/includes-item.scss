@@ -13,6 +13,7 @@
 .includes-item__img-wrapper {
     position: relative;
     aspect-ratio: 240/195;
+    overflow: hidden;
 }
 
 .includes-item__img {
