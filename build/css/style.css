@@ -9333,6 +9333,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 .text h2 {
   position: relative;
+  margin-top: 0;
   margin-bottom: 12px;
   font-family: Times, serif;
   font-weight: 400;
@@ -9379,10 +9380,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   background-size: cover;
 }
 .text h3 {
-  font-family: "Rubik";
+  margin-top: 0;
+  margin-bottom: 0;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   line-height: 140%;
   color: var(--gray2);
 }
@@ -9402,7 +9404,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 
 .text--three-columns {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   row-gap: 36px;
 }
 .text--three-columns div {
@@ -9512,10 +9514,10 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 
 @media (min-width: 740px) {
   .text p {
-    font-size: 1.185rem;
+    font-size: 1rem;
   }
   .text h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
   .text blockquote {
     padding-left: 100px;
@@ -9560,12 +9562,14 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   }
   .text--three-columns div {
     flex-basis: calc(50% - 12px);
+    width: calc(50% - 12px);
   }
 }
 @media (min-width: 1000px) {
   .text--three-columns div {
     flex-basis: calc(33.3333333333% - 16px);
     flex-grow: 1;
+    width: calc(33.3333333333% - 16px);
   }
 
   .ad_tb table,
