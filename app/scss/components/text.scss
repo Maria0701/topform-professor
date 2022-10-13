@@ -1,9 +1,10 @@
 .text {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0,1fr);
     gap: 1rem;
 
     a {
+        display: inline-block;
         color: var(--dark-gray);
         transition: color 0.3s ease-in-out;
 

@@ -9278,10 +9278,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 
 .text {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
 }
 .text a {
+  display: inline-block;
   color: var(--dark-gray);
   transition: color 0.3s ease-in-out;
 }
