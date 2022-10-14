@@ -7428,10 +7428,15 @@ button {
 }
 
 .popup__form {
-  max-height: calc(100vh - 170px);
+  max-height: calc(100vh - 200px);
   overflow-y: auto;
 }
 
+@media (max-width: 600px) {
+  .popup__form .comment-form {
+    row-gap: 12px;
+  }
+}
 .popup-overlay {
   position: fixed;
   top: 100%;
