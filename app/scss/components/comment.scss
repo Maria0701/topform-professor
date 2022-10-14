@@ -5,6 +5,10 @@
     background-color: var(--light-gray);
 }
 
+.service-page__includes + .comment {
+    margin-top: 50px;
+}
+
 .comment__wrapper {
     display: grid;
     grid-template-columns: 1fr;
