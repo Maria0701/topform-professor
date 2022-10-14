@@ -13463,8 +13463,8 @@ var PopupOpener = /*#__PURE__*/function () {
         this.popupElt = null;
       }
 
-      if (document.querySelector('[data-action="success"]')) {
-        document.querySelector('[data-action="success"]').remove();
+      if (document.querySelector('[data-popup="success"]')) {
+        document.querySelector('[data-popup="success"]').remove();
         this.popupElt = null;
       }
 

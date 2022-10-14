@@ -7425,7 +7425,10 @@ button {
   padding: 12px;
   transform: translate(-50%, -50%);
   background-color: var(--white);
-  overflow: hidden;
+}
+
+.popup__form {
+  max-height: calc(100vh - 170px);
   overflow-y: auto;
 }
 
@@ -7507,7 +7510,7 @@ button {
 .popup__svg {
   display: flex;
   justify-content: center;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 
 .popup__phones {
@@ -7543,6 +7546,10 @@ button {
 
   .popup--success .comment-form__btn {
     width: 132px;
+  }
+
+  .popup__svg {
+    margin-bottom: 48px;
   }
 }
 .flatpickr-calendar {
