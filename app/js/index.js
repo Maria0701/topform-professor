@@ -80,7 +80,7 @@ try {
 		modules: [ Navigation],
 		slidesPerView: "auto",
         spaceBetween: 16,
-		loop: true,
+		loop: false,
 		observer: true,
 		observeParents: true,
 		breakpoints: {
@@ -104,7 +104,7 @@ try {
 		modules: [ Navigation],
 		slidesPerView: "auto",
         spaceBetween: 16,
-		loop: true,
+		loop: false,
 		observer: true,
 		observeParents: true,
 		breakpoints: {
@@ -128,7 +128,7 @@ try {
 		modules: [ Navigation, Pagination],
 		slidesPerView: 1,
         spaceBetween: 16,
-		loop: true,
+		loop: false,
 		observer: true,
 		observeParents: true,
 		navigation: {

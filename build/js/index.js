@@ -14515,7 +14515,7 @@ try {
     modules: [swiper_esm/* Navigation */.W_],
     slidesPerView: "auto",
     spaceBetween: 16,
-    loop: true,
+    loop: false,
     observer: true,
     observeParents: true,
     breakpoints: {
@@ -14538,7 +14538,7 @@ try {
     modules: [swiper_esm/* Navigation */.W_],
     slidesPerView: "auto",
     spaceBetween: 16,
-    loop: true,
+    loop: false,
     observer: true,
     observeParents: true,
     breakpoints: {
@@ -14561,7 +14561,7 @@ try {
     modules: [swiper_esm/* Navigation */.W_, swiper_esm/* Pagination */.tl],
     slidesPerView: 1,
     spaceBetween: 16,
-    loop: true,
+    loop: false,
     observer: true,
     observeParents: true,
     navigation: {
