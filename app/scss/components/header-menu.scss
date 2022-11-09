@@ -84,7 +84,7 @@
         top: 50%;
         height: 10px;
         width: 10px;
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04LjA3NjY3IDFMNC43NTI0NSA0LjMyNDlMMS40MjgyMiAxTDAgMi40MjgyMkw0Ljc1MjQ1IDcuMThMOS41MDQ5IDIuNDI4MjJMOC4wNzY2NyAxWiIgZmlsbD0iIzVGOEQ2RSIvPgo8L3N2Zz4K);
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04LjA3NjY3IDFMNC43NTI0NSA0LjMyNDlMMS40MjgyMiAxTDAgMi40MjgyMkw0Ljc1MjQ1IDcuMThMOS41MDQ5IDIuNDI4MjJMOC4wNzY2NyAxWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
         background-position: center;
         background-repeat: no-repeat;
         transform: translateY(-50%) rotate(-90deg);
@@ -189,16 +189,16 @@
     .inner-menu {
         position: absolute;
         top: 100%;
-        left: -230px;
+        left: 0;
         right: 0;
         display: none;
-        padding-top: 12px;
-        background-color: var(--white);
+        padding-top: 12px;        
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
 
         .service-content {
             flex-grow: 1;
+            background-color: var(--white);
         }
         
     }

@@ -46,18 +46,29 @@
 
 @media (min-width: 1000px) {
     .secondary-menu {
+        position: relative;
 		order: 0;
         display: flex;
-        flex-wrap: wrap;
         flex-basis: 100%;
         justify-content: space-between;
         padding-top: 12px;
         padding-bottom: 12px;
-        border-bottom: 1px solid var(--light-gray);
+        padding-left: 34%;
+        
+        &:before {
+            content: '';
+            position:absolute;
+            bottom: 0;
+            right: 0;
+            width: 66%;
+            height: 1px;
+            background-color: var(--light-gray);
+        }
 	}
 
     .secondary-menu-list {
         display: flex;
+        flex-wrap: wrap;
         gap: 0;
     }
 

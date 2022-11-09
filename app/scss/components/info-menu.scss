@@ -21,11 +21,13 @@
     }
 }
 
+.header .info-menu {
+    column-gap: 20px;
+}
+
 .info-menu-phones {
     display: grid;
     grid-auto-flow: row;
-    gap: 5px;
-
     a {
         font-weight: 700;
         font-size: 1rem;
@@ -40,11 +42,11 @@
     grid-auto-flow: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 12px;
+    gap: 4px;
 
     svg {        
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
         color: var(--green-text);
         fill: var(--green-text);
     }
@@ -71,10 +73,10 @@
     .info-menu {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
         order: 0;
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 8px;
+        padding-bottom: 8px;        
     }
 
     .info-menu::after {
@@ -101,8 +103,14 @@
 	}
 }
 
+@media (min-width: 1391px) {
+    .info-menu {
+        padding-left: 34%;
+    }
+}
+
 @media (min-width: $desktop-large) { 
     .info-menu-contact {
-        column-gap: 30px;
+        column-gap: 19px;
     }
 }
