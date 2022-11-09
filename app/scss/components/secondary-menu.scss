@@ -25,8 +25,15 @@
         font-size: 0.813rem;
         text-align: center;
         color: var(--mid-grey);
-        text-decoration: none;;
+        white-space: nowrap;
+        text-decoration: none;
     }
+}
+
+.secondary-menu__social {
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    order: -1;
 }
 
 .secondary-menu__btn {
@@ -41,6 +48,7 @@
     .secondary-menu {
 		order: 0;
         display: flex;
+        flex-wrap: wrap;
         flex-basis: 100%;
         justify-content: space-between;
         padding-top: 12px;
@@ -51,5 +59,11 @@
     .secondary-menu-list {
         display: flex;
         gap: 0;
+    }
+
+    .secondary-menu__social {
+        padding-left: 0;
+        padding-right: 0;
+        order: 0;
     }
 }

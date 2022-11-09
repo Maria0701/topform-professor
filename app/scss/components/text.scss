@@ -113,8 +113,8 @@
         font-weight: 400;
         font-size: 0.875rem;
         line-height: 140%;
-        color: var(--gray2);
-        background-color: var(--bege);
+        background-color: var(--green);
+        color: var(--white-text);
 
         &::before {
             content: '';
@@ -269,7 +269,8 @@
 
     .text blockquote {
         margin-top: 20px;
-        background-color: var(--white);
+        background-color: var(--green);
+        color: var(--white-text);
     }
 }
 

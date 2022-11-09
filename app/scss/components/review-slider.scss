@@ -14,21 +14,10 @@
     padding-bottom: 24px;
     margin-left: -16px;
     margin-right: -16px;
-    background-image: url('../img/bg1.png');
+    background-image: url('../img/reviews-bg3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0.6;
-        background-color: var(--bege);
-    }
 }
 
 .review-slider__controls {
@@ -108,6 +97,13 @@
     position: relative;
     z-index: 1;
     width: calc(100% - 32px);
+    color: var(--white-text);
+
+    &:hover,
+    &:focus {
+        color: var(--orange-text);
+        border-color: var(--orange-text);
+    }
 }
 
 @media (min-width: 600px) {

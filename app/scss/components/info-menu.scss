@@ -84,6 +84,7 @@
     .info-menu-search {
         max-width: 153px;
         box-sizing: border-box;
+        order: 1;
     }
 
     .info-menu-contact {
@@ -96,11 +97,12 @@
 		font-size: 1rem;
 		line-height: 1.3;
         white-space: nowrap;
+        order: 1;
 	}
 }
 
 @media (min-width: $desktop-large) { 
     .info-menu-contact {
-        column-gap: 42px;
+        column-gap: 30px;
     }
 }
