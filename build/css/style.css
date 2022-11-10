@@ -7060,7 +7060,14 @@ button {
   background-size: 1920px 700px;
   background-repeat: no-repeat;
 }
-.hero-slider__item::before {
+
+.hero-slider__item .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  z-index: 1;
+  position: relative;
+}
+.hero-slider__item .container::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -7069,13 +7076,6 @@ button {
   height: 30%;
   z-index: 2;
   background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 77.4%);
-}
-
-.hero-slider__item .container {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  z-index: 1;
-  position: relative;
 }
 
 .hero-slider__title {
