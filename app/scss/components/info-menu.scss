@@ -76,7 +76,7 @@
         justify-content: flex-end;
         order: 0;
         padding-top: 8px;
-        padding-bottom: 8px;        
+        padding-bottom: 8px;
     }
 
     .info-menu::after {
@@ -112,5 +112,11 @@
 @media (min-width: $desktop-large) { 
     .info-menu-contact {
         column-gap: 19px;
+    }
+}
+
+@media (min-width:970px) and (max-width: 1500px) {
+    .header .info-menu-contact__item:nth-child(3) {
+        display: none;
     }
 }

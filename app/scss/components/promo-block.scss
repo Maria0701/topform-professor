@@ -55,15 +55,19 @@
 
 @media (min-width: $small) {
     .promo-block__item {
-        width: 300px;
+        width: calc(25% - 30px);
     }
 
     .promo-block__item--large {
-        width: 640px;
+        width: calc(50% - 30px);
     }
 
     .promo-block__btn {
         top: -5px;
+    }
+
+    .promotion__img-wrap {
+        height: auto;
     }
 }
 
@@ -74,13 +78,6 @@
 }
 
 @media (min-width: 1200px) {
-    .promo-block__item {
-        width: 320px;
-    }
-
-    .promo-block__item--large {
-        width: 692px;
-    }
 
     .promo-block__slider {
         margin-right: 0;

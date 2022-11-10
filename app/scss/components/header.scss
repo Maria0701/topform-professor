@@ -165,8 +165,11 @@
 @media (min-width: $small) {
 	.header-logo {
 		margin-left: 0;
-	}
+	}	
+}
 
+@media (min-width: 1000px) {
+	
 	.header--scroll .info-menu {
 		display: none;
 	}
@@ -184,9 +187,7 @@
 	.header--scroll .secondary-menu {
 		padding-bottom: 20px;
 	}
-}
 
-@media (min-width: 1000px) {
 	.header-container {
 		position: relative;
 		align-items: stretch;
