@@ -9551,6 +9551,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   gap: 0;
 }
 .text .img-bordered {
+  padding-top: 0;
   position: relative;
 }
 .text .img-bordered:before {
@@ -9568,7 +9569,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   grid-template-columns: minmax(0, 1fr);
   row-gap: 36px;
 }
-.text--three-columns div {
+.text--three-columns > div {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 24px;
@@ -9722,7 +9723,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
     flex-wrap: wrap;
     justify-content: center;
   }
-  .text--three-columns div {
+  .text--three-columns > div {
     flex-basis: calc(50% - 12px);
     width: calc(50% - 12px);
   }
@@ -9733,7 +9734,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   }
 }
 @media (min-width: 1000px) {
-  .text--three-columns div {
+  .text--three-columns > div {
     flex-basis: calc(33.3333333333% - 16px);
     flex-grow: 1;
     width: calc(33.3333333333% - 16px);
@@ -9795,7 +9796,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
     -moz-column-gap: 44px;
          column-gap: 44px;
   }
-  .text--three-columns div {
+  .text--three-columns > div {
     flex-basis: calc(33.3333333333% - 30px);
     flex-grow: 1;
   }

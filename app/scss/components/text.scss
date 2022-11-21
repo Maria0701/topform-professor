@@ -158,6 +158,7 @@
     }
 
     .img-bordered {
+        padding-top: 0;
         position: relative;
 
         &:before {
@@ -177,7 +178,7 @@
     grid-template-columns: minmax(0,1fr);
     row-gap: 36px;
 
-    div {
+    &>div {
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 24px;
@@ -343,7 +344,7 @@
         flex-wrap: wrap;
         justify-content: center;
     
-        div {
+        &>div {
             flex-basis: calc(50% - 12px);
             width:  calc(50% - 12px);
         }
@@ -366,7 +367,7 @@
 
 @media (min-width: 1000px) {
     .text--three-columns {   
-        div {
+        &>div {
             flex-basis: calc(100% / 3 - 16px);
             flex-grow: 1;
             width:  calc(100% / 3 - 16px);
@@ -432,7 +433,7 @@
     .text--three-columns {
         column-gap: 44px;
 
-        div {
+        &>div {
             flex-basis: calc(100% / 3 - 30px);
             flex-grow: 1;
         }
