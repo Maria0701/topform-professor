@@ -9550,6 +9550,18 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   background-repeat: no-repeat;
   gap: 0;
 }
+.text .img-bordered {
+  position: relative;
+}
+.text .img-bordered:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  border: 1px solid #FFFFFF;
+}
 
 .text--three-columns {
   display: grid;
@@ -9713,6 +9725,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   .text--three-columns div {
     flex-basis: calc(50% - 12px);
     width: calc(50% - 12px);
+  }
+
+  .img-bordered:before {
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
   }
 }
 @media (min-width: 1000px) {

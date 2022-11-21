@@ -156,6 +156,20 @@
         background-repeat: no-repeat;        
         gap: 0;
     }
+
+    .img-bordered {
+        position: relative;
+
+        &:before {
+            content: '';
+            position:absolute;
+            top: 8px;
+            left: 8px;
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+            border: 1px solid #FFFFFF;
+        }
+    }
 }
 
 .text--three-columns {
@@ -338,6 +352,13 @@
     .container-inside.text {
         ol li {
             //font-size: 1.185rem;
+        }
+    }
+
+    .img-bordered {
+        &:before {
+            width: calc(100% - 24px);
+            height: calc(100% - 24px);
         }
     }
     
