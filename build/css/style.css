@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Swiper 7.0.8
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -4995,6 +4996,17 @@ button {
   color: var(--gray2);
 }
 
+.advantages.index__ways {
+  grid-column: span 3;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.index__ways .advantages__content {
+  grid-column: span 2;
+}
+
 @media (min-width: 740px) {
   .advantages__list {
     position: relative;
@@ -6342,10 +6354,41 @@ button {
 
 .contacts__map {
   height: 600px;
+  margin-top: 50px;
 }
 .contacts__map .map-container {
   width: 100%;
   height: 100%;
+}
+
+.contacts__button-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px 30px;
+}
+
+.contacts__attention img {
+  margin-left: -20px;
+  margin-right: 9px;
+}
+
+.contacts__attention {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+  /*min-height: 67px;*/
+  padding: 24px 0;
+  background-size: cover;
+}
+
+.contacts__attention span,
+.contacts__attention a {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  display: block;
+  color: #FFFFFF;
 }
 
 @media (min-width: 740px) {
@@ -6447,6 +6490,15 @@ button {
   .contacts__quote:before {
     top: 36px;
     left: 36px;
+  }
+}
+@media (max-width: 740px) {
+  .contacts__top-img::before {
+    content: unset;
+  }
+
+  .contacts__attention {
+    margin-bottom: 100px;
   }
 }
 .time {
@@ -10271,5 +10323,78 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 
 .svg-disclaimer {
   display: none;
+}
+
++ .ways__list {
+  counter-reset: ways;
+}
+
+.ways__number {
+  height: 85px;
+  width: 50px;
+  background: #F0EEE0;
+  border-radius: 24px 24px 0px 0px;
+  position: relative;
+}
+
+.ways__number:after {
+  counter-increment: ways;
+  /* Отображение счетчика */
+  content: counter(ways) ".";
+  font-family: "ElisabethischeBook";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 83px;
+  text-transform: uppercase;
+  color: #5F8D6E;
+  position: absolute;
+  bottom: -20px;
+  right: -12px;
+}
+
+.advantages.index__ways {
+  grid-column: span 3;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.ways__list img {
+  display: inline;
+}
+
+.ways__underground {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #5F5F5F;
+  margin-top: 16px;
+}
+
+.ways__car {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #4F4F4F;
+  margin-top: 8px;
+}
+
+.ways__man {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #4F4F4F;
+  margin-top: 12px;
+}
+
+.ways__underground, .ways__car, .ways__man {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  align-items: center;
+  gap: 0 9px;
 }
 /*# sourceMappingURL=style.css.map */
