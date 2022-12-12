@@ -1,7 +1,7 @@
 .service-menu-wrapper {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     align-items: flex-start;
     align-content: flex-start;
     padding-top: 16px;
@@ -9,6 +9,10 @@
     padding-bottom: 14px;
     padding-right: 16px;
     background-color: rgba(240,238,224, 0.9);
+}
+
+.service-menu-wrapper.service-menu-wrapper--doctor {
+    grid-template-columns: minmax(0, 1fr);
 }
 
 .service-menu {
@@ -20,6 +24,10 @@
     margin: 0;
     padding: 0;    
     list-style: none;
+}
+.service-menu--doctor {
+    align-items: initial;
+    align-content: initial;
 }
 
 .service-menu__sub {
@@ -59,6 +67,9 @@
     &:focus {
         color: var(--dark-gray);
     }
+}
+.service-menu--doctor > .service-menu__item > .service-menu__link {
+    margin-right: 0;
 }
 
 .service-menu > .service-menu__item {
@@ -164,7 +175,8 @@
 }
 
 @media (min-width: $small) {
-    .service-menu-wrapper {
+    .service-menu-wrapper,
+    .service-menu--doctor {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         column-gap: 54px;
     }
@@ -184,7 +196,8 @@
 }
 
 @media (min-width: 1000px) {
-    .service-menu-wrapper {
+    .service-menu-wrapper,
+    .service-menu--doctor {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-columns: masonry;
         column-gap: 54px;
@@ -199,6 +212,9 @@
 @media (min-width: $desktop-large) {
     .service-menu-wrapper {
         z-index: 1;
+    }
+    .service-menu--doctor {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
     }
     .service-menu-block {
         position: relative;

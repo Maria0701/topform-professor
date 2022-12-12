@@ -241,7 +241,7 @@
         padding-bottom: 33px;
         margin: 0;
         font-weight: 400;
-        font-size: 3.56rem;
+        font-size: 2.56rem;
         line-height: 110%;
         color: var(--white-text);
         background: rgba(95, 95, 95, 0.2);
@@ -262,10 +262,13 @@
 
 @media (min-width: 1400px) {
     .hero-slider__actions {
-        bottom: 152px;
+        bottom: 100px;
+    }
+    .hero-slider__title {
+        font-size: 3.56rem;
     }
 
     .hero-slider__item .container {
-        grid-template-columns: 1fr 560px;
+        grid-template-columns: 1fr 715px;
     }
 }

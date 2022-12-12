@@ -10,13 +10,22 @@
                 <p class="top-page__subname">{{ subname }}</p>
                 <div class="top-page__service-block">
                     <div class="top-page__from">
-                        <span class="top-page__from-svg">
-                            <include src="app/html/svg-icon.html" locals='{ "name": "ruble","width": "36", "height": "36"  }'></include>
-                        </span>
-                        <span class="top-page__from-text">Цена:</span>
-                        <span class="top-page__from-price">от 1500 ₽</span>
+                        <div class="top-page__from-block top-page__from-block--first">
+                            <span class="top-page__from-svg">
+                                <include src="app/html/svg-icon.html" locals='{ "name": "ruble","width": "36", "height": "36"  }'></include>
+                            </span>
+                            <span class="top-page__from-text">Цена:</span>
+                            <span class="top-page__from-price">от 1500 ₽</span>
+                        </div>
+                        <div class="top-page__from-block ">
+                            <span class="top-page__from-price">Первичный прием: 3000 ₽</span>
+                            <span class="top-page__from-price">Вторичный прием: 2500 ₽</span>
+                        </div>
+                        <div class="top-page__from-block">                            
+                            <a href="#prices" class="top-page__all-prices">ВСЕ ЦЕНЫ</a>
+                        </div>
                     </div>
-                    <div class="top-page__from">
+                    <div class="top-page__from top-page__from-block--first">
                         <span class="top-page__from-svg">
                             <include src="app/html/svg-icon.html" locals='{ "name": "time","width": "36", "height": "36"  }'></include>
                         </span>
