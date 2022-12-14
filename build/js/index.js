@@ -69,8 +69,16 @@ var tabsOpener = function tabsOpener(className) {
 
   var openHandler = function openHandler(evt) {
     evt.preventDefault();
-    evt.target.closest(className).parentElement.classList.toggle('closed');
-    evt.target.closest(className).parentElement.classList.toggle('opened');
+
+    if ($(evt.target).parents('.prices-block.js-tabs').length != 0) {
+      if ($(evt.target).parents('.prices-block__header').length != 0 || $(evt.target).hasClass('prices-block__header')) {
+        evt.target.closest(className).parentElement.classList.toggle('closed');
+        evt.target.closest(className).parentElement.classList.toggle('opened');
+      }
+    } else {
+      evt.target.closest(className).parentElement.classList.toggle('closed');
+      evt.target.closest(className).parentElement.classList.toggle('opened');
+    }
   };
 
   var observer = new MutationObserver(function (mutationRecords) {
@@ -213,12 +221,13 @@ if (typeof Object.assign !== "function") {
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  "pt": () => (/* reexport */ Autoplay),
   "W_": () => (/* reexport */ Navigation),
   "tl": () => (/* reexport */ Pagination),
   "ZP": () => (/* reexport */ core)
 });
 
-// UNUSED EXPORTS: A11y, Autoplay, Controller, EffectCards, EffectCoverflow, EffectCreative, EffectCube, EffectFade, EffectFlip, FreeMode, Grid, HashNavigation, History, Keyboard, Lazy, Manipulation, Mousewheel, Parallax, Scrollbar, Swiper, Thumbs, Virtual, Zoom
+// UNUSED EXPORTS: A11y, Controller, EffectCards, EffectCoverflow, EffectCreative, EffectCube, EffectFade, EffectFlip, FreeMode, Grid, HashNavigation, History, Keyboard, Lazy, Manipulation, Mousewheel, Parallax, Scrollbar, Swiper, Thumbs, Virtual, Zoom
 
 ;// CONCATENATED MODULE: ./node_modules/ssr-window/ssr-window.esm.js
 /**
@@ -9316,7 +9325,7 @@ function Autoplay({
     }
 
     clearTimeout(timeout);
-    timeout = nextTick(() => {
+    timeout = utils_nextTick(() => {
       let autoplayResult;
 
       if (swiper.params.autoplay.reverseDirection) {
@@ -9393,7 +9402,7 @@ function Autoplay({
   }
 
   function onVisibilityChange() {
-    const document = getDocument();
+    const document = ssr_window_esm_getDocument();
 
     if (document.visibilityState === 'hidden' && swiper.autoplay.running) {
       pause();
@@ -9456,7 +9465,7 @@ function Autoplay({
   on('init', () => {
     if (swiper.params.autoplay.enabled) {
       start();
-      const document = getDocument();
+      const document = ssr_window_esm_getDocument();
       document.addEventListener('visibilitychange', onVisibilityChange);
       attachMouseEvents();
     }
@@ -9491,7 +9500,7 @@ function Autoplay({
       stop();
     }
 
-    const document = getDocument();
+    const document = ssr_window_esm_getDocument();
     document.removeEventListener('visibilitychange', onVisibilityChange);
   });
   Object.assign(swiper.autoplay, {
@@ -14458,6 +14467,7 @@ var _require = __webpack_require__(405),
 var _require2 = __webpack_require__(291),
     tabsOpener = _require2.tabsOpener;
 
+swiper_esm/* default.use */.ZP.use([swiper_esm/* Autoplay */.pt]);
 R.bind('[data-fancybox="gallery"]', {
   infinite: false
 });
@@ -14575,6 +14585,8 @@ try {
   };
   var optionsHero = {
     modules: [swiper_esm/* Navigation */.W_, swiper_esm/* Pagination */.tl],
+    autoplay: true,
+    speed: 400,
     slidesPerView: 1,
     loop: true,
     observer: true,

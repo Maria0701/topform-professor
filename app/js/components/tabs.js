@@ -4,8 +4,16 @@ export const tabsOpener = (className) => {
     
     const openHandler = (evt) => {
         evt.preventDefault();
-        evt.target.closest(className).parentElement.classList.toggle('closed');
-        evt.target.closest(className).parentElement.classList.toggle('opened');
+        if ($(evt.target).parents('.prices-block.js-tabs').length != 0){
+            if ($(evt.target).parents('.prices-block__header').length != 0 || $(evt.target).hasClass('prices-block__header')) {
+                evt.target.closest(className).parentElement.classList.toggle('closed');
+                evt.target.closest(className).parentElement.classList.toggle('opened');
+            }
+        }
+        else{
+            evt.target.closest(className).parentElement.classList.toggle('closed');
+            evt.target.closest(className).parentElement.classList.toggle('opened');
+        }
     }
 
     let observer = new MutationObserver(mutationRecords => {
