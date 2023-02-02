@@ -47,6 +47,18 @@
     color: var(--gray2);
 }
 
+.advantages.index__ways{
+    grid-column: span 3;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.index__ways .advantages__content {
+    grid-column: span 2
+}
+  
+
 @media (min-width: $small) {
     .advantages__list {
         position: relative;

@@ -1,5 +1,5 @@
 
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 import { clipText } from './components/clip-text';
 import { PopupOpener } from './components/popupOpener';
 import { TabsAutomatic } from './components/tabs-auromatic';
@@ -15,6 +15,7 @@ import { sightSwitcher } from './components/sight-form';
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
+Swiper.use([Autoplay]);
 
 Fancybox.bind('[data-fancybox="gallery"]', {
 	infinite: false
@@ -143,6 +144,8 @@ try {
 
 	const optionsHero = {
 		modules: [ Navigation, Pagination],
+		autoplay: true,
+		speed: 400,
 		slidesPerView: 1,
 		loop: true,
 		observer: true,

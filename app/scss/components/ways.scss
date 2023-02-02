@@ -1,0 +1,70 @@
++.ways__list{
+  counter-reset: ways;
+}
+.ways__number{
+  height: 85px;
+  width: 50px;
+  background: #F0EEE0;
+  border-radius: 24px 24px 0px 0px;
+  position: relative;
+}
+.ways__number:after{
+  counter-increment: ways;
+  /* Отображение счетчика */
+  content: counter(ways) ".";
+  font-family: 'ElisabethischeBook';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 83px;
+  text-transform: uppercase;
+  color: #5F8D6E;
+  position: absolute;
+  bottom: -20px;
+  right: -12px;
+}
+
+.advantages.index__ways{
+  grid-column: span 3;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.ways__list img{
+  display: inline;
+}
+
+.ways__underground{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #5F5F5F;
+  margin-top: 16px;
+}
+
+.ways__car{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #4F4F4F;
+  margin-top: 8px;
+}
+
+.ways__man{
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #4F4F4F;
+  margin-top: 12px;
+}
+
+.ways__underground, .ways__car, .ways__man{
+  display: flex;
+  /*flex-wrap: wrap;*/
+  align-items: center;
+  gap: 0 9px;
+}
