@@ -1,7 +1,6 @@
 export const successTemplate = (successMessage) => {
     const successText = successMessage === 'success'
-        ? `Спасибо за обращение.
-        <br/>Мы свяжемся с вами для подтверждения записи`
+        ? `Сообщение отправлено.<br/> Мы свяжемся с вами, чтобы уточнить детали`
         : `<p>Пожалуйста, свяжитесь с ними по телефонам</p>
             <div class="popup__phones">
 				<a href="tel:+78122727024" title="позвонить в клинику" class="phone-link">+7 (812) 272-70-24</a>
@@ -10,7 +9,7 @@ export const successTemplate = (successMessage) => {
             </div>
         `;
     const successName = successMessage === 'success'
-    ? `заявка отправлена!`
+    ? `Спасибо`
     : `ошибка отправки!`;
 
     return `
