@@ -1,5 +1,6 @@
 export const successTemplate = (successMessage) => {
-    const successText = successMessage === 'success'
+    const isSuccess = successMessage === 'success';
+    const successText = isSuccess
         ? `Сообщение отправлено.<br/> Мы свяжемся с вами, чтобы уточнить детали`
         : `<p>Пожалуйста, свяжитесь с ними по телефонам</p>
             <div class="popup__phones">
@@ -8,9 +9,15 @@ export const successTemplate = (successMessage) => {
 				<a href="tel:+78122758696" title="позвонить в клинику" class="phone-link">+7 (812) 275-86-96</a>
             </div>
         `;
-    const successName = successMessage === 'success'
+    const successName = isSuccess
     ? `Спасибо`
     : `ошибка отправки!`;
+
+    const isReviews = window.location.href.includes('reviews');
+
+    const remark = !isReviews && isSuccess 
+        ? '<div class="popup__important important-message">ПОСЛЕ ЗАПИСИ ПРОСИМ ПОЛУЧИТЬ ПОДТВЕРЖДЕНИЕ О ПРИЕМЕ ОТ РЕГИСТРАТУРЫ</div>' 
+        : '';
 
     return `
     <div class="popup-overlay opened" data-popup="${successMessage}">
@@ -29,6 +36,7 @@ export const successTemplate = (successMessage) => {
                 </div>
                 <p class="popup__name">${successName}</p>
                 <div class="popup__remark">${successText}</div>
+                ${remark}
             </div>           
             <button class="comment-form__btn btn btn--primary js-close">Хорошо</button>
         </div>
