@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+    <include src="app/html/meta.html"></include>
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">   
+  </head>
+  <body >
+    <include src="app/html/header.html"></include>
+    <main>
+      <include src="app/html/top-page.html" locals='{"class": "top-page--gray top-page--prices", "name": "Оснащение нашего центра", "subname": "Наша клиника укомплектована новейшим оборудованием, позволяющим оперативно проводить весь спектр необходимых исследований для наших пациентов"}'></include>
+      <include src="app/html/equipment.html"></include>      
+    </main> 
+    <include src="app/html/footer.html"></include>
+    <script src="js/index.js"></script>
+  </body>
+</html>

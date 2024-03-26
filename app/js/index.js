@@ -12,6 +12,7 @@ import { checkField } from './components/utils';
 import { CustomSelect } from './components/custom-select';
 import { Fancybox } from "@fancyapps/ui";
 import { sightSwitcher } from './components/sight-form';
+import { popupEq } from './components/popup-eq';
 
 const { swiperMode } = require("./components/btns-swiper");
 const { tabsOpener } = require("./components/tabs");
@@ -175,12 +176,34 @@ try {
 		},
 	};
 
+	var optionsEquipment = {
+    slidesPerView: 1,
+    loop: false,
+    observer: true,
+    observeParents: true,
+    breakpoints: {
+      740: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1000: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      }
+    },
+    navigation: {
+      nextEl: '.equipment-slider__right',
+      prevEl: '.equipment-slider__left'
+    },
+  };
+
 	const swiper = new Swiper('.includes-swiper', optionsIncluded);
 	const swiperDoctors = new Swiper('.doctors__swiper', optionsDoctors);
 	const swiperPromo = new Swiper('.promo-block__swiper', optionsPromo);
 	const swiperReviews = new Swiper('.review-slider__swiper', optionsReviews);	  
 	const swiperHistory = new Swiper('.history__swiper', optionsHistory);
 	const swiperHero = new Swiper('.hero-slider__swiper', optionsHero);
+	const swiperEquipment = new Swiper('.equipment-slider__wrapper', optionsEquipment);
 } catch(e) {
 	console.log(e)
 }
@@ -392,6 +415,12 @@ try {
 try {
 	const switcher = document.querySelector('[data-action="sight-panel"]');
 	sightSwitcher(switcher);
+} catch(e) {
+	console.log(e)
+}
+
+try {
+	popupEq();
 } catch(e) {
 	console.log(e)
 }
